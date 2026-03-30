@@ -2,19 +2,25 @@
 %  memorias o tesis en inglés (borrando el archivo .aux)
 \documentclass{umemoria} 
 
-\depto{Departamento de ???}
-\author{Nombre Completo Autor}
-\title{Título de la Memoria/Tesis}
+\usepackage{tocloft}
+
+% Reduce espacio entre líneas del índice
+\setlength{\cftbeforesecskip}{2pt}   % secciones
+\setlength{\cftbeforesubsecskip}{1pt} % subsecciones
+
+\depto{Departamento de Ingenería Civil Mecánica}
+\author{Joakin Ugalde Castro}
+\title{Evaluación del potencial del cold spray con microtobera para la fabricación aditiva de piezas 3D near-net shape en Ti-6Al-4V}
 
 % incluir ambos comandos para una doble titulación
 %  o quitar el comando que no aplica
-\memoria{Ingenier[o/a?] Civil en ???}
-\tesis{Magíster en ???}
+%\memoria{Ingenier[o/a?] Civil en ???}
+\tesis{Magíster en Ciencias de la Ingeniería, mención Mecánica}
 %\tesis{Doctor en ???} % incluir solo este comando para doctorados
 
 % puede haber varios profesores guía seperados por coma;
 % pero si es una memoria, solo puede haber un profesor guía
-\guia{Nombre Completo Guía} 
+\guia{Rubén Fernández Urrutia} 
 
 % puede haber varios profesores co-guía seperados por coma;
 % pero si es una memoria, el profesor co-guía será el primer
@@ -23,7 +29,7 @@
 
 %\cotutela{Nombre Institución} % incluir en caso de cotutela
 
-\comision{Nombre Completo Uno,Nombre Completo Dos,Nombre Completo Tres}
+\comision{Las voces}
 
 %\auspicio{Nombre Institución} % incluir en caso de recibir financiamiento
 
@@ -38,7 +44,19 @@
 \maketitle
 
 \begin{resumen}
-\lipsum[1-4]
+
+Se estudia de manera experimental el potencial del uso de la técnica de coldpsray (proyección de partículas en frío) como método de manufactura aditiva para piezas 3D con precisión cercana a la forma final (\textit{near net shape}), usando específicamente una microtobera con garganta de 1 mm, nitrógeno como gas portante, aleación de aluminio como sustrato, y polvo de aleación de titanio Ti6Al-4V.
+
+Este trabajo tiene 2 hipótesis principales: 1) una tobera con garganta pequeña mejora la resolución espacial del proceso, pues baja el diámetro del \textit{spot}, y 2) Trayectorias multiaxiales de la herramienta corrigen el perfil de deposición típicamente gaussiano hacia el cuasi-plano ideal para la fabricación aditiva controlada de paredes.
+
+El montaje experimental utilizado corresponde a una CNC de escritorio de 5 ejes adaptada para su integración con un sistema estándar de coldspray.
+
+Se caracteriza el perfil de deposición y se prueban diversas estrategias de compensación de paredes. Repasar los costados de las paredes con la herramienta en ángulo demuestra SER BKN PORKE BAJA EL SKEWNESS.
+
+ Usando combinaciones de parámetros y trayectorias se generan probetas, las cuales son caracterizadas respecto a su resistencia mecánica, y piezas sencillas, cuya resolución se compara con el diseño de referencia.
+
+Y QUE PASO. no c po, decir que las piezas no son tan fuertes, pero que si se tratan termicamente quedan mas bknes, y que la forma ideal de implementar este proceso seria en un sistema hibrido, donde capa a capa se alterne el fresado con el spray.
+
 \end{resumen}
 
 % opcional: incluir para tesis en inglés;
@@ -49,11 +67,13 @@
 %\end{abstract}
 
 \begin{dedicatoria}
-Una dedicatoria corta.
+CUANDO FOKIN PAGAN
 \end{dedicatoria}
 
 \begin{thanks}
-\lipsum[1-2]
+
+a diosito
+
 \end{thanks}
 
 \tableofcontents
@@ -65,6 +85,7 @@ Una dedicatoria corta.
 \input{intro.tex}
 \input{cap2.tex}
 \input{cap3.tex}
+\input{cap4.tex}
 \input{conclu.tex}
 
 % ver https://www.overleaf.com/learn/latex/Glossaries

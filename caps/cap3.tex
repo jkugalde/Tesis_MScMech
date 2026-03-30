@@ -1,2 +1,70 @@
-\chapter{Tercero}
-\lipsum[50-60]
+\chapter{Metodología}
+
+\section{Flujo del trabajo}
+
+Para el desarrollo del trabajo se plantean 5 etapas secuenciales, cada una organizada en actividades, como se muestra en la Figura \ref{met}. 
+
+
+\section{Sistema experimental de CS}
+
+\subsection{Recursos previos}
+
+La arquitectura cinemática a utilizar corresponde a una \textit{Pocket NC V2-10} (Figura \ref{pocket}), cuyas capacidades nominales relevantes se observan en la tabla \ref{datospocket}.
+
+El sistema de CS a montar es principalmente de fabricación propia, lo cual incluye un calefactor eléctrico de 1kW para los gases y un par de toberas (Figura \ref{caleftob}). 
+
+El calefactor cuenta con un sistema PID para fijar la temperatura de los gases a la salida, cuyo sensor es una termocupla que se ubica cerca de la unión con la tobera. Este calefactor se desarrollo como parte de la memoria de Andrés Cerda (aca la referencia).
+
+Para el precalentamiento del calefactor, se utiliza aire comprimido proveniente de un compresor modelo marca. El cambio de gas en el sistema se realiza a través de una válvula de 3 posiciones.
+
+Las toberas son convergente-divergente con garganta de 1 mm, sus medidas generales se especifican en la Figura \ref{tobs}. La alimentación de polvos es lateral y puede ser antes o después de la garganta. Estas toberas se diseñaron como parte de la tesis de Blanca Cerda (aca la referencia).
+
+La diferencia principal entre estas toberas es la sección de barril, la cual se espera que permita un mejor desarrollo y estabilización del jet, aumentando la velocidad y reduciendo la dispersión en la deposición. Por el contrario, la sección de barril puede aumentar la pérdida energética y presentar erosión.  
+
+El alimentador de polvo a utilizar es asdasd, el cual se conecta a través de una manguera con la tobera en el sistema de CS.
+
+\subsection{Adaptaciones}
+
+Para el montaje de las componentes mencionadas anteriormente, se remueven partes de la máquina original y se reemplazan con soportes de acero cortados en láser (Figura \ref{montaj}). 
+
+En la Figura \ref{carro} se observa el anclaje del calefactor al cabezal de la máquina, lo cual sincroniza los movimientos en el eje Z y X. 
+
+En este conjunto también se monta una pieza que porta un imán, el cual activa el sensor de fin de carrera en el eje Z.
+
+Por su masa significativa en relación a la máquina CNC, el calefactor requiere un apoyo rodante adicional ubicado en su parte posterior, lo cual se logró mediante un perfil de aluminio y parte de un rodamiento axial.
+
+Sobre el espacio de trabajo se montan piezas circulares, cuyo fin es soportar el sustrato y canalizar el flujo de gases y material no adherido, lo cual se extrae desde la parte posterior del espacio de trabajo mediante una aspiradora.
+
+La aspiradora se dimensionó considerando el caudal correspondiente al jet de gases y el aire arrastrado por este. El caudal del jet $Q_{jet}$ se estimó mediante una velocidad promedio de referencia de 1000 ms y la sección de la salida de la tobera.
+
+\begin{equation}
+Q_{jet}=A v=0.0283 \mathrm{[m^{3}/s]}
+\end{equation}
+
+La estimación del caudal de aire arrastrado se hace mediante:
+
+
+Por todo lo anterior, se selecciona una aspiradora modelo con x caudal, para otorgar cierto margen de seguridad.
+
+Para la protección de la máquina y de los usuarios, se fabrica un fuelle de silicona elástica que cubre el espacio de trabajo, abierto parcialmente en sus extremos para permitir el flujo de gases.
+
+La silicona utilizada es Mold Max 60 de la marca Smooth-On, su hoja técnica indica que puede soportar temperaturas de hasta aproximadamente 300 C.
+
+La temperatura máxima para el gas de trabajo corresponde nominalmente a 500 C, no obstante, si consideramos de manera simplista la mezcla de este con el aire de arrastre a temperatura ambiente, la temperatura promedio de la mezcla sería:
+
+
+Además de esto, se debe considerar que el jet pierde energía al impactar con el sustrato y que la capacidad de succión de la aspiradora estaría incorporando más aire ambiental a la mezcla, por lo que la protección de silicona debiese soportar las condiciones de servicio.
+
+\subsection{Sistema final}
+
+El sistema final de experimentación se observa en la Figura. 
+
+El espacio de trabajo 
+
+La máquina CNC provee una interfaz al conectarla por USB con un ordenador, a través de la cual se puede manipular y cargar código G.
+
+\section{Diseño de experimentos}
+
+\section{Estrategias de toolpath}
+
+\section{Probetas}

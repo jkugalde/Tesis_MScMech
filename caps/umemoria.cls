@@ -230,7 +230,7 @@
 \renewcommand{\maketitle}{
 	\begin{titlepage}
 		\begin{minipage}{1.6cm}
-			\includegraphics[scale=.12]{imagenes/escudoU2014.pdf}
+			\includegraphics[scale=.12]{imgs/escudoU2014.pdf}
 		\end{minipage}
 		\begin{minipage}[t]{12cm}
 			\MakeUppercase\@universidad\\\MakeUppercase\@facultad\\\MakeUppercase\@depto
