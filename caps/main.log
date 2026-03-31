@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.6)  30 MAR 2026 23:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.6)  31 MAR 2026 12:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -670,51 +670,51 @@ Cap\'{\i }tulo 1.
 
 ] [2] [3]) (cap2.tex [4]
 Cap\'{\i }tulo 2.
-) (cap3.tex [5
+[5
 
-] [6]
+]) (cap3.tex [6] [7]
 Overfull \vbox (56.70793pt too high) has occurred while \output is active []
 
 
-[7]
+[8]
 Cap\'{\i }tulo 3.
 
-LaTeX Warning: Reference `met' on page 8 undefined on input line 5.
+LaTeX Warning: Reference `met' on page 9 undefined on input line 5.
 
 
-LaTeX Warning: Reference `pocket' on page 8 undefined on input line 12.
+LaTeX Warning: Reference `pocket' on page 9 undefined on input line 12.
 
 
-LaTeX Warning: Reference `datospocket' on page 8 undefined on input line 12.
+LaTeX Warning: Reference `datospocket' on page 9 undefined on input line 12.
 
 
-LaTeX Warning: Reference `caleftob' on page 8 undefined on input line 14.
+LaTeX Warning: Reference `caleftob' on page 9 undefined on input line 14.
 
 
-LaTeX Warning: Reference `tobs' on page 8 undefined on input line 20.
+LaTeX Warning: Reference `tobs' on page 9 undefined on input line 20.
 
-[8
+[9
 
 ]
 
-LaTeX Warning: Reference `montaj' on page 9 undefined on input line 28.
+LaTeX Warning: Reference `montaj' on page 10 undefined on input line 28.
 
 
-LaTeX Warning: Reference `carro' on page 9 undefined on input line 30.
+LaTeX Warning: Reference `carro' on page 10 undefined on input line 30.
 
-[9]) (cap4.tex [10]
+[10]) (cap4.tex [11]
 Cap\'{\i }tulo 4.
-) (conclu.tex [11
+) (conclu.tex [12
 
 ]
 Cap\'{\i }tulo 5.
-) (main.bbl [12
+) (main.bbl [13
 
-]) (anexoA.tex [13
+] [14
 
-]
+]) (anexoA.tex [15]
 Ap\'{e}ndice A.
-) [14
+) [16
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -729,13 +729,13 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E2637721E6DB2620CA37F01A086D07BC;7063.
+(rerunfilecheck)             Checksum: 2404BB5B64350C3DD2C4A6B9C5596232;7002.
  ) 
 Here is how much of TeX's memory you used:
- 20685 strings out of 474486
- 354222 string characters out of 5753571
+ 20695 strings out of 474486
+ 354354 string characters out of 5753571
  1938542 words of memory out of 5000000
- 42593 multiletter control sequences out of 15000+600000
+ 42599 multiletter control sequences out of 15000+600000
  565522 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,7n,93p,942b,792s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -746,9 +746,9 @@ s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmti12.pfb>
-Output written on main.pdf (20 pages, 166584 bytes).
+Output written on main.pdf (22 pages, 171072 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 87 named destinations out of 1000 (max. 500000)
+ 412 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
  342 words of extra memory for PDF output out of 10000 (max. 10000000)
 

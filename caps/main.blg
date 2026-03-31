@@ -5,44 +5,46 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: ieeetr.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografia.bib
-You've used 12 entries,
+Warning--I didn't find a database entry for ""
+You've used 14 entries,
             1876 wiz_defined-function locations,
-            566 strings with 5744 characters,
-and the built_in function-call counts, 3762 in all, are:
-= -- 380
-> -- 165
+            580 strings with 6132 characters,
+and the built_in function-call counts, 4524 in all, are:
+= -- 458
+> -- 193
 < -- 0
-+ -- 59
-- -- 47
-* -- 275
-:= -- 532
-add.period$ -- 15
-call.type$ -- 12
-change.case$ -- 10
++ -- 69
+- -- 55
+* -- 328
+:= -- 632
+add.period$ -- 17
+call.type$ -- 14
+change.case$ -- 12
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 184
-empty$ -- 326
-format.name$ -- 47
-if$ -- 914
+cite$ -- 14
+duplicate$ -- 222
+empty$ -- 392
+format.name$ -- 55
+if$ -- 1106
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 15
-newline$ -- 42
-num.names$ -- 12
-pop$ -- 31
+int.to.str$ -- 14
+missing$ -- 17
+newline$ -- 48
+num.names$ -- 14
+pop$ -- 35
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 136
+skip$ -- 171
 stack$ -- 0
-substring$ -- 271
-swap$ -- 88
+substring$ -- 343
+swap$ -- 110
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 37
-width$ -- 14
-write$ -- 125
+while$ -- 43
+width$ -- 16
+write$ -- 145
+(There was 1 warning)
