@@ -1,46 +1,46 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Contexto y motivación}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Objetivos y alcances}{2}{section.1.2}%
-\contentsline {subsubsection}{Objetivo general}{2}{section*.3}%
+\contentsline {section}{\numberline {1.2}Objetivos y alcances}{3}{section.1.2}%
+\contentsline {subsubsection}{Objetivo general}{3}{section*.3}%
 \contentsline {subsubsection}{Objetivos específicos}{3}{section*.4}%
 \contentsline {subsubsection}{Alcances}{3}{section*.5}%
-\contentsline {chapter}{\numberline {2}Antecedentes}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Cold Spray}{4}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Principios del proceso}{4}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Sistema de CS}{6}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Parámetros relevantes}{6}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Mecanismos de deposición}{6}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Aplicaciones típicas}{6}{subsection.2.1.5}%
-\contentsline {section}{\numberline {2.2}Mecanismos de adherencia en cold spray}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Deformación plástica severa}{6}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Adhesión sólido-sólido}{6}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Inestabilidad adiabática de corte}{6}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Ruptura de capas de óxido}{6}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}Manufactura aditiva}{6}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Slicing y trayectorias}{6}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Estrategias de deposición}{6}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Control multieje}{6}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Fabricación con aleación Ti-6Al-4V}{6}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Propiedades físicas y mecánicas}{6}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Comportamiento en procesos de alta velocidad}{6}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Tratamientos térmicos en CS}{6}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Alivio de tensiones}{6}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Difusión en estado sólido}{6}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Densificación microestructural}{6}{subsection.2.5.3}%
-\contentsline {chapter}{\numberline {3}Metodología}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Flujo del trabajo}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Sistema experimental de CS}{7}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Recursos previos}{7}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Adaptaciones}{8}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Sistema final}{9}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Diseño de experimentos}{9}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Estrategias de toolpath}{9}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Probetas}{9}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Resultados y discusión}{10}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Caracterización}{10}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{11}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{11}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{11}{section.5.2}%
-\contentsline {chapter}{\numberline {}Bibliograf\'ia}{12}{chapter*.6}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{13}{Appendix.alph1.Alph1}%
+\contentsline {chapter}{\numberline {2}Antecedentes}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Cold Spray}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Principios del proceso}{5}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Sistema de CS}{7}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Parámetros relevantes}{7}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Mecanismos de deposición}{7}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Aplicaciones típicas}{7}{subsection.2.1.5}%
+\contentsline {section}{\numberline {2.2}Mecanismos de adherencia en cold spray}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Deformación plástica severa}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Adhesión sólido-sólido}{7}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Inestabilidad adiabática de corte}{7}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Ruptura de capas de óxido}{7}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Manufactura aditiva}{7}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Slicing y trayectorias}{7}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Estrategias de deposición}{7}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Control multieje}{7}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Fabricación con aleación Ti-6Al-4V}{7}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Propiedades físicas y mecánicas}{7}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Comportamiento en procesos de alta velocidad}{7}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Tratamientos térmicos en CS}{7}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Alivio de tensiones}{7}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Difusión en estado sólido}{7}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Densificación microestructural}{7}{subsection.2.5.3}%
+\contentsline {chapter}{\numberline {3}Metodología}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Flujo del trabajo}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Sistema experimental de CS}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Recursos previos}{8}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Adaptaciones}{9}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Sistema final}{10}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Diseño de experimentos}{10}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Estrategias de toolpath}{10}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Probetas}{10}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Resultados y discusión}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Caracterización}{11}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{12}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{12}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{12}{section.5.2}%
+\contentsline {chapter}{\numberline {}Bibliograf\'ia}{13}{chapter*.6}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{14}{Appendix.alph1.Alph1}%

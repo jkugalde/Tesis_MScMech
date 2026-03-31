@@ -1,3 +1,63 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{Papyrin2007}
+A.~Papyrin, V.~Kosarev, S.~Klinkov, A.~Alkhimov, and V.~Fomin, {\em Cold Spray
+  Technology}.
+\newblock Oxford, UK: Elsevier, 2007.
+
+\bibitem{Assadi2003}
+H.~Assadi, F.~G{\"a}rtner, T.~Stoltenhoff, and H.~Kreye, ``Bonding mechanism in
+  cold gas spraying,'' {\em Acta Materialia}, vol.~51, no.~15, pp.~4379--4394,
+  2003.
+
+\bibitem{Champagne2016unique}
+V.~Champagne and D.~Helfritch, ``The unique abilities of cold spray
+  deposition,'' {\em International Materials Reviews}, vol.~61, no.~7,
+  pp.~436--455, 2016.
+
+\bibitem{Champagne2015repairs}
+V.~Champagne and D.~Helfritch, ``Critical assessment 11: Structural repairs by
+  cold spray,'' {\em Materials Science and Technology}, vol.~31, no.~6,
+  pp.~627--634, 2015.
+
+\bibitem{Gibson2015}
+I.~Gibson, D.~Rosen, and B.~Stucker, {\em Additive Manufacturing Technologies:
+  {3D} Printing, Rapid Prototyping, and Direct Digital Manufacturing}.
+\newblock New York: Springer, 2~ed., 2015.
+
+\bibitem{Herzog2016}
+D.~Herzog, V.~Seyda, E.~Wycisk, and C.~Emmelmann, ``Additive manufacturing of
+  metals,'' {\em Acta Materialia}, vol.~117, pp.~371--392, 2016.
+
+\bibitem{Leyens2003}
+C.~Leyens and M.~Peters, {\em Titanium and Titanium Alloys: Fundamentals and
+  Applications}.
+\newblock Weinheim, Germany: Wiley-VCH, 2003.
+
+\bibitem{Huang2020}
+C.~Huang, W.~Li, C.~Verdy, H.~Liao, and S.~Deng, ``Solid-state cold spraying of
+  {Ti} and its alloys: A literature review,'' {\em Progress in Materials
+  Science}, vol.~110, p.~100633, 2020.
+
+\bibitem{Yin2022review}
+S.~Yin, P.~Cavaliere, B.~Aldwell, R.~Jenkins, H.~Liao, W.~Li, and R.~Lupoi,
+  ``Cold spray additive manufacturing and repair: Fundamentals and
+  applications,'' {\em Journal of Thermal Spray Technology}, vol.~31, no.~4,
+  pp.~848--865, 2022.
+
+\bibitem{Moridi2014}
+A.~Moridi, S.~M. Hassani-Gangaraj, M.~Guagliano, and M.~Dao, ``Cold spray
+  coating: review of material systems and future perspectives,'' {\em Surface
+  Engineering}, vol.~30, no.~6, pp.~369--395, 2014.
+
+\bibitem{Kotoban2017}
+D.~Kotoban, S.~Grigoriev, A.~Okunkova, and A.~Sova, ``Influence of a shape of
+  single track on deposition efficiency of metal powder in cold spray,'' {\em
+  Additive Manufacturing}, vol.~17, pp.~1--12, 2017.
+
+\bibitem{Sova2017micronozzle}
+A.~Sova, M.~Doubenskaia, S.~Grigoriev, A.~Okunkova, and I.~Smurov, ``Deposition
+  of aluminum powder by cold spray micronozzle,'' {\em The International
+  Journal of Advanced Manufacturing Technology}, vol.~93, pp.~3057--3064, 2017.
 
 \end{thebibliography}
