@@ -6,7 +6,7 @@
 \contentsline {subsubsection}{Objetivos específicos}{3}{section*.4}%
 \contentsline {subsubsection}{Alcances}{3}{section*.5}%
 \contentsline {chapter}{\numberline {2}Antecedentes}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Cold Spray}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.1}Fundamentos de CS}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Fundamentos físicos}{5}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Sistema de CS}{7}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}Parámetros relevantes}{9}{subsection.2.1.3}%
@@ -43,4 +43,4 @@
 \contentsline {section}{\numberline {5.1}Conclusiones}{14}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Trabajo futuro}{14}{section.5.2}%
 \contentsline {chapter}{\numberline {}Bibliograf\'ia}{16}{chapter*.6}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{17}{Appendix.alph1.Alph1}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{17}{Appendix.1.Alph1}%
