@@ -7,11 +7,16 @@
 \contentsline {subsubsection}{Alcances}{3}{section*.5}%
 \contentsline {chapter}{\numberline {2}Antecedentes}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Fundamentos de CS}{5}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Fundamentos físicos}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Sistema de CS}{7}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Parámetros relevantes}{9}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Mecanismos de deposición}{9}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Aplicaciones típicas}{9}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.1}Aceleración del gas}{5}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Proyección de partículas}{6}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Impacto}{6}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Velocidad crítica}{6}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Eficiencia de deposición}{6}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Adherencia}{6}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Sistema de CS}{7}{subsection.2.1.7}%
+\contentsline {subsection}{\numberline {2.1.8}Parámetros relevantes}{9}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.9}Mecanismos de deposición}{9}{subsection.2.1.9}%
+\contentsline {subsection}{\numberline {2.1.10}Aplicaciones típicas}{9}{subsection.2.1.10}%
 \contentsline {section}{\numberline {2.2}Mecanismos de adherencia en cold spray}{9}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Deformación plástica severa}{9}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Adhesión sólido-sólido}{9}{subsection.2.2.2}%
