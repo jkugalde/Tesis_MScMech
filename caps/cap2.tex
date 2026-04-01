@@ -2,24 +2,70 @@
 
 \section{Cold Spray}
 
-\subsection{Fundamentos}
+\subsection{Fundamentos físicos}
 
-El coldspray es una tecnología de fabricación que çonvencionalmente se utiliza para generar recubrimientos superficiales, mediante la proyección de partículas sobre una superficie, las cuales se adhieren a esta y luego entre sí.
+El coldspray es una tecnología de fabricación que çonvencionalmente se utiliza para generar recubrimientos superficiales, mediante la proyección de partículas sólidas sobre un sustrato, las cuales se adhieren a este y luego entre sí, al transformar su energía cinética en deformación plástica.
 
 La herramienta principal de este proceso es una tobera convergente divergente (o de Laval), la cual acelera un gas portador inerte (Nitrógeno, Helio, Argón) que será mezclado con los polvos del material a depositar, típicamente metálicos y cerámicos.
 
-De esta manera, energía cinética es transferida a los polvos del jet, los cuales se pueden incorporar antes o después de la garganta de la tobera. Incporporar antes los polvos aumenta la probabilidad de que el gas transfiera momentum lineal a estos, mientras que incporporalos despues suele ser tecnicamente más sencillo y evita el colapso de la garganta por acumulación indeseada o su desgaste pro abrasión.
+La tobera permite acelerar el gas a velocidades supersónicas una vez que se supera el umbral establecido por la razón de presiones críticas entre el interior y exterior del sistema, generando el fénomeno de \textit{choking}, esto es:
 
-Finalmente, es la energia cinética de las partículas la cual se transforma en deformación plástica la que permite la adhesión de las partículas. Las partículas se pueden adherir específicametne por diferentes mecanismos, pero por lo general es anclaje mecánico por deformación.
+\begin{equation}
+	\frac{P}{P_{0}}>n
+\end{equation}
 
-Otra forma en que se unen las partículas es directamente por enlace metálico, pues las capas de óxido que podrían generarse (lo cual está disminuido por la presencia del gas) se rompen por efecto de la deformación plástica, luego es probale que exista contacto directo entre la red metálica de partículas, generando un enlace intermetálico.
+En esta condición, el flujo siempre se encuentra en Mach 1 en la garganta, luego procede a expandirse, y acelerar, en la sección divergente. Asumiendo un flujo isoentrópico, la ecuación trascendental para encontrar el número de Mach a la salida es:
 
-El cambio de energpia interna en las partículas durante el transcurso del jet de gas no suele ser relevante en el proceso de adhesión, pues las temperatura del gas suele ser basntante lejana a las temperaturas de cambio de fase o recristalización de los materiales típcios de coldspray, considerando además que el tiempo durante el cual la partícula se mezcla con el gas es reducido. La temperatura podría afecta la ductilidad de las par´ticuñas y facilitar la deformación 
+\begin{equation}
+	\frac{A}{A^*} = \frac{1}{M} \left[ \frac{2}{\gamma+1} \left( 1 + \frac{\gamma-1}{2} M^2 \right) \right]^{\frac{\gamma+1}{2(\gamma-1)}}
+\end{equation}
 
+La cual suele resolverse de manera iterativa y da dos soluciones, donde la supersónica la solución válida. Luego, conocido el número de Mach, es posible encontrar la velocidad a la sálida mediante:
 
+\begin{equation}
+	V_{salida} = M \cdot \sqrt{\frac{\gamma R T_0}{1 + \frac{\gamma-1}{2}M^2}}
+\end{equation}
 
+Así, este gas acelerado se mezcla en la tobera con los polvos de material a utilizar, otorgando energía cinética a las partículas a través de la transferencia de momentum lineal.
+
+Nótese que en la ecuación hay una dependencia con la temperatura del gas de proceso, mas no con su presión, luego, sobre la presión crítica el aumento de presión not endría efecto sobre la velocidad final. La influencia de presiones sobre el umbral genera un aumento de densidad del gas, lo que provoca una mayor tasa de transferencia de momentum lineal con las partículas a mezclar, pues el flujo másico de gas aumenta.
+
+La incorporación de los polvos al flujo puede ser antes o después de la garganta de la tobera. Incporporar antes los polvos aumenta la probabilidad la ventana de tiempo para la transferencia de momentum lineal, mientras que incporporalos despues suele ser tecnicamente más sencillo y evita el colapso de la garganta por acumulación indeseada o su desgaste pro abrasión.
+
+Finalmente, es la energia cinética de las partículas la cual, de manera simplista, se transforma en deformación plástica que permite la adhesión entre partículas y con el sustrato. De manera más específica, existen 5 mecanismos de adhesión que podrían darse en el proceso de CS:
+
+Adiabatic shear inestability
+
+Anclaje mecánico
+
+Difusión metálica
+
+Enlace intermetálico
+
+Fuerzas de van der Wals
+
+De lo anterior, es claro que entonces debe existir una velocidad mínima a la cual ocurra suficiente deformación plástica, pues de lo contrario, la partícula podría deformarse (de manera plástica y/o elástica) pero no lo suficiente para adherirse. A esta velocidad se le llama \textbf{velocidad crítica}. 
+
+velocidad critica
+
+velocidad maxima
+
+tamaño de particula
+
+El cambio de energpia interna en las partículas por contacto con el gas de proceso no suele ser relevante en el proceso de adhesión, pues las temperatura del gas suele ser basntante lejana a las temperaturas de cambio de fase o recristalización de los materiales típcios de coldspray, considerando además que el tiempo durante el cual la partícula se mezcla con el gas es reducido. La temperatura podría afecta la ductilidad de las par´ticuñas y facilitar la deformación 
 
 \subsection{Sistema de CS}
+
+tanques de gas de procesos, robot, calefactor
+
+alimentador de polvos,
+
+tobera
+
+configuraciones
+
+
+
 \subsection{Parámetros relevantes}
 \subsection{Mecanismos de deposición}
 \subsection{Aplicaciones típicas}
