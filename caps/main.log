@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.1)  1 APR 2026 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.1)  2 APR 2026 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -649,7 +649,7 @@ Package hyperref Info: Link coloring OFF on input line 41.
 \openout3 = `main.out'.
 
 \c@lstlisting=\count346
-<imgs/escudoU2014.pdf, id=191, 320.19624pt x 689.57625pt>
+<imgs/escudoU2014.pdf, id=183, 320.19624pt x 689.57625pt>
 File: imgs/escudoU2014.pdf Graphic file (type pdf)
 <use imgs/escudoU2014.pdf>
 Package pdftex.def Info: imgs/escudoU2014.pdf  used on input line 44.
@@ -714,48 +714,44 @@ Cap\'{\i }tulo 2.
 [5
 
 ] [6]) (cap3.tex [7] [8]
-Overfull \vbox (20.62459pt too high) has occurred while \output is active []
-
-
-[9]
 Cap\'{\i }tulo 3.
 
-LaTeX Warning: Reference `met' on page 10 undefined on input line 5.
+LaTeX Warning: Reference `met' on page 9 undefined on input line 5.
 
 
-LaTeX Warning: Reference `pocket' on page 10 undefined on input line 12.
+LaTeX Warning: Reference `pocket' on page 9 undefined on input line 12.
 
 
-LaTeX Warning: Reference `datospocket' on page 10 undefined on input line 12.
+LaTeX Warning: Reference `datospocket' on page 9 undefined on input line 12.
 
 
-LaTeX Warning: Reference `caleftob' on page 10 undefined on input line 14.
+LaTeX Warning: Reference `caleftob' on page 9 undefined on input line 14.
 
 
-LaTeX Warning: Reference `tobs' on page 10 undefined on input line 20.
+LaTeX Warning: Reference `tobs' on page 9 undefined on input line 20.
 
-[10
+[9
 
 ]
 
-LaTeX Warning: Reference `montaj' on page 11 undefined on input line 28.
+LaTeX Warning: Reference `montaj' on page 10 undefined on input line 28.
 
 
-LaTeX Warning: Reference `carro' on page 11 undefined on input line 30.
+LaTeX Warning: Reference `carro' on page 10 undefined on input line 30.
 
-[11]) (cap4.tex [12]
+[10]) (cap4.tex [11]
 Cap\'{\i }tulo 4.
-) (conclu.tex [13
+) (conclu.tex [12
 
 ]
 Cap\'{\i }tulo 5.
-) (main.bbl [14
+) (main.bbl [13
 
-] [15
+] [14
 
-]) (anexoA.tex [16]
+]) (anexoA.tex [15]
 Ap\'{e}ndice A.
-) [17
+) [16
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -770,13 +766,13 @@ L3 programming layer <2025-12-24>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 36B1E353B4E72AC994B79DC2054ECBD8;7833.
+(rerunfilecheck)             Checksum: 4A752EB8334F5229C4D8DD8E36401ECF;7443.
  ) 
 Here is how much of TeX's memory you used:
- 20796 strings out of 467871
- 358102 string characters out of 5419829
- 839023 words of memory out of 5000000
- 49290 multiletter control sequences out of 15000+600000
+ 20797 strings out of 467871
+ 358130 string characters out of 5419829
+ 839215 words of memory out of 5000000
+ 49292 multiletter control sequences out of 15000+600000
  635174 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,7n,93p,942b,810s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -794,9 +790,9 @@ ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Hp/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Hp/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Hp/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (23 pages, 235554 bytes).
+Output written on main.pdf (22 pages, 235803 bytes).
 PDF statistics:
- 475 PDF objects out of 1000 (max. 8388607)
- 100 named destinations out of 1000 (max. 500000)
- 382 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 464 PDF objects out of 1000 (max. 8388607)
+ 99 named destinations out of 1000 (max. 500000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 

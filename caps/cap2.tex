@@ -1,34 +1,61 @@
 \chapter{Antecedentes}
 
-\section{Fundamentos de CS}
+\section{Fundamentos físicos en CS}
 
 \subsection{Aceleración del gas}
 
 El coldspray es una tecnología de fabricación que çonvencionalmente se utiliza para generar recubrimientos superficiales, mediante la proyección de partículas sólidas sobre un sustrato, las cuales se adhieren a este y luego entre sí, al transformar su energía cinética en deformación plástica.
 
-La herramienta principal de este proceso es una tobera convergente divergente (o de Laval), la cual acelera un gas portador inerte (Nitrógeno, Helio, Argón) que será mezclado con los polvos del material a depositar, típicamente metálicos y cerámicos.
+La herramienta principal de este proceso es una tobera convergente divergente (o de Laval), la cual acelera un gas portador inerte (usualmente nitrógeno o helio, o mezclas de estos) que será mezclado con los polvos del material a depositar, típicamente metálicos y cerámicos.
 
-La tobera permite acelerar el gas a velocidades supersónicas una vez que se supera el umbral establecido por la razón de presiones críticas entre el interior y exterior del sistema, generando el fénomeno de \textit{choking}, esto es:
+La tobera permite acelerar el gas a velocidades supersónicas una vez que se supera el umbral establecido por la razón de presiones críticas entre el interior y exterior del sistema, generando el fénomeno de \textit{choking} o estrangulamiento, esto es:
 
 \begin{equation}
-	\frac{P}{P_{0}}>n
+	\frac{p_e}{p_0} < \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma}{\gamma-1}}
+	\label{eq:condicion_supersonica}
 \end{equation}
 
-En esta condición, el flujo siempre se encuentra en Mach 1 en la garganta, luego procede a expandirse, y acelerar, en la sección divergente. Asumiendo un flujo isoentrópico, la ecuación trascendental para encontrar el número de Mach a la salida es:
+donde \( p_e \) es la presión estática a la salida de la tobera (presión ambiental, por lo general), \( p_0 \) es la 
+presión antes de la garganta (controlable), y \( \gamma \) es el coeficiente de calor específico del gas propulsor.
+
+Es conveniente entonces caracterizar la velocidad de este flujo en función del número de Mach:
+
+\begin{equation}
+	M = \frac{v}{a}
+	\label{eq:mach}
+\end{equation}
+
+donde \( v \) es la velocidad local del flujo y \( a \) es la velocidad local del sonido en el gas, la cual se puede describir como:
+
+\begin{equation}
+	a = \sqrt{\gamma \frac{R}{M_{mol}} T}
+	\label{eq:velocidad_sonido}
+\end{equation}
+
+donde, \( R \) es la constante universal de los gases ideales, 
+\( M_{mol} \) es la masa molar del gas propulsor, y \( T \) es la temperatura estática local del flujo.
+
+En la condición de estrangulamiento, el flujo siempre se encuentra en Mach 1 en la garganta, luego procede a expandirse, y acelerar, en la sección divergente. Asumiendo un flujo isoentrópico, la ecuación trascendental para encontrar el número de Mach a la salida es:
 
 \begin{equation}
 	\frac{A}{A^*} = \frac{1}{M} \left[ \frac{2}{\gamma+1} \left( 1 + \frac{\gamma-1}{2} M^2 \right) \right]^{\frac{\gamma+1}{2(\gamma-1)}}
 \end{equation}
 
-La cual suele resolverse de manera iterativa y da dos soluciones, donde la supersónica la solución válida. Luego, conocido el número de Mach, es posible encontrar la velocidad a la sálida mediante:
+donde \( A \) es el área de la sección transversal local de la tobera, \( A^* \) es el área de la garganta en condición sónica (\( Ma = 1 \)), \( M \) es el número de Mach local del flujo, y \( \gamma \) es el coeficiente de calores específicos 
+del gas propulsor. La cual suele resolverse de manera iterativa y da dos soluciones, donde la supersónica la solución válida. 
+
+Conocido el número de Mach, es posible encontrar la velocidad a la sálida mediante:
 
 \begin{equation}
-	V_{salida} = M \cdot \sqrt{\frac{\gamma R T_0}{1 + \frac{\gamma-1}{2}M^2}}
+	v_e = M \sqrt{\frac{\gamma R T_0}{M_{mol}\left(1 + \frac{\gamma-1}{2}M^2\right)}}
+	\label{eq:velocidad_salida}
 \end{equation}
+
+donde \( v_e \) es la velocidad del gas a la salida de la tobera, y \( T_0 \) es la temperatura antes de la tobera.
 
 Así, este gas acelerado se mezcla en la tobera con los polvos de material a utilizar, otorgando energía cinética a las partículas a través de la transferencia de momentum lineal.
 
-Nótese que en la ecuación hay una dependencia con la temperatura del gas de proceso, mas no con su presión, luego, sobre la presión crítica el aumento de presión not endría efecto sobre la velocidad final alcanzada por el gas. La influencia de presiones sobre el umbral genera un aumento de densidad del gas, lo que provoca una mayor tasa de transferencia de momentum lineal con las partículas a mezclar, pues el flujo másico de gas aumenta.
+Nótese que en la ecuación \ref{eq:velocidad_salida} hay una dependencia de la velocidad con la temperatura del gas de proceso, mas no con su presión, luego, sobre la presión crítica el aumento de presión no tendría efecto sobre la velocidad final alcanzada por el gas. La influencia de presiones sobre el umbral genera un aumento de densidad del gas, lo que provoca una mayor tasa de transferencia de momentum lineal con las partículas a mezclar, pues el flujo másico de gas aumenta.
 
 \subsection{Proyección de partículas}
 
@@ -42,9 +69,7 @@ Finalmente, es la energia cinética de las partículas la cual, de manera simpli
 
 \subsection{Velocidad crítica}
 
-\subsection{Eficiencia de deposición}
-
-\subsection{Adherencia}
+\subsection{Mecanismos de adherencia}
 
 Adiabatic shear inestability asdasd
 
@@ -66,38 +91,20 @@ tamaño de particula
 
 El cambio de energpia interna en las partículas por contacto con el gas de proceso no suele ser relevante en el proceso de adhesión, pues las temperatura del gas suele ser basntante lejana a las temperaturas de cambio de fase o recristalización de los materiales típcios de coldspray, considerando además que el tiempo durante el cual la partícula se mezcla con el gas es reducido. La temperatura podría afecta la ductilidad de las par´ticuñas y facilitar la deformación 
 
+\subsection{Perfil de deposición}
+
+\section{Fabricación por CS}
+
 \subsection{Sistema de CS}
-
-tanques de gas de procesos, robot, calefactor
-
-alimentador de polvos,
-
-tobera
-
-configuraciones
-
-
-
 \subsection{Parámetros relevantes}
-\subsection{Mecanismos de deposición}
+\subsection{Características de productos por CS}
 \subsection{Aplicaciones típicas}
-
-\section{Mecanismos de adherencia en cold spray}
-\subsection{Deformación plástica severa}
-\subsection{Adhesión sólido-sólido}
-\subsection{Inestabilidad adiabática de corte}
-\subsection{Ruptura de capas de óxido}
 
 \section{Manufactura aditiva}
 \subsection{Slicing y trayectorias}
 \subsection{Estrategias de deposición}
 \subsection{Control multieje}
+\subsection{FA usando CS}
+\subsection{FA usando titanio}
 
-\section{Fabricación con aleación Ti-6Al-4V}
-\subsection{Propiedades físicas y mecánicas}
-\subsection{Comportamiento en procesos de alta velocidad}
 
-\section{Tratamientos térmicos en CS}
-\subsection{Alivio de tensiones}
-\subsection{Difusión en estado sólido}
-\subsection{Densificación microestructural}
