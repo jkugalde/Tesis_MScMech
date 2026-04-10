@@ -1,14 +1,34 @@
 \chapter{Antecedentes}
 
-\section{Fundamentos físicos en CS}
 
+\section{Fundamentos de CS}
+
+\subsection{Descripción general del proceso}
+
+Como se mencionó en la sección de introducción, el CS es una tecnología 
+de fabricación que convencionalmente se utiliza para generar recubrimientos superficiales sobre componentes, mediante la proyección de partículas sólidas a alta velocidad sobre un sustrato. En la Figura \ref{CS} se presentan los elementos básicos que conforman un sistema estándar de CS.
+
+La herramienta principal del proceso es una tobera convergente-divergente 
+(o de Laval), la cual acelera un gas portador inerte (usualmente nitrógeno, helio, o mezclas de ambos) hasta velocidades supersónicas. Los polvos del material a depositar, generalmente metálicos, son suministrados por un alimentador y se mezclan con el flujo de gas en la tobera, siendo arrastrados y acelerados junto a este.
+
+La velocidad alcanzada por el gas depende directamente de su temperatura 
+tras el paso por el calefactor y de la presión de suministro. Existen 
+configuraciones donde el polvo es precalentado de forma independiente antes de la inyección, con el fin de reducir su dureza y mejorar la probabilidad de adherencia; sin embargo, estas no constituyen la práctica convencional debido a la complejidad operativa que introducen.
+
+Como se desarrolla en las secciones siguientes, la velocidad de impacto 
+de las partículas es el factor determinante para la eficacia del proceso. 
+Otros factores relevantes incluyen la morfología y el tamaño de las 
+partículas, las propiedades mecánicas del material a depositar, y la 
+naturaleza del sustrato.
+
+El proceso se ejecuta desplazando la herramienta (o pistola) sobre la superficie a cubrir en sucesivas pasadas. La acumulación de material depende de parámetros operativos como el flujo másico de polvo, la velocidad de desplazamiento y el número de pasadas, entre otros.
+
+Los depósitos obtenidos por CS suelen presentar porosidad residual, 
+rugosidad superficial y tensiones residuales de compresión. Por esta razón, dependiendo de la aplicación, es frecuente aplicar tratamientos posteriores como recocido o mecanizado de acabado para mejorar las propiedades finales del recubrimiento.
+ 
 \subsection{Aceleración del gas}
 
-El coldspray es una tecnología de fabricación que çonvencionalmente se utiliza para generar recubrimientos superficiales, mediante la proyección de partículas sólidas sobre un sustrato, las cuales se adhieren a este y luego entre sí, al transformar su energía cinética en deformación plástica.
-
-La herramienta principal de este proceso es una tobera convergente divergente (o de Laval), la cual acelera un gas portador inerte (usualmente nitrógeno o helio, o mezclas de estos) que será mezclado con los polvos del material a depositar, típicamente metálicos y cerámicos.
-
-La tobera permite acelerar el gas a velocidades supersónicas una vez que se supera el umbral establecido por la razón de presiones críticas entre el interior y exterior del sistema, generando el fénomeno de \textit{choking} o estrangulamiento, esto es:
+La tobera acelera el gas a velocidades supersónicas una vez que se supera el umbral establecido por la razón de presiones críticas entre el interior y exterior del sistema, generando el fénomeno de \textit{choking} o estrangulamiento, esto es:
 
 \begin{equation}
 	\frac{p_e}{p_0} < \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma}{\gamma-1}}
@@ -16,9 +36,9 @@ La tobera permite acelerar el gas a velocidades supersónicas una vez que se sup
 \end{equation}
 
 donde \( p_e \) es la presión estática a la salida de la tobera (presión ambiental, por lo general), \( p_0 \) es la 
-presión antes de la garganta (controlable), y \( \gamma \) es el coeficiente de calor específico del gas propulsor.
+presión de estancamiento antes de la garganta (controlable), y \( \gamma \) es el coeficiente de calor específico del gas propulsor.
 
-Es conveniente entonces caracterizar la velocidad de este flujo en función del número de Mach:
+Es conveniente entonces caracterizar la velocidad de este flujo en función del número de Mach $M$:
 
 \begin{equation}
 	M = \frac{v}{a}
@@ -41,8 +61,8 @@ En la condición de estrangulamiento, el flujo siempre se encuentra en Mach 1 en
 	\frac{A}{A^*} = \frac{1}{M} \left[ \frac{2}{\gamma+1} \left( 1 + \frac{\gamma-1}{2} M^2 \right) \right]^{\frac{\gamma+1}{2(\gamma-1)}}
 \end{equation}
 
-donde \( A \) es el área de la sección transversal local de la tobera, \( A^* \) es el área de la garganta en condición sónica (\( Ma = 1 \)), \( M \) es el número de Mach local del flujo, y \( \gamma \) es el coeficiente de calores específicos 
-del gas propulsor. La cual suele resolverse de manera iterativa y da dos soluciones, donde la supersónica la solución válida. 
+donde \( A \) es el área de la sección transversal local de la tobera, \( A^* \) es el área de la garganta en condición sónica (\( M = 1 \)), \( M \) es el número de Mach local del flujo, y \( \gamma \) es el coeficiente de calores específicos 
+del gas propulsor. La cual suele resolverse de manera iterativa y da dos soluciones, donde la supersónica es la solución válida. 
 
 Conocido el número de Mach, es posible encontrar la velocidad a la sálida mediante:
 
@@ -51,19 +71,73 @@ Conocido el número de Mach, es posible encontrar la velocidad a la sálida medi
 	\label{eq:velocidad_salida}
 \end{equation}
 
-donde \( v_e \) es la velocidad del gas a la salida de la tobera, y \( T_0 \) es la temperatura antes de la tobera.
+donde \( v_e \) es la velocidad del gas a la salida de la tobera, y \( T_0 \) es la temperatura de estancamiento antes de la tobera.
 
 Así, este gas acelerado se mezcla en la tobera con los polvos de material a utilizar, otorgando energía cinética a las partículas a través de la transferencia de momentum lineal.
 
-Nótese que en la ecuación \ref{eq:velocidad_salida} hay una dependencia de la velocidad con la temperatura del gas de proceso, mas no con su presión, luego, sobre la presión crítica el aumento de presión no tendría efecto sobre la velocidad final alcanzada por el gas. La influencia de presiones sobre el umbral genera un aumento de densidad del gas, lo que provoca una mayor tasa de transferencia de momentum lineal con las partículas a mezclar, pues el flujo másico de gas aumenta.
+Nótese que en la ecuación~\ref{eq:velocidad_salida} la velocidad de salida del gas depende de la temperatura de estancamiento \( T_0 \), pero no de la presión de estancamiento \( p_0 \). Por lo tanto, una vez superada la condición de estrangulamiento, incrementar la presión de operación no produce un aumento en la velocidad del gas a la salida. Sin embargo, el aumento de presión sí incrementa la densidad del gas y, en consecuencia, el flujo másico a través de la tobera. Esto se traduce en una mayor tasa de transferencia de momentum lineal hacia las partículas, favoreciendo su aceleración. Así, la presión y la temperatura de operación actúan como parámetros independientes en el proceso: la temperatura determina la velocidad del gas, mientras que la presión regula la cantidad de momentum disponible para transferir a las partículas.
 
 \subsection{Proyección de partículas}
 
-La incorporación de los polvos al flujo puede ser antes o después de la garganta de la tobera. Incporporar antes los polvos aumenta la probabilidad la ventana de tiempo para la transferencia de momentum lineal, mientras que incporporalos despues suele ser tecnicamente más sencillo y evita el colapso de la garganta por acumulación indeseada o su desgaste pro abrasión.
+El gas acelerado arrastra a las partículas en la tobera, aumentando su 
+energía cinética mediante la transferencia de momentum lineal. Esta 
+transferencia está determinada por varios factores relacionados con las 
+condiciones de operación y las características del material particulado.
 
-El tamaño de partícula determina la efectividad en la transferencia de momentum con la interacción del gas durante el tiempo de vuelo, donde las más pequeñas, al tener una inercia menor, lograrían alcanzar mayores velocidades en promedio, y de manewra opuesta, las mas grandes lograrían menores velocidades.
+El punto de inyección de los polvos es uno de estos factores. Si se 
+alimentan antes de la garganta, la distancia de interacción con el gas 
+es mayor, lo que favorece que las partículas alcancen velocidades más 
+altas. Sin embargo, esta configuración conlleva riesgos de obstrucción 
+en la garganta por acumulación de material y de erosión acelerada de la 
+tobera. Alimentar los polvos aguas abajo de la garganta evita estos 
+problemas, pero a costa de reducir la longitud de interacción y, por 
+tanto, la velocidad final de las partículas.
 
-Finalmente, es la energia cinética de las partículas la cual, de manera simplista, se transforma en deformación plástica que permite la adhesión entre partículas y con el sustrato.
+El tamaño de las partículas es otro factor determinante. En general, 
+las partículas más pequeñas, al tener menor inercia, responden con mayor 
+fidelidad a los cambios en el flujo de gas. Sin embargo, la relación entre 
+tamaño y velocidad de impacto no es monótona: existe un tamaño óptimo para 
+cada condición de operación. Las partículas muy finas, aunque se aceleran 
+con mayor facilidad, son también más susceptibles de ser desviadas por 
+fenómenos de turbulencia o por el \textit{bow shock} — el estancamiento 
+del gas frente a la superficie del sustrato que genera una contrapresión 
+localizada en la zona de impacto. Las partículas de mayor tamaño, por su 
+inercia, son más capaces de superar esta barrera, aunque requieren mayor 
+transferencia de momentum para alcanzar la velocidad crítica. Por tanto, 
+la selección del rango granulométrico implica un compromiso entre 
+acelerabilidad y capacidad de penetrar la capa de gas estancado frente 
+al sustrato.
+
+Comercialmente, los polvos para CS se describen y adquieren según su 
+distribución de tamaño de partícula, caracterizada mediante percentiles 
+del diámetro equivalente: $D_{10}$, $D_{50}$ y $D_{90}$, que corresponden 
+a los diámetros bajo los cuales se encuentra el 10\%, 50\% y 90\% del 
+volumen de polvo, respectivamente. En CS interesa principalmente el rango 
+$D_{10}$--$D_{90}$, pues define la fracción de partículas con mayor 
+probabilidad de encontrarse dentro de la ventana entre la velocidad crítica 
+y la velocidad de erosión del depósito.
+
+El tamaño de partícula también influye en su calentamiento por convección 
+durante el trayecto en la tobera: las partículas más pequeñas equilibran 
+su temperatura con la del gas más rápidamente. A diferencia de otros 
+procesos de proyección térmica, en CS las partículas no alcanzan su punto 
+de fusión, por lo que la temperatura de la partícula no es el factor 
+dominante del proceso. No obstante, no es un factor irrelevante: una 
+partícula más caliente presenta menor dureza y mayor ductilidad, lo que 
+reduce su velocidad crítica de adhesión. En este sentido, la temperatura 
+del gas de proceso actúa sobre la eficacia del CS por dos vías: 
+incrementando la velocidad del gas —y con ello la velocidad de impacto 
+de las partículas— y aumentando la temperatura de las partículas, 
+favoreciendo su deformabilidad en el impacto.
+
+Finalmente, la morfología de las partículas también es relevante. 
+Las partículas esféricas, producidas típicamente por atomización en gas, 
+presentan un comportamiento aerodinámico más predecible y una mejor 
+fluidez en el alimentador, siendo la morfología preferida en CS 
+convencional. Existe interés en partículas de forma irregular en 
+contextos específicos, aunque los efectos sobre la calidad del depósito 
+son dependientes del material y las condiciones de operación [REFERENCIAS]
+
 
 \subsection{Impacto}
 
