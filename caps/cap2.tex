@@ -8,18 +8,17 @@
 Como se mencionó en la sección de introducción, el CS es una tecnología 
 de fabricación que convencionalmente se utiliza para generar recubrimientos superficiales sobre componentes, mediante la proyección de partículas sólidas a alta velocidad sobre un sustrato. En la Figura \ref{CS} se presentan los elementos básicos que conforman un sistema estándar de CS.
 
+Existen diversos mecanismos a través de los cuales las partículas se adhieren entre sí y con el sustrato, los cuales se discuten con más detalle en la sección 2.1.4, no obstante, cabe mencionar que estos mecanismos requieren de deformaciones plásticas intensas, logradas por la energía cinética transferida a las partículas.
+
+Es entonces la velocidad de impacto de las partículas la variable más determinante para la efectividad del proceso. Otros factores relevantes incluyen la morfología y el tamaño de las partículas, las propiedades mecánicas del material a depositar, y la 
+naturaleza del sustrato.
+
 La herramienta principal del proceso es una tobera convergente-divergente 
 (o de Laval), la cual acelera un gas portador inerte (usualmente nitrógeno, helio, o mezclas de ambos) hasta velocidades supersónicas. Los polvos del material a depositar, generalmente metálicos, son suministrados por un alimentador y se mezclan con el flujo de gas en la tobera, siendo arrastrados y acelerados junto a este.
 
 La velocidad alcanzada por el gas depende directamente de su temperatura 
 tras el paso por el calefactor y de la presión de suministro. Existen 
 configuraciones donde el polvo es precalentado de forma independiente antes de la inyección, con el fin de reducir su dureza y mejorar la probabilidad de adherencia; sin embargo, estas no constituyen la práctica convencional debido a la complejidad operativa que introducen.
-
-Como se desarrolla en las secciones siguientes, la velocidad de impacto 
-de las partículas es el factor determinante para la eficacia del proceso. 
-Otros factores relevantes incluyen la morfología y el tamaño de las 
-partículas, las propiedades mecánicas del material a depositar, y la 
-naturaleza del sustrato.
 
 El proceso se ejecuta desplazando la herramienta (o pistola) sobre la superficie a cubrir en sucesivas pasadas. La acumulación de material depende de parámetros operativos como el flujo másico de polvo, la velocidad de desplazamiento y el número de pasadas, entre otros.
 
@@ -67,13 +66,35 @@ del gas propulsor. La cual suele resolverse de manera iterativa y da dos solucio
 Conocido el número de Mach, es posible encontrar la velocidad a la sálida mediante:
 
 \begin{equation}
-	v_e = M \sqrt{\frac{\gamma R T_0}{M_{mol}\left(1 + \frac{\gamma-1}{2}M^2\right)}}
+	v_e = M_{e} \sqrt{\frac{\gamma R T_0}{M_{mol}\left(1 + \frac{\gamma-1}{2}M_{e}^2\right)}}
 	\label{eq:velocidad_salida}
 \end{equation}
 
-donde \( v_e \) es la velocidad del gas a la salida de la tobera, y \( T_0 \) es la temperatura de estancamiento antes de la tobera.
+donde \( v_e \) es la velocidad del gas a la salida de la tobera, $M_{e}$ el número de Mach a la salida y \( T_0 \) es la temperatura de estancamiento antes de la tobera.
 
-Así, este gas acelerado se mezcla en la tobera con los polvos de material a utilizar, otorgando energía cinética a las partículas a través de la transferencia de momentum lineal.
+A modo de ilustración, considerando dos casos extremos del proceso.
+Para nitrógeno (\( \gamma = 1.4 \), \( M_{mol} = 28\times10^{-3} \) 
+kg/mol) a temperatura de estancamiento moderada (\( T_0 = 400 \) K) 
+con \( M_e = 3 \), la ecuación~\ref{eq:velocidad_salida} entrega 
+\( v_e \approx 620 \) m/s. En el extremo opuesto, empleando helio 
+(\( \gamma = 1.667 \), \( M_{mol} = 4\times10^{-3} \) kg/mol) a alta 
+temperatura (\( T_0 = 1000 \) K) con \( M_e = 4 \), se obtiene 
+\( v_e \approx 1980 \) m/s. Este contraste ilustra el efecto combinado 
+de \( T_0 \) y de la masa molar del gas: a igualdad de condiciones 
+de estancamiento, un gas más liviano produce una velocidad de salida 
+significativamente mayor, dado que \( v_e \propto \sqrt{T_0/M_{mol}} \).
+
+La elección del gas propulsor responde a tres criterios: rendimiento 
+aerodinámico, inercia química y costo. El helio presenta un factor 
+$\gamma/M_{mol}$ aproximadamente ocho veces superior al del nitrógeno, 
+lo que se traduce en velocidades de salida casi tres veces mayores a 
+igual $T_0$; sin embargo, su costo industrial es entre 50 y 150 veces 
+mayor\cite{Champagne2016unique}. El nitrógeno, en cambio, se emplea 
+por su carácter inerte, que previene la oxidación superficial de las 
+partículas durante la aceleración, y su desventaja aerodinámica 
+respecto al helio se compensa incrementando $T_0$, dado que 
+$v_e \propto \sqrt{T_0/M_{mol}}$\cite{Huang2020}.
+
 
 Nótese que en la ecuación~\ref{eq:velocidad_salida} la velocidad de salida del gas depende de la temperatura de estancamiento \( T_0 \), pero no de la presión de estancamiento \( p_0 \). Por lo tanto, una vez superada la condición de estrangulamiento, incrementar la presión de operación no produce un aumento en la velocidad del gas a la salida. Sin embargo, el aumento de presión sí incrementa la densidad del gas y, en consecuencia, el flujo másico a través de la tobera. Esto se traduce en una mayor tasa de transferencia de momentum lineal hacia las partículas, favoreciendo su aceleración. Así, la presión y la temperatura de operación actúan como parámetros independientes en el proceso: la temperatura determina la velocidad del gas, mientras que la presión regula la cantidad de momentum disponible para transferir a las partículas.
 
@@ -99,11 +120,9 @@ fidelidad a los cambios en el flujo de gas. Sin embargo, la relación entre
 tamaño y velocidad de impacto no es monótona: existe un tamaño óptimo para 
 cada condición de operación. Las partículas muy finas, aunque se aceleran 
 con mayor facilidad, son también más susceptibles de ser desviadas por 
-fenómenos de turbulencia o por el \textit{bow shock} — el estancamiento 
-del gas frente a la superficie del sustrato que genera una contrapresión 
-localizada en la zona de impacto. Las partículas de mayor tamaño, por su 
+fenómenos de turbulencia o por el \textit{bow shock}, esto es, el estancamiento del gas frente a la superficie del sustrato que genera una contrapresión localizada en la zona de impacto \cite{Pattison2008}. Las partículas de mayor tamaño, por su 
 inercia, son más capaces de superar esta barrera, aunque requieren mayor 
-transferencia de momentum para alcanzar la velocidad crítica. Por tanto, 
+transferencia de momentum para alcanzar mayores velocidades. Por tanto, 
 la selección del rango granulométrico implica un compromiso entre 
 acelerabilidad y capacidad de penetrar la capa de gas estancado frente 
 al sustrato.
@@ -114,8 +133,7 @@ del diámetro equivalente: $D_{10}$, $D_{50}$ y $D_{90}$, que corresponden
 a los diámetros bajo los cuales se encuentra el 10\%, 50\% y 90\% del 
 volumen de polvo, respectivamente. En CS interesa principalmente el rango 
 $D_{10}$--$D_{90}$, pues define la fracción de partículas con mayor 
-probabilidad de encontrarse dentro de la ventana entre la velocidad crítica 
-y la velocidad de erosión del depósito.
+probabilidad de encontrarse dentro de la ventana operativa de velocidades útiles, como se explica en 2.1.5.
 
 El tamaño de partícula también influye en su calentamiento por convección 
 durante el trayecto en la tobera: las partículas más pequeñas equilibran 
@@ -124,7 +142,7 @@ procesos de proyección térmica, en CS las partículas no alcanzan su punto
 de fusión, por lo que la temperatura de la partícula no es el factor 
 dominante del proceso. No obstante, no es un factor irrelevante: una 
 partícula más caliente presenta menor dureza y mayor ductilidad, lo que 
-reduce su velocidad crítica de adhesión. En este sentido, la temperatura 
+aumenta la probabilidad de adhesión por deformación. Así, la temperatura 
 del gas de proceso actúa sobre la eficacia del CS por dos vías: 
 incrementando la velocidad del gas —y con ello la velocidad de impacto 
 de las partículas— y aumentando la temperatura de las partículas, 
@@ -136,36 +154,302 @@ presentan un comportamiento aerodinámico más predecible y una mejor
 fluidez en el alimentador, siendo la morfología preferida en CS 
 convencional. Existe interés en partículas de forma irregular en 
 contextos específicos, aunque los efectos sobre la calidad del depósito 
-son dependientes del material y las condiciones de operación [REFERENCIAS]
+son dependientes del material y las condiciones de operación \cite{Wong2013}
 
 
-\subsection{Impacto}
+\subsection{Impacto en el sustrato y adhesión}
+
+Como se mencionó en la sección 2.1.3, la trayectoria de las 
+partículas puede verse perturbada por el bow shock antes de alcanzar la 
+superficie, por lo que el vector de velocidad al momento del impacto no es 
+necesariamente normal al sustrato. Adicionalmente, la exposición prolongada 
+del sustrato al chorro de gas caliente durante el precalentamiento del sistema 
+produce un ablandamiento superficial que modifica localmente sus propiedades 
+mecánicas antes del primer impacto.
+
+Las partículas que inciden sobre la superficie experimentan una desaceleración 
+abrupta desde velocidades en el rango \(10^2-10^3\) m/s hasta el reposo en un intervalo de tiempo del orden de \(10^{-8}\) s. Esta desaceleración genera una onda de presión que se propaga a través de la partícula a la velocidad del sonido en el sólido.
+
+Por ejemplo, para Ti-6Al-4V, dicha velocidad es de aproximadamente 
+6100 m/s, considerablemente mayor que la velocidad 
+de impacto, de modo que la onda recorre el diámetro de una partícula 
+de 50~\(\mu\)m en cerca de 8~ns. La presión de contacto en los 
+primeros instantes puede estimarse a través de la relación de Hugoniot 
+para impacto simétrico\cite{Marsh1980}:
+
+\begin{equation}
+	P = \rho_0 \, U_s \, u_p
+	\label{eq:hugoniot_presion}
+\end{equation}
+
+donde $\rho_0$ es la densidad del material en reposo, $U_s$ es la 
+velocidad de propagación de la onda de choque, y $u_p$ es la velocidad 
+de partícula del material (no del polvo). Para metales, $U_s$ y $u_p$ 
+se relacionan empíricamente mediante:
+\begin{equation}
+	U_s = c_0 + s \, u_p
+	\label{eq:hugoniot_us}
+\end{equation}
+
+donde $c_0$ es la velocidad del sonido bulk del material y $s$ es el 
+coeficiente de Hugoniot, parámetro adimensional característico de cada 
+material. En impacto simétrico, la velocidad de partícula del material 
+es aproximadamente la mitad de la velocidad de impacto, esto es, 
+$u_p \approx v_i/2$, por lo que la presión de contacto resulta:
+
+\begin{equation}
+	P \approx \rho_0 \left(c_0 + s\,\frac{v_i}{2}\right)\frac{v_i}{2}
+	\label{eq:hugoniot_P}
+\end{equation}
+
+Para Ti-6Al-4V, con $\rho_0 = 4430$~kg/m$^3$, $c_0 = 5130$~m/s y 
+$s \approx 1.028$\cite{Assadi2003}, y considerando velocidades de 
+impacto en el rango $v_i = 600$--$900$~m/s, la ecuación 
+\ref{eq:hugoniot_P} entrega presiones de contacto de aproximadamente 
+7--12~GPa, lo cual supera ampliamente el límite de fluencia estático 
+del material ($\sigma_y \approx 900$~MPa).
+
+La elevada tasa de deformación resultante, del orden de 
+\(\dot{\varepsilon} \sim 10^6\)--\(10^9\)~s\(^{-1}\)~\cite{Assadi2003}, 
+induce deformación plástica intensa en la interfaz. El comportamiento 
+constitutivo del material bajo estas condiciones se describe habitualmente 
+mediante el modelo constitutivo de Johnson-Cook \cite{Johnson1983}:
+
+\begin{equation}
+	\sigma = \left(A + B\varepsilon^n\right)
+	\left(1 + C\ln\frac{\dot{\varepsilon}}{\dot{\varepsilon}_0}\right)
+	\left(1 - \left(\frac{T - T_r}{T_m - T_r}\right)^m\right)
+	\label{eq:johnson_cook}
+\end{equation}
+
+donde \(\sigma\) es la tensión de flujo, \(\varepsilon\) la deformación 
+plástica equivalente, \(\dot{\varepsilon}\) la tasa de deformación, 
+\(\dot{\varepsilon}_0\) una tasa de referencia, \(T\) la temperatura local, \(T_r\) la temperatura de referencia, y \(T_m\) la temperatura de fusión del material. Los parámetros \(A\), \(B\), \(n\), \(C\) y \(m\) son constantes del material obtenidas experimentalmente.
+
+La ecuación \eqref{eq:johnson_cook} captura la competencia entre dos efectos opuestos: el primer factor representa el endurecimiento por deformación 
+(\(B\varepsilon^n\)), mientras que el tercer factor representa el 
+ablandamiento térmico. Dado que la escala de tiempo del impacto es 
+demasiado corta para que el calor generado por disipación plástica se difunda 
+hacia el exterior, la deformación ocurre en condiciones localmente adiabáticas. 
+En estas condiciones, el ablandamiento térmico puede superar al endurecimiento 
+por deformación, generando una inestabilidad plástica localizada en la 
+interfaz conocida como \textbf{inestabilidad de corte adiabático} o 
+\textbf{adiabatic shear instability} (ASI)~\cite{Assadi2003, Grujicic2004}.
+
+La ASI se manifiesta como bandas de deformación extremadamente localizadas 
+(\(\sim\)1--5~\(\mu\)m de espesor) en las que el flujo de material alcanza 
+velocidades de deformación locales aún mayores. Este flujo violento cumple 
+dos funciones críticas para la adhesión: primero, fragmenta y dispersa la 
+capa de óxido nativo presente en ambas superficies, exponiendo metal limpio 
+en contacto directo; segundo, genera las condiciones de presión y temperatura 
+local suficientes para la formación de uniones metalúrgicas en estado sólido. 
+Como mecanismos secundarios se reportan también el anclaje mecánico por 
+incrustación de la partícula en el sustrato, y fuerzas de van der Waals en 
+las zonas de contacto íntimo, aunque su contribución relativa es 
+considerablemente menor~\cite{Papyrin2007}.
+
+El estado tensional en la partícula durante el impacto presenta componentes 
+compresivos en la dirección normal a la superficie, originados por la 
+desaceleración de la masa contra el sustrato. Dado que el material no puede 
+comprimirse indefinidamente, parte del volumen fluye radialmente hacia los 
+costados: este flujo lateral está impulsado por el gradiente de presión entre 
+la zona de contacto central, donde la presión es máxima, y la periferia libre 
+de la partícula, donde la presión es atmosférica. A este fenómeno se le conoce como \textit{jetting}. 
+
+Esto introduce esfuerzos de 
+corte en planos oblicuos a la superficie que, al superar el criterio de 
+fluencia, producen el esparcimiento característico de la partícula 
+(\textit{splat}). En simulaciones numéricas, el criterio de Von Mises es 
+frecuentemente adoptado por su simplicidad y adecuada representación del 
+comportamiento isótropo~\cite{Grujicic2004}.
+
+El ángulo de incidencia $\theta$ de la partícula respecto a la normal 
+del sustrato introduce una asimetría en la distribución de velocidades 
+de impacto. La componente normal $v_n = v_i \cos\theta$ es la 
+responsable de generar la presión de contacto y activar los mecanismos 
+de deformación plástica descritos, mientras que la componente 
+tangencial $v_t = v_i \sin\theta$ induce deformación por corte lateral 
+en la interfaz. Para impacto normal ($\theta = 0^{\circ}$), la transferencia 
+de energía es máxima y la deformación es axialmente simétrica.
+
+A medida que $\theta$ aumenta, la componente normal disminuye y la 
+eficiencia de deposición decrece, existiendo un \textbf{ángulo crítico} más 
+allá del cual la partícula no logra adherirse\cite{Wong2013}. Para 
+Ti-6Al-4V, dicho ángulo se sitúa típicamente entre 45° y 60° respecto 
+a la normal\cite{Bae2009}
+
+La respuesta del sustrato al impacto depende de la relación entre sus 
+propiedades mecánicas y las de la partícula. Un sustrato más blando concentra 
+mayor deformación y genera un cráter más profundo, favoreciendo el anclaje 
+mecánico por incrustación. Por ejemplo, en el caso del sistema 
+Ti-6Al-4V sobre Al puro: con una diferencia de dureza de aproximadamente un 
+orden de magnitud (~320 HV vs.~25 HV), la deformación plástica se concentra 
+casi enteramente en el sustrato, y la partícula permanece aproximadamente 
+esférica tras el impacto. La alta conductividad térmica del Al 
+($k \approx 230$~W/m·K, frente a $\sim$7~W/m·K del Ti-6Al-4V) disipa parte 
+del calor adiabático, lo que dificulta marginalmente el ablandamiento 
+localizado; sin embargo, la baja resistencia mecánica del Al compensa este 
+efecto. Un factor adicional a considerar es la capa de Al\textsubscript{2}O\textsubscript{3} 
+nativa del sustrato de aluminio, cuya dureza (~2000 HV) dificulta su 
+fragmentación cuando la deformación se concentra en el sustrato blando y no 
+en la propia interfaz de óxido.
+
+\subsection{Impacto entre partículas}
+
+A partir de la segunda capa, cada partícula impacta sobre una superficie 
+compuesta por partículas previamente adheridas y deformadas, lo que modifica 
+sustancialmente las condiciones de adhesión respecto al caso sustrato-partícula. 
+Por un lado, si el material del sustrato difiere del polvo, la interfaz pasa 
+a ser homogénea, lo que aumenta la probabilidad de formación de uniones 
+metalúrgicas mediante ASI. Por otro lado, el depósito acumulado presenta 
+endurecimiento superficial por efecto peening de los impactos anteriores, 
+elevando localmente el límite de fluencia y requiriendo mayor energía de 
+impacto para inducir deformación plástica. Además, la superficie no es plana 
+sino irregular, con una topografía determinada por la morfología de los splats 
+anteriores, lo que introduce variabilidad en el ángulo de impacto local y en 
+la distribución de contacto.
+
+Los mecanismos de adhesión son los mismos descritos para la interfaz 
+partícula-sustrato. La porosidad resultante del depósito depende de la 
+ductilidad de las partículas, su morfología y su tendencia a fluir: partículas 
+muy dúctiles como el cobre generan splats de gran área que minimizan los 
+espacios interpartícula, mientras que materiales más rígidos como el acero 
+inoxidable producen depósitos con mayor porosidad residual\cite{Papyrin2007}.
+
+A diferencia del sustrato inicial, el depósito acumulado retiene parte del 
+calor generado por los impactos sucesivos, reduciendo localmente el límite de 
+fluencia del material superficial y favoreciendo la deformación en capas 
+posteriores\cite{Papyrin2007}. Este efecto térmico compite con el 
+endurecimiento por peening mencionado, de modo que las propiedades mecánicas 
+superficiales del depósito resultan de un balance dinámico entre ambos 
+mecanismos.
+
+Por otra parte, las partículas que no logran adherirse sobre la superficie del 
+depósito pueden rebotar e impactar otras zonas con distinta energía, o 
+desprender material ya adherido, estableciendo un balance dinámico entre 
+deposición y erosión que afecta la eficiencia neta en capas 
+sucesivas\cite{Moridi2014}. Adicionalmente, la deformación plástica acumulada 
+en capas anteriores reduce la ductilidad residual del depósito, limitando su 
+capacidad de deformarse ante nuevos impactos e incrementando la porosidad 
+interlamelar (entre capas) en depósitos de gran espesor\cite{Huang2020}.
 
 \subsection{Velocidad crítica}
 
-\subsection{Mecanismos de adherencia}
+La energía disponible para los mecanismos de deformación descritos 
+proviene de la energía cinética adquirida por las partículas durante 
+la aceleración en la tobera. Existe un umbral mínimo de velocidad, 
+denominado \textbf{velocidad crítica} $v_{cr}$, por debajo del cual 
+la energía de impacto es insuficiente para inducir ASI y la partícula 
+rebota sin adherirse. Existe también un límite superior, a partir del 
+cual el exceso de energía genera erosión, fractura o desprendimiento 
+del material depositado, definiendo así una \textbf{ventana de 
+	deposición} entre ambos límites, como se ilustra en la 
+Figura \ref{fig:ventana_deposicion}.
 
-Adiabatic shear inestability asdasd
+La velocidad crítica es una propiedad del par material-sustrato y 
+depende principalmente de la resistencia mecánica y la ductilidad 
+del material de la partícula, su temperatura al momento del impacto 
+(que reduce $\sigma_y$ y por tanto $v_{cr}$), la dureza relativa del 
+sustrato, y el tamaño de partícula\cite{Schmidt2006}. El 
+Cuadro~\ref{tab:vc} presenta valores de referencia para materiales 
+de uso frecuente en CS.
 
-Anclaje mecánico
+\begin{table}[h]
+	\centering
+	\caption{Velocidades críticas aproximadas para materiales comunes 
+		en \textit{cold spray}. Valores compilados de la 
+		literatura.}
+	\label{tab:vc}
+	\begin{tabular}{lcc}
+		\hline
+		\textbf{Material} & \textbf{$v_{cr}$ (m/s)} & 
+		\textbf{Referencia} \\
+		\hline
+		Cu          & 300--400  & \cite{Schmidt2006} \\
+		Al          & 580--680  & \cite{Schmidt2006} \\
+		Ni          & 620--640  & \cite{Assadi2003}  \\
+		Ti-6Al-4V   & 660--900  & \cite{Bae2009}     \\
+		Acero 316L  & 700--800  & \cite{Schmidt2006} \\
+		\hline
+	\end{tabular}
+\end{table}
 
-Difusión metálica
+Es importante señalar que operar dentro de la ventana de deposición 
+es condición necesaria pero no suficiente para garantizar adhesión: 
+la temperatura de precalentamiento del gas, el ángulo de impacto, 
+el estado superficial del sustrato y la morfología del polvo modulan 
+la eficiencia de deposición incluso cuando la velocidad de partícula 
+se encuentra dentro del rango admisible\cite{Papyrin2007}. 
 
-Enlace intermetálico
-
-Fuerzas de van der Wals
-
-De lo anterior, es claro que entonces debe existir una velocidad mínima a la cual ocurra suficiente deformación plástica, pues de lo contrario, la partícula podría deformarse (de manera plástica y/o elástica) pero no lo suficiente para adherirse. A esta velocidad se le llama \textbf{velocidad crítica}. 
-
-velocidad critica
-
-velocidad maxima
-
-tamaño de particula
-
-El cambio de energpia interna en las partículas por contacto con el gas de proceso no suele ser relevante en el proceso de adhesión, pues las temperatura del gas suele ser basntante lejana a las temperaturas de cambio de fase o recristalización de los materiales típcios de coldspray, considerando además que el tiempo durante el cual la partícula se mezcla con el gas es reducido. La temperatura podría afecta la ductilidad de las par´ticuñas y facilitar la deformación 
+Es importante indicar que, a pesar de los avances en la comprensión del proceso, los mecanismos de adhesión en cold spray siguen siendo objeto de investigación y 
+debate activos. Si bien la ASI es ampliamente aceptada como condición 
+necesaria para la adhesión\cite{Assadi2003, Grujicic2004}, estudios 
+recientes han propuesto que el jetting interfacial puede ocurrir 
+independientemente de la ASI, gobernado por plasticidad hidrodinámica 
+inducida por la onda de presión de impacto\cite{Moridi2014}. En 
+materiales de alta resistencia como el Ti-6Al-4V, cuya baja 
+conductividad térmica favorece condiciones adiabáticas locales, la 
+contribución relativa de cada mecanismo depende fuertemente de la 
+velocidad de impacto, la temperatura de la partícula y la 
+microestructura del polvo\cite{Huang2020}, aspectos que aún no 
+cuentan con un modelo predictivo unificado.
 
 \subsection{Perfil de deposición}
+
+Se genera un régimen dinámico entre la probabilidad de adhesión y la 
+de erosión, modulado por la distribución espacial de partículas en 
+torno al eje de la tobera. Dicha distribución está ligada a los 
+fenómenos convectivos del jet supersónico, la morfología e inercia 
+de las partículas, y el cambio progresivo en el ángulo de incidencia 
+local producto de la acumulación de capas anteriores. El resultado 
+macroscópico de estos fenómenos es el \textbf{perfil de deposición} 
+(\textbf{PD}), que describe la distribución espacial del espesor 
+depositado en función de la posición radial respecto al eje del 
+jet\cite{Papyrin2007}.
+
+Las partículas de mayor tamaño, con mayor inercia, tienden a seguir 
+trayectorias más rectilíneas y a concentrarse cerca del eje central 
+del jet, mientras que las partículas más finas son más susceptibles 
+a ser desviadas radialmente por los gradientes de presión y velocidad 
+del flujo\cite{Wong2013}. Como consecuencia, el centro del PD 
+concentra tanto mayor masa depositada como partículas de mayor 
+diámetro promedio, mientras que hacia los extremos del \textit{spot} 
+disminuye tanto el espesor como el tamaño medio de partícula. 
+Adicionalmente, las partículas que impactan con trayectoria 
+aproximadamente normal al sustrato aprovechan más eficientemente su 
+energía cinética en deformación plástica, reforzando la acumulación 
+preferencial en el centro del depósito.
+
+En términos generales, el PD se aproxima a una distribución Gaussiana 
+simétrica respecto al eje de la tobera\cite{Kotoban2017}, de modo que 
+sus parámetros estadísticos --- valor máximo, desviación estándar y 
+ancho a media altura --- son los descriptores habituales para 
+caracterizar la geometría del depósito. La forma del PD depende 
+además del tiempo de permanencia de la tobera sobre un sector 
+determinado y del flujo másico del jet, de manera que la velocidad 
+de barrido y la presión de operación son parámetros de proceso que 
+modulan directamente el espesor y la anchura del cordón 
+depositado\cite{WU2025642}.
+
+Las partículas que impactan en los extremos del \textit{spot}, donde 
+el ángulo de incidencia local es mayor y la probabilidad de adhesión 
+decrece, no simplemente rebotan sin efecto: su energía cinética se 
+transfiere parcialmente al depósito ya formado mediante un efecto 
+peening localizado\cite{Moridi2014}. Esto genera una compactación 
+superficial en los bordes del cordón que modifica el PD efectivo 
+respecto al perfil Gaussiano puro, reduciendo la porosidad 
+interlamelar en esas zonas pero sin contribuir al crecimiento en 
+espesor.
+
+Para fines predictivos, el PD puede modelarse analíticamente como 
+el producto de la distribución espacial de flujo de partículas del 
+jet --- aproximada como Gaussiana --- y una función de eficiencia de 
+deposición local que depende del ángulo de incidencia y la velocidad 
+de impacto en cada punto radial\cite{Kotoban2017}. Este enfoque 
+permite estimar la geometría del depósito a partir de los parámetros 
+de proceso sin recurrir a simulaciones CFD completas, y constituye 
+la base para los modelos de planificación de trayectoria en 
+manufactura aditiva por cold spray.
 
 \section{Fabricación por CS}
 

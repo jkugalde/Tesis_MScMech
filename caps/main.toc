@@ -10,41 +10,41 @@
 \contentsline {subsection}{\numberline {2.1.1}Descripción general del proceso}{5}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Aceleración del gas}{6}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}Proyección de partículas}{7}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Impacto}{8}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Velocidad crítica}{8}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Mecanismos de adherencia}{8}{subsection.2.1.6}%
-\contentsline {subsection}{\numberline {2.1.7}Perfil de deposición}{9}{subsection.2.1.7}%
-\contentsline {section}{\numberline {2.2}Fabricación por CS}{9}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Sistema de CS}{9}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Parámetros relevantes}{9}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Características de productos por CS}{9}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Aplicaciones típicas}{9}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}Manufactura aditiva}{9}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Slicing y trayectorias}{9}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Estrategias de deposición}{9}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Control multieje}{9}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}FA usando CS}{9}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}FA usando titanio}{9}{subsection.2.3.5}%
-\contentsline {chapter}{\numberline {3}Metodología}{10}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Flujo del trabajo}{10}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Sistema experimental de CS}{10}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Recursos previos}{10}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Adaptaciones}{11}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Sistema final}{12}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Diseño de experimentos}{12}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Influencia de POs en perfil de deposición}{12}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Efectividad de estrategias de compensación}{12}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Caracterización mecánica de probetas}{12}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Caracterización con piezas 3D}{12}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Estrategias de toolpath}{12}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Chepillo et al}{12}{subsection.3.4.1}%
-\contentsline {chapter}{\numberline {4}Resultados y discusión}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Caracterización del perfil}{13}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Estrategias de compensación}{13}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Ensayos mecánicos}{13}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Fidelidad geométrica}{13}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{14}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{14}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{14}{section.5.2}%
-\contentsline {chapter}{\numberline {}Bibliograf\'ia}{16}{chapter*.6}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{17}{Appendix.alph1.Alph1}%
+\contentsline {subsection}{\numberline {2.1.4}Impacto en el sustrato y adhesión}{8}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Impacto entre partículas}{11}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Velocidad crítica}{11}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Perfil de deposición}{12}{subsection.2.1.7}%
+\contentsline {section}{\numberline {2.2}Fabricación por CS}{14}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Sistema de CS}{14}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Parámetros relevantes}{14}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Características de productos por CS}{14}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Aplicaciones típicas}{14}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Manufactura aditiva}{14}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Slicing y trayectorias}{14}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Estrategias de deposición}{14}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Control multieje}{14}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}FA usando CS}{14}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}FA usando titanio}{14}{subsection.2.3.5}%
+\contentsline {chapter}{\numberline {3}Metodología}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Flujo del trabajo}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Sistema experimental de CS}{15}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Recursos previos}{15}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Adaptaciones}{16}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Sistema final}{17}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Diseño de experimentos}{17}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Influencia de POs en perfil de deposición}{17}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Efectividad de estrategias de compensación}{17}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Caracterización mecánica de probetas}{17}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Caracterización con piezas 3D}{17}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Estrategias de toolpath}{17}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Chepillo et al}{17}{subsection.3.4.1}%
+\contentsline {chapter}{\numberline {4}Resultados y discusión}{18}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Caracterización del perfil}{18}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Estrategias de compensación}{18}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Ensayos mecánicos}{18}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Fidelidad geométrica}{18}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{19}{section.5.2}%
+\contentsline {chapter}{\numberline {}Bibliograf\'ia}{21}{chapter*.7}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{22}{Appendix.alph1.Alph1}%

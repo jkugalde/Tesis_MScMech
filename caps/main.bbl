@@ -70,4 +70,46 @@ R.~Falco and S.~Bagherifard, ``Cold spray additive manufacturing: A review of
   shape control challenges and solutions,'' {\em Journal of Thermal Spray
   Technology}, vol.~34, pp.~1023 -- 1041, 2025.
 
+\bibitem{Pattison2008}
+J.~Pattison, S.~Celotto, A.~Khan, and W.~O'Neill, ``Standoff distance and bow
+  shock phenomena in the {Cold Spray} process,'' {\em Surface and Coatings
+  Technology}, vol.~202, no.~8, pp.~1443--1454, 2008.
+
+\bibitem{Wong2013}
+W.~Wong, P.~Vo, E.~Irissou, A.~N. Ryabinin, J.~G. Legoux, and S.~Yue, ``Effect
+  of particle morphology and size distribution on cold-sprayed pure titanium
+  coatings,'' {\em Journal of Thermal Spray Technology}, vol.~22, no.~6--7,
+  pp.~1140--1153, 2013.
+
+\bibitem{Marsh1980}
+S.~P. Marsh, {\em {LASL} Shock Hugoniot Data}.
+\newblock Berkeley, CA: University of California Press, 1980.
+
+\bibitem{Johnson1983}
+G.~R. Johnson and W.~H. Cook, ``A constitutive model and data for metals
+  subjected to large strains, high strain rates and high temperatures,'' in
+  {\em Proceedings of the 7th International Symposium on Ballistics}, (The
+  Hague, The Netherlands), pp.~541--547, 1983.
+
+\bibitem{Grujicic2004}
+M.~Grujicic, C.~L. Zhao, W.~S. DeRosset, and D.~Helfritch, ``Adiabatic shear
+  instability based mechanism for particles/substrate bonding in the cold-gas
+  dynamic-spray process,'' {\em Materials \& Design}, vol.~25, no.~8,
+  pp.~681--688, 2004.
+
+\bibitem{Schmidt2006}
+T.~Schmidt, F.~G{\"a}rtner, H.~Assadi, and H.~Kreye, ``Development of a
+  generalized parameter window for cold spray deposition,'' {\em Acta
+  Materialia}, vol.~54, no.~3, pp.~729--742, 2006.
+
+\bibitem{Bae2009}
+G.~Bae, S.~Kumar, S.~Yoon, K.~Kang, H.~Na, H.-J. Kim, and C.~Lee, ``Bonding
+  features and associated mechanisms in kinetic sprayed titanium coatings,''
+  {\em Acta Materialia}, vol.~57, no.~19, pp.~5654--5666, 2009.
+
+\bibitem{Callister2018}
+W.~D. Callister and D.~G. Rethwisch, {\em Materials Science and Engineering: An
+  Introduction}.
+\newblock John Wiley \& Sons, 10~ed., 2018.
+
 \end{thebibliography}
