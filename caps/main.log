@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.6)  13 APR 2026 21:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.6)  15 APR 2026 10:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -498,6 +498,50 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cfttabindent=\skip89
 \cfttabnumwidth=\skip90
 )
+(C:\Users\56942\AppData\Roaming\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count314
+\l__siunitx_number_exponent_fixed_int=\count315
+\l__siunitx_number_min_decimal_int=\count316
+\l__siunitx_number_min_integer_int=\count317
+\l__siunitx_number_round_precision_int=\count318
+\l__siunitx_number_lower_threshold_int=\count319
+\l__siunitx_number_upper_threshold_int=\count320
+\l__siunitx_number_group_first_int=\count321
+\l__siunitx_number_group_size_int=\count322
+\l__siunitx_number_group_minimum_int=\count323
+\l__siunitx_angle_tmp_dim=\dimen190
+\l__siunitx_angle_marker_box=\box57
+\l__siunitx_angle_unit_box=\box58
+\l__siunitx_compound_count_int=\count324
+
+(C:\Users\56942\AppData\Roaming\MiKTeX\tex/latex/translations\translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_table_tmp_box=\box59
+\l__siunitx_table_tmp_dim=\dimen191
+\l__siunitx_table_column_width_dim=\dimen192
+\l__siunitx_table_integer_box=\box60
+\l__siunitx_table_decimal_box=\box61
+\l__siunitx_table_uncert_box=\box62
+\l__siunitx_table_before_box=\box63
+\l__siunitx_table_after_box=\box64
+\l__siunitx_table_before_dim=\dimen193
+\l__siunitx_table_carry_dim=\dimen194
+\l__siunitx_unit_tmp_int=\count325
+\l__siunitx_unit_position_int=\count326
+\l__siunitx_unit_total_int=\count327
+(C:\Program Files\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen195
+\ar@mcellbox=\box65
+\extrarowheight=\dimen196
+\NC@list=\toks43
+\extratabsurround=\skip91
+\backup@length=\skip92
+\ar@cellbox=\box66
+))
 (C:\Users\56942\AppData\Roaming\MiKTeX\tex/latex/lipsum\lipsum.sty
 (C:\Program Files\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
 (C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty
@@ -505,18 +549,26 @@ Package: expl3 2024-01-04 L3 programming layer (loader)
 
 (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count314
-\l__pdf_internal_box=\box57
+\l__color_backend_stack_int=\count328
+\l__pdf_internal_box=\box67
 ))
 Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count315
-\l__lipsum_a_int=\count316
-\l__lipsum_b_int=\count317
+\g__lipsum_par_int=\count329
+\l__lipsum_a_int=\count330
+\l__lipsum_b_int=\count331
 
 (C:\Users\56942\AppData\Roaming\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
-(main.aux
+(C:\Program Files\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(C:\Program Files\MiKTeX\tex/latex/graphics\mathcolor.ltx)) (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -577,17 +629,17 @@ LaTeX Font Info:    ... okay on input line 41.
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count318
-\scratchdimen=\dimen190
-\scratchbox=\box58
-\nofMPsegments=\count319
-\nofMParguments=\count320
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count321
-\MPscratchDim=\dimen191
-\MPnumerator=\count322
-\makeMPintoPDFobject=\count323
-\everyMPtoPDFconversion=\toks44
+\scratchcounter=\count332
+\scratchdimen=\dimen197
+\scratchbox=\box68
+\nofMPsegments=\count333
+\nofMParguments=\count334
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count335
+\MPscratchDim=\dimen198
+\MPnumerator=\count336
+\makeMPintoPDFobject=\count337
+\everyMPtoPDFconversion=\toks45
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -608,15 +660,24 @@ Package hyperref Info: Link coloring OFF on input line 41.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-\c@lstlisting=\count324
-<imgs/escudoU2014.pdf, id=187, 320.19624pt x 689.57625pt>
+\c@lstlisting=\count338
+
+(C:\Users\56942\AppData\Roaming\MiKTeX\tex/latex/translations/dicts\translation
+s-basic-dictionary-spanish.trsl
+File: translations-basic-dictionary-spanish.trsl (spanish translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `spanish'. on input line 41.
+<imgs/escudoU2014.pdf, id=175, 320.19624pt x 689.57625pt>
 File: imgs/escudoU2014.pdf Graphic file (type pdf)
 <use imgs/escudoU2014.pdf>
 Package pdftex.def Info: imgs/escudoU2014.pdf  used on input line 44.
 (pdftex.def)             Requested size: 38.42189pt x 82.74557pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
 
- (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
@@ -675,50 +736,50 @@ LaTeX Warning: Reference `CS' on page 5 undefined on input line 9.
 
 [5
 
-] [6] [7] [8] [9] [10]
+] [6] [7] [8] [9] [10] [11]
 
-LaTeX Warning: Reference `fig:ventana_deposicion' on page 11 undefined on input
- line 347.
+LaTeX Warning: Reference `fig:ventana_deposicion' on page 12 undefined on input
+ line 380.
 
-[11] [12]) (cap3.tex [13] [14]
+[12] [13] [14] [15] [16] [17] [18] [19]) (cap3.tex [20] [21]
 Cap\'{\i }tulo 3.
 
-LaTeX Warning: Reference `met' on page 15 undefined on input line 5.
+LaTeX Warning: Reference `met' on page 22 undefined on input line 5.
 
 
-LaTeX Warning: Reference `pocket' on page 15 undefined on input line 12.
+LaTeX Warning: Reference `pocket' on page 22 undefined on input line 12.
 
 
-LaTeX Warning: Reference `datospocket' on page 15 undefined on input line 12.
+LaTeX Warning: Reference `datospocket' on page 22 undefined on input line 12.
 
 
-LaTeX Warning: Reference `caleftob' on page 15 undefined on input line 14.
+LaTeX Warning: Reference `caleftob' on page 22 undefined on input line 14.
 
 
-LaTeX Warning: Reference `tobs' on page 15 undefined on input line 20.
+LaTeX Warning: Reference `tobs' on page 22 undefined on input line 20.
 
-[15
+[22
 
 ]
 
-LaTeX Warning: Reference `montaj' on page 16 undefined on input line 28.
+LaTeX Warning: Reference `montaj' on page 23 undefined on input line 28.
 
 
-LaTeX Warning: Reference `carro' on page 16 undefined on input line 30.
+LaTeX Warning: Reference `carro' on page 23 undefined on input line 30.
 
-[16]) (cap4.tex [17]
+[23]) (cap4.tex [24]
 Cap\'{\i }tulo 4.
-) (conclu.tex [18
+) (conclu.tex [25
 
 ]
 Cap\'{\i }tulo 5.
-) (main.bbl [19
+) (main.bbl [26
 
-] [20
+] [27
 
-]) (anexoA.tex [21]
+]) (anexoA.tex [28]
 Ap\'{e}ndice A.
-) [22
+) [29
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -733,16 +794,16 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F8F3846FDA62704F62A6FFF96EFD06F9;7781.
+(rerunfilecheck)             Checksum: 95CA2C3061EF30083F707ED09CF3760B;7326.
  ) 
 Here is how much of TeX's memory you used:
- 20770 strings out of 474486
- 355527 string characters out of 5753571
- 1939542 words of memory out of 5000000
- 42646 multiletter control sequences out of 15000+600000
+ 24761 strings out of 474486
+ 479337 string characters out of 5753571
+ 1938542 words of memory out of 5000000
+ 46607 multiletter control sequences out of 15000+600000
  565522 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,10n,93p,942b,792s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,10n,93p,942b,1382s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\56942\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program File
@@ -755,9 +816,9 @@ s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmti12.pfb>
-Output written on main.pdf (28 pages, 281321 bytes).
+Output written on main.pdf (35 pages, 315754 bytes).
 PDF statistics:
- 553 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
- 374 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 613 PDF objects out of 1000 (max. 8388607)
+ 126 named destinations out of 1000 (max. 500000)
+ 350 words of extra memory for PDF output out of 10000 (max. 10000000)
 

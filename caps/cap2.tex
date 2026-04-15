@@ -246,7 +246,7 @@ local suficientes para la formación de uniones metalúrgicas en estado sólido.
 Como mecanismos secundarios se reportan también el anclaje mecánico por 
 incrustación de la partícula en el sustrato, y fuerzas de van der Waals en 
 las zonas de contacto íntimo, aunque su contribución relativa es 
-considerablemente menor~\cite{Papyrin2007}.
+considerablemente menor \cite{Papyrin2007}.
 
 El estado tensional en la partícula durante el impacto presenta componentes 
 compresivos en la dirección normal a la superficie, originados por la 
@@ -256,12 +256,30 @@ costados: este flujo lateral está impulsado por el gradiente de presión entre
 la zona de contacto central, donde la presión es máxima, y la periferia libre 
 de la partícula, donde la presión es atmosférica. A este fenómeno se le conoce como \textit{jetting}. 
 
+
+
 Esto introduce esfuerzos de 
 corte en planos oblicuos a la superficie que, al superar el criterio de 
 fluencia, producen el esparcimiento característico de la partícula 
 (\textit{splat}). En simulaciones numéricas, el criterio de Von Mises es 
 frecuentemente adoptado por su simplicidad y adecuada representación del 
 comportamiento isótropo~\cite{Grujicic2004}.
+
+No toda la energía cinética de la partícula se disipa como calor o deformación 
+plástica durante el impacto. Una fracción queda almacenada elásticamente en la 
+red cristalina de ambos materiales, generando un campo de tensiones residuales 
+en la interfaz. En cold spray, este campo es predominantemente compresivo, 
+en contraste con procesos de proyección térmica convencionales donde las 
+tensiones residuales son de naturaleza tensora debido a la contracción por enfriamiento. Las tensiones compresivas favorecen la integridad mecánica del depósito al inhibir la propagación de microgrietas en la interfaz 
+partícula-sustrato\cite{Champagne2016unique}.
+
+Sin embargo, la energía elástica almacenada en la partícula deformada introduce 
+también una tendencia al rebote elástico (\textit{elastic springback}), mediante 
+la cual la partícula recupera parcialmente su forma original tras el impacto. 
+Si la adhesión generada en la interfaz no es suficiente para contrarrestar esta 
+recuperación elástica, la partícula puede desprenderse del sustrato. Este 
+mecanismo constituye uno de los criterios físicos que fundamentan la existencia 
+de una velocidad crítica mínima de deposición~\cite{Schmidt2006}.
 
 El ángulo de incidencia $\theta$ de la partícula respecto a la normal 
 del sustrato introduce una asimetría en la distribución de velocidades 
@@ -332,6 +350,21 @@ sucesivas\cite{Moridi2014}. Adicionalmente, la deformación plástica acumulada
 en capas anteriores reduce la ductilidad residual del depósito, limitando su 
 capacidad de deformarse ante nuevos impactos e incrementando la porosidad 
 interlamelar (entre capas) en depósitos de gran espesor\cite{Huang2020}.
+
+La acumulación progresiva de tensiones residuales compresivas capa a capa, 
+producto del peening sucesivo, compacta el depósito y reduce la porosidad 
+interlamelar. No obstante, en depósitos de gran espesor esta acumulación 
+puede superar la resistencia cohesiva de las interfaces más débiles, 
+provocando delaminación entre capas. Este fenómeno es especialmente 
+relevante en cold spray aditivo, donde el número de capas es 
+considerablemente mayor que en recubrimientos convencionales~\cite{Yin2022review}.
+
+En casos extremos, 
+la acumulación progresiva de tensiones residuales compresivas puede superar la 
+resistencia cohesiva de las interfaces más débiles, provocando delaminación 
+entre capas, fenómeno especialmente relevante en cold spray aditivo donde el 
+número de capas es considerablemente mayor que en recubrimientos 
+convencionales~\cite{Yin2022review}.
 
 \subsection{Velocidad crítica}
 
@@ -453,16 +486,355 @@ manufactura aditiva por cold spray.
 
 \section{Fabricación por CS}
 
-\subsection{Sistema de CS}
 \subsection{Parámetros relevantes}
+
+Un proceso convencional de CS está determinado por múltiples factores, los cuales pueden clasificarse en \textbf{parámetros de hardware (PH)}, \textbf{parámetros operativos (PO)} y \textbf{parámetros de trayectoria (PT)}.
+
+Los PH están asociados a la construcción del equipo y los componentes instalados, definiendo los rangos de operación disponibles. Ejemplos de estos son la geometría de la tobera, el espacio de trabajo del manipulador y la capacidad del calefactor.
+
+Los PO se configuran para cada operación en función del material y el resultado deseado, determinando el compromiso entre eficiencia y efectividad del proceso. Los parámetros operativos primordiales son la presión de alimentación del gas y la temperatura del calefactor, los cuales se fijan en función de superar la velocidad crítica del material a depositar, y se calibran experimentalmente hasta observar deposición sobre el sustrato. 
+
+Otro PO relevante es la \textbf{distancia de standoff} \textbf{DS}, que define la separación entre la tobera y el sustrato; existe una distancia óptima dentro de la cual las partículas logran atravesar el bowshock sin perder una fracción significativa de su energía cinética \cite{Pattison2008}. 
+
+El caudal de alimentación de polvos $\dot{m}_{p}$ es también un PO independiente, pues afecta directamente la eficiencia de deposición y la porosidad del depósito. El perfil transversal de deposición queda determinado por el conjunto de estos parámetros: a menor velocidad transversal de la herramienta, mayor es la altura media del perfil depositado por pasada, mientras que el diámetro del spot está gobernado principalmente por la geometría de la tobera y la distancia de standoff, pues el flujo toma una forma cónica al ser expulsado. El rango de flujos másicos en CS suele encontrarse en el rango de [cita].
+
+Conocido el perfil de deposición, es posible definir los PT o cinemáticos para cubrir el área requerida con la geometría deseada. Estos incluyen la estrategia de escaneo o \textit{hatching}, que define el patrón general de la trayectoria (zigzag, alternado, concéntrico, entre otros), la distancia entre líneas adyacentes o \textit{hatch distance}, la velocidad transversal de la herramienta, y el número de pasadas sobre una misma región.
+
 \subsection{Características de productos por CS}
+
+Los depósitos generados por cold spray presentan, en estado verde (sin 
+tratamiento posterior), cierto grado de porosidad y rugosidad superficial. 
+La porosidad depende principalmente de la ductilidad de las partículas, su 
+morfología y los parámetros operativos del proceso. 
+
+En cuanto a propiedades mecánicas, los depósitos en estado verde presentan una dureza superior a la del material de referencia, consecuencia del 
+endurecimiento por deformación plástica (\textit{strain hardening}) y las 
+tensiones residuales compresivas generadas por el efecto peening acumulado. 
+
+Sin embargo, la resistencia a la tracción y la ductilidad son 
+considerablemente inferiores a las del material forjado, debido a la 
+adhesión interfacial incompleta entre partículas y a la fragilidad 
+introducida por el endurecimiento por deformación \cite{Moridi2014, 
+	Champagne2016unique}. Este comportamiento es especialmente pronunciado en 
+Ti-6Al-4V, donde los depósitos en estado verde son esencialmente 
+frágiles \cite{Huang2020}.
+
+Para mejorar las propiedades mecánicas del depósito, es frecuente recurrir a tratamientos térmicos posteriores. El recocido promueve la recuperación y recristalización microestructural, 
+reduce las tensiones residuales y mejora la adherencia interpartícula 
+mediante difusión en estado sólido, lo que se traduce en un aumento de la 
+resistencia a la tracción y la ductilidad a expensas de una reducción en 
+dureza \cite{Huang2020}.
+
+El prensado isostático en caliente (HIP) es el 
+tratamiento más efectivo para reducir la porosidad y recuperar propiedades mecánicas próximas a las del material forjado, aunque no elimina completamente los poros de mayor tamaño \cite{Moridi2014}. Cabe señalar que el tratamiento térmico por sí solo no elimina la porosidad, sino que actúa principalmente sobre la cohesión interpartícula y la microestructura.
+
+La resolución espacial del depósito está determinada en gran medida por 
+la geometría de la tobera. Un mayor diámetro de salida y una mayor 
+distancia de standoff amplían el spot de deposición, reduciendo la 
+resolución del proceso. El tamaño de las partículas introduce un límite 
+inferior adicional: partículas de mayor diámetro producen perfiles de 
+deposición más anchos e irregulares \cite{Wong2013}.
+
+Las superficies del depósito pueden someterse a rectificado u otros 
+procesos de mecanizado convencional para ajustar tolerancias dimensionales o mejorar el acabado superficial. Esta etapa es habitual en aplicaciones estructurales o de reparación donde se requieren superficies funcionales de precisión\cite{Champagne2015repairs}.
+
 \subsection{Aplicaciones típicas}
 
-\section{Manufactura aditiva}
-\subsection{Slicing y trayectorias}
-\subsection{Estrategias de deposición}
-\subsection{Control multieje}
-\subsection{FA usando CS}
-\subsection{FA usando titanio}
+Las aplicaciones más consolidadas del cold spray son los recubrimientos 
+funcionales y la reparación dimensional de componentes, aprovechando en ambos 
+casos las ventajas del proceso en estado sólido: ausencia de zona afectada 
+por calor, tensiones residuales compresivas, baja oxidación y preservación 
+de la microestructura del polvo de alimentación~\cite{Champagne2016unique}.
 
 
+En aplicaciones de reparación, el depósito se construye sobre la zona dañada 
+hasta superar el volumen original de diseño, para luego rectificar mediante 
+mecanizado convencional hasta recuperar las dimensiones y tolerancias 
+requeridas. Esta estrategia es especialmente ventajosa en componentes de 
+alto valor o gran tamaño, donde el costo de reemplazo es considerablemente 
+mayor que el de la reparación, y donde los procesos de reparación por 
+soldadura o proyección térmica convencional introducirían distorsión térmica 
+inaceptable. Ejemplos representativos incluyen trenes de aterrizaje y 
+carcasas de caja de engranajes en aeronaves, componentes estructurales de 
+aleaciones de magnesio en plataformas militares, y árboles o 
+cojinetes de equipos industriales desgastados~\cite{Champagne2015repairs}.
+
+El polvo utilizado en reparación puede ser del mismo material que el 
+componente base o de un material distinto con propiedades superiores. 
+Un caso frecuente es la reparación de sustratos de aleaciones de aluminio 
+(por ejemplo, Al 7075 o Al 7149) con polvo de Al puro o mezclas Al/Al\textsubscript{2}O\textsubscript{3}, 
+donde la adición de alúmina mejora la eficiencia de deposición en sistemas 
+de baja presión~\cite{Champagne2015repairs}. En componentes de acero o 
+hierro fundido, es frecuente el uso de polvos de níquel o acero inoxidable 
+para recuperar dimensiones con mayor resistencia a la corrosión que el 
+material base.
+
+Un aspecto crítico en reparación es la compatibilidad mecánica entre el 
+depósito y el sustrato: la adhesión debe ser suficiente para soportar las 
+cargas de servicio, lo que en algunos casos requiere tratamiento térmico 
+posterior para consolidar la interfaz~\cite{Moridi2014}.
+
+En aplicaciones de recubrimiento, el cold spray se emplea para conferir 
+propiedades superficiales específicas sin alterar el sustrato subyacente. 
+Las funcionalidades más frecuentes son:
+
+\begin{itemize}
+	\item \textbf{Resistencia al desgaste:} recubrimientos de WC-Co o 
+	Cr\textsubscript{3}C\textsubscript{2}-NiCr sobre sustratos de acero 
+	o titanio en componentes sometidos a fricción intensa, como herramientas 
+	de corte, rodillos industriales y componentes de maquinaria minera. 
+	La dureza de estos cermets supera los 1000~HV, muy por encima de los 
+	sustratos metálicos típicos.
+	
+	\item \textbf{Protección anticorrosión:} recubrimientos de zinc o 
+	aluminio sobre acero estructural o naval, donde el depósito actúa como 
+	ánodo de sacrificio. A diferencia de la galvanización, el cold spray 
+	no requiere inmersión en baño fundido ni genera efluentes, lo que lo 
+	hace viable para reparaciones en campo~\cite{Champagne2016unique}.
+	
+	\item \textbf{Conductividad eléctrica y térmica:} depósitos de cobre 
+	sobre sustratos de aluminio para disipadores de calor en electrónica 
+	de potencia, o para restaurar conductividad en barras colectoras y 
+	contactos eléctricos dañados. El cobre proyectado por CS preserva su 
+	conductividad intrínseca al no oxidarse durante el proceso.
+	
+	\item \textbf{Recubrimientos biomédicos:} depósitos porosos de titanio 
+	o hidroxiapatita sobre implantes ortopédicos metálicos, donde la 
+	rugosidad y porosidad superficial favorecen la osteointegración. 
+	La ausencia de calor evita la descomposición de fases sensibles 
+	como la hidroxiapatita~\cite{Huang2020}.
+\end{itemize}
+
+\section{Fabricación aditiva}
+
+\subsection{Fundamentos de FA}
+
+La FA comprende un conjunto de técnicas de fabricación 
+que construyen piezas volumétricas mediante la adición controlada y 
+progresiva de material, típicamente capa por capa, a partir de un modelo 
+digital \cite{Gibson2015}. Este paradigma contrasta fundamentalmente con la 
+manufactura sustractiva, en la que la pieza emerge por remoción de material 
+desde un bloque inicial, y con la manufactura formativa, en la que el 
+material es conformado por deformación plástica o fundición.
+
+La adición controlada de material otorga ventajas que no son accesibles en 
+procesos convencionales. En primer lugar, permite una mayor eficiencia en 
+el uso de materia prima, al depositar material únicamente donde la geometría 
+final lo requiere, reduciendo el desperdicio respecto al mecanizado. En 
+segundo lugar, posibilita la distribución optimizada del material en función 
+del servicio de la pieza: estructuras con gradiente de propiedades, canales 
+internos de refrigeración o geometrías con densidad variable según el campo 
+de esfuerzos son ejemplos que escapan a las capacidades de los procesos 
+convencionales \cite{Herzog2016}. En tercer lugar, la MA trasciende las 
+restricciones geométricas inherentes a los procesos sustractivos: mientras 
+un torno limita las geometrías a superficies de revolución y una fresadora 
+requiere acceso de herramienta a cada cara, la MA construye la pieza sin 
+restricciones de acceso, permitiendo voladizos, cavidades internas y 
+estructuras reticulares \cite{Gibson2015}.
+
+En contrapartida, la FA presenta limitaciones relevantes. Las tasas de 
+deposición son generalmente bajas en comparación con procesos de fabricación 
+en serie, y los costos por pieza suelen ser mayores a escala industrial. 
+Por esto, la MA encuentra su nicho competitivo en contextos donde el volumen 
+de producción es pequeño a mediano y las piezas son de geometría compleja o 
+altamente personalizadas, como componentes aeronáuticos o espaciales 
+estructurales, implantes biomédicos, entre otros \cite{Herzog2016}.
+
+Históricamente, la FA surgió con el objetivo de generar prototipos físicos 
+desde flujos de trabajo CAD/CAM de manera rápida e iterable, lo que se conoce 
+como prototipado rápido (\textit{rapid prototyping}). Los primeros procesos 
+comerciales, desarrollados en la década de 1980, utilizaron polímeros 
+termoplásticos y fotopolímeros precisamente porque estos materiales permiten 
+obtener modelos dimensionalmente representativos sin exigencia de propiedades 
+mecánicas de servicio~\cite{Gibson2015}. Con el tiempo, el desarrollo de 
+procesos aptos para metales y cerámicas desplazó el énfasis desde el 
+prototipado hacia la fabricación directa de componentes funcionales, 
+consolidando la FA como una tecnología de producción y no solo de 
+visualización.
+
+\subsection{FA de piezas metálicas}
+
+De entre las técnicas de manufactura aditiva para componentes metálicos, 
+las más consolidadas industrialmente son las basadas en fusión de lecho 
+de polvo (\textit{powder bed fusion}, PBF), cuyo representante principal 
+es la fusión selectiva por láser (\textit{selective laser melting}, SLM), 
+también denominada fusión láser en lecho de polvo (\textit{laser powder 
+	bed fusion}, LPBF)~\cite{Herzog2016}. Una variante relevante es la fusión 
+por haz de electrones (\textit{electron beam melting}, EBM), que opera 
+bajo vacío y utiliza un haz de electrones como fuente de energía.
+
+En SLM, el material se encuentra en un lecho de polvo sobre el que se 
+traza la sección transversal de la pieza mediante un haz láser de alta 
+energía, el cual funde completamente las partículas y las suelda con la 
+capa inferior. Completada una capa, la plataforma desciende un espesor 
+de capa (típicamente 20--60~\(\mu\)m), se deposita polvo nuevo y se 
+repite el proceso hasta completar el volumen~\cite{Gibson2015}. El proceso 
+ocurre en cámara con atmósfera inerte de nitrógeno o argón para evitar 
+la oxidación del material fundido. La granulometría y morfología del polvo 
+tienen un papel determinante en la resolución espacial y en la transferencia 
+de calor durante la fusión: polvos esféricos con distribución estrecha 
+(típicamente 10--45~\(\mu\)m para SLM) favorecen la densificación y 
+reproducibilidad del proceso~\cite{Herzog2016}.
+
+Las piezas fabricadas presentan superficies rugosas inherentes a la 
+construcción por capas de polvo. Adicionalmente, la cohesión incompleta 
+entre partículas introduce una porosidad intrínseca, que puede tratarse 
+mediante los mismos procedimientos descritos para depósitos de cold spray: 
+recocido o HIP para reducir porosidad y aliviar tensiones residuales.
+
+Entre los materiales y aplicaciones más representativos de SLM en metales se encuentran:
+
+\begin{itemize}
+	\item \textbf{Superaleaciones base níquel (Inconel 718, Inconel 625):} 
+	ampliamente usadas en componentes de turbinas de gas, cámaras de 
+	combustión y toberas de cohetes, donde se requiere resistencia mecánica 
+	a alta temperatura. 
+	
+	\item \textbf{Aceros inoxidables y aceros de herramienta (316L, 
+		17-4~PH, 1.2709):} utilizados en dispositivos de sujeción con canales de refrigeración 
+	conformados, moldes de inyección y componentes estructurales en 
+	industria aeronáutica y automotriz donde se requiere resistencia a la 
+	corrosión combinada con complejidad geométrica.
+	
+	\item \textbf{Aleaciones de aluminio (AlSi10Mg):} empleadas en 
+	soportes estructurales, carcasas y componentes de automoción donde 
+	la reducción de peso es prioritaria.
+	
+	\item \textbf{Aleaciones de cobalto-cromo (CoCrMo):} aplicadas en 
+	implantes dentales, prótesis articulares y componentes de turbinas, 
+	aprovechando su resistencia al desgaste y biocompatibilidad.
+\end{itemize}
+
+Las aleaciones de titanio, y en particular el Ti-6Al-4V, constituyen un 
+caso de especial interés para la manufactura aditiva. Su baja maquinabilidad, 
+debida a la combinación de alta dureza, baja conductividad térmica y 
+reactividad química con las herramientas de corte, encarece notablemente 
+su procesamiento por vías convencionales y genera un elevado desperdicio 
+de material en operaciones sustractivas. La manufactura aditiva permite 
+explotar aún más sus características de ligereza y resistencia al disponer 
+la materia de forma optimizada según el campo de esfuerzos del diseño, 
+produciendo piezas de geometría compleja en estado cercano a la forma 
+final (\textit{near-net-shape})~\cite{Leyens2003, Herzog2016}.
+
+Las aplicaciones de Ti-6Al-4V por SLM y EBM son amplias: en aeronáutica, 
+soportes estructurales, brackets y componentes de airframe con optimización 
+topológica que pueden reducir la masa hasta un 25--30\% respecto al diseño 
+convencional manteniendo la vida a fatiga requerida; en medicina, implantes 
+ortopédicos de cadera, rodilla y columna vertebral con estructuras de 
+celosía porosa (\textit{lattice}) que emulan la rigidez del hueso esponjoso 
+y favorecen la osteointegración; y en industria espacial, toberas y 
+componentes de propulsión donde la relación resistencia-peso es 
+crítica~\cite{Herzog2016}.
+
+La desventaja fundamental de los procesos PBF radica en los gradientes 
+térmicos intensos generados por la naturaleza localizada y cíclica de la 
+fuente de energía. Localmente, la temperatura puede superar la de fusión 
+del material mientras las zonas adyacentes permanecen frías, generando 
+esfuerzos térmicos que se traducen en deformación dimensional, alabeo 
+(\textit{warping}) y en casos extremos, delaminación entre capas si la 
+acumulación de calor no se controla adecuadamente~\cite{Herzog2016}. 
+Estos gradientes promueven además la oxidación en materiales reactivos 
+y pueden inducir transformaciones de fase no deseadas que alteran la 
+microestructura final, como la formación de martensita $\alpha'$ 
+metaestable en Ti-6Al-4V por enfriamiento rápido, lo que resulta en 
+mayor resistencia pero menor ductilidad respecto al material 
+forjado~\cite{Leyens2003}.
+
+Una consecuencia directa de la construcción capa por capa bajo gradientes 
+térmicos direccionales es la \textbf{anisotropía} de las propiedades 
+mecánicas. Durante la solidificación, los granos crecen epitaxialmente 
+en la dirección del gradiente térmico, que es preferentemente perpendicular 
+al plano de construcción. Esto genera columnas de grano orientadas en la 
+dirección de construcción, de modo que la resistencia y ductilidad medidas 
+en esa dirección difieren de las medidas en el plano paralelo a las 
+capas~\cite{Herzog2016}. En Ti-6Al-4V fabricado por SLM, la resistencia 
+a la tracción en dirección vertical es típicamente inferior a la horizontal, 
+mientras que la ductilidad muestra el comportamiento inverso, dependiendo 
+del ciclo térmico y la estrategia de escaneo empleada.
+
+Para mitigar estos efectos, los procesos PBF utilizan \textbf{estructuras 
+	de soporte} (\textit{support structures}): geometrías auxiliares que no 
+forman parte de la pieza final pero cumplen dos funciones esenciales. 
+Primero, actúan como conductores térmicos que disipan el calor generado 
+en zonas críticas hacia la placa base, reduciendo los gradientes y el 
+riesgo de alabeo. Segundo, y al igual que en otras técnicas de FA, funcionan como andamios estructurales que 
+permiten construir voladizos, superficies inclinadas a ángulos menores 
+de aproximadamente 45° respecto a la horizontal, y geometrías sin 
+conectividad con la estructura principal, que de otro modo quedarían sin 
+sustentación y colapsarían durante la construcción~\cite{Gibson2015}. 
+Los soportes se eliminan en el postprocesado, generalmente por mecanizado, 
+y su diseño tiene un impacto directo en el costo y tiempo total del proceso.
+
+\subsection{FA mediante CS}
+
+El CS es esencialmente una tecnología de deposición controlada de material en
+el espacio, lo cual lo convierte en un candidato natural para ser implementado
+como método de fabricación aditiva (FA) de piezas tridimensionales. Para ello,
+se han desarrollado ciertas adaptaciones a los sistemas estándar de CS.
+
+Una de las características fundamentales de la FA es la resolución espacial
+necesaria para lograr geometrías complejas. En CS, este atributo puede mejorarse
+controlando parámetros operacionales como la distancia de trabajo (\textit{standoff})
+y, principalmente, mediante el uso de \textbf{microtoberas}. Al tener una
+garganta y un diámetro de salida reducidos, las microtoberas permiten controlar
+con mayor precisión tanto la forma del \textit{spot} de deposición como el flujo
+másico de partículas~\cite{Sova2017micronozzle}.
+
+Por otro lado, el perfil de deposición de forma gaussiana constituye una
+limitante para la construcción secuencial capa a capa, ya que las capas
+consecutivas no encuentran una superficie uniformemente plana sobre la cual
+apoyarse. Esto requiere algún tipo de corrección o estrategia de compensación.
+
+La idea esencial es compensar el perfil gaussiano para lograr paredes homogéneas
+y controlables, de forma que las capas siguientes se construyan sobre una
+superficie plana. Se han propuesto distintas estrategias para abordar este
+problema~\cite{Moridi2014}. % TODO: agregar referencia Chepillo (trabajo de título, U. Chile)
+Entre ellas, Chepillo et al.\ proponen una arquitectura cinemática de más de
+tres grados de libertad, lo que permite variar el ángulo de incidencia de la
+tobera y repasar las paredes laterales del perfil gaussiano, buscando generar
+una pared de sección homogénea.
+
+Una estrategia notable en este ámbito es la denominada \textit{Metal Knitting},
+desarrollada por el grupo del \textit{Thermal Spray Centre} de la Universitat de
+Barcelona~\cite{Vaz2022MetalKnitting}. En lugar de mantener la tobera
+perpendicular al sustrato, esta estrategia mueve el brazo robótico describiendo
+una trayectoria cónica virtual, variando continuamente el ángulo de incidencia.
+Esto permite controlar la inclinación de las paredes laterales del depósito y
+obtener geometrías más verticales, con ángulos de pared cercanos a \SI{80}{\degree}
+respecto al sustrato, en contraste con la inclinación pronunciada característica
+de la estrategia tradicional. El método ha sido validado con materiales como
+acero inoxidable 316L, Cu, Ti y Ti-6Al-4V~\cite{Vaz2024MK316L}.
+
+Desde una perspectiva de modelado y planificación de proceso, Bagherifard y
+colaboradores del Politecnico di Milano han abordado el problema del control
+geométrico en CSAM mediante modelos físicos del perfil de depósito. En
+particular, Vanerio et al. \cite{Vanerio2021} desarrollaron un modelo 3D
+basado en ecuaciones en derivadas parciales capaz de simular la evolución del
+perfil de depósito en función de parámetros operacionales como la velocidad de
+barrido, el ángulo de incidencia, la distancia de trabajo y el número de
+pasadas. El modelo permite además simular condiciones complejas como pistas
+superpuestas con distintos ángulos, sustratos curvos y perfiles no gaussianos,
+constituyendo una herramienta para la digitalización y automatización del
+proceso. Una revisión sistemática más reciente~\cite{Falco2025ColdSA} consolida
+los avances en estrategias de trayectoria y modelado de forma en CSAM,
+identificando el control geométrico como el principal obstáculo para la
+adopción industrial generalizada de esta tecnología.
+
+Desde una perspectiva de estrategia de trayectoria, Wu et al.~\cite{WU2025642}
+proponen un enfoque eficiente de construcción capa a capa para CSAM. La idea
+central consiste en reconocer que el depósito acumulado adopta naturalmente una
+forma piramidal como consecuencia del perfil gaussiano, y en lugar de buscar
+corregirlo mediante mecanizado intermedio, orientar la tobera en un ángulo
+deflectado hacia las paredes inclinadas de dicha pirámide durante el propio
+proceso de deposición. De este modo, las pasadas sucesivas inciden sobre la
+superficie lateral del depósito, permitiendo construir paredes verticales
+estables y repetibles sin requerir grados de libertad adicionales en la
+cinemática del robot. Esta estrategia es conceptualmente complementaria a la de
+\textit{Metal Knitting}~\cite{Vaz2022MetalKnitting}, aunque se diferencia en
+que no requiere una trayectoria cónica del efector final, sino una corrección
+angular sistemática del ángulo de incidencia en cada capa.
+
+Finalmente, dado que el CS no genera los gradientes térmicos propios de procesos
+como la sinterización láser selectiva (SLS), resulta especialmente atractivo
+para la fabricación aditiva de titanio y otras piezas donde el control
+microestructural sea crítico~\cite{Yin2022review}.
