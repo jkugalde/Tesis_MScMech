@@ -35,9 +35,9 @@ C.~Leyens and M.~Peters, {\em Titanium and Titanium Alloys: Fundamentals and
 \newblock Weinheim, Germany: Wiley-VCH, 2003.
 
 \bibitem{Huang2020}
-C.~Huang, W.~Li, C.~Verdy, H.~Liao, and S.~Deng, ``Solid-state cold spraying of
-  {Ti} and its alloys: A literature review,'' {\em Progress in Materials
-  Science}, vol.~110, p.~100633, 2020.
+W.~Li, C.~Congcong, and Y.~Shuo, ``Solid-state cold spraying of {Ti} and its
+  alloys: A literature review,'' {\em Progress in Materials Science}, vol.~110,
+  p.~100633, 2020.
 
 \bibitem{Yin2022review}
 S.~Yin, P.~Cavaliere, B.~Aldwell, R.~Jenkins, H.~Liao, W.~Li, and R.~Lupoi,
@@ -55,10 +55,10 @@ D.~Kotoban, S.~Grigoriev, A.~Okunkova, and A.~Sova, ``Influence of a shape of
   single track on deposition efficiency of metal powder in cold spray,'' {\em
   Additive Manufacturing}, vol.~17, pp.~1--12, 2017.
 
-\bibitem{Sova2017micronozzle}
-A.~Sova, M.~Doubenskaia, S.~Grigoriev, A.~Okunkova, and I.~Smurov, ``Deposition
-  of aluminum powder by cold spray micronozzle,'' {\em The International
-  Journal of Advanced Manufacturing Technology}, vol.~93, pp.~3057--3064, 2017.
+\bibitem{Sova2013micronozzle}
+A.~Sova, S.~Klinkov, V.~Kosarev, N.~Ryashin, and I.~Smurov, ``Preliminary study
+  on deposition of aluminium and copper powders by cold spray micronozzle using
+  helium,'' {\em Surface and Coatings Technology}, vol.~220, pp.~98--101, 2013.
 
 \bibitem{WU2025642}
 Y.~Wu, C.~Sun, J.~Lu, T.~Li, J.~Wu, and H.~Xie, ``Efficient layer-building
@@ -69,6 +69,12 @@ Y.~Wu, C.~Sun, J.~Lu, T.~Li, J.~Wu, and H.~Xie, ``Efficient layer-building
 R.~Falco and S.~Bagherifard, ``Cold spray additive manufacturing: A review of
   shape control challenges and solutions,'' {\em Journal of Thermal Spray
   Technology}, vol.~34, pp.~1023 -- 1041, 2025.
+
+\bibitem{Legoux2010}
+J.~G. Legoux, E.~Irissou, S.~Desaulniers, J.~Bobyn, B.~Harvey, W.~Wong,
+  E.~Gagnon, and S.~Yue, ``Characterization and performance evaluation of a
+  helium recovery system designed for cold spraying,'' in {\em Thermal Spray:
+  Global Solutions for Future Application, ITSC 2010}, pp.~560--565, 2010.
 
 \bibitem{Pattison2008}
 J.~Pattison, S.~Celotto, A.~Khan, and W.~O'Neill, ``Standoff distance and bow
@@ -97,36 +103,135 @@ M.~Grujicic, C.~L. Zhao, W.~S. DeRosset, and D.~Helfritch, ``Adiabatic shear
   dynamic-spray process,'' {\em Materials \& Design}, vol.~25, no.~8,
   pp.~681--688, 2004.
 
+\bibitem{HassaniGangaraj2018}
+M.~Hassani-Gangaraj, D.~Veysset, V.~K. Champagne, K.~A. Nelson, and C.~A.
+  Schuh, ``Adiabatic shear instability is not necessary for adhesion in cold
+  spray,'' {\em Acta Materialia}, vol.~158, pp.~430--439, 2018.
+
 \bibitem{Schmidt2006}
 T.~Schmidt, F.~G{\"a}rtner, H.~Assadi, and H.~Kreye, ``Development of a
   generalized parameter window for cold spray deposition,'' {\em Acta
   Materialia}, vol.~54, no.~3, pp.~729--742, 2006.
+
+\bibitem{SENG2022128068}
+D.~H.~L. Seng, Z.~Zhang, Z.-Q. Zhang, T.~L. Meng, S.~L. Teo, B.~H. Tan, Q.~Loi,
+  and J.~Pan, ``Influence of spray angle in cold spray deposition of ti-6al-4v
+  coatings on al6061-t6 substrates,'' {\em Surface and Coatings Technology},
+  vol.~432, p.~128068, 2022.
 
 \bibitem{Bae2009}
 G.~Bae, S.~Kumar, S.~Yoon, K.~Kang, H.~Na, H.-J. Kim, and C.~Lee, ``Bonding
   features and associated mechanisms in kinetic sprayed titanium coatings,''
   {\em Acta Materialia}, vol.~57, no.~19, pp.~5654--5666, 2009.
 
-\bibitem{Vaz2022MetalKnitting}
-R.~F. Vaz, others, and I.~G. Cano, ``Metal knitting: A new strategy for cold
-  gas spray additive manufacturing,'' {\em Materials}, vol.~15, no.~19,
-  p.~6785, 2022.
+\bibitem{Schmidt2009}
+T.~Schmidt, H.~Assadi, F.~Gärtner, H.~Richter, T.~Stoltenhoff, H.~Kreye, and
+  T.~Klassen, ``From particle acceleration to impact and bonding in cold
+  spraying,'' {\em Journal of Thermal Spray Technology}, vol.~18, no.~5,
+  pp.~794--808, 2009.
 
-\bibitem{Vaz2024MK316L}
-R.~F. Vaz, V.~Luzin, F.~Salvemini, G.~G. Ribamar, J.~A. {\'A}vila,
-  V.~Albaladejo, J.~Sanchez, and I.~G. Cano, ``The effect of the deposition
-  strategy and heat treatment on cold spray additive manufactured {316L}
-  stainless steel,'' {\em Advanced Engineering Materials}, vol.~26, p.~2302156,
+\bibitem{AFSHARI2025284}
+A.~Afshari, J.-A. Tröger, J.~Meyer, S.~Hartmann, and D.~Inkermann,
+  ``Non-planar 3d printing enhancing design potentials by advanced slicing
+  algorithms and path planning,'' {\em Procedia CIRP}, vol.~136, pp.~284--289,
+  2025.
+\newblock 35th CIRP Design 2025.
+
+\bibitem{Kondas2024feedstock}
+J.~Kondás, M.~Guagliano, S.~Bagherifard, R.~Singh, J.~Cizek, F.~Lukac,
+  P.~Konopik, and S.~Rzepa, ``Importance of feedstock powder selection for
+  mechanical properties improvement of cold spray additively manufactured
+  {Ti6Al4V} deposits,'' {\em Additive Manufacturing Letters}, vol.~9,
+  p.~100199, 2024.
+
+\bibitem{Pattison2007CGDM}
+J.~Pattison, S.~Celotto, R.~Morgan, M.~Bray, and W.~O'Neill, ``Cold gas dynamic
+  manufacturing: A non-thermal approach to freeform fabrication,'' {\em
+  International Journal of Machine Tools and Manufacture}, vol.~47, no.~3--4,
+  pp.~627--634, 2007.
+
+\bibitem{Bagherifard2018freeform}
+S.~Bagherifard, S.~Monti, M.~V. Zuccoli, M.~Riccio, J.~Kondás, and
+  M.~Guagliano, ``Cold spray deposition for additive manufacturing of freeform
+  structural components compared to selective laser melting,'' {\em Materials
+  Science and Engineering: A}, vol.~721, pp.~339--350, 2018.
+
+\bibitem{Li2007nozzledesign}
+W.-Y. Li, H.~Liao, G.~Douchy, and C.~Coddet, ``Optimal design of a cold spray
+  nozzle by numerical analysis of particle velocity and experimental validation
+  with {316L} stainless steel powder,'' {\em Materials \& Design}, vol.~28,
+  no.~7, pp.~2129--2137, 2007.
+
+\bibitem{Sova2013velocity}
+A.~Sova, A.~Okunkova, S.~Grigoriev, and I.~Smurov, ``Velocity of the particles
+  accelerated by a cold spray micronozzle: Experimental measurements and
+  numerical simulation,'' {\em Journal of Thermal Spray Technology}, vol.~22,
+  no.~1, pp.~75--80, 2013.
+
+\bibitem{Sova2013AMpotential}
+A.~Sova, S.~Grigoriev, A.~Okunkova, and I.~Smurov, ``Potential of cold gas
+  dynamic spray as additive manufacturing technology,'' {\em The International
+  Journal of Advanced Manufacturing Technology}, vol.~69, pp.~2269--2278, 2013.
+
+\bibitem{CerdaLobos2024}
+B.~M. Cerda~Lobos, ``Dimensionamiento de microtoberas de cold spray para
+  deposición de partículas de titanio mediante modelamiento
+  fluidodinámico,'' tesis de magíster, Universidad de Chile, Santiago, Chile,
   2024.
+
+\bibitem{Cao2022nozzle}
+C.~Cao, W.~Li, Z.~Zhang, X.~Yang, and Y.~Xu, ``Cold spray additive
+  manufacturing of {Ti6Al4V}: Special nozzle design using numerical simulation
+  and experimental validation,'' {\em Coatings}, vol.~12, no.~2, p.~210, 2022.
+
+\bibitem{Cai2014overlap}
+Z.~Cai, S.~Deng, H.~Liao, C.~Zeng, and G.~Montavon, ``The effect of spray
+  distance and scanning step on the coating thickness uniformity in cold spray
+  process,'' {\em Journal of Thermal Spray Technology}, vol.~23, no.~3,
+  pp.~354--362, 2014.
+
+\bibitem{Chepillo2024}
+A.~Chepillo~Cortés, ``Determinación de la trayectoria de una tobera de {Cold
+  Spray} para su uso en la manufactura aditiva de una pared vertical,'' trabajo
+  de título de ingeniero civil mecánico, Universidad de Chile, 2024.
 
 \bibitem{Vanerio2021}
 D.~Vanerio, J.~Kondas, M.~Guagliano, and S.~Bagherifard, ``{3D} modelling of
   the deposit profile in cold spray additive manufacturing,'' {\em Journal of
   Manufacturing Processes}, vol.~67, pp.~521--534, 2021.
 
-\bibitem{Callister2018}
-W.~D. Callister and D.~G. Rethwisch, {\em Materials Science and Engineering: An
-  Introduction}.
-\newblock John Wiley \& Sons, 10~ed., 2018.
+\bibitem{Vaz2022MetalKnitting}
+R.~F. Vaz, V.~Albaladejo-Fuentes, J.~Sanchez, U.~Ocaña, Z.~G. Corral,
+  H.~Canales, and I.~G. Cano, ``Metal knitting: A new strategy for cold gas
+  spray additive manufacturing,'' {\em Materials}, vol.~15, no.~19, p.~6785,
+  2022.
+
+\bibitem{Vaz2024MK316L}
+R.~F. Vaz, V.~Luzin, F.~Salvemini, G.~G. Ribamar, J.~A. Ávila, V.~Albaladejo,
+  J.~Sanchez, and I.~G. Cano, ``The effect of the deposition strategy and heat
+  treatment on cold spray additive manufactured {316L} stainless steel,'' {\em
+  Advanced Engineering Materials}, vol.~26, p.~2302156, 2024.
+
+\bibitem{Falco2025DNN}
+R.~Falco, M.~Jalayer, and S.~Bagherifard, ``Enhanced geometrical control in
+  cold spray additive manufacturing through deep neural network predictive
+  models,'' {\em Virtual and Physical Prototyping}, vol.~20, no.~1, 2025.
+
+\bibitem{Vo2013heattreatment}
+P.~Vo, E.~Irissou, J.-G. Legoux, and S.~Yue, ``Mechanical and microstructural
+  characterization of cold-sprayed {Ti-6Al-4V} after heat treatment,'' {\em
+  Journal of Thermal Spray Technology}, vol.~22, no.~6, pp.~954--964, 2013.
+
+\bibitem{Lek2018microstructure}
+J.~Y. Lek, A.~Bhowmik, A.~W.-Y. Tan, W.~Sun, X.~Song, W.~Zhai, P.~J.
+  Buenconsejo, F.~Li, E.~Liu, Y.~M. Lam, and C.~B. Boothroyd, ``Understanding
+  the microstructural evolution of cold sprayed {Ti-6Al-4V} coatings on
+  {Ti-6Al-4V} substrates,'' {\em Applied Surface Science}, vol.~459,
+  pp.~492--504, 2018.
+
+\bibitem{RicouSpalding1961}
+F.~P. Ricou and D.~B. Spalding, ``Measurements of entrainment by axisymmetrical
+  turbulent jets,'' {\em Journal of Fluid Mechanics}, vol.~11, no.~1,
+  pp.~21--32, 1961.
 
 \end{thebibliography}

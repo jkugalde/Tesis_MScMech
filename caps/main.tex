@@ -1,9 +1,11 @@
 % se puede agregar la opción [english] para 
 %  memorias o tesis en inglés (borrando el archivo .aux)
 \documentclass{umemoria} 
-
+\usepackage{notoccite}
 \usepackage{tocloft}
 \usepackage[]{siunitx}
+\usepackage[font=small]{caption}
+\usepackage{caption}
 % Reduce espacio entre líneas del índice
 \setlength{\cftbeforesecskip}{2pt}   % secciones
 \setlength{\cftbeforesubsecskip}{1pt} % subsecciones
@@ -91,7 +93,7 @@ thanks obama
 % ver https://www.overleaf.com/learn/latex/Glossaries
 % \input{glosario.tex} % opcional
 
-\nocite{*}
+%\nocite{*}
 \bibliographystyle{ieeetr}
 \bibliography{bibliografia}
 

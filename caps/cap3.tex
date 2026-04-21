@@ -1,78 +1,343 @@
 \chapter{Metodología}
 
-\section{Flujo del trabajo}
-
-Para el desarrollo del trabajo se plantean 5 etapas secuenciales, cada una organizada en actividades, como se muestra en la Figura \ref{met}. 
-
-
-\section{Sistema experimental de CS}
+\section{Implementación de un sistema experimental de CS}
 
 \subsection{Recursos previos}
 
-La arquitectura cinemática a utilizar corresponde a una \textit{Pocket NC V2-10} (Figura \ref{pocket}), cuyas capacidades nominales relevantes se observan en la tabla \ref{datospocket}.
+El desarrollo de este trabajo requirió la implementación de una máquina CNC adaptada para CS, en base a la arquitectura descrita en la sección~\ref{sec:cs_sistema} y utilizando recursos previos del grupo de investigación de la Universidad de Chile.
 
-El sistema de CS a montar es principalmente de fabricación propia, lo cual incluye un calefactor eléctrico de 1kW para los gases y un par de toberas (Figura \ref{caleftob}). 
+\subsubsection{Arquitectura cinemática}
 
-El calefactor cuenta con un sistema PID para fijar la temperatura de los gases a la salida, cuyo sensor es una termocupla que se ubica cerca de la unión con la tobera. Este calefactor se desarrollo como parte de la memoria de Andrés Cerda (aca la referencia).
+La arquitectura cinemática utilizada corresponde a una fresadora de escritorio \textit{Pocket NC V2-10} (Figura~\ref{pocket}), cuyas especificaciones relevantes se presentan en el Cuadro~\ref{datospocket}. Esta máquina CNC cuenta con cinco ejes de libertad, lo cual permite proponer estrategias de compensación de paredes mediante variación del ángulo de deposición, tal como se propone en los trabajos de Chepillo et al.~\cite{Chepillo2024} y Wu et al.~\cite{WU2025642}.
 
-Para el precalentamiento del calefactor, se utiliza aire comprimido proveniente de un compresor modelo marca. El cambio de gas en el sistema se realiza a través de una válvula de 3 posiciones.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{imgs/pocketnc.jpg}
+	\caption[Fresadora de escritorio Pocket NC V2-10]{Fresadora de escritorio Pocket NC V2-10. Fuente: Penta Machine Co}
+	\label{pocket}
+\end{figure}
 
-Las toberas son convergente-divergente con garganta de 1 mm, sus medidas generales se especifican en la Figura \ref{tobs}. La alimentación de polvos es lateral y puede ser antes o después de la garganta. Estas toberas se diseñaron como parte de la tesis de Blanca Cerda (aca la referencia).
+\begin{table}[h]
+	\centering
+	\caption[Especificaciones relevantes de la fre.
+	sadora \textit{Pocket NC V2-10}]{Especificaciones relevantes de la fresadora \textit{Pocket NC V2-10. Fuente: Penta Machine Co}.}
+	\label{datospocket}
+	\begin{tabular}{lccccc}
+		\hline
+		Parámetro & X & Y & Z & A & B \\
+		\hline
+		Recorrido     & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]}° & \textbf{[x]}° \\
+		Velocidad máxima                 & \textbf{[x]} mm/s & \textbf{[x]} mm/s & \textbf{[x]} mm/s & \textbf{[x]} °/s & \textbf{[x]} °/s \\
+		Backlash                         & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]}° & \textbf{[x]}° \\
+		Resolución                       & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]}° & \textbf{[x]}° \\
+		Repetibilidad                    & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]}° & \textbf{[x]}° \\
+		\hline
+	\end{tabular}
+\end{table}
 
-La diferencia principal entre estas toberas es la sección de barril, la cual se espera que permita un mejor desarrollo y estabilización del jet, aumentando la velocidad y reduciendo la dispersión en la deposición. Por el contrario, la sección de barril puede aumentar la pérdida energética y presentar erosión.  
+La conversión de esta máquina para uso en CS requiere dos adaptaciones principales: el reemplazo del husillo de mecanizado por un calefactor de gas, y la protección de los elementos de transmisión frente al flujo de gas caliente y al material particulado que no se adhiere al sustrato.
 
-El alimentador de polvo a utilizar es asdasd, el cual se conecta a través de una manguera con la tobera en el sistema de CS.
+\subsubsection{Calefactor de gases}
 
-\subsection{Adaptaciones}
+El calefactor de gases es de fabricación propia. Consiste en una estructura tubular de acero inoxidable con dos cámaras concéntricas: el gas ingresa radialmente hacia la cámara 1, y fluye axialmente hasta la entrada de la cámara 2 y luego hasta la salida, donde se conecta con la tobera mediante una rosca NPT 1/4 hembra. En la cámara interior se aloja un calefactor eléctrico tipo barra de 1~kW con disipadores anulares adosados mediante prisioneros, los cuales además cuentan con perforaciones para el paso del flujo de gas. Esta configuración de doble cámara permite mantener la superficie exterior del calefactor refrigerada, reduciendo el riesgo térmico sobre los componentes cercanos.
 
-Para el montaje de las componentes mencionadas anteriormente, se remueven partes de la máquina original y se reemplazan con soportes de acero cortados en láser (Figura \ref{montaj}). 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/kalefa.png}
+	\caption[Modelo 3D para calefactor de 1kW a) vista isométrica b) vista en corte]{Modelo 3D para calefactor de 1kW}
+	\label{fig:kalefa}
+\end{figure}
 
-En la Figura \ref{carro} se observa el anclaje del calefactor al cabezal de la máquina, lo cual sincroniza los movimientos en el eje Z y X. 
+El control de temperatura se implementa mediante un controlador PID digital comercial modelo \textbf{[COMPLETAR: modelo PID]}, que opera a través de un relé de estado sólido. La temperatura de proceso se mide con una termocupla tipo K modelo \textbf{[COMPLETAR: modelo termocupla]}, dispuesta radialmente en la salida del calefactor, aguas arriba de la tobera. De este modo, la variable controlada es la temperatura del gas en la entrada de la tobera, lo cual constituye la temperatura de estancamiento $T_0$ del proceso.
 
-En este conjunto también se monta una pieza que porta un imán, el cual activa el sensor de fin de carrera en el eje Z.
+\subsubsection{Gases de proceso}
 
-Por su masa significativa en relación a la máquina CNC, el calefactor requiere un apoyo rodante adicional ubicado en su parte posterior, lo cual se logró mediante un perfil de aluminio y parte de un rodamiento axial.
+El gas portador utilizado es nitrógeno (N\textsubscript{2}) con una pureza del \textbf{[COMPLETAR: \%]} por ciento. El suministro se realiza desde dos cilindros de \textbf{[COMPLETAR: volumen]} litros a una presión máxima de \textbf{[COMPLETAR: presión]} bar, cada uno equipado con manómetro y regulador de presión independiente. Los dos cilindros operan en líneas separadas: uno suministra el gas portador principal al calefactor, y el otro alimenta el gas de arrastre del alimentador de polvos. Esta separación permite controlar de forma independiente la presión de proceso y la tasa de inyección de partículas.
 
-Sobre el espacio de trabajo se montan piezas circulares, cuyo fin es soportar el sustrato y canalizar el flujo de gases y material no adherido, lo cual se extrae desde la parte posterior del espacio de trabajo mediante una aspiradora.
+El calefactor requiere un pre-calentamiento antes de iniciar la operación de CS, para lo cual se hace circular aire a presión desde un compresor. El cambio hacia el gas de proceso se hace manualmente a través de una válvula de 3 posiciones.
 
-La aspiradora se dimensionó considerando el caudal correspondiente al jet de gases y el aire arrastrado por este. El caudal del jet $Q_{jet}$ se estimó mediante una velocidad promedio de referencia de 1000 ms y la sección de la salida de la tobera.
+\subsubsection{Alimentador de polvos}
+
+El alimentador de polvos utilizado es un modelo \textbf{[COMPLETAR: modelo alimentador]}, el cual opera mediante \textbf{[COMPLETAR: principio de operación: disco rotatorio / tornillo sin fin / fluidización, etc.]} y permite regular la tasa de alimentación en el rango de \textbf{[COMPLETAR: rango]} g/min. Este equipo se conecta a uno de los tanques de N2.
+
+\subsubsection{Toberas}
+
+A partir del trabajo de Cerda et al., se fabricaron dos toberas convergente-divergentes de acero inoxidable mediante EDM, cuyos modelos 3D se exhibe en la Figura~\ref{fig:toberas} y cuyas dimensiones principales se presentan en el Cuadro~\ref{tab:geometria_toberas}. Ambas toberas comparten un diámetro de garganta de 1~mm y un diámetro de salida de 3~mm. Se descartó el uso de gargantas de 0{,}5~mm debido al mayor riesgo de obstrucción por partículas y de deterioro prematuro por erosión. Las toberas cuentan con una rosca macho NPT 1/4 en uno de sus extremos para la conexión con el calefactor
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{imgs/toberasblanki.png}
+	\caption[Modelos 3D de toberas fabricadas en base a Cerda et al.]{Modelos 3D de toberas fabricadas en base a Cerda et al.}
+	\label{fig:toberas}
+\end{figure}
+
+Las toberas disponen de una entrada tipo downstream para la inyección de polvo; en caso de que esta configuración no resulte efectiva, se contempla la alternativa de emplear la entrada upstream. La entrada que no se utiliza queda sellada mediante un prisionero y compuesto sellante. Adicionalmente, y en caso de que se use la entrada upstream, se plantea conectar una termocupla en la entrada downstream con el fin de obtener una estimación más precisa de la temperatura de remanso $T_{0}$.
+
+La diferencia principal entre las dos toberas radica en la presencia de una sección de barril en la tobera T2: esta extensión downstream de la sección divergente aumenta el tiempo de residencia de las partículas en el jet, favoreciendo la transferencia de momentum y de calor desde el gas hacia las partículas, y permitiendo un mejor desarrollo y estabilización del flujo. En consecuencia, se espera que la tobera con barril produzca mayores velocidades de impacto y temperaturas de partícula. La tobera T1, al carecer de barril, presenta una longitud total menor, lo que podría reducir la dispersión radial del jet y disminuir el diámetro efectivo del punto de deposición (\textit{spot}). Como contrapartida, la sección de barril puede incrementar las pérdidas energéticas por fricción y presentar mayor desgaste por erosión en operación prolongada.
+
+\begin{table}[h]
+	\centering
+	\caption{Parámetros geométricos de las toberas T1 y T2.}
+	\label{tab:geometria_toberas}
+	\begin{tabular}{lcc}
+	\hline
+		\textbf{Parámetro} & \textbf{T1} & \textbf{T2} \\
+	\hline
+		Diámetro de entrada, $D_{in}$ (mm)         & 6 & 6 \\
+		Diámetro de garganta, $D^*$ (mm)           & 1 & 1 \\
+		Diámetro de salida, $D_{out}$ (mm)         & 3 & 3 \\
+		Largo sección convergente, $L_{conv}$ (mm) & 20 & 20 \\
+		Largo sección divergente, $L_{div}$ (mm)   & 20 & 20 \\
+		Largo sección de barril, $L_{bar}$ (mm)    & 0 & 50 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Esta componente es fundamental para definir los parámetros operativos y proyectar las estrategias y resultados obtenibles en el proceso, por lo que se describe de manera más extensa en la sección~\ref{sec:toberas}.
+
+\subsection{Adaptaciones mecánicas}
+
+Para el montaje de las componentes mencionadas, se removieron las piezas originales del husillo de la fresadora y se reemplazaron con soportes fabricados en acero inoxidable 304 cortados en láser (Figura~\ref{fig:montaje}).
+
+El calefactor se ancla al cabezal de la máquina mediante el soporte mostrado en la Figura~\ref{fig:carro}, sincronizando sus movimientos con los ejes $Z$ y $X$ de la máquina. En este mismo conjunto se monta una pieza portadora de un imán permanente, cuya función es activar el sensor de fin de carrera del eje $Z$ en la posición de referencia.
+
+Dado que la masa del calefactor es significativa en relación a la capacidad del cabezal de la Pocket NC, se incorporó un apoyo rodante en la parte posterior del calefactor. Este apoyo consiste en soportes de acero inoxidable, un perfil de aluminio de sección T-slot 3030 y el rodamiento de un rodamiento axial reutilizado, el cual transmite las cargas verticales hacia la estructura de la máquina sin restringir el movimiento horizontal.
+
+Sobre la mesa de trabajo se montan piezas circulares de soporte que cumplen dos funciones: fijar el sustrato en posición y canalizar el flujo de gas y material particulado no adherido hacia la parte posterior del espacio de trabajo, desde donde es extraído mediante un sistema de aspiración.
+
+\subsection{Sistema de extracción y protección}
+
+El dimensionamiento del sistema de extracción se realizó considerando el caudal del jet de gases a la salida de la tobera y el aire ambiente arrastrado por el jet libre. El caudal del jet $Q_0$ se estimó considerando una velocidad promedio de referencia de $\bar{v} = 1000$~m/s en la sección de salida de la tobera de diámetro $d_s = 3$~mm, de acuerdo a las simulaciones de Cerda et al.:
 
 \begin{equation}
-Q_{jet}=A v=0.0283 \mathrm{[m^{3}/s]}
+	Q_0 = \frac{\pi d_s^2}{4} \cdot \bar{v} = \frac{\pi (0{,}003)^2}{4} \cdot 1000 \approx 7{,}07 \times 10^{-3}~\text{m}^3/\text{s}
+	\label{eq:qjet}
 \end{equation}
 
-La estimación del caudal de aire arrastrado se hace mediante:
+El caudal total del jet a una distancia axial $x$ de la salida, incluyendo el aire ambiente arrastrado, se estima mediante la correlación de Ricou y Spalding~\cite{RicouSpalding1961} para jets turbulentos libres axisimétricos:
 
+\begin{equation}
+	\frac{Q(x)}{Q_0} = 0{,}32 \cdot \frac{x}{d_s} \cdot \left(\frac{\rho_0}{\rho_\infty}\right)^{1/2}
+	\label{eq:entrainment}
+\end{equation}
 
-Por todo lo anterior, se selecciona una aspiradora modelo con x caudal, para otorgar cierto margen de seguridad.
+donde $\rho_0$ es la densidad del gas en la sección de salida y $\rho_\infty$ es la densidad del aire ambiente. De acuerdo con las simulaciones de Cerda et al., la temperatura del gas a la salida de la tobera se sitúa en torno a 200–250~°C, correspondiente a aproximadamente 500~K. A esa temperatura y a presión atmosférica, la densidad del N$_2$ es $\rho_0 \approx 0{,}67$~kg/m$^3$, mientras que para el aire ambiente a 20~°C se tiene $\rho_\infty \approx 1{,}20$~kg/m$^3$. Tomando como distancia de referencia $x = 100$~mm, correspondiente a la distancia aproximada entre la salida de la tobera y la pared del fuelle:
 
-Para la protección de la máquina y de los usuarios, se fabrica un fuelle de silicona elástica que cubre el espacio de trabajo, abierto parcialmente en sus extremos para permitir el flujo de gases.
+\begin{equation}
+	\frac{Q(x)}{Q_0} = 0{,}32 \cdot \frac{0{,}1}{0{,}003} \cdot \left(\frac{0{,}67}{1{,}20}\right)^{1/2} \approx 0{,}32 \cdot 33{,}3 \cdot 0{,}747 \approx 7{,}96
+	\label{eq:ratio_entrainment}
+\end{equation}
 
-La silicona utilizada es Mold Max 60 de la marca Smooth-On, su hoja técnica indica que puede soportar temperaturas de hasta aproximadamente 300 C.
+El caudal total que debe manejar el sistema de extracción resulta entonces:
 
-La temperatura máxima para el gas de trabajo corresponde nominalmente a 500 C, no obstante, si consideramos de manera simplista la mezcla de este con el aire de arrastre a temperatura ambiente, la temperatura promedio de la mezcla sería:
+\begin{equation}
+	Q_\text{total} = 7{,}96 \cdot Q_0 \approx 7{,}96 \times 7{,}07 \times 10^{-3} \approx 5{,}63 \times 10^{-2}~\text{m}^3/\text{s} \approx 56{,}3~\text{L/s}
+	\label{eq:qtotal}
+\end{equation}
 
+Cabe destacar que esta estimación corresponde a un jet libre no confinado, por lo que representa un escenario conservador: en la práctica, el fuelle limita el volumen de aire disponible para el entrainment, reduciendo el caudal efectivo. Aplicando un factor de seguridad de 1{,}5 sobre el caudal estimado, se requiere una aspiradora con una capacidad mínima de aproximadamente 85~L/s (305~m$^3$/h). Con base en este análisis, se seleccionó una aspiradora modelo \textbf{[COMPLETAR: modelo]} con un caudal nominal de \textbf{[COMPLETAR: caudal]} L/s.
 
-Además de esto, se debe considerar que el jet pierde energía al impactar con el sustrato y que la capacidad de succión de la aspiradora estaría incorporando más aire ambiental a la mezcla, por lo que la protección de silicona debiese soportar las condiciones de servicio.
+\subsection{Material pulverizado y sustrato}
+
+El material utilizado para los depósitos corresponde a polvo de aleación de titanio Ti-6Al-4V \textbf{[COMPLETAR: grado, p.ej. Grado 5 o ELI]}, con una pureza de \textbf{[COMPLETAR: \%]}, fabricado mediante atomización en gas, lo cual confiere a las partículas una morfología predominantemente esférica. La distribución granulométrica presenta un diámetro $D_{90} = 50~\mu$m, medido por tamizado, y su curva de distribución acumulada se presenta en la Figura~\ref{fig:granulometria}. La hoja de datos del proveedor se incluye en el Anexo~\ref{anx:polvo}.
+
+El sustrato corresponde a barras rectangulares de aluminio \textbf{[COMPLETAR: aleación, p.ej. Al 6061 — verificar si es 1010 o corregir]}, cortadas en forma de paralelepípedo según las dimensiones indicadas en la Figura~\ref{fig:sustrato}. Este material fue seleccionado por su disponibilidad como recurso previo del grupo de investigación, y por ser un sustrato habitual en experimentos de CS sobre titanio dado su bajo punto de fluencia, que favorece la adhesión mecánica inicial.
 
 \subsection{Sistema final}
 
-El sistema final de experimentación se observa en la Figura. 
+El diagrama del sistema final se observa en la Figura \ref{esqumesis}. El modelo 3D del subsensamble principal del sistema experimental se observa en en la Figura~\ref{fig:sistema_final}. El eje A de la máquina debe posicionarse por defecto a 90° respecto a su referencia, de modo que el sustrato quede orientado normal al eje de la tobera. La máquina CNC se conecta mediante USB a un computador, a través del cual se carga y ejecuta el código G generado para cada trayectoria. 
 
-El espacio de trabajo 
+Este código G se escribe a través de programas específicos implementados en Python para cada experimento y geometría a lograr, pues no se cuenta con un software CAM para el proceso.
 
-La máquina CNC provee una interfaz al conectarla por USB con un ordenador, a través de la cual se puede manipular y cargar código G.
+La máquina no dispone de un sistema de deflexión o bloqueo del jet, por lo que no es posible detener la proyección de partículas en los movimientos sin fabricar de las trayectorias, o durante la preparación del jet antes de fabricar.
 
-\section{Diseño de experimentos}
+\subsection{Caracterización del espacio de trabajo}
 
-\subsection{Influencia de POs en perfil de deposición}
+Con el sistema ensamblado se realizaron pruebas de movimiento para determinar el espacio de trabajo útil respecto a las capacidades nominales de la máquina original. Posicionando la tobera en contacto con la periferia del área de trabajo y recorriendo su contorno, se comprueba que es posible recorrer la circunferencia completa deformando la protección de silicona. En consecuencia, el espacio de trabajo útil puede definirse en coordenadas cilíndricas según el Cuadro~\ref{tab:espacio_trabajo}.
 
-\subsection{Efectividad de estrategias de compensación}
+\begin{table}[h]
+	\centering
+	\caption{Espacio de trabajo útil del sistema en coordenadas cilíndricas.}
+	\label{tab:espacio_trabajo}
+	\begin{tabular}{ccc}
+		\hline
+		Parámetro & Mínimo & Máximo \\
+		\hline
+		$r$ [mm]      & 0   & \textbf{[COMPLETAR]} \\
+		$\theta$ [°]  & 0   & 360 \\
+		$z$ [mm]      & 0   & \textbf{[COMPLETAR]} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Este rango se ve reducido al utilizar el eje A, puesto que la deformación impuesta sobre la protección de silicona aumenta con la desviación angular respecto a la normal, con la profundidad en $z$ y con la desviación radial respecto al centro del área de trabajo, tal como se ilustra en la Figura~\ref{fig:espacio_A}. Dado que la literatura reporta un ángulo crítico de deposición para titanio por encima del cual la eficiencia cae drásticamente~\cite{WU2025642}, se fija el rango operativo del eje A en un mínimo de 70° respecto a la superficie del sustrato.
+
+Es importante notar que en fabricación aditiva tridimensional se generan nuevas superficies al construir las paredes que definen un objeto. En un sistema cartesiano convencional, la deposición ocurre siempre sobre la cara superior de la pared en construcción, siguiendo un paradigma de fabricación estrictamente planar. Sin embargo, un sistema con mayor número de grados de libertad ofrece capacidades adicionales: permite depositar de manera oblicua o normal a las caras laterales de las paredes ya fabricadas (Figura~\ref{fig:deposicion_oblicua}). En este caso, el ángulo crítico se evalúa respecto a la cara lateral de la pared, lo cual resulta más favorable geométricamente que respecto a la cara superior. Este modo de deposición queda fuera del alcance de la presente investigación, ya que la protección de silicona restringe el acceso lateral a las paredes fabricadas.
+
+La deposición oblicua también abre la posibilidad de fabricar voladizos, aunque esta estrategia enfrenta restricciones severas en CSAM, dado que cada capa nueva requiere impactar sobre material sólido subyacente para adherirse. Como aproximación, se plantea que un voladizo podría generarse mediante una deposición oblicua ejecutada sobre el borde de una pared ya consolidada, de modo que el material depositado sobresalga lateralmente y actúe como voladizo incipiente. Esta posibilidad se considera fuera del alcance principal de la investigación, pero se documenta como una proyección para trabajo futuro.
+
+\subsection{Resumen de parámetros operativos}
+
+En el Cuadro~\ref{tab:parametros} se presentan los acrónimos y rangos operativos de los parámetros que gobiernan el proceso en el sistema implementado.
+
+\begin{table}[h]
+	\centering
+	\caption{Parámetros operativos del sistema de CS implementado y sus rangos de operación.}
+	\label{tab:parametros}
+	\begin{tabular}{clcc}
+		\hline
+		Símbolo & Parámetro & Mínimo & Máximo \\
+		\hline
+		$T_0$       & Temperatura de estancamiento [°C]   & \textbf{[COMPLETAR]} & \textbf{[COMPLETAR]} \\
+		$p_0$       & Presión de estancamiento [bar]      & 4   & 8   \\
+		$\theta$    & Ángulo de deposición [°]            & 70  & 90  \\
+		$v_f$       & Velocidad de avance [mm/s]          & \textbf{[COMPLETAR]} & \textbf{[COMPLETAR]} \\
+		$d_s$       & Distancia de standoff [mm]          & \textbf{[COMPLETAR]} & \textbf{[COMPLETAR]} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\section{Planificación de trayectorias}
+
+\subsection{Características de las toberas}
+
+Las toberas fabricadas fueron simuladas numéricamente en Cerda et al., empleando los mismos polvos de Ti-6Al-4V seleccionados para esta investigación y asumiendo una temperatura de estancamiento $T_0 \approx 480$~°C aguas arriba de la garganta. Los resultados principales de estas simulaciones se resumen en el Cuadro~\ref{tab:sim_toberas}, e incluyen la velocidad y temperatura de impacto de las partículas para cada diseño de tobera.
+
+En la Figura~\ref{fig:temp_gas} se presentan los perfiles de temperatura del gas a lo largo del eje de la tobera obtenidos de la simulación. Estos resultados confirman que la temperatura del gas en la zona de trabajo es compatible con la resistencia térmica de la protección de silicona (Mold Max~60, $T_\text{máx} \approx 290$~°C), validando el diseño del sistema de protección descrito en la sección~\ref{sec:proteccion}.
+
+Ambas toberas serán evaluadas experimentalmente mediante una trayectoria rectilínea de referencia, y la selección de la tobera de trabajo se realizará de manera cualitativa en función de la facilidad de deposición: se preferirá aquella que logre adherencia a menor velocidad crítica para igual flujo másico. En caso de que la diferencia no sea apreciable, la selección se realizará mediante análisis comparativo del perfil de depósito obtenido.
+
+El perfil de deposición de las toberas se muestra en la Figura asddas, el cual será comparado con los resultados experimentales.
+
+\subsection{Caracterización del perfil de deposición}
+
+Una vez identificados los parámetros operativos mínimos que permiten deposición 
+estable y seleccionada la tobera de trabajo, se realizan experimentos de variación 
+paramétrica para estudiar la influencia de cada variable sobre el perfil de depósito. 
+Los parámetros estudiados son la temperatura de estancamiento $T_0$, la presión de 
+estancamiento $p_0$, la velocidad de avance $v_f$, el ángulo de deposición $\theta$ 
+y la distancia de standoff $d_s$, variados de manera individual manteniendo los 
+restantes constantes en sus valores de referencia.
+
+Cada condición experimental consiste en una pasada rectilínea simple sobre el 
+sustrato de aluminio. El perfil transversal del cordón resultante se caracteriza 
+mediante perfilometría de contacto \textbf{[COMPLETAR: o perfilometría óptica / 
+	microscopía confocal, según disponibilidad]}, obteniéndose para cada condición las 
+siguientes variables geométricas de interés:
+
+\begin{itemize}
+	\item Ancho del cordón $w$ [mm]
+	\item Altura máxima del cordón $h$ [mm]
+	\item Área de la sección transversal $A_c$ [mm$^2$]
+	\item Factor de forma $h/w$, indicador de la convexidad del perfil
+\end{itemize}
+
+Dado que el perfil transversal de un cordón de CS presenta típicamente una 
+distribución de altura de forma gaussiana~\cite{Pattison2008}, los datos de 
+perfilometría se ajustan mediante mínimos cuadrados a una función de la forma:
+
+\begin{equation}
+	h(y) = h_0 \exp\left(-\frac{y^2}{2\sigma^2}\right)
+	\label{eq:gaussiana}
+\end{equation}
+
+donde $h_0$ es la altura máxima del cordón, $y$ es la coordenada transversal 
+respecto al eje de deposición y $\sigma$ es la desviación estándar del perfil, 
+relacionada con el ancho del cordón mediante $w = 2\sqrt{2\ln 2}\,\sigma \approx 
+2{,}355\,\sigma$. Los parámetros $h_0$ y $\sigma$ obtenidos del ajuste constituyen 
+una descripción compacta del perfil para cada condición experimental, y son el 
+insumo directo para la planificación de trayectorias CSAM: conociendo el perfil 
+gaussiano de una pasada simple, es posible calcular analíticamente el solapamiento 
+entre pasadas adyacentes que minimiza la ondulación de la superficie compuesta, 
+así como estimar el perfil acumulado tras $N$ capas superpuestas para una estrategia 
+de trayectoria dada.
+
+Los resultados de este estudio paramétrico permiten construir un mapa del espacio 
+de parámetros operativos, identificando las condiciones que maximizan la altura del 
+cordón, minimizan el factor de forma (perfil más plano) o maximizan la eficiencia 
+de deposición, según el criterio de interés para las etapas siguientes.
+
+\subsection{Estrategias de deposición}
+
+Con base en el perfil de cordón caracterizado en la subsección anterior y siguiendo el enfoque propuesto por Chepillo et al.~\cite{Chepillo2024}, se plantean estrategias de compensación de paredes para lograr una superficie superior plana y homogénea al construir capas sucesivas.
+
+El problema central es que una pasada simple de CS produce un cordón con perfil convexo, de modo que al superponer pasadas adyacentes o capas sucesivas sin compensación, se acumula material de manera no uniforme, generando una superficie irregular que se propaga y amplifica con cada capa. Para contrarrestar este efecto, se consideran las siguientes estrategias:
+
+\textbf{Compensación por solapamiento:} se ajusta el solapamiento entre pasadas adyacentes $s$ como fracción del ancho del cordón $w$, de modo que la suma de los perfiles individuales aproxime una superficie plana. El valor óptimo de $s/w$ se determina a partir del perfil medido, siguiendo el criterio de minimización de la rugosidad superficial compuesta.
+
+\textbf{Compensación por variación de velocidad de avance:} dado que $v_f$ controla directamente el área depositada por unidad de longitud, se puede modular $v_f$ a lo largo de la trayectoria para depositar más material donde el perfil acumulado es deficiente, de manera análoga a las estrategias de compensación adaptativa reportadas en la literatura~\cite{WU2025642}.
+
+\textbf{Deposición oblicua:} aprovechando los cinco ejes de la máquina, se evalúa la deposición con el eje A desviado respecto a la normal al sustrato, dentro del rango operativo definido en la sección~\ref{sec:espacio_trabajo}. Siguiendo a Chepillo et al.~\cite{Chepillo2024}, esta estrategia permite compensar la asimetría del perfil en las paredes laterales de una pieza en construcción.
+
+Cada estrategia se evalúa cualitativamente en términos de la planicidad de la superficie resultante tras $N$ capas \textbf{[COMPLETAR: N a definir según espesor de capa y altura objetivo]}, medida mediante perfilometría. La estrategia o combinación de estrategias que produzca la superficie más homogénea será adoptada para la fabricación de las probetas y piezas descritas en las secciones siguientes.
+
+\section{Caracterización del proceso CSAM}
 
 \subsection{Caracterización mecánica de probetas}
 
-\subsection{Caracterización con piezas 3D}
+Para evaluar las propiedades mecánicas del material depositado, se fabrican probetas de tracción uniaxial mediante CSAM. La geometría de las probetas sigue la norma ASTM E8/E8M~\cite{ASTME8}, adaptada a las dimensiones alcanzables con el sistema implementado \textbf{[COMPLETAR: indicar si se usa subsize specimen u otra variante, y las dimensiones resultantes]}.
 
-\section{Estrategias de toolpath}
+Las probetas se fabrican en dos condiciones: estado consolidado (\textit{as-deposited}) y tras tratamiento térmico. El tratamiento térmico aplicado corresponde a \textbf{[COMPLETAR: temperatura, atmósfera, tiempo y velocidad de enfriamiento]}, seleccionado con base en los tratamientos reportados en la literatura para Ti-6Al-4V depositado por CS~\cite{Huang2020, Yin2022review}.
 
-\subsection{Chepillo et al}
+Los ensayos de tracción se realizan en una máquina universal de ensayos \textbf{[COMPLETAR: modelo]} a una velocidad de desplazamiento de \textbf{[COMPLETAR]} mm/min, obteniéndose las siguientes propiedades:
+
+\begin{itemize}
+	\item Módulo de elasticidad $E$
+	\item Límite de fluencia $\sigma_{0,2}$ (criterio offset 0,2\%)
+	\item Resistencia a la tracción $\sigma_\text{UTS}$
+	\item Elongación a la fractura $\varepsilon_f$
+\end{itemize}
+
+Complementariamente, se realizan mediciones de microdureza Vickers (HV) en secciones transversales de las probetas, tanto en estado \textit{as-deposited} como post-tratamiento, con el fin de evaluar la homogeneidad de las propiedades a lo largo de la dirección de construcción.
+
+\subsection{Caracterización de piezas tridimensionales}
+
+Para evaluar la capacidad del sistema de reproducir geometrías definidas, se fabrican piezas de referencia consistentes en extrusiones de perfiles 2D de geometría simple \textbf{[COMPLETAR: p.ej. paralelepípedo, cilindro, L-shape]}, cuyas dimensiones nominales se definen en el Cuadro~\ref{tab:piezas_ref}. La selección de geometrías simples permite aislar los efectos geométricos del proceso de las complejidades propias de formas orgánicas.
+
+La evaluación de cada pieza fabricada considera los siguientes indicadores:
+
+\textbf{Precisión geométrica:} se comparan las dimensiones externas medidas mediante calibre digital y/o escáner 3D \textbf{[COMPLETAR: especificar instrumento disponible]} con las dimensiones nominales del diseño, calculando la desviación absoluta y relativa en cada dirección ($x$, $y$, $z$).
+
+\textbf{Continuidad y densidad relativa:} se preparan secciones metalográficas transversales y longitudinales, las cuales se observan en microscopio óptico. Mediante análisis de imagen se cuantifica la porosidad aparente $\phi$ como fracción de área de poros respecto al área total de la sección, siguiendo el procedimiento descrito en \textbf{[COMPLETAR: norma o referencia metodológica]}.
+
+\textbf{Calidad superficial:} se mide la rugosidad superficial $R_a$ en las caras externas de las piezas mediante perfilometría, distinguiendo entre la cara superior (última capa depositada) y las caras laterales.
+
+\subsection{Análisis de desempeño del proceso}
+
+El desempeño global del proceso se evalúa mediante los siguientes indicadores operativos, calculados para cada condición experimental y para la fabricación de piezas:
+
+\textbf{Eficiencia de deposición} $\eta_d$: definida en la ecuación~\ref{eq:eficiencia}, cuantifica la fracción de polvo suministrado que efectivamente se incorpora a la pieza.
+
+\textbf{Tasa volumétrica de deposición} $\dot{V}_d$ [mm$^3$/s]: indica la productividad del proceso en términos de volumen de material consolidado por unidad de tiempo.
+
+\textbf{Consumo específico de gas} $C_g$ [L/mm$^3$]: volumen de N$_2$ consumido por unidad de volumen depositado, calculado a partir del caudal másico de gas y la tasa volumétrica de deposición. Este indicador es relevante para proyectar la escalabilidad y costo operativo del proceso.
+
+\textbf{Tiempo de fabricación} $t_f$ [min]: tiempo total de deposición activa para producir una pieza de volumen $V$ dado, excluyendo tiempos de preparación y cambio de sustrato.
+
+Estos indicadores se presentan de manera comparativa entre las distintas condiciones paramétricas y estrategias de trayectoria evaluadas, con el fin de identificar la configuración que mejor equilibra calidad geométrica, propiedades mecánicas y eficiencia del proceso.
+
+\subsection{Resumen de indicadores de evaluación}
+
+En el Cuadro~\ref{tab:indicadores} se resumen los indicadores utilizados para evaluar la viabilidad del proceso CSAM implementado como alternativa para la fabricación aditiva de componentes metálicos de alta resolución a partir de polvo de Ti-6Al-4V.
+
+\begin{table}[h]
+	\centering
+	\caption{Indicadores de evaluación del proceso CSAM implementado.}
+	\label{tab:indicadores}
+	\begin{tabular}{llll}
+		\hline
+		Indicador & Símbolo & Unidad & Método de medición \\
+		\hline
+		Desviación geométrica        & $\delta_g$      & mm / \%        & Calibre / escáner 3D \\
+		Porosidad aparente           & $\phi$          & \%             & Análisis metalográfico \\
+		Rugosidad superficial        & $R_a$           & $\mu$m         & Perfilometría \\
+		Resistencia a la tracción    & $\sigma_\text{UTS}$ & MPa        & Ensayo ASTM E8 \\
+		Límite de fluencia           & $\sigma_{0,2}$  & MPa            & Ensayo ASTM E8 \\
+		Elongación a la fractura     & $\varepsilon_f$ & \%             & Ensayo ASTM E8 \\
+		Microdureza                  & HV              & —              & Vickers \\
+		Eficiencia de deposición     & $\eta_d$        & \%             & Ec.~\ref{eq:eficiencia} \\
+		Consumo específico de gas    & $C_g$           & L/mm$^3$       & Cálculo operativo \\
+		Tasa volumétrica             & $\dot{V}_d$     & mm$^3$/s       & Perfilometría / geometría \\
+		\hline
+	\end{tabular}
+\end{table}

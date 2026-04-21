@@ -8,40 +8,56 @@
 \contentsline {chapter}{\numberline {2}Antecedentes}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Fundamentos de CS}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Descripción general del proceso}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Aceleración del gas}{6}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Proyección de partículas}{7}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Impacto en el sustrato y adhesión}{8}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Impacto entre partículas}{11}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Velocidad crítica}{12}{subsection.2.1.6}%
-\contentsline {subsection}{\numberline {2.1.7}Perfil de deposición}{13}{subsection.2.1.7}%
-\contentsline {section}{\numberline {2.2}Fabricación por CS}{14}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Parámetros relevantes}{14}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Características de productos por CS}{15}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Aplicaciones típicas}{15}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Fabricación aditiva}{17}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Fundamentos de FA}{17}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}FA de piezas metálicas}{17}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}FA mediante CS}{19}{subsection.2.3.3}%
-\contentsline {chapter}{\numberline {3}Metodología}{22}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Flujo del trabajo}{22}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Sistema experimental de CS}{22}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Recursos previos}{22}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Adaptaciones}{23}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Sistema final}{24}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Diseño de experimentos}{24}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Influencia de POs en perfil de deposición}{24}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Efectividad de estrategias de compensación}{24}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Caracterización mecánica de probetas}{24}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Caracterización con piezas 3D}{24}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Estrategias de toolpath}{24}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Chepillo et al}{24}{subsection.3.4.1}%
-\contentsline {chapter}{\numberline {4}Resultados y discusión}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Caracterización del perfil}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Estrategias de compensación}{25}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Ensayos mecánicos}{25}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Fidelidad geométrica}{25}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{26}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{26}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{26}{section.5.2}%
-\contentsline {chapter}{\numberline {}Bibliograf\'ia}{28}{chapter*.7}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{29}{Appendix.alph1.Alph1}%
+\contentsline {subsection}{\numberline {2.1.2}Aceleración del gas}{7}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Proyección de partículas}{9}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Impacto en el sustrato y adhesión}{11}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Impacto entre partículas}{16}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Velocidad crítica}{18}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Eficiencia de deposición}{20}{subsection.2.1.7}%
+\contentsline {subsection}{\numberline {2.1.8}Perfil de deposición}{20}{subsection.2.1.8}%
+\contentsline {section}{\numberline {2.2}Fabricación por CS}{21}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Parámetros relevantes}{21}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Características de productos por CS}{22}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Aplicaciones típicas}{23}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Fabricación aditiva}{25}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Fundamentos de FA}{25}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}FA de piezas metálicas}{26}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}FA mediante CS}{28}{subsection.2.3.3}%
+\contentsline {subsubsection}{Cold Spray Additive Manufacturing: concepto y fundamentos}{28}{section*.20}%
+\contentsline {subsubsection}{Microtoberas en CSAM}{29}{section*.21}%
+\contentsline {subsubsection}{Estrategias de deposición en CSAM}{30}{section*.22}%
+\contentsline {subsubsection}{CSAM de Ti-6Al-4V}{31}{section*.23}%
+\contentsline {chapter}{\numberline {3}Metodología}{33}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Implementación de un sistema experimental de CS}{33}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Recursos previos}{33}{subsection.3.1.1}%
+\contentsline {subsubsection}{Arquitectura cinemática}{33}{section*.24}%
+\contentsline {subsubsection}{Calefactor de gases}{34}{section*.27}%
+\contentsline {subsubsection}{Gases de proceso}{35}{section*.29}%
+\contentsline {subsubsection}{Alimentador de polvos}{35}{section*.30}%
+\contentsline {subsubsection}{Toberas}{35}{section*.31}%
+\contentsline {subsection}{\numberline {3.1.2}Adaptaciones mecánicas}{37}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Sistema de extracción y protección}{37}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Material pulverizado y sustrato}{38}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Sistema final}{38}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Caracterización del espacio de trabajo}{39}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.7}Resumen de parámetros operativos}{40}{subsection.3.1.7}%
+\contentsline {section}{\numberline {3.2}Planificación de trayectorias}{40}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Características de las toberas}{40}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Caracterización del perfil de deposición}{41}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Estrategias de deposición}{42}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Caracterización del proceso CSAM}{42}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Caracterización mecánica de probetas}{42}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Caracterización de piezas tridimensionales}{43}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Análisis de desempeño del proceso}{43}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Resumen de indicadores de evaluación}{44}{subsection.3.3.4}%
+\contentsline {chapter}{\numberline {4}Resultados y discusión}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Caracterización del perfil}{45}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Estrategias de compensación}{45}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Ensayos mecánicos}{45}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Fidelidad geométrica}{45}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Estructura de costos}{45}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{46}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{46}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{46}{section.5.2}%
+\contentsline {chapter}{\numberline {}Bibliograf\'ia}{50}{chapter*.37}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{51}{Appendix.alph1.Alph1}%

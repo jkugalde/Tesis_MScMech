@@ -6,7 +6,15 @@
 \subsection{Descripción general del proceso}
 
 Como se mencionó en la sección de introducción, el CS es una tecnología 
-de fabricación que convencionalmente se utiliza para generar recubrimientos superficiales sobre componentes, mediante la proyección de partículas sólidas a alta velocidad sobre un sustrato. En la Figura \ref{CS} se presentan los elementos básicos que conforman un sistema estándar de CS.
+de fabricación que convencionalmente se utiliza para generar recubrimientos superficiales sobre componentes, mediante la proyección de partículas sólidas a alta velocidad sobre un sustrato. En la Figura \ref{fig:1} se presentan los elementos básicos que conforman un sistema estándar de CS.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{imgs/syspray.pdf}
+	\caption{Diagrama para un sistema convencional de coldspray.}
+	\label{fig:1}
+\end{figure}
+
 
 Existen diversos mecanismos a través de los cuales las partículas se adhieren entre sí y con el sustrato, los cuales se discuten con más detalle en la sección 2.1.4, no obstante, cabe mencionar que estos mecanismos requieren de deformaciones plásticas intensas, logradas por la energía cinética transferida a las partículas.
 
@@ -16,18 +24,37 @@ naturaleza del sustrato.
 La herramienta principal del proceso es una tobera convergente-divergente 
 (o de Laval), la cual acelera un gas portador inerte (usualmente nitrógeno, helio, o mezclas de ambos) hasta velocidades supersónicas. Los polvos del material a depositar, generalmente metálicos, son suministrados por un alimentador y se mezclan con el flujo de gas en la tobera, siendo arrastrados y acelerados junto a este.
 
-La velocidad alcanzada por el gas depende directamente de su temperatura 
-tras el paso por el calefactor y de la presión de suministro. Existen 
-configuraciones donde el polvo es precalentado de forma independiente antes de la inyección, con el fin de reducir su dureza y mejorar la probabilidad de adherencia; sin embargo, estas no constituyen la práctica convencional debido a la complejidad operativa que introducen.
+Es importante señalar que la configuración mostrada en la \ref{fig:1} no es única dentro del proceso de CS. Existen diversas variantes en la arquitectura del sistema, como el uso de una única fuente de gas tanto para la alimentación de polvo como para el gas de proceso, lo que simplifica el diseño a costa de perder independencia en el control de los flujos. Asimismo, la alimentación de partículas puede realizarse mediante mecanismos alternativos, como la inyección por presión negativa basada en el efecto Venturi. Otras configuraciones contemplan la incorporación de sistemas de calentamiento para el polvo, mientras que en ciertos casos se prescinde completamente de calefactores, dependiendo de los requerimientos específicos del proceso. 
 
-El proceso se ejecuta desplazando la herramienta (o pistola) sobre la superficie a cubrir en sucesivas pasadas. La acumulación de material depende de parámetros operativos como el flujo másico de polvo, la velocidad de desplazamiento y el número de pasadas, entre otros.
+Un aspecto de interés en el diseño de sistemas de CS a escala industrial es la recuperación y reciclaje de los insumos de proceso. El polvo de titanio y otros 
+polvos metálicos de alta pureza representan un costo significativo, y en un 
+proceso de CS típico una fracción considerable del polvo suministrado no se 
+adhiere al sustrato, siendo eyectada junto con el gas portador. De manera 
+análoga, el uso de gases como helio, cuyo empleo mejora notablemente las 
+condiciones de deposición respecto al nitrógeno, encarece significativamente la operación. Por estas razones, se han propuesto sistemas de recuperación que separan el polvo no adherido del flujo 
+de gas mediante ciclones o filtros, permitiendo la reutilización de ambos 
+insumos y mejorando la viabilidad económica del proceso a escala 
+productiva~\cite{Legoux2010}.
+
+Por otra parte, los sistemas de CS pueden clasificarse en configuraciones de alta y baja presión. Los sistemas de alta presión operan típicamente con gases a elevadas presiones y temperaturas, donde las partículas alcanzan altas velocidades, lo que se traduce en recubrimientos densos y de alta calidad. En contraste, los sistemas de baja presión emplean condiciones más moderadas, con menores velocidades de partícula, lo que limita la eficiencia de deposición y las propiedades mecánicas del recubrimiento, pero ofrece ventajas en términos de costo, simplicidad y portabilidad.
+
+El proceso se ejecuta desplazando la herramienta (o pistola) sobre la superficie a cubrir en sucesivas pasadas a través de una arquitectura cinemática, como una máquina CNC o brazo robótico. La acumulación de material depende de parámetros operativos como el flujo másico de polvo, la velocidad de desplazamiento y el número de pasadas, entre otros.
 
 Los depósitos obtenidos por CS suelen presentar porosidad residual, 
 rugosidad superficial y tensiones residuales de compresión. Por esta razón, dependiendo de la aplicación, es frecuente aplicar tratamientos posteriores como recocido o mecanizado de acabado para mejorar las propiedades finales del recubrimiento.
  
 \subsection{Aceleración del gas}
 
-La tobera acelera el gas a velocidades supersónicas una vez que se supera el umbral establecido por la razón de presiones críticas entre el interior y exterior del sistema, generando el fénomeno de \textit{choking} o estrangulamiento, esto es:
+En la Figura \ref{fig:2} se presenta una representación esquemática de una tobera de Laval, la cual está constituida por una región convergente donde el gas en régimen subsónico es acelerado hasta alcanzar la condición sónica en la garganta. Posteriormente, el flujo transita a régimen supersónico en la sección divergente, donde el incremento de área produce una expansión del gas que se traduce en un aumento adicional de su velocidad.
+
+El cambio de régimen ocurra una vez que se supera el umbral establecido por la razón de presiones críticas entre el interior y exterior del sistema, generando el fénomeno de \textit{choking} o estrangulamiento, como denota la ecuación \ref{eq:condicion_supersonica}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{imgs/tobera.pdf}
+	\caption{Diagrama para una tobera de Laval convergente-divergente, con inyección de polvos antes o después de la garganta.}
+	\label{fig:2}
+\end{figure}
 
 \begin{equation}
 	\frac{p_e}{p_0} < \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma}{\gamma-1}}
@@ -106,13 +133,13 @@ transferencia está determinada por varios factores relacionados con las
 condiciones de operación y las características del material particulado.
 
 El punto de inyección de los polvos es uno de estos factores. Si se 
-alimentan antes de la garganta, la distancia de interacción con el gas 
+alimentan antes de la garganta (alimentación \textit{upstream}), la distancia de interacción con el gas 
 es mayor, lo que favorece que las partículas alcancen velocidades más 
-altas. Sin embargo, esta configuración conlleva riesgos de obstrucción 
+altas (Figura \ref{fig:2}). Sin embargo, esta configuración conlleva riesgos de obstrucción 
 en la garganta por acumulación de material y de erosión acelerada de la 
-tobera. Alimentar los polvos aguas abajo de la garganta evita estos 
+tobera. Alimentar los polvos aguas abajo de la garganta (alimentación \textit{downstream}) evita estos 
 problemas, pero a costa de reducir la longitud de interacción y, por 
-tanto, la velocidad final de las partículas.
+tanto, la velocidad final de las partículas. Cabe destacar que existen otras formas de alimentar los polvos, incluso directamente en el jet de salida, entre otros.
 
 El tamaño de las partículas es otro factor determinante. En general, 
 las partículas más pequeñas, al tener menor inercia, responden con mayor 
@@ -120,14 +147,26 @@ fidelidad a los cambios en el flujo de gas. Sin embargo, la relación entre
 tamaño y velocidad de impacto no es monótona: existe un tamaño óptimo para 
 cada condición de operación. Las partículas muy finas, aunque se aceleran 
 con mayor facilidad, son también más susceptibles de ser desviadas por 
-fenómenos de turbulencia o por el \textit{bow shock}, esto es, el estancamiento del gas frente a la superficie del sustrato que genera una contrapresión localizada en la zona de impacto \cite{Pattison2008}. Las partículas de mayor tamaño, por su 
+fenómenos de turbulencia o por el \textit{bow shock}, esto es, el estancamiento del gas frente a la superficie del sustrato que genera una contrapresión localizada en la zona de impacto \cite{Pattison2008}, como se observa en la Figura \ref{fig:3}. Las partículas de mayor tamaño, por su 
 inercia, son más capaces de superar esta barrera, aunque requieren mayor 
-transferencia de momentum para alcanzar mayores velocidades. Por tanto, 
-la selección del rango granulométrico implica un compromiso entre 
-acelerabilidad y capacidad de penetrar la capa de gas estancado frente 
-al sustrato.
+transferencia de momentum para alcanzar mayores velocidades. 
 
-Comercialmente, los polvos para CS se describen y adquieren según su 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/bowshick.pdf}
+	\caption{Diagrama para el fenómeno de \textit{bow shock} en CS.}
+	\label{fig:3}
+\end{figure}
+
+El efecto de deflexión de partículas de menor tamaño en la región del \textit{bow shock} en el CS suele modelarse mediante el número de Stokes $St$ \cite{Assadi2003}, el cual permite cuantificar el grado de acoplamiento entre la dinámica de las partículas y el campo de flujo gaseoso. En este contexto, el comportamiento aerodinámico de las partículas depende de su inercia relativa respecto a las escalas características del flujo, determinando si estas siguen las líneas de corriente o mantienen trayectorias dominadas por inercia a través de la región de choque. El número de Stokes se define como:
+
+\begin{equation}
+	St = \frac{\rho_p d_p^2 U}{18 \mu L}
+\end{equation}
+
+donde $\rho_p$ es la densidad de la partícula, $d_p$ su diámetro, $U$ la velocidad característica del flujo, $\mu$ la viscosidad dinámica del gas y $L$ una escala característica del flujo. Valores bajos del número de Stokes implican una fuerte interacción con el campo de flujo, favoreciendo la deflexión de las partículas alrededor del \textit{bow shock}, mientras que valores elevados corresponden a trayectorias dominadas por inercia, con menor sensibilidad a la desviación del flujo.
+
+Por tanto, la selección del rango granulométrico implica un compromiso entre acelerabilidad y capacidad de penetrar la capa de gas estancado frente al sustrato. Comercialmente, los polvos para CS se describen y adquieren según su 
 distribución de tamaño de partícula, caracterizada mediante percentiles 
 del diámetro equivalente: $D_{10}$, $D_{50}$ y $D_{90}$, que corresponden 
 a los diámetros bajo los cuales se encuentra el 10\%, 50\% y 90\% del 
@@ -135,18 +174,36 @@ volumen de polvo, respectivamente. En CS interesa principalmente el rango
 $D_{10}$--$D_{90}$, pues define la fracción de partículas con mayor 
 probabilidad de encontrarse dentro de la ventana operativa de velocidades útiles, como se explica en 2.1.5.
 
-El tamaño de partícula también influye en su calentamiento por convección 
-durante el trayecto en la tobera: las partículas más pequeñas equilibran 
-su temperatura con la del gas más rápidamente. A diferencia de otros 
-procesos de proyección térmica, en CS las partículas no alcanzan su punto 
-de fusión, por lo que la temperatura de la partícula no es el factor 
-dominante del proceso. No obstante, no es un factor irrelevante: una 
-partícula más caliente presenta menor dureza y mayor ductilidad, lo que 
-aumenta la probabilidad de adhesión por deformación. Así, la temperatura 
-del gas de proceso actúa sobre la eficacia del CS por dos vías: 
-incrementando la velocidad del gas —y con ello la velocidad de impacto 
-de las partículas— y aumentando la temperatura de las partículas, 
-favoreciendo su deformabilidad en el impacto.
+El tamaño de partícula influye también en su calentamiento por convección
+durante el tránsito en la tobera. Esta dependencia puede caracterizarse
+mediante el número de Biot de la partícula:
+
+$$
+\text{Bi} = \frac{h \, d_p}{6 \, k_p}
+$$
+
+\noindent donde $h$ es el coeficiente de transferencia de calor convectivo
+entre el gas y la partícula, $d_p$ su diámetro y $k_p$ su conductividad
+térmica. Para valores de $\text{Bi} \ll 1$, la resistencia térmica interna
+de la partícula es despreciable y su temperatura puede considerarse uniforme,
+de modo que el calentamiento queda gobernado exclusivamente por la convección
+externa. En ese régimen, partículas más pequeñas equilibran su temperatura
+con la del gas más rápidamente debido a su mayor relación superficie-volumen.
+Para el Ti-6Al-4V, cuya conductividad térmica es baja
+($k_p \approx \SI{7}{W.m^{-1}.K^{-1}}$), el Bi puede no ser despreciable
+para partículas de mayor tamaño, lo que implica que la temperatura de impacto
+presenta gradientes internos y no refleja fielmente la temperatura del gas
+propulsor.
+
+A diferencia de otros procesos de proyección térmica, en CS las partículas
+no alcanzan su punto de fusión, por lo que la temperatura de impacto no es
+el factor dominante del proceso. No obstante, tampoco es irrelevante: una
+partícula más caliente presenta menor dureza y mayor ductilidad, lo que
+favorece la deformación plástica necesaria para la adhesión. En consecuencia,
+la temperatura del gas de proceso actúa sobre la eficacia del CS por dos vías
+simultáneas: incrementando la velocidad del gas —y con ello la velocidad de
+impacto de las partículas— y elevando la temperatura de las partículas,
+favoreciendo su deformabilidad en el impacto~\cite{Assadi2003, Moridi2014}.
 
 Finalmente, la morfología de las partículas también es relevante. 
 Las partículas esféricas, producidas típicamente por atomización en gas, 
@@ -236,6 +293,24 @@ por deformación, generando una inestabilidad plástica localizada en la
 interfaz conocida como \textbf{inestabilidad de corte adiabático} o 
 \textbf{adiabatic shear instability} (ASI)~\cite{Assadi2003, Grujicic2004}.
 
+Existe una vasta cantidad de estudios mediante simulaciones del impacto de las partículas en CS. En la Figura \ref{fig:4} se observa la simulación del impacto de una partícula de cobre sobre un sustrato de cobre, considerando los efectos de endurecimiento y ablandamiento descritos en el párrafo anterior. Nótese que el esfuerzo de Von Mises supera varias veces el límite de fluencia del material, y que el fenómeno está en el orden de los nanosegundos. En simulaciones numéricas, el criterio de Von Mises es 
+frecuentemente adoptado por su simplicidad y adecuada representación del 
+comportamiento isótropo~\cite{Grujicic2004}.En la Figura \ref{fig:5} se observa el campo de deformación plástica y la temperatura bajo las mismas condiciones.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.85\linewidth]{imgs/pop.jpg}
+	\caption[Simulación para impacto de una partícula de cobre en distintos momentos, la cual incluye endurecimiento Johnson-Cook y ablandamiento. Razón entre esfuerzo de Von Mises y de fluencia]{Simulación para impacto de una partícula de cobre en distintos momentos, la cual incluye endurecimiento Johnson-Cook y ablandamiento. Se muestra la escala de colores para la razón entre esfuerzo de Von Mises y de fluencia.\cite{HassaniGangaraj2018}} 
+	\label{fig:4}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.85\linewidth]{imgs/pip.jpg}
+	\caption[Simulación para impacto de una partícula de cobre en distintos momentos, la cual incluye endurecimiento Johnson-Cook y ablandamiento. Deformación plástica y temperatura]{Simulación para impacto de una partícula de cobre en distintos momentos, la cual incluye endurecimiento Johnson-Cook y ablandamiento. Se muestra la escala de colores para la deformación plástica en a), y para le temperatura en Kelvin en b). \cite{HassaniGangaraj2018}}
+	\label{fig:5}
+\end{figure}
+
 La ASI se manifiesta como bandas de deformación extremadamente localizadas 
 (\(\sim\)1--5~\(\mu\)m de espesor) en las que el flujo de material alcanza 
 velocidades de deformación locales aún mayores. Este flujo violento cumple 
@@ -248,30 +323,26 @@ incrustación de la partícula en el sustrato, y fuerzas de van der Waals en
 las zonas de contacto íntimo, aunque su contribución relativa es 
 considerablemente menor \cite{Papyrin2007}.
 
-El estado tensional en la partícula durante el impacto presenta componentes 
-compresivos en la dirección normal a la superficie, originados por la 
-desaceleración de la masa contra el sustrato. Dado que el material no puede 
-comprimirse indefinidamente, parte del volumen fluye radialmente hacia los 
-costados: este flujo lateral está impulsado por el gradiente de presión entre 
-la zona de contacto central, donde la presión es máxima, y la periferia libre 
-de la partícula, donde la presión es atmosférica. A este fenómeno se le conoce como \textit{jetting}. 
+El estado tensional en la partícula durante el impacto presenta componentes compresivos en la dirección normal a la superficie, originados por la desaceleración de la masa contra el sustrato. Dado que el material no puede comprimirse indefinidamente, parte del volumen fluye radialmente hacia los costados: este flujo lateral está impulsado por el gradiente de presión entre la zona de contacto central, donde la presión es máxima, y la periferia libre de la partícula, donde la presión es atmosférica. Este flujo lateral introduce esfuerzos de corte en planos oblicuos a la superficie que, al superar el criterio de fluencia, producen el esparcimiento característico de la partícula (\textit{splat}). A este fenómeno se le conoce como \textit{jetting}, representado en la Figura \ref{fig:6}.
 
-
-
-Esto introduce esfuerzos de 
-corte en planos oblicuos a la superficie que, al superar el criterio de 
-fluencia, producen el esparcimiento característico de la partícula 
-(\textit{splat}). En simulaciones numéricas, el criterio de Von Mises es 
-frecuentemente adoptado por su simplicidad y adecuada representación del 
-comportamiento isótropo~\cite{Grujicic2004}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/jett.jpg}
+	\caption[Representación esquemática del fenómeno de \textit{jetting} en CS]{Representación esquemática del fenómeno de \textit{jetting} en CS. Etapa I: el impacto induce una onda de choque. Etapa II: la onda de choque se desprende del borde de ataque. Etapa III: formación de un chorro (o jet) como resultado de la liberación de presión. Nota: la uniformidad de los colores no representa una distribución uniforme de la presión o la tensión. \cite{HassaniGangaraj2018}}
+	\label{fig:6}
+\end{figure}
 
 No toda la energía cinética de la partícula se disipa como calor o deformación 
 plástica durante el impacto. Una fracción queda almacenada elásticamente en la 
 red cristalina de ambos materiales, generando un campo de tensiones residuales 
 en la interfaz. En cold spray, este campo es predominantemente compresivo, 
 en contraste con procesos de proyección térmica convencionales donde las 
-tensiones residuales son de naturaleza tensora debido a la contracción por enfriamiento. Las tensiones compresivas favorecen la integridad mecánica del depósito al inhibir la propagación de microgrietas en la interfaz 
-partícula-sustrato\cite{Champagne2016unique}.
+tensiones residuales son de naturaleza tensora debido a la contracción por enfriamiento. 
+
+Las tensiones compresivas favorecen la integridad mecánica del depósito al inhibir la propagación de microgrietas en la interfaz 
+partícula-sustrato\cite{Champagne2016unique}. Sin embargo, cuando los esfuerzos compresivos en el plano de la interfaz son excesivos, pueden inducir pandeo local (\textit{buckling}) en depósitos de pared delgada o generar esfuerzos de cizalle en los bordes del depósito que comprometen la adhesión al sustrato.
+
+Como se mencionó, los esfuerzos tensivos surgen del enfriamiento diferencial entre el depósito —que se contrae térmicamente al enfriarse desde la temperatura de impacto— y el sustrato, que permanece comparativamente frío durante el proceso \cite{Yin2022review}. Cuando esta contracción está restringida por la adherencia interfacial, se generan tensiones de tracción que facilitan la apertura de grietas normales a la superficie y la delaminación por tracción directa en la interfaz. En la práctica, el perfil de esfuerzos residuales resultante es la superposición de ambas contribuciones: el efecto de \textit{peening} tiende a dominar a temperaturas de gas moderadas, mientras que el gradiente térmico cobra mayor relevancia al procesar materiales de alta conductividad térmica o al emplear temperaturas de precalentamiento elevadas \cite{Moridi2014}.
 
 Sin embargo, la energía elástica almacenada en la partícula deformada introduce 
 también una tendencia al rebote elástico (\textit{elastic springback}), mediante 
@@ -283,18 +354,25 @@ de una velocidad crítica mínima de deposición~\cite{Schmidt2006}.
 
 El ángulo de incidencia $\theta$ de la partícula respecto a la normal 
 del sustrato introduce una asimetría en la distribución de velocidades 
-de impacto. La componente normal $v_n = v_i \cos\theta$ es la 
+de impacto (Figura \ref{fig:7}). La componente normal $v_n = v_i \cos\theta$ es la 
 responsable de generar la presión de contacto y activar los mecanismos 
 de deformación plástica descritos, mientras que la componente 
 tangencial $v_t = v_i \sin\theta$ induce deformación por corte lateral 
-en la interfaz. Para impacto normal ($\theta = 0^{\circ}$), la transferencia 
+en la interfaz, la cual podría ser positivo para limpiar la superficie de óxidos, por ejemplo. Para impacto normal ($\theta = 0^{\circ}$), la transferencia 
 de energía es máxima y la deformación es axialmente simétrica.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/partipangli.jpg}
+	\caption[Representación esquemática del ángulo de incidencia sobre el sustrato]{Representación esquemática del ángulo de incidencia sobre el sustrato. \cite{SENG2022128068}}
+	\label{fig:7}
+\end{figure}
+
 
 A medida que $\theta$ aumenta, la componente normal disminuye y la 
 eficiencia de deposición decrece, existiendo un \textbf{ángulo crítico} más 
 allá del cual la partícula no logra adherirse\cite{Wong2013}. Para 
-Ti-6Al-4V, dicho ángulo se sitúa típicamente entre 45° y 60° respecto 
-a la normal\cite{Bae2009}
+Ti-6Al-4V se ha reportado que dicho ángulo se encuentra en torno a los 45°-60° grados respecto a la normal, y sobre 70° permite obtener depósitos aceptables de baja porosidad \cite{Bae2009, SENG2022128068}
 
 La respuesta del sustrato al impacto depende de la relación entre sus 
 propiedades mecánicas y las de la partícula. Un sustrato más blando concentra 
@@ -312,6 +390,29 @@ nativa del sustrato de aluminio, cuya dureza (~2000 HV) dificulta su
 fragmentación cuando la deformación se concentra en el sustrato blando y no 
 en la propia interfaz de óxido.
 
+Es importante indicar que, a pesar de los avances en la comprensión 
+del proceso, los mecanismos de adhesión en cold spray siguen siendo 
+objeto de investigación y debate activos. Si bien la ASI es 
+ampliamente aceptada como condición necesaria para la 
+adhesión~\cite{Assadi2003, Moridi2014}, Hassani-Gangaraj et 
+al.~\cite{HassaniGangaraj2018} cuestionan este consenso mediante 
+simulaciones y mediciones directas de velocidad crítica en partículas 
+individuales. Los autores demuestran que el \textit{jetting} interfacial 
+puede producirse sin que la ASI se active, proponiéndolo en cambio como 
+un fenómeno de plasticidad hidrodinámica gobernado por la interacción 
+de ondas de presión con el borde libre de la partícula. 
+
+Esta interpretación lleva a los autores a postular una 
+proporcionalidad entre la velocidad crítica y la velocidad del sonido 
+en el material, verificada experimentalmente, lo que sitúa el proceso 
+como fundamentalmente dependiente de la presión más que de la 
+inestabilidad térmica. En materiales de alta resistencia como el 
+Ti-6Al-4V, cuya baja conductividad térmica favorece condiciones 
+adiabáticas locales, la contribución relativa de cada mecanismo depende 
+fuertemente de la velocidad de impacto, la temperatura de la partícula 
+y la microestructura del polvo~\cite{Huang2020}, aspectos que aún no 
+cuentan con un modelo predictivo unificado.
+
 \subsection{Impacto entre partículas}
 
 A partir de la segunda capa, cada partícula impacta sobre una superficie 
@@ -322,54 +423,67 @@ a ser homogénea, lo que aumenta la probabilidad de formación de uniones
 metalúrgicas mediante ASI. Por otro lado, el depósito acumulado presenta 
 endurecimiento superficial por efecto peening de los impactos anteriores, 
 elevando localmente el límite de fluencia y requiriendo mayor energía de 
-impacto para inducir deformación plástica. Además, la superficie no es plana 
-sino irregular, con una topografía determinada por la morfología de los splats 
-anteriores, lo que introduce variabilidad en el ángulo de impacto local y en 
-la distribución de contacto.
+impacto para inducir deformación plástica. 
+
+Además, la superficie no es plana sino irregular, con una topografía determinada por la morfología de los splats anteriores, lo que introduce variabilidad en el ángulo de impacto local y en la distribución de contacto (Figura \ref{fig:8}). Esta rugosidad superficial tiene un efecto dual sobre la adhesión: una rugosidad moderada es favorable porque incrementa el área de contacto efectiva y promueve el anclaje mecánico entre partícula entrante y depósito, mientras que una rugosidad excesiva genera zonas de sombra donde partículas posteriores no logran contacto completo con la superficie subyacente, resultando en porosidad atrapada entre splats adyacentes \cite{Moridi2014}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{imgs/partpart.jpg}
+	\caption[Representación esquemática del cambio de ángulo de incidencia por deposición previa de partículas]{Representación esquemática del cambio de ángulo de incidencia por deposición previa de partículas. \cite{SENG2022128068}}
+	\label{fig:8}
+\end{figure}
+
+
 
 Los mecanismos de adhesión son los mismos descritos para la interfaz 
 partícula-sustrato. La porosidad resultante del depósito depende de la 
 ductilidad de las partículas, su morfología y su tendencia a fluir: partículas 
 muy dúctiles como el cobre generan splats de gran área que minimizan los 
 espacios interpartícula, mientras que materiales más rígidos como el acero 
-inoxidable producen depósitos con mayor porosidad residual\cite{Papyrin2007}.
+inoxidable producen depósitos con mayor porosidad residual\cite{Papyrin2007}. Además, los parámetros operativos del proceso también determinan la porosidad del depósito, como se observa en la Figura \ref{fig:9}, en la Figura \ref{fig:10}, y en la Figura \ref{fig:11}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/porosi.jpg}
+	\caption[Imagen de sección transversal de depósitos de Ti6Al4V sobre sustratos de Ti6Al4V fabricados a diferentes velocidades de desplazamiento de la boquilla]{Imagen de sección transversal de depósitos de Ti6Al4V sobre sustratos de Ti6Al4V fabricados a diferentes velocidades de desplazamiento de la boquilla: (a) 100\,mm/s, (b) 300\,mm/s y (c) 500\,mm/s. Las flechas azules indican la interfaz depósito-sustrato. \cite{Yin2022review}}
+	\label{fig:9}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/porosiang.jpg}
+	\caption[Imagen de sección transversal de depósitos de Ti6Al4V sobre sustratos de Ti6Al4V fabricados a diferentes ángulos de spray]{Imagen de sección transversal de depósitos de Ti6Al4V sobre sustratos de Ti6Al4V fabricados a diferentes ángulos de spray: (a) 90°, (b) 75°0 y (c) 45°. \cite{Yin2022review}}
+	\label{fig:10}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.75\linewidth]{imgs/morfo.jpg}
+	\caption[Relación entre la velocidad de impacto de partículas de Ti, la porosidad y la microdureza]{Relación entre la velocidad de impacto de partículas de Ti, la porosidad y la microdureza: (a) porosidad en función de la velocidad de impacto, (b) microdureza en función de la velocidad y (c) microdureza en función de la porosidad. \cite{Huang2020}}
+	\label{fig:11}
+\end{figure}
+
 
 A diferencia del sustrato inicial, el depósito acumulado retiene parte del 
 calor generado por los impactos sucesivos, reduciendo localmente el límite de 
 fluencia del material superficial y favoreciendo la deformación en capas 
 posteriores\cite{Papyrin2007}. Este efecto térmico compite con el 
-endurecimiento por peening mencionado, de modo que las propiedades mecánicas 
-superficiales del depósito resultan de un balance dinámico entre ambos 
-mecanismos.
-
-Por otra parte, las partículas que no logran adherirse sobre la superficie del 
+endurecimiento por peening mencionado. Por otra parte, las partículas que no logran adherirse sobre la superficie del 
 depósito pueden rebotar e impactar otras zonas con distinta energía, o 
 desprender material ya adherido, estableciendo un balance dinámico entre 
 deposición y erosión que afecta la eficiencia neta en capas 
 sucesivas\cite{Moridi2014}. Adicionalmente, la deformación plástica acumulada 
-en capas anteriores reduce la ductilidad residual del depósito, limitando su 
+en capas anteriores reduce la ductilidad del depósito, limitando su 
 capacidad de deformarse ante nuevos impactos e incrementando la porosidad 
 interlamelar (entre capas) en depósitos de gran espesor\cite{Huang2020}.
 
-La acumulación progresiva de tensiones residuales compresivas capa a capa, 
-producto del peening sucesivo, compacta el depósito y reduce la porosidad 
-interlamelar. No obstante, en depósitos de gran espesor esta acumulación 
-puede superar la resistencia cohesiva de las interfaces más débiles, 
-provocando delaminación entre capas. Este fenómeno es especialmente 
-relevante en cold spray aditivo, donde el número de capas es 
-considerablemente mayor que en recubrimientos convencionales~\cite{Yin2022review}.
-
-En casos extremos, 
-la acumulación progresiva de tensiones residuales compresivas puede superar la 
-resistencia cohesiva de las interfaces más débiles, provocando delaminación 
-entre capas, fenómeno especialmente relevante en cold spray aditivo donde el 
-número de capas es considerablemente mayor que en recubrimientos 
-convencionales~\cite{Yin2022review}.
+Un fenómeno adicional es la propagación de ondas de presión hacia el interior del depósito durante cada impacto. A diferencia del caso partícula-sustrato, donde la onda se transmite a un sólido semi-infinito, en el depósito acumulado estas ondas encuentran interfaces internas entre splats y entre capas, en las cuales se producen reflexiones parciales. Las ondas reflejadas pueden reactivar deformación plástica localizada en zonas ya consolidadas o, si la cohesión interfacial es insuficiente, generar microfisuras en interfaces débiles. Este efecto es más pronunciado en depósitos de gran espesor, donde la atenuación de la onda es menor en las capas más alejadas del sustrato \cite{Schmidt2006}.
 
 \subsection{Velocidad crítica}
 
 La energía disponible para los mecanismos de deformación descritos 
-proviene de la energía cinética adquirida por las partículas durante 
+proviene en su mayoría de la energía cinética adquirida por las partículas durante 
 la aceleración en la tobera. Existe un umbral mínimo de velocidad, 
 denominado \textbf{velocidad crítica} $v_{cr}$, por debajo del cual 
 la energía de impacto es insuficiente para inducir ASI y la partícula 
@@ -378,6 +492,13 @@ cual el exceso de energía genera erosión, fractura o desprendimiento
 del material depositado, definiendo así una \textbf{ventana de 
 	deposición} entre ambos límites, como se ilustra en la 
 Figura \ref{fig:ventana_deposicion}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{imgs/deposiwindow.jpeg}
+	 \caption[Correlación esquemática entre la velocidad de partícula, la eficiencia de deposición y los efectos del impacto a temperatura de impacto constante]{Correlación esquemática entre la velocidad de partícula, la eficiencia de deposición y los efectos del impacto a temperatura de impacto constante. Sólo se observa deposición en materiales dúctiles a cierto rango de velocidad para un tamaño de partícula dado y temperatura. \cite{Schmidt2009}}
+	\label{fig:ventana_deposicion}
+\end{figure}
 
 La velocidad crítica es una propiedad del par material-sustrato y 
 depende principalmente de la resistencia mecánica y la ductilidad 
@@ -407,25 +528,73 @@ de uso frecuente en CS.
 	\end{tabular}
 \end{table}
 
-Es importante señalar que operar dentro de la ventana de deposición 
+Operar dentro de la ventana de deposición 
 es condición necesaria pero no suficiente para garantizar adhesión: 
 la temperatura de precalentamiento del gas, el ángulo de impacto, 
 el estado superficial del sustrato y la morfología del polvo modulan 
 la eficiencia de deposición incluso cuando la velocidad de partícula 
 se encuentra dentro del rango admisible\cite{Papyrin2007}. 
 
-Es importante indicar que, a pesar de los avances en la comprensión del proceso, los mecanismos de adhesión en cold spray siguen siendo objeto de investigación y 
-debate activos. Si bien la ASI es ampliamente aceptada como condición 
-necesaria para la adhesión\cite{Assadi2003, Grujicic2004}, estudios 
-recientes han propuesto que el jetting interfacial puede ocurrir 
-independientemente de la ASI, gobernado por plasticidad hidrodinámica 
-inducida por la onda de presión de impacto\cite{Moridi2014}. En 
-materiales de alta resistencia como el Ti-6Al-4V, cuya baja 
-conductividad térmica favorece condiciones adiabáticas locales, la 
-contribución relativa de cada mecanismo depende fuertemente de la 
-velocidad de impacto, la temperatura de la partícula y la 
-microestructura del polvo\cite{Huang2020}, aspectos que aún no 
-cuentan con un modelo predictivo unificado.
+Scmidt et al. et al.~\cite{Schmidt2006} proponen 
+la siguiente expresión para la velocidad crítica:
+
+$$
+v_{cr} = \left[ \frac{4F_1\sigma_{TS}}{\rho_p} \left(1 - 
+\frac{T_p - T_{ref}}{T_m - T_{ref}}\right) + 
+F_2 c_p \left(T_m - T_p\right) \right]^{1/2}
+$$
+
+\noindent donde $\sigma_{TS}$ es la resistencia a la tracción de la 
+partícula [Pa], $T_p$ la temperatura de impacto de la partícula [K], 
+$T_{ref} = \SI{293}{K}$ la temperatura de referencia, $T_m$ la 
+temperatura de fusión [K], $\rho_p$ la densidad de la partícula 
+[\si{kg.m^{-3}}], y $c_p$ la capacidad calorífica específica a presión 
+constante [\si{J.kg^{-1}.K^{-1}}]. Los factores $F_1$ y 
+$F_2$ son coeficientes adimensionales determinados 
+experimentalmente, los cuales valen 0.4 y 0.3 respectivamente para el caso del titanio, de acuerdo a Wong et al.\cite{Wong2013}.
+
+\subsection{Eficiencia de deposición}
+
+La eficiencia de deposición (DE, por las siglas en inglés) es un parámetro de caracterización del proceso
+CS que cuantifica la fracción de partículas alimentadas que efectivamente se
+adhieren al sustrato o al depósito previo. Su definición más directa es
+gravimétrica:
+
+\begin{equation}
+	\text{DE} = \frac{m_{\text{dep}}}{m_{\text{ali}}} \times 100\%
+\end{equation}
+
+
+\noindent donde $m_{\text{dep}}$ es la masa del depósito obtenido y
+$m_{\text{ali}}$ es la masa total de polvo alimentado durante la deposición.
+Esta definición es independiente del material y del sistema de CS utilizado,
+lo que la convierte en una métrica universal para comparar condiciones de
+proceso y diseños de tobera.
+
+Si bien, medir la $m_{dep}$ como la diferencia de masa en el sistema sustrato-depósito antes y después del proceso podría ser sencillo, no lo es necesariamente para $m_{ali}$. Si el alimentador cuenta con un control de flujo volumétrico preciso, entonces se puede estimar la masa alimentada como:
+
+\begin{equation}
+	m_{ali}=t Q\rho
+\end{equation}
+
+donde $Q$ es el flujo volumétrico de polvo, $t$ el tiempo del proceso con proyección y $rho$ la densidad del polvo. Otras formas pueden ser, medir la variación de masa del alimentador completo, o si hay una extracción controlada, medir la masa acumulada en el depósito de extracción. 
+
+Desde una perspectiva física, la DE está directamente vinculada a la fracción
+de partículas que alcanzan o superan la velocidad crítica $v_c$ al momento del
+impacto, como se observa en la Figura \ref{fig:ventana_deposicion}. Las partículas con velocidad de impacto $v_p < v_c$ rebotan sin
+adherirse, mientras que aquellas con $v_p \geq v_c$ sufren la inestabilidad
+de corte adiabático necesaria para la unión metalúrgica. En consecuencia, la
+DE puede interpretarse como una medida integral de cuán efectivamente el sistema
+— tobera, gas propulsor y parámetros de proceso — acelera las partículas por
+encima de dicho umbral~\cite{Assadi2003, Schmidt2006}.
+
+Esta dependencia implica que la DE es sensible a todos los factores que afectan
+la velocidad de impacto: presión y temperatura del gas, geometría de la tobera,
+tamaño y densidad de las partículas, y distancia de trabajo. En particular, para
+materiales de alta resistencia como el Ti-6Al-4V, cuya velocidad crítica es
+elevada, la DE tiende a ser baja en condiciones de proceso moderadas, lo que
+refuerza la importancia del diseño de tobera y la selección de parámetros
+operacionales para maximizar la fracción de partículas depositadas~\cite{Moridi2014}.
 
 \subsection{Perfil de deposición}
 
@@ -448,7 +617,7 @@ del flujo\cite{Wong2013}. Como consecuencia, el centro del PD
 concentra tanto mayor masa depositada como partículas de mayor 
 diámetro promedio, mientras que hacia los extremos del \textit{spot} 
 disminuye tanto el espesor como el tamaño medio de partícula. 
-Adicionalmente, las partículas que impactan con trayectoria 
+Además, las partículas que impactan con trayectoria 
 aproximadamente normal al sustrato aprovechan más eficientemente su 
 energía cinética en deformación plástica, reforzando la acumulación 
 preferencial en el centro del depósito.
@@ -459,7 +628,7 @@ sus parámetros estadísticos --- valor máximo, desviación estándar y
 ancho a media altura --- son los descriptores habituales para 
 caracterizar la geometría del depósito. La forma del PD depende 
 además del tiempo de permanencia de la tobera sobre un sector 
-determinado y del flujo másico del jet, de manera que la velocidad 
+determinado, del flujo másico del jet, y del número de capasa, de manera que la velocidad 
 de barrido y la presión de operación son parámetros de proceso que 
 modulan directamente el espesor y la anchura del cordón 
 depositado\cite{WU2025642}.
@@ -481,7 +650,7 @@ deposición local que depende del ángulo de incidencia y la velocidad
 de impacto en cada punto radial\cite{Kotoban2017}. Este enfoque 
 permite estimar la geometría del depósito a partir de los parámetros 
 de proceso sin recurrir a simulaciones CFD completas, y constituye 
-la base para los modelos de planificación de trayectoria en 
+una base para los modelos de planificación de trayectoria en 
 manufactura aditiva por cold spray.
 
 \section{Fabricación por CS}
@@ -519,11 +688,18 @@ introducida por el endurecimiento por deformación \cite{Moridi2014,
 Ti-6Al-4V, donde los depósitos en estado verde son esencialmente 
 frágiles \cite{Huang2020}.
 
-Para mejorar las propiedades mecánicas del depósito, es frecuente recurrir a tratamientos térmicos posteriores. El recocido promueve la recuperación y recristalización microestructural, 
+Para mejorar las propiedades mecánicas del depósito, es frecuente recurrir a tratamientos térmicos posteriores. El recocido promueve la recuperación y recristalización microestructural (Figura \ref{fig:anili}), 
 reduce las tensiones residuales y mejora la adherencia interpartícula 
 mediante difusión en estado sólido, lo que se traduce en un aumento de la 
 resistencia a la tracción y la ductilidad a expensas de una reducción en 
 dureza \cite{Huang2020}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/aniled.jpg}
+	\caption[Comparación de microestructuras en depositos de cobre en verde y recocido]{Comparación de microestructuras en depositos de cobre (a) en verde  (b) recocido. El recocido se hizo a 500°C durante 4 horas\cite{Yin2022review}.}
+	\label{fig:anili}
+\end{figure}
 
 El prensado isostático en caliente (HIP) es el 
 tratamiento más efectivo para reducir la porosidad y recuperar propiedades mecánicas próximas a las del material forjado, aunque no elimina completamente los poros de mayor tamaño \cite{Moridi2014}. Cabe señalar que el tratamiento térmico por sí solo no elimina la porosidad, sino que actúa principalmente sobre la cohesión interpartícula y la microestructura.
@@ -652,6 +828,29 @@ prototipado hacia la fabricación directa de componentes funcionales,
 consolidando la FA como una tecnología de producción y no solo de 
 visualización.
 
+La gran mayoría de los procesos de FA operan bajo un paradigma de 
+fabricación planar, en el que cada capa se deposita en un plano horizontal 
+fijo y la pieza crece en la dirección vertical mediante la acumulación 
+sucesiva de estas láminas. Este enfoque simplifica considerablemente la 
+planificación de trayectorias (\textit{toolpath planning}), pues el problema 
+se reduce a la generación de contornos e infill en planos paralelos, 
+estrategia que es compatible con sistemas de tres ejes de libertad. No 
+obstante, la fabricación planar impone restricciones geométricas propias: 
+las superficies inclinadas presentan un efecto de escalonado (\textit{staircase 
+	effect}) cuya severidad depende del espesor de capa, y los voladizos 
+pueden requerir para cierto rango estructuras de soporte sacrificiales que deben ser removidas en 
+postproceso, incrementando el tiempo de fabricación y pudiendo comprometer 
+la integridad superficial de la pieza~\cite{Gibson2015}.
+
+La fabricación no planar (\textit{non-planar} o \textit{multi-axis AM}) 
+extiende este paradigma al permitir que las capas se depositen sobre 
+superficies curvas o en direcciones variables, aprovechando los grados de 
+libertad adicionales de sistemas con cuatro o más ejes. Esta capacidad 
+reduce el efecto de escalonado en superficies inclinadas, puede eliminar 
+la necesidad de soportes en ciertas geometrías y permite orientar el 
+material de manera favorable respecto a las cargas de servicio~\cite{AFSHARI2025284}. 
+
+
 \subsection{FA de piezas metálicas}
 
 De entre las técnicas de manufactura aditiva para componentes metálicos, 
@@ -765,76 +964,244 @@ sustentación y colapsarían durante la construcción~\cite{Gibson2015}.
 Los soportes se eliminan en el postprocesado, generalmente por mecanizado, 
 y su diseño tiene un impacto directo en el costo y tiempo total del proceso.
 
+
+
 \subsection{FA mediante CS}
 
-El CS es esencialmente una tecnología de deposición controlada de material en
-el espacio, lo cual lo convierte en un candidato natural para ser implementado
-como método de fabricación aditiva (FA) de piezas tridimensionales. Para ello,
-se han desarrollado ciertas adaptaciones a los sistemas estándar de CS.
+\subsubsection{Cold Spray Additive Manufacturing: concepto y fundamentos}
 
-Una de las características fundamentales de la FA es la resolución espacial
-necesaria para lograr geometrías complejas. En CS, este atributo puede mejorarse
-controlando parámetros operacionales como la distancia de trabajo (\textit{standoff})
-y, principalmente, mediante el uso de \textbf{microtoberas}. Al tener una
-garganta y un diámetro de salida reducidos, las microtoberas permiten controlar
-con mayor precisión tanto la forma del \textit{spot} de deposición como el flujo
-másico de partículas~\cite{Sova2017micronozzle}.
+El CS es esencialmente una tecnología de deposición controlada de material en el
+espacio, lo cual lo convierte en un candidato natural para ser implementado como
+método de fabricación aditiva de piezas tridimensionales. A diferencia de los
+procesos AM basados en fusión, el CS opera íntegramente en estado sólido: la
+unión entre partículas y sustrato se logra mediante deformación plástica severa
+en el impacto, sin que el material alcance su temperatura de fusión en ninguna
+etapa del proceso. Esta característica le confiere ventajas estructurales
+relevantes frente a tecnologías como la sinterización láser selectiva (SLS) o la
+deposición por energía dirigida (DED), en particular la ausencia de zonas
+afectadas térmicamente, la mínima oxidación del material depositado y la
+preservación de la microestructura del polvo
+alimentador~\cite{Papyrin2007, Gibson2015}.
 
-Por otro lado, el perfil de deposición de forma gaussiana constituye una
-limitante para la construcción secuencial capa a capa, ya que las capas
+Para implementar el CS como proceso AM, se requieren adaptaciones respecto al
+esquema convencional de recubrimiento. En CS estándar, el objetivo es depositar
+una capa delgada y homogénea sobre una superficie plana; en CSAM, en cambio, el
+objetivo es construir un volumen tridimensional con control geométrico preciso.
+Esto implica gestionar la acumulación progresiva de capas, el control del perfil
+de deposición, la trayectoria del efector final y la coherencia mecánica del
+depósito en su conjunto. A este conjunto de tecnologías y metodologías orientadas
+a la construcción aditiva mediante CS se le denomina \textbf{Cold Spray Additive
+	Manufacturing (CSAM)}~\cite{Moridi2014, Champagne2016unique}.
+
+Desde el punto de vista de las propiedades del material, los depósitos CSAM
+presentan en condición \textit{as-sprayed} una porosidad residual y una
+cohesión interpartícula limitada, determinadas principalmente por la energía
+cinética de impacto y la deformabilidad del material. La densificación y la
+recuperación de propiedades mecánicas se logran típicamente mediante tratamientos
+post-proceso como el recocido o el prensado isostático en caliente
+(HIP)~\cite{Kondas2024feedstock}. No obstante, incluso en condición
+\textit{as-deposited}, el CSAM permite obtener geometrías funcionales con tasas
+de deposición elevadas y sin las restricciones térmicas propias de los procesos
+de fusión, lo que lo posiciona como una alternativa competitiva para la
+fabricación y reparación de componentes metálicos de alta
+responsabilidad~\cite{Champagne2015repairs}.
+
+Los primeros intentos experimentales de fabricación de piezas tridimensionales
+mediante CS datan de mediados de la década de 2000. Pattison
+et al.~\cite{Pattison2007CGDM} introdujeron el concepto de \textit{Cold Gas Dynamic
+	Manufacturing} (CGDM), combinando deposición CS aditiva con mecanizado
+sustractivo de alta velocidad para producir geometrías complejas libres de
+molde, demostrando la viabilidad del proceso como alternativa no térmica a la
+fabricación por forma libre. Más recientemente, Bagherifard
+et al.~\cite{Bagherifard2018freeform} fabricaron muestras tridimensionales
+autoportantes de Inconel~718 mediante CSAM y compararon sus propiedades con
+piezas equivalentes producidas por SLM, evidenciando que si bien el CSAM
+permite tasas de deposición muy superiores y elimina los gradientes térmicos
+característicos de los procesos de fusión, la porosidad residual y la cohesión
+interpartícula en condición \textit{as-sprayed} constituyen las principales
+limitantes para alcanzar propiedades mecánicas comparables a las del material
+procesado por fusión. 
+
+\subsubsection{Microtoberas en CSAM}
+
+Una de las características fundamentales de la fabricación aditiva es la
+resolución espacial necesaria para lograr geometrías complejas. En CS, este
+atributo puede mejorarse controlando parámetros operacionales como la distancia
+de trabajo (\textit{standoff}) y, principalmente, mediante el uso de
+\textbf{microtoberas}. Al tener una garganta y un diámetro de salida reducidos,
+las microtoberas permiten controlar con mayor precisión tanto la forma del
+\textit{spot} de deposición como el flujo másico de
+partículas~\cite{Sova2013micronozzle, Li2007nozzledesign}.
+
+El grupo de Sova e Smurov en ENISE/Universidad de Lyon ha sido pionero en el
+desarrollo experimental de microtoberas para CS. En trabajos previos,
+Sova et al.~\cite{Sova2013micronozzle, Sova2013velocity} demostraron
+experimentalmente que partículas de aluminio y zinc pueden alcanzar velocidades
+próximas al umbral crítico en una tobera convergente-divergente con diámetro de
+salida de 1~mm, diámetro de garganta de 0.5~mm y longitud total de 20~mm,
+utilizando helio como gas propulsor a temperatura ambiente. El diámetro del
+chorro de partículas entregado por la microtobera no supera 1.3~mm para ninguno
+de los materiales ensayados, confirmando la viabilidad del concepto para
+deposición de alta resolución espacial. No obstante, los depósitos obtenidos
+presentan menor densidad y resistencia de unión que los producidos con toberas
+estándar, lo que evidencia el compromiso entre resolución geométrica y calidad
+microestructural del depósito en sistemas miniaturizados.
+
+ Asimismo, Sova
+et al.~\cite{Sova2013AMpotential} discuten el potencial de las microtoberas como
+herramienta habilitante para la FA mediante CS, señalando que la reducción del
+diámetro de salida permite concentrar el chorro y mejorar la resolución lateral
+del depósito, abriendo la posibilidad de construir estructuras tridimensionales
+con mayor control geométrico que el alcanzable con toberas convencionales.
+
+En esta línea, se ha analizado mediante simulaciones fluidodinámicas el efecto
+de la geometría y dimensiones de microtoberas sobre el comportamiento del flujo
+compresible y la dinámica de partículas en el proceso de CS, considerando la
+deposición de partículas de titanio en el rango de
+10--50~$\mu$m~\cite{CerdaLobos2024}. El estudio evalúa configuraciones con
+variaciones en el diámetro de garganta, la longitud total y la geometría
+(convergente-divergente y convergente-divergente con sección de barril),
+evidenciando una fuerte dependencia de la velocidad del gas, la transferencia de
+momento y la eficiencia de deposición respecto de estos parámetros. Los
+resultados muestran que diámetros de garganta reducidos pueden inducir regímenes
+de sobreexpansión con separación de flujo en la sección divergente, limitando el
+desarrollo del chorro y reduciendo la velocidad de impacto de las partículas por
+debajo del umbral requerido para la deposición. Asimismo, se observa que el
+aumento de la longitud de la tobera favorece la aceleración progresiva del flujo,
+incrementando la velocidad de las partículas y, consecuentemente, la eficiencia
+de deposición. La incorporación de una sección de barril permite además
+estabilizar el chorro y concentrar el flujo de partículas, generando perfiles de
+deposición más uniformes. Finalmente, se reporta que el uso de mezclas
+nitrógeno-helio incrementa significativamente la velocidad del flujo y la
+eficiencia de deposición, aunque con un impacto relevante en los costos
+operacionales.
+
+Respecto al diseño de la sección convergente, Cao et al.~\cite{Cao2022nozzle}
+estudiaron mediante simulación numérica y validación experimental su efecto sobre
+la deposición de Ti-6Al-4V. Sus resultados muestran que una mayor longitud
+convergente aumenta notablemente la temperatura de impacto de las partículas,
+mientras que el incremento en energía cinética es comparativamente menor.
+Experimentalmente, una sección convergente más larga produce bordes de depósito
+más suaves y mejora la densidad del depósito, aunque la porosidad en condición
+\textit{as-sprayed} con gas nitrógeno puede alcanzar valores elevados. 
+
+\subsubsection{Estrategias de deposición en CSAM}
+
+El perfil de deposición de forma gaussiana constituye una limitante fundamental
+para la construcción secuencial capa a capa en CSAM, ya que las capas
 consecutivas no encuentran una superficie uniformemente plana sobre la cual
-apoyarse. Esto requiere algún tipo de corrección o estrategia de compensación.
+apoyarse. La corrección de este perfil para lograr paredes homogéneas y
+controlables es el principal desafío geométrico del proceso, y se han propuesto
+distintas estrategias para abordarlo~\cite{Moridi2014}.
 
-La idea esencial es compensar el perfil gaussiano para lograr paredes homogéneas
-y controlables, de forma que las capas siguientes se construyan sobre una
-superficie plana. Se han propuesto distintas estrategias para abordar este
-problema~\cite{Moridi2014}. % TODO: agregar referencia Chepillo (trabajo de título, U. Chile)
-Entre ellas, Chepillo et al.\ proponen una arquitectura cinemática de más de
-tres grados de libertad, lo que permite variar el ángulo de incidencia de la
-tobera y repasar las paredes laterales del perfil gaussiano, buscando generar
-una pared de sección homogénea.
+El modelado del perfil de deposición y del solapamiento entre pasadas constituye
+una herramienta fundamental para el diseño de estas estrategias de corrección.
+Cai et al.~\cite{Cai2014overlap} desarrollaron uno de los primeros modelos
+orientados a simular la acumulación de pasadas consecutivas en CS, aproximando
+el perfil de pista individual mediante una distribución gaussiana y
+superponiendo perfiles adyacentes a paso de escaneo variable para predecir el
+espesor total y la ondulación de la superficie. Este enfoque estableció una base
+metodológica sobre la cual se apoyan enfoques posteriores como los de Chepillo
+et al.~\cite{Chepillo2024} y Vanerio et al.~\cite{Vanerio2021}.
 
-Una estrategia notable en este ámbito es la denominada \textit{Metal Knitting},
+Chepillo et al.~\cite{Chepillo2024} y Wu et al.~\cite{WU2025642} convergen en
+una misma estrategia esencial: inclinar la tobera respecto a la normal del
+sustrato para que las pasadas de corrección incidan directamente sobre las
+paredes laterales del perfil gaussiano acumulado, logrando bordes más verticales
+sin recurrir a mecanizado intermedio. Chepillo et al.\ desarrollan además un
+modelo numérico que simula la evolución del perfil depositado en función de
+parámetros como la velocidad transversal, la distancia de trabajo, la separación
+entre pistas y el ángulo de corrección, identificando tres valores de separación
+entre pistas que generan superficies uniformes y concluyendo que ángulos de
+corrección menores producen bordes más cercanos a la vertical. Wu et al.\
+complementan este enfoque partiendo explícitamente de la forma piramidal que
+adopta naturalmente el depósito acumulado como consecuencia del perfil gaussiano,
+orientando la tobera hacia las paredes inclinadas de dicha pirámide en cada capa
+sucesiva, construyendo así paredes verticales estables y repetibles sin requerir
+estrategias de compensación externas al propio proceso.
+
+Una estrategia diferente en este ámbito es la denominada \textit{Metal Knitting},
 desarrollada por el grupo del \textit{Thermal Spray Centre} de la Universitat de
 Barcelona~\cite{Vaz2022MetalKnitting}. En lugar de mantener la tobera
 perpendicular al sustrato, esta estrategia mueve el brazo robótico describiendo
 una trayectoria cónica virtual, variando continuamente el ángulo de incidencia.
 Esto permite controlar la inclinación de las paredes laterales del depósito y
-obtener geometrías más verticales, con ángulos de pared cercanos a \SI{80}{\degree}
-respecto al sustrato, en contraste con la inclinación pronunciada característica
-de la estrategia tradicional. El método ha sido validado con materiales como
-acero inoxidable 316L, Cu, Ti y Ti-6Al-4V~\cite{Vaz2024MK316L}.
+obtener geometrías más verticales, con ángulos de pared cercanos a
+\SI{80}{\degree} respecto al sustrato, en contraste con la inclinación
+pronunciada característica de la estrategia tradicional. El método ha sido
+validado con materiales como acero inoxidable 316L, Cu, Ti y
+Ti-6Al-4V~\cite{Vaz2024MK316L}. 
 
-Desde una perspectiva de modelado y planificación de proceso, Bagherifard y
-colaboradores del Politecnico di Milano han abordado el problema del control
-geométrico en CSAM mediante modelos físicos del perfil de depósito. En
-particular, Vanerio et al. \cite{Vanerio2021} desarrollaron un modelo 3D
-basado en ecuaciones en derivadas parciales capaz de simular la evolución del
-perfil de depósito en función de parámetros operacionales como la velocidad de
-barrido, el ángulo de incidencia, la distancia de trabajo y el número de
-pasadas. El modelo permite además simular condiciones complejas como pistas
-superpuestas con distintos ángulos, sustratos curvos y perfiles no gaussianos,
-constituyendo una herramienta para la digitalización y automatización del
-proceso. Una revisión sistemática más reciente~\cite{Falco2025ColdSA} consolida
-los avances en estrategias de trayectoria y modelado de forma en CSAM,
-identificando el control geométrico como el principal obstáculo para la
-adopción industrial generalizada de esta tecnología.
+Bagherifard y colaboradores del Politecnico di Milano han abordado el problema
+del control geométrico en CSAM mediante modelos físicos del perfil de depósito.
+Vanerio et al.~\cite{Vanerio2021} desarrollaron un modelo 3D basado en
+ecuaciones en derivadas parciales capaz de simular la evolución del perfil de
+depósito en función de parámetros operacionales como la velocidad de barrido, el
+ángulo de incidencia, la distancia de trabajo y el número de pasadas. El modelo
+permite además simular condiciones complejas como pistas superpuestas con
+distintos ángulos, sustratos curvos y perfiles no gaussianos, constituyendo una
+herramienta para la digitalización y automatización del proceso. 
 
-Desde una perspectiva de estrategia de trayectoria, Wu et al.~\cite{WU2025642}
-proponen un enfoque eficiente de construcción capa a capa para CSAM. La idea
-central consiste en reconocer que el depósito acumulado adopta naturalmente una
-forma piramidal como consecuencia del perfil gaussiano, y en lugar de buscar
-corregirlo mediante mecanizado intermedio, orientar la tobera en un ángulo
-deflectado hacia las paredes inclinadas de dicha pirámide durante el propio
-proceso de deposición. De este modo, las pasadas sucesivas inciden sobre la
-superficie lateral del depósito, permitiendo construir paredes verticales
-estables y repetibles sin requerir grados de libertad adicionales en la
-cinemática del robot. Esta estrategia es conceptualmente complementaria a la de
-\textit{Metal Knitting}~\cite{Vaz2022MetalKnitting}, aunque se diferencia en
-que no requiere una trayectoria cónica del efector final, sino una corrección
-angular sistemática del ángulo de incidencia en cada capa.
+Avanzando sobre
+este modelo físico, Falco et al.~\cite{Falco2025DNN} proponen un marco
+computacional que integra un algoritmo de \textit{slicing} adaptativo con redes
+neuronales profundas entrenadas sobre datos generados por modelos analíticos
+físicos, permitiendo predecir el perfil de depósito con mayor eficiencia que los
+enfoques puramente físicos e incluyendo estrategias de planificación de
+trayectoria orientadas a maximizar la precisión geométrica y la eficiencia de
+material. La aplicación directa de redes neuronales al CSAM enfrenta sin embargo
+una limitación estructural: la obtención de conjuntos de datos experimentales
+suficientemente grandes es costosa, lo que restringe el desarrollo de modelos
+puramente dirigidos por datos. La estrategia de entrenar
+las redes sobre salidas de modelos físicos, adoptada por Falco et al., constituye
+precisamente una respuesta a esta restricción. Una revisión sistemática
+reciente~\cite{Falco2025ColdSA} consolida los avances en estrategias de
+trayectoria y modelado de forma en CSAM, identificando el control geométrico
+como el principal obstáculo para la adopción industrial generalizada de esta
+tecnología.
 
-Finalmente, dado que el CS no genera los gradientes térmicos propios de procesos
-como la sinterización láser selectiva (SLS), resulta especialmente atractivo
-para la fabricación aditiva de titanio y otras piezas donde el control
-microestructural sea crítico~\cite{Yin2022review}.
+
+\subsubsection{CSAM de Ti-6Al-4V}
+
+Dado que el CS opera en estado sólido y no genera los gradientes térmicos
+propios de procesos como la sinterización láser selectiva (SLS), resulta
+especialmente atractivo para la fabricación aditiva de titanio y sus aleaciones,
+donde el control microestructural y la ausencia de oxidación son requisitos
+críticos~\cite{Yin2022review}. Sin embargo, la alta resistencia mecánica del
+Ti-6Al-4V impone condiciones de proceso más exigentes que en materiales más
+dúctiles, y la obtención de depósitos densos y con propiedades mecánicas
+aceptables sigue siendo un desafío abierto.
+
+Respecto a las propiedades mecánicas, Kondás et al.~\cite{Kondas2024feedstock}
+evaluaron el efecto de la morfología y microestructura del polvo alimentador
+sobre depósitos CSAM de Ti-6Al-4V, comparando polvos esféricos atomizados por
+plasma con polvos cristalinos. Los depósitos en condición \textit{as-deposited}
+presentaron resistencia mecánica y ductilidad en el rango del 8--30\% respecto
+al Ti-6Al-4V forjado, confirmando que la deposición directa sin tratamiento
+posterior no satisface los estándares de aplicación en FA. No obstante, mediante
+la selección del polvo adecuado y la aplicación de tratamiento térmico
+post-proceso, los autores lograron alcanzar propiedades de tracción conformes a
+la norma ASTM B381 para forjados recocidos de Ti-6Al-4V, con resistencia a la
+fluencia de \SI{887}{MPa} y resistencia a la tracción de \SI{929}{MPa}. Los
+autores concluyen que la selección apropiada del polvo alimentador constituye un
+factor determinante para superar las limitaciones mecánicas del proceso, y que
+depósitos de alta calidad conformes a estándares AM son alcanzables bajo
+condiciones de proceso optimizadas.
+
+El rol de los tratamientos post-proceso sobre las propiedades mecánicas de
+depósitos CS de Ti-6Al-4V ha sido objeto de estudio sistemático. Tan
+et al.~\cite{Vo2013heattreatment} evaluaron el efecto del prensado isostático en
+caliente (HIP) y del recocido convencional sobre la microestructura y las
+propiedades mecánicas de estos depósitos, mostrando que el HIP es
+significativamente más efectivo que el recocido simple para recuperar la
+ductilidad del material, al promover la difusión interfacial entre partículas y
+reducir la porosidad residual. Complementariamente, Lek
+et al.~\cite{Lek2018microstructure} realizaron una caracterización fractográfica
+detallada de depósitos CSAM de Ti-6Al-4V en condición \textit{as-sprayed} y
+post-tratada, identificando que en condición \textit{as-sprayed} la fractura
+ocurre predominantemente a lo largo de las interfaces interpartícula, mientras
+que los tratamientos térmicos desplazan el modo de fractura hacia el interior de
+las partículas, indicando una mejora sustancial en la cohesión del depósito.
+Ambos trabajos refuerzan la conclusión de Kondás et al.~\cite{Kondas2024feedstock}
+respecto a la necesidad de tratamiento post-proceso para alcanzar propiedades
+mecánicas conformes a estándares de aplicación en FA.
