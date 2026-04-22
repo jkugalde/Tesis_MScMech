@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.6)  21 APR 2026 12:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.6)  22 APR 2026 01:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -831,10 +831,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [18 <./imgs/morfo.jpg>] [19 <./imgs/deposiwindow.jpeg>] [20] [21] [22]
-<imgs/aniled.jpg, id=638, 361.35pt x 123.43716pt>
+<imgs/aniled.jpg, id=640, 361.35pt x 123.43716pt>
 File: imgs/aniled.jpg Graphic file (type jpg)
 <use imgs/aniled.jpg>
-Package pdftex.def Info: imgs/aniled.jpg  used on input line 699.
+Package pdftex.def Info: imgs/aniled.jpg  used on input line 709.
 (pdftex.def)             Requested size: 424.82523pt x 145.12154pt.
  [23 <./imgs/aniled.jpg>] [24] [25] [26] [27] [28] [29] [30] [31]) (cap3.tex [3
 2]
@@ -843,7 +843,7 @@ Cap\'{\i }tulo 3.
 LaTeX Warning: Reference `sec:cs_sistema' on page 33 undefined on input line 7.
 
 
-<imgs/pocketnc.jpg, id=765, 1080.035pt x 705.63625pt>
+<imgs/pocketnc.jpg, id=766, 1080.035pt x 705.63625pt>
 File: imgs/pocketnc.jpg Graphic file (type jpg)
 <use imgs/pocketnc.jpg>
 Package pdftex.def Info: imgs/pocketnc.jpg  used on input line 15.
@@ -854,13 +854,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [33
 
 ]
-<imgs/kalefa.png, id=771, 632.3625pt x 387.69844pt>
+<imgs/kalefa.png, id=772, 632.3625pt x 387.69844pt>
 File: imgs/kalefa.png Graphic file (type png)
 <use imgs/kalefa.png>
 Package pdftex.def Info: imgs/kalefa.png  used on input line 46.
 (pdftex.def)             Requested size: 424.82523pt x 260.46057pt.
  [34 <./imgs/pocketnc.jpg> <./imgs/kalefa.png>]
-<imgs/toberasblanki.png, id=781, 682.80093pt x 373.395pt>
+<imgs/toberasblanki.png, id=782, 682.80093pt x 373.395pt>
 File: imgs/toberasblanki.png Graphic file (type png)
 <use imgs/toberasblanki.png>
 Package pdftex.def Info: imgs/toberasblanki.png  used on input line 69.
@@ -870,9 +870,6 @@ Package pdftex.def Info: imgs/toberasblanki.png  used on input line 69.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [35]
-
-LaTeX Warning: Reference `sec:toberas' on page 36 undefined on input line 96.
-
 
 LaTeX Warning: Reference `fig:montaje' on page 36 undefined on input line 100.
 
@@ -917,52 +914,55 @@ LaTeX Warning: Reference `fig:deposicion_oblicua' on page 39 undefined on input
 
 [39]
 
+LaTeX Warning: Reference `' on page 40 undefined on input line 205.
+
+
 LaTeX Warning: Reference `tab:sim_toberas' on page 40 undefined on input line 2
-04.
+06.
+
+[40]
+
+LaTeX Warning: Reference `fig:temp_gas' on page 41 undefined on input line 252.
 
 
-LaTeX Warning: Reference `fig:temp_gas' on page 40 undefined on input line 206.
+
+LaTeX Warning: Reference `sec:proteccion' on page 41 undefined on input line 25
+7.
+
+[41] [42]
+
+LaTeX Warning: Reference `sec:espacio_trabajo' on page 43 undefined on input li
+ne 338.
 
 
-
-LaTeX Warning: Reference `sec:proteccion' on page 40 undefined on input line 20
-6.
-
-[40] [41]
-
-LaTeX Warning: Reference `sec:espacio_trabajo' on page 42 undefined on input li
-ne 270.
+LaTeX Warning: Citation `ASTME384' on page 43 undefined on input line 355.
 
 
-LaTeX Warning: Citation `ASTME8' on page 42 undefined on input line 278.
-
-[42]
-
-LaTeX Warning: Reference `tab:piezas_ref' on page 43 undefined on input line 29
-5.
-
-
-LaTeX Warning: Reference `eq:eficiencia' on page 43 undefined on input line 309
-.
+LaTeX Warning: Reference `tab:piezas_ref' on page 43 undefined on input line 37
+3.
 
 [43]
 
-LaTeX Warning: Reference `eq:eficiencia' on page 44 undefined on input line 338
+LaTeX Warning: Reference `eq:eficiencia' on page 44 undefined on input line 387
 .
 
-) (cap4.tex [44]
+
+LaTeX Warning: Reference `eq:eficiencia' on page 44 undefined on input line 416
+.
+
+[44]) (cap4.tex [45]
 Cap\'{\i }tulo 4.
-) (conclu.tex [45
+) (conclu.tex [46
 
 ]
 Cap\'{\i }tulo 5.
-) (main.bbl [46
+) (main.bbl [47
 
-] [47
+] [48
 
-] [48] [49]) (anexoA.tex [50]
+] [49] [50]) (anexoA.tex [51]
 Ap\'{e}ndice A.
-) [51
+) [52
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -976,14 +976,20 @@ L3 programming layer <2024-01-04>
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 060CD8157524D23441A5F08A7E29FFCE;9323.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: B84BFDBCAEB68896687220C882586F13;9265
+(rerunfilecheck)             After:  F64EC39BF1820245D5599E257132D63F;9362.
  ) 
 Here is how much of TeX's memory you used:
- 25043 strings out of 474486
- 484890 string characters out of 5753571
- 1942542 words of memory out of 5000000
- 46798 multiletter control sequences out of 15000+600000
+ 25053 strings out of 474486
+ 485012 string characters out of 5753571
+ 1941542 words of memory out of 5000000
+ 46805 multiletter control sequences out of 15000+600000
  566509 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,12n,93p,948b,1388s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1001,9 +1007,9 @@ X/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (58 pages, 4276456 bytes).
+Output written on main.pdf (59 pages, 4280969 bytes).
 PDF statistics:
- 989 PDF objects out of 1000 (max. 8388607)
- 211 named destinations out of 1000 (max. 500000)
+ 1000 PDF objects out of 1000 (max. 8388607)
+ 214 named destinations out of 1000 (max. 500000)
  486 words of extra memory for PDF output out of 10000 (max. 10000000)
 

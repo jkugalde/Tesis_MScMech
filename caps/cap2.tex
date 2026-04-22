@@ -43,7 +43,7 @@ El proceso se ejecuta desplazando la herramienta (o pistola) sobre la superficie
 Los depósitos obtenidos por CS suelen presentar porosidad residual, 
 rugosidad superficial y tensiones residuales de compresión. Por esta razón, dependiendo de la aplicación, es frecuente aplicar tratamientos posteriores como recocido o mecanizado de acabado para mejorar las propiedades finales del recubrimiento.
  
-\subsection{Aceleración del gas}
+\subsection{Dinámica del gas}
 
 En la Figura \ref{fig:2} se presenta una representación esquemática de una tobera de Laval, la cual está constituida por una región convergente donde el gas en régimen subsónico es acelerado hasta alcanzar la condición sónica en la garganta. Posteriormente, el flujo transita a régimen supersónico en la sección divergente, donde el incremento de área produce una expansión del gas que se traduce en un aumento adicional de su velocidad.
 
@@ -597,7 +597,6 @@ refuerza la importancia del diseño de tobera y la selección de parámetros
 operacionales para maximizar la fracción de partículas depositadas~\cite{Moridi2014}.
 
 \subsection{Perfil de deposición}
-
 Se genera un régimen dinámico entre la probabilidad de adhesión y la 
 de erosión, modulado por la distribución espacial de partículas en 
 torno al eje de la tobera. Dicha distribución está ligada a los 
@@ -607,37 +606,48 @@ local producto de la acumulación de capas anteriores. El resultado
 macroscópico de estos fenómenos es el \textbf{perfil de deposición} 
 (\textbf{PD}), que describe la distribución espacial del espesor 
 depositado en función de la posición radial respecto al eje del 
-jet\cite{Papyrin2007}.
+jet~\cite{Papyrin2007}.
 
 Las partículas de mayor tamaño, con mayor inercia, tienden a seguir 
 trayectorias más rectilíneas y a concentrarse cerca del eje central 
 del jet, mientras que las partículas más finas son más susceptibles 
 a ser desviadas radialmente por los gradientes de presión y velocidad 
-del flujo\cite{Wong2013}. Como consecuencia, el centro del PD 
+del flujo~\cite{Wong2013}. Como consecuencia, el centro del PD 
 concentra tanto mayor masa depositada como partículas de mayor 
 diámetro promedio, mientras que hacia los extremos del \textit{spot} 
 disminuye tanto el espesor como el tamaño medio de partícula. 
-Además, las partículas que impactan con trayectoria 
-aproximadamente normal al sustrato aprovechan más eficientemente su 
-energía cinética en deformación plástica, reforzando la acumulación 
-preferencial en el centro del depósito.
+Además, las partículas que impactan con trayectoria aproximadamente 
+normal al sustrato aprovechan más eficientemente su energía cinética 
+en deformación plástica, reforzando la acumulación preferencial en 
+el centro del depósito.
 
-En términos generales, el PD se aproxima a una distribución Gaussiana 
-simétrica respecto al eje de la tobera\cite{Kotoban2017}, de modo que 
-sus parámetros estadísticos --- valor máximo, desviación estándar y 
-ancho a media altura --- son los descriptores habituales para 
-caracterizar la geometría del depósito. La forma del PD depende 
-además del tiempo de permanencia de la tobera sobre un sector 
-determinado, del flujo másico del jet, y del número de capasa, de manera que la velocidad 
-de barrido y la presión de operación son parámetros de proceso que 
-modulan directamente el espesor y la anchura del cordón 
-depositado\cite{WU2025642}.
+En términos generales, el PD se aproxima a una distribución 
+Gaussiana simétrica respecto al eje de la tobera~\cite{Kotoban2017}, 
+de modo que sus parámetros estadísticos --- valor máximo, desviación 
+estándar y ancho a media altura --- son los descriptores habituales 
+para caracterizar la geometría del depósito. Sin embargo, la 
+aproximación Gaussiana no es universalmente válida: dependiendo de 
+las condiciones de proceso y la geometría de la tobera, el PD puede 
+adoptar formas que se ajustan mejor a otras funciones, como 
+distribuciones de tipo super-Gaussiana o perfiles con hombros 
+pronunciados~\cite{Vanerio2021}. Esta distinción es relevante para 
+fines de modelado predictivo, dado que asumir a priori una forma 
+Gaussiana puede introducir errores sistemáticos en la estimación del 
+ancho del cordón y del volumen depositado, especialmente en toberas 
+de geometría no estándar o en condiciones de baja velocidad de 
+barrido.
+
+La forma del PD depende además del tiempo de permanencia de la 
+tobera sobre un sector determinado, del flujo másico del jet, y del 
+número de capas, de manera que la velocidad de barrido y la presión 
+de operación son parámetros de proceso que modulan directamente el 
+espesor y la anchura del cordón depositado~\cite{WU2025642}.
 
 Las partículas que impactan en los extremos del \textit{spot}, donde 
 el ángulo de incidencia local es mayor y la probabilidad de adhesión 
 decrece, no simplemente rebotan sin efecto: su energía cinética se 
 transfiere parcialmente al depósito ya formado mediante un efecto 
-peening localizado\cite{Moridi2014}. Esto genera una compactación 
+peening localizado~\cite{Moridi2014}. Esto genera una compactación 
 superficial en los bordes del cordón que modifica el PD efectivo 
 respecto al perfil Gaussiano puro, reduciendo la porosidad 
 interlamelar en esas zonas pero sin contribuir al crecimiento en 
@@ -647,7 +657,7 @@ Para fines predictivos, el PD puede modelarse analíticamente como
 el producto de la distribución espacial de flujo de partículas del 
 jet --- aproximada como Gaussiana --- y una función de eficiencia de 
 deposición local que depende del ángulo de incidencia y la velocidad 
-de impacto en cada punto radial\cite{Kotoban2017}. Este enfoque 
+de impacto en cada punto radial~\cite{Kotoban2017}. Este enfoque 
 permite estimar la geometría del depósito a partir de los parámetros 
 de proceso sin recurrir a simulaciones CFD completas, y constituye 
 una base para los modelos de planificación de trayectoria en 
@@ -1066,7 +1076,9 @@ momento y la eficiencia de deposición respecto de estos parámetros. Los
 resultados muestran que diámetros de garganta reducidos pueden inducir regímenes
 de sobreexpansión con separación de flujo en la sección divergente, limitando el
 desarrollo del chorro y reduciendo la velocidad de impacto de las partículas por
-debajo del umbral requerido para la deposición. Asimismo, se observa que el
+debajo del umbral requerido para la deposición. 
+
+Asimismo, se observa que el
 aumento de la longitud de la tobera favorece la aceleración progresiva del flujo,
 incrementando la velocidad de las partículas y, consecuentemente, la eficiencia
 de deposición. La incorporación de una sección de barril permite además

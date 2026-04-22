@@ -2,9 +2,9 @@
 
 \section{Implementación de un sistema experimental de CS}
 
-\subsection{Recursos previos}
+\subsection{Recursos}
 
-El desarrollo de este trabajo requirió la implementación de una máquina CNC adaptada para CS, en base a la arquitectura descrita en la sección~\ref{sec:cs_sistema} y utilizando recursos previos del grupo de investigación de la Universidad de Chile.
+El desarrollo de este trabajo requirió la implementación de una máquina CNC adaptada para CS, en base a la arquitectura descrita en la sección~\ref{sec:cs_sistema} y utilizando recursos del grupo de investigación de la Universidad de Chile.
 
 \subsubsection{Arquitectura cinemática}
 
@@ -71,7 +71,7 @@ A partir del trabajo de Cerda et al., se fabricaron dos toberas convergente-dive
 	\label{fig:toberas}
 \end{figure}
 
-Las toberas disponen de una entrada tipo downstream para la inyección de polvo; en caso de que esta configuración no resulte efectiva, se contempla la alternativa de emplear la entrada upstream. La entrada que no se utiliza queda sellada mediante un prisionero y compuesto sellante. Adicionalmente, y en caso de que se use la entrada upstream, se plantea conectar una termocupla en la entrada downstream con el fin de obtener una estimación más precisa de la temperatura de remanso $T_{0}$.
+Las toberas disponen de una entrada tipo downstream para la inyección de polvo; en caso de que esta configuración no resulte efectiva, se contempla la alternativa de emplear la entrada upstream. La entrada que no se utiliza queda sellada mediante un prisionero y sellante. Adicionalmente, y en caso de que se use la entrada upstream, se plantea conectar una termocupla en la entrada downstream con el fin de obtener una estimación más precisa de la temperatura de remanso $T_{0}$.
 
 La diferencia principal entre las dos toberas radica en la presencia de una sección de barril en la tobera T2: esta extensión downstream de la sección divergente aumenta el tiempo de residencia de las partículas en el jet, favoreciendo la transferencia de momentum y de calor desde el gas hacia las partículas, y permitiendo un mejor desarrollo y estabilización del flujo. En consecuencia, se espera que la tobera con barril produzca mayores velocidades de impacto y temperaturas de partícula. La tobera T1, al carecer de barril, presenta una longitud total menor, lo que podría reducir la dispersión radial del jet y disminuir el diámetro efectivo del punto de deposición (\textit{spot}). Como contrapartida, la sección de barril puede incrementar las pérdidas energéticas por fricción y presentar mayor desgaste por erosión en operación prolongada.
 
@@ -93,7 +93,7 @@ La diferencia principal entre las dos toberas radica en la presencia de una secc
 	\end{tabular}
 \end{table}
 
-Esta componente es fundamental para definir los parámetros operativos y proyectar las estrategias y resultados obtenibles en el proceso, por lo que se describe de manera más extensa en la sección~\ref{sec:toberas}.
+Esta componente es fundamental para definir los parámetros operativos y proyectar las estrategias y resultados obtenibles en el proceso, po
 
 \subsection{Adaptaciones mecánicas}
 
@@ -197,33 +197,89 @@ En el Cuadro~\ref{tab:parametros} se presentan los acrónimos y rangos operativo
 	\end{tabular}
 \end{table}
 
-\section{Planificación de trayectorias}
+\section{Planificación de experimentos de trazo y pared}
 
 \subsection{Características de las toberas}
 
-Las toberas fabricadas fueron simuladas numéricamente en Cerda et al., empleando los mismos polvos de Ti-6Al-4V seleccionados para esta investigación y asumiendo una temperatura de estancamiento $T_0 \approx 480$~°C aguas arriba de la garganta. Los resultados principales de estas simulaciones se resumen en el Cuadro~\ref{tab:sim_toberas}, e incluyen la velocidad y temperatura de impacto de las partículas para cada diseño de tobera.
+Las toberas fabricadas fueron simuladas numéricamente en Cerda et al., las
+condiciones iniciales se muestran en el Cuadro~\ref{}. Los resultados
+principales de estas simulaciones se resumen en el Cuadro~\ref{tab:sim_toberas},
+e incluyen la velocidad y temperatura de impacto de las partículas para cada
+diseño de tobera.
 
-En la Figura~\ref{fig:temp_gas} se presentan los perfiles de temperatura del gas a lo largo del eje de la tobera obtenidos de la simulación. Estos resultados confirman que la temperatura del gas en la zona de trabajo es compatible con la resistencia térmica de la protección de silicona (Mold Max~60, $T_\text{máx} \approx 290$~°C), validando el diseño del sistema de protección descrito en la sección~\ref{sec:proteccion}.
+Es importante destacar que las simulaciones de Cerda et al. fueron realizadas
+con titanio puro como material de polvo, mientras que en esta investigación se
+emplea la aleación Ti-6Al-4V. No obstante, las diferencias en la dinámica
+pre-impacto entre ambos materiales son despreciables, por las siguientes
+razones. La dinámica del gas en la tobera depende exclusivamente de las
+condiciones de estancamiento $T_0$ y $p_0$ y de la geometría de la tobera,
+siendo independiente del material del polvo. La aceleración y el calentamiento
+de las partículas están gobernados, respectivamente, por la ecuación de
+arrastre:
 
-Ambas toberas serán evaluadas experimentalmente mediante una trayectoria rectilínea de referencia, y la selección de la tobera de trabajo se realizará de manera cualitativa en función de la facilidad de deposición: se preferirá aquella que logre adherencia a menor velocidad crítica para igual flujo másico. En caso de que la diferencia no sea apreciable, la selección se realizará mediante análisis comparativo del perfil de depósito obtenido.
+\begin{equation}
+	m_p \frac{dv_p}{dt} = \frac{1}{2} C_D \rho_g A_p (v_g - v_p)^2
+	\label{eq:arrastre}
+\end{equation}
 
-El perfil de deposición de las toberas se muestra en la Figura asddas, el cual será comparado con los resultados experimentales.
+y por la transferencia de calor por convección forzada entre el gas y la
+partícula. En ambos casos, los parámetros materiales relevantes son la densidad
+$\rho_p$ y la conductividad térmica $k_p$. Para Ti cp se tiene $\rho_p \approx
+4{,}51$~g/cm$^3$ y $k_p \approx 17$~W/m·K, mientras que para Ti-6Al-4V los
+valores correspondientes son $\rho_p \approx 4{,}43$~g/cm$^3$ y $k_p \approx
+7$~W/m·K~\cite{Leyens2003}. 
+
+La diferencia en densidad es de apenas un 2\%,
+lo que implica que la masa $m_p$ y el área proyectada $A_p$ de partículas del
+mismo diámetro son prácticamente idénticas, y por tanto las trayectorias de
+velocidad $v_p(t)$ son indistinguibles entre ambos materiales bajo las mismas
+condiciones de gas. La menor conductividad térmica de Ti-6Al-4V implica un
+perfil térmico ligeramente menos homogéneo al interior de la partícula, pero
+no altera de forma significativa la temperatura promedio $T_p$ al momento del
+impacto, dado que el número de Biot para partículas de $\sim$50~$\mu$m en
+estas condiciones es pequeño ($\text{Bi} \ll 1$), lo que indica que la
+resistencia interna a la conducción es despreciable frente a la resistencia
+convectiva externa.
+
+Por consiguiente, los resultados de Cerda et al. relativos a la dinámica del
+gas y a la velocidad y temperatura de partícula al impacto son directamente
+aplicables a Ti-6Al-4V. Las diferencias entre ambos materiales se manifiestan
+exclusivamente a partir del impacto, en términos de velocidad crítica $v_{cr}$,
+mecanismos de adhesión y propiedades del depósito resultante, aspectos que
+quedan fuera del alcance de las simulaciones de Cerda et al. y son abordados
+de manera independiente en esta investigación.
+
+En la Figura~\ref{fig:temp_gas} se presentan los perfiles de temperatura del
+gas a lo largo del eje de la tobera obtenidos de la simulación. Estos
+resultados confirman que la temperatura del gas en la zona de trabajo es
+compatible con la resistencia térmica de la protección de silicona (Mold
+Max~60, $T_\text{máx} \approx 290$~°C), validando el diseño del sistema de
+protección descrito en la sección~\ref{sec:proteccion}.
+
+Ambas toberas serán evaluadas experimentalmente mediante una trayectoria
+rectilínea de referencia, y la selección de la tobera de trabajo se realizará
+de manera cualitativa en función de la facilidad de deposición: se preferirá
+aquella que logre adherencia a menor velocidad crítica para igual flujo másico.
+En caso de que la diferencia no sea apreciable, la selección se realizará
+mediante análisis comparativo del perfil de depósito obtenido.
+
+
 
 \subsection{Caracterización del perfil de deposición}
 
-Una vez identificados los parámetros operativos mínimos que permiten deposición 
-estable y seleccionada la tobera de trabajo, se realizan experimentos de variación 
-paramétrica para estudiar la influencia de cada variable sobre el perfil de depósito. 
-Los parámetros estudiados son la temperatura de estancamiento $T_0$, la presión de 
-estancamiento $p_0$, la velocidad de avance $v_f$, el ángulo de deposición $\theta$ 
-y la distancia de standoff $d_s$, variados de manera individual manteniendo los 
-restantes constantes en sus valores de referencia.
+Una vez establecidas las condiciones operativas del sistema --- temperatura de
+estancamiento $T_0$ y presión de estancamiento $p_0$ fijadas en los valores
+máximos alcanzables por el equipo --- se realizan experimentos de variación
+paramétrica para estudiar la influencia de las variables de trayectoria sobre
+el perfil de depósito. Los parámetros estudiados son la velocidad de avance
+$v_f$, el ángulo de deposición $\theta$ y la distancia de standoff $d_s$,
+variados de manera individual manteniendo los restantes en sus valores de
+referencia.
 
-Cada condición experimental consiste en una pasada rectilínea simple sobre el 
-sustrato de aluminio. El perfil transversal del cordón resultante se caracteriza 
-mediante perfilometría de contacto \textbf{[COMPLETAR: o perfilometría óptica / 
-	microscopía confocal, según disponibilidad]}, obteniéndose para cada condición las 
-siguientes variables geométricas de interés:
+Cada condición experimental consiste en una pasada rectilínea simple sobre el
+sustrato de aluminio. El perfil transversal del cordón resultante se caracteriza
+mediante perfilometría óptica confocal (Keyence VK-5000), obteniéndose para
+cada condición las siguientes variables geométricas de interés:
 
 \begin{itemize}
 	\item Ancho del cordón $w$ [mm]
@@ -232,30 +288,42 @@ siguientes variables geométricas de interés:
 	\item Factor de forma $h/w$, indicador de la convexidad del perfil
 \end{itemize}
 
-Dado que el perfil transversal de un cordón de CS presenta típicamente una 
-distribución de altura de forma gaussiana~\cite{Pattison2008}, los datos de 
-perfilometría se ajustan mediante mínimos cuadrados a una función de la forma:
+Los datos de perfilometría se ajustan en primera instancia mediante mínimos
+cuadrados a una función Gaussiana de la forma:
 
 \begin{equation}
 	h(y) = h_0 \exp\left(-\frac{y^2}{2\sigma^2}\right)
 	\label{eq:gaussiana}
 \end{equation}
 
-donde $h_0$ es la altura máxima del cordón, $y$ es la coordenada transversal 
-respecto al eje de deposición y $\sigma$ es la desviación estándar del perfil, 
-relacionada con el ancho del cordón mediante $w = 2\sqrt{2\ln 2}\,\sigma \approx 
-2{,}355\,\sigma$. Los parámetros $h_0$ y $\sigma$ obtenidos del ajuste constituyen 
-una descripción compacta del perfil para cada condición experimental, y son el 
-insumo directo para la planificación de trayectorias CSAM: conociendo el perfil 
-gaussiano de una pasada simple, es posible calcular analíticamente el solapamiento 
-entre pasadas adyacentes que minimiza la ondulación de la superficie compuesta, 
-así como estimar el perfil acumulado tras $N$ capas superpuestas para una estrategia 
-de trayectoria dada.
+donde $h_0$ es la altura máxima del cordón, $y$ es la coordenada transversal
+respecto al eje de deposición y $\sigma$ es la desviación estándar del perfil,
+relacionada con el ancho del cordón mediante $w = 2\sqrt{2\ln 2}\,\sigma
+\approx 2{,}355\,\sigma$. Sin embargo, la distribución Gaussiana constituye
+una aproximación que no siempre describe adecuadamente el perfil real: en
+depósitos de aleaciones de titanio obtenidos por CS, se ha reportado que el
+perfil puede presentar hombros pronunciados o una forma más plana en la zona
+central, alejándose del decaimiento Gaussiano puro~\cite{Vanerio2021}. Por
+esta razón, la calidad del ajuste Gaussiano se evaluará mediante el coeficiente
+de determinación $R^2$, y en caso de ajuste insuficiente se explorarán
+funciones alternativas, como la super-Gaussiana generalizada:
 
-Los resultados de este estudio paramétrico permiten construir un mapa del espacio 
-de parámetros operativos, identificando las condiciones que maximizan la altura del 
-cordón, minimizan el factor de forma (perfil más plano) o maximizan la eficiencia 
-de deposición, según el criterio de interés para las etapas siguientes.
+\begin{equation}
+	h(y) = h_0 \exp\left(-\left(\frac{y^2}{2\sigma^2}\right)^n\right)
+	\label{eq:supergaussiana}
+\end{equation}
+
+donde el exponente $n > 1$ controla la planicidad del perfil central y la
+abruptitud de los flancos.
+
+Complementariamente, se realizan cortes transversales de los cordones
+depositados, seguidos de embutido metalográfico y pulido, para su observación
+en microscopio óptico y/o electrónico de barrido. Esta preparación permite
+evaluar la porosidad interna del depósito, la calidad de la interfaz
+Ti-6Al-4V/aluminio, la morfología de deformación de las partículas
+individuales y la distribución de óxidos interpartícula, características
+que no son accesibles mediante perfilometría superficial y que son
+determinantes para la integridad del depósito~\cite{Huang2020, Yin2022review}.
 
 \subsection{Estrategias de deposición}
 
@@ -275,20 +343,30 @@ Cada estrategia se evalúa cualitativamente en términos de la planicidad de la 
 
 \subsection{Caracterización mecánica de probetas}
 
-Para evaluar las propiedades mecánicas del material depositado, se fabrican probetas de tracción uniaxial mediante CSAM. La geometría de las probetas sigue la norma ASTM E8/E8M~\cite{ASTME8}, adaptada a las dimensiones alcanzables con el sistema implementado \textbf{[COMPLETAR: indicar si se usa subsize specimen u otra variante, y las dimensiones resultantes]}.
+Dada la complejidad de mecanizar probetas de tracción a partir de depósitos de
+Ti-6Al-4V obtenidos con el sistema implementado, la caracterización mecánica se
+concentra en mediciones de microdureza Vickers (HV). Esta decisión es coherente
+con el enfoque principal de la investigación, que prioriza la demostración de
+viabilidad del proceso CSAM con aleación de titanio a alta resolución geométrica
+relativa, por sobre la caracterización exhaustiva de propiedades mecánicas bulk
+del depósito.
 
-Las probetas se fabrican en dos condiciones: estado consolidado (\textit{as-deposited}) y tras tratamiento térmico. El tratamiento térmico aplicado corresponde a \textbf{[COMPLETAR: temperatura, atmósfera, tiempo y velocidad de enfriamiento]}, seleccionado con base en los tratamientos reportados en la literatura para Ti-6Al-4V depositado por CS~\cite{Huang2020, Yin2022review}.
+Las mediciones de microdureza se realizan sobre secciones transversales de las
+probetas en estado \textit{as-deposited}, siguiendo la norma ASTM E384~\cite{ASTME384},
+con el fin de evaluar la homogeneidad de las propiedades a lo largo de la
+dirección de construcción. Los valores obtenidos se contrastan con tres estados
+de referencia del mismo material. 
 
-Los ensayos de tracción se realizan en una máquina universal de ensayos \textbf{[COMPLETAR: modelo]} a una velocidad de desplazamiento de \textbf{[COMPLETAR]} mm/min, obteniéndose las siguientes propiedades:
-
-\begin{itemize}
-	\item Módulo de elasticidad $E$
-	\item Límite de fluencia $\sigma_{0,2}$ (criterio offset 0,2\%)
-	\item Resistencia a la tracción $\sigma_\text{UTS}$
-	\item Elongación a la fractura $\varepsilon_f$
-\end{itemize}
-
-Complementariamente, se realizan mediciones de microdureza Vickers (HV) en secciones transversales de las probetas, tanto en estado \textit{as-deposited} como post-tratamiento, con el fin de evaluar la homogeneidad de las propiedades a lo largo de la dirección de construcción.
+El polvo feedstock atomizado presenta
+típicamente valores de 280--320~HV, reflejo de la microestructura finamente
+dendrítica generada por la solidificación rápida durante la atomización. El
+material bulk en estado recocido exhibe valores de 300--340~HV, mientras que
+en estado envejecido se reportan valores de 360--400~HV~\cite{Leyens2003}.
+Dado que los depósitos obtenidos por CS acumulan deformación plástica severa
+durante el impacto, es habitual que la microdureza \textit{as-deposited} supere
+la del material recocido, constituyendo un indicador indirecto del grado de
+consolidación y del trabajo en frío introducido por el proceso~\cite{Huang2020,
+	Yin2022review}.
 
 \subsection{Caracterización de piezas tridimensionales}
 
