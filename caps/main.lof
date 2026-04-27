@@ -8,7 +8,7 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Simulación para impacto de una partícula de cobre en distintos momentos, la cual incluye endurecimiento Johnson-Cook y ablandamiento. Deformación plástica y temperatura}}{13}{figure.caption.10}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Representación esquemática del fenómeno de \textit {jetting} en CS}}{14}{figure.caption.11}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Representación esquemática del ángulo de incidencia sobre el sustrato}}{15}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Representación esquemática del cambio de ángulo de incidencia por deposición previa de partículas}}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Representación esquemática del cambio de ángulo de incidencia por deposición previa de partículas}}{17}{figure.caption.13}%
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Imagen de sección transversal de depósitos de Ti6Al4V sobre sustratos de Ti6Al4V fabricados a diferentes velocidades de desplazamiento de la boquilla}}{17}{figure.caption.14}%
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Imagen de sección transversal de depósitos de Ti6Al4V sobre sustratos de Ti6Al4V fabricados a diferentes ángulos de spray}}{17}{figure.caption.15}%
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Relación entre la velocidad de impacto de partículas de Ti, la porosidad y la microdureza}}{18}{figure.caption.16}%
@@ -18,6 +18,12 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Fresadora de escritorio Pocket NC V2-10}}{34}{figure.caption.25}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Modelo 3D para calefactor de 1kW a) vista isométrica b) vista en corte}}{34}{figure.caption.28}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Modelos 3D de toberas fabricadas en base a Cerda et al.}}{36}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Modelo 3D de las adaptaciones en torno a la máquina CNC }}{37}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Adaptaciones a la máquina CNC, ejes X y Z}}{38}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Adaptaciones a la máquina CNC, ejes X y Z}}{38}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Diagrama del sistema de CS implementado.}}{41}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Perfil de deposición para las toberas efectivas en Cerda et al.}}{43}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Simulación para la temperatura del gas en toberas}}{44}{figure.caption.44}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

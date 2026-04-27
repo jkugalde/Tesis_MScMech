@@ -18,7 +18,7 @@ Una forma directa de abordar las limitaciones geométricas del proceso es reduci
 
 Por otro lado, en investigaciones recientes se ha logrado consolidar piezas volumétricas mediante CS utilizando toberas convencionales y trayectorias optimizadas\cite{WU2025642}. No obstante, se reportan desviaciones geométricas significativas respecto a las formas objetivo, con errores promedio del orden de 0.44 mm y valores máximos superiores a 3.9 mm en piezas de escala centimétrica. Estas desviaciones son atribuidas en parte al perfil de depósito gaussiano característico del proceso, cuya distribución espacial amplia limita el control local del material depositado\cite{Falco2025ColdSA}.
 
-De esta manera, el presente trabajo propone desarrollar y evaluar un sistema de fabricación aditiva mediante CS con \textbf{microtoberas} para la consolidación de piezas \textit{near-net-shape} a partir de polvo de titanio Ti-6Al-4V. Se generarán trayectorias de deposición óptimas en función de los parámetros operativos del proceso, para luego evaluar la calidad del material consolidado en muestras y así determinar la viabilidad técnica de esta tecnología para aplicaciones en la manufactura de componentes casi finales de alta resolución en titanio.
+De esta manera, el presente trabajo propone desarrollar y evaluar un sistema de fabricación aditiva mediante CS con \textbf{microtoberas} para la consolidación de piezas \textit{near-net-shape} a partir de polvo de titanio comercialmente puro. Se generarán trayectorias de deposición óptimas en función de los parámetros operativos del proceso, para luego evaluar la calidad del material consolidado en muestras y así determinar la viabilidad técnica de esta tecnología para aplicaciones en la manufactura de componentes casi finales de alta resolución en titanio.
 
 
 
@@ -37,17 +37,17 @@ Desarrollar y evaluar un proceso de FA mediante CS con microtoberas para la cons
 	\item Definir y evaluar estrategias para las trayectorias de herramienta con el fin de lograr un perfil plano u homogéneo.
 	\item Identificar las limitaciones del proceso y proyectar las geometrías factibles de fabricar como piezas y probetas.
 	\item Evaluar la precisión geométrica, continuidad del material y densidad relativa en las piezas generadas, considerando su condición previa a tratamientos térmicos.
-	\item Caracterizar las propiedades microestructurales y mecánicas del material depositado tanto en estado consolidado como después de someterse a un tratamiento térmico en probetas estándar.
+	\item Caracterizar las propiedades microestructurales y mecánicas del material depositado.
 	\item Analizar la viabilidad técnica del proceso como alternativa para la fabricación aditiva de componentes metálicos de alta resolución a partir de polvo de titanio.
 \end{enumerate}
 
 \subsubsection{Alcances}
 
 \begin{itemize}
-	\item Integración del sistema de deposición por CS con microtoberas (desarrollado anteriormente) a una máquina CNC comercial, generando condiciones para un proceso controlado y con mínima dispersión de polvo, protegiendo los componentes de precisión.
+	\item Integración del sistema de deposición por CS con microtoberas a una máquina CNC comercial, generando condiciones para un proceso controlado y con mínima dispersión de polvo, protegiendo los componentes de precisión.
 	\item Fabricación de piezas de dimensiones pequeñas (inscritas en un cubo de 6 cm de arista) con geometrías limitadas y parametrizadas debido a la ausencia de software CAM o simuladores específicos, desarrollando códigos personalizados para los trayectos de herramienta.
 	\item Operación del proceso con expulsión continua de partículas sin sistema de detención ni modulación del chorro.
-	\item Caracterización limitada a análisis microestructurales mediante microscopía óptica y/o electrónica, y ensayos mecánicos de tracción, antes y después de un tratamiento térmico estándar.
-	\item Exclusión de estudios sobre resistencia a la corrosión, fatiga, comportamiento en ambientes extremos, análisis económicos o escalabilidad industrial.
+	\item Caracterización limitada a análisis microestructurales mediante microscopía óptica y/o electrónica, y ensayos mecánicos de microdureza.
+	\item Exclusión de estudios sobre resistencia a la corrosión, fatiga, comportamiento en ambientes extremos, o escalabilidad industrial.
 	\item La temperatura y la presión serán variables fijas durante los ensayos una vez encontrado el par óptimo.
 \end{itemize}

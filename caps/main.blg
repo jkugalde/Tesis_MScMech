@@ -5,46 +5,46 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: ieeetr.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografia.bib
-Warning--I didn't find a database entry for "ASTME8"
-You've used 43 entries,
+Warning--I didn't find a database entry for "ASTME384"
+You've used 48 entries,
             1876 wiz_defined-function locations,
-            782 strings with 13187 characters,
-and the built_in function-call counts, 14250 in all, are:
-= -- 1420
-> -- 671
+            812 strings with 14044 characters,
+and the built_in function-call counts, 15415 in all, are:
+= -- 1542
+> -- 710
 < -- 0
-+ -- 239
-- -- 196
-* -- 1072
-:= -- 2014
-add.period$ -- 48
-call.type$ -- 43
-change.case$ -- 42
++ -- 254
+- -- 206
+* -- 1146
+:= -- 2175
+add.period$ -- 55
+call.type$ -- 48
+change.case$ -- 47
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 699
-empty$ -- 1185
-format.name$ -- 196
-if$ -- 3449
+cite$ -- 48
+duplicate$ -- 757
+empty$ -- 1303
+format.name$ -- 206
+if$ -- 3739
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 45
-newline$ -- 137
-num.names$ -- 43
-pop$ -- 97
+int.to.str$ -- 48
+missing$ -- 50
+newline$ -- 154
+num.names$ -- 48
+pop$ -- 115
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 545
+skip$ -- 582
 stack$ -- 0
-substring$ -- 1042
-swap$ -- 351
+substring$ -- 1114
+swap$ -- 373
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 136
-width$ -- 45
-write$ -- 448
+while$ -- 147
+width$ -- 50
+write$ -- 497
 (There was 1 warning)

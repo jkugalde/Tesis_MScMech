@@ -4,7 +4,7 @@
 
 \subsection{Recursos}
 
-El desarrollo de este trabajo requirió la implementación de una máquina CNC adaptada para CS, en base a la arquitectura descrita en la sección~\ref{sec:cs_sistema} y utilizando recursos del grupo de investigación de la Universidad de Chile.
+El desarrollo de este trabajo requirió la implementación de una máquina CNC adaptada para CS, en base al sistema descrito en la sección 2.1.1 y utilizando recursos del grupo de investigación de la Universidad de Chile.
 
 \subsubsection{Arquitectura cinemática}
 
@@ -39,7 +39,7 @@ La conversión de esta máquina para uso en CS requiere dos adaptaciones princip
 
 \subsubsection{Calefactor de gases}
 
-El calefactor de gases es de fabricación propia. Consiste en una estructura tubular de acero inoxidable con dos cámaras concéntricas: el gas ingresa radialmente hacia la cámara 1, y fluye axialmente hasta la entrada de la cámara 2 y luego hasta la salida, donde se conecta con la tobera mediante una rosca NPT 1/4 hembra. En la cámara interior se aloja un calefactor eléctrico tipo barra de 1~kW con disipadores anulares adosados mediante prisioneros, los cuales además cuentan con perforaciones para el paso del flujo de gas. Esta configuración de doble cámara permite mantener la superficie exterior del calefactor refrigerada, reduciendo el riesgo térmico sobre los componentes cercanos.
+El calefactor de gases es de fabricación propia. Consiste en una estructura tubular de acero inoxidable con dos cámaras concéntricas: el gas ingresa radialmente hacia la cámara 1, y fluye axialmente hasta la entrada de la cámara 2 y luego hasta la salida, donde se conecta con la tobera mediante una rosca NPT 1/4 hembra. En la cámara interior se aloja un calefactor eléctrico tipo barra de 1~kW monofásico con disipadores anulares adosados mediante prisioneros, los cuales además cuentan con perforaciones para el paso del flujo de gas. Esta configuración de doble cámara permite mantener la superficie exterior del calefactor refrigerada, reduciendo el riesgo térmico sobre los componentes cercanos.
 
 \begin{figure}[h!]
 	\centering
@@ -54,7 +54,7 @@ El control de temperatura se implementa mediante un controlador PID digital come
 
 El gas portador utilizado es nitrógeno (N\textsubscript{2}) con una pureza del \textbf{[COMPLETAR: \%]} por ciento. El suministro se realiza desde dos cilindros de \textbf{[COMPLETAR: volumen]} litros a una presión máxima de \textbf{[COMPLETAR: presión]} bar, cada uno equipado con manómetro y regulador de presión independiente. Los dos cilindros operan en líneas separadas: uno suministra el gas portador principal al calefactor, y el otro alimenta el gas de arrastre del alimentador de polvos. Esta separación permite controlar de forma independiente la presión de proceso y la tasa de inyección de partículas.
 
-El calefactor requiere un pre-calentamiento antes de iniciar la operación de CS, para lo cual se hace circular aire a presión desde un compresor. El cambio hacia el gas de proceso se hace manualmente a través de una válvula de 3 posiciones.
+El calefactor requiere un pre-calentamiento antes de iniciar la operación de CS, para lo cual se hace circular aire a presión desde un compresor para ahorrar costos. El cambio hacia el gas de proceso se hace manualmente a través de una válvula de 3 posiciones.
 
 \subsubsection{Alimentador de polvos}
 
@@ -62,7 +62,7 @@ El alimentador de polvos utilizado es un modelo \textbf{[COMPLETAR: modelo alime
 
 \subsubsection{Toberas}
 
-A partir del trabajo de Cerda et al., se fabricaron dos toberas convergente-divergentes de acero inoxidable mediante EDM, cuyos modelos 3D se exhibe en la Figura~\ref{fig:toberas} y cuyas dimensiones principales se presentan en el Cuadro~\ref{tab:geometria_toberas}. Ambas toberas comparten un diámetro de garganta de 1~mm y un diámetro de salida de 3~mm. Se descartó el uso de gargantas de 0{,}5~mm debido al mayor riesgo de obstrucción por partículas y de deterioro prematuro por erosión. Las toberas cuentan con una rosca macho NPT 1/4 en uno de sus extremos para la conexión con el calefactor
+A partir del trabajo de Cerda et al., se fabricaron dos toberas convergente-divergentes de acero inoxidable mediante EDM, cuyos modelos 3D se exhibe en la Figura~\ref{fig:toberas} y cuyas dimensiones principales se presentan en el Cuadro~\ref{tab:geometria_toberas}. Ambas toberas comparten un diámetro de garganta de 1~mm y un diámetro de salida de 3~mm. Se descartó el uso de gargantas de 0{,}5~mm debido al mayor riesgo de obstrucción por partículas, deterioro prematuro por erosión, y sobre-expansión del gas. Las toberas cuentan con una rosca macho NPT 1/4 en uno de sus extremos para la conexión con el calefactor
 
 \begin{figure}[h!]
 	\centering
@@ -93,19 +93,72 @@ La diferencia principal entre las dos toberas radica en la presencia de una secc
 	\end{tabular}
 \end{table}
 
-Esta componente es fundamental para definir los parámetros operativos y proyectar las estrategias y resultados obtenibles en el proceso, po
+Esta componente es fundamental para definir los parámetros operativos y proyectar las estrategias y resultados obtenibles en el proceso, por lo que se describen en detalle en la sección 3.2.1
 
 \subsection{Adaptaciones mecánicas}
 
-Para el montaje de las componentes mencionadas, se removieron las piezas originales del husillo de la fresadora y se reemplazaron con soportes fabricados en acero inoxidable 304 cortados en láser (Figura~\ref{fig:montaje}).
+En la Figura~\ref{montfinal} se muestra el modelo 3D de las modificaciones 
+realizadas en torno a la máquina CNC para la integración del sistema de CS. 
+A continuación se describen cada una de ellas de acuerdo a la numeración en la Figura.
 
-El calefactor se ancla al cabezal de la máquina mediante el soporte mostrado en la Figura~\ref{fig:carro}, sincronizando sus movimientos con los ejes $Z$ y $X$ de la máquina. En este mismo conjunto se monta una pieza portadora de un imán permanente, cuya función es activar el sensor de fin de carrera del eje $Z$ en la posición de referencia.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.75\linewidth]{imgs/3dsys.png}
+	\caption[Modelo 3D de las adaptaciones en torno a la máquina CNC ]{Modelo 3D de las adaptaciones en torno a la máquina CNC.}
+	\label{montfinal}
+\end{figure}
 
-Dado que la masa del calefactor es significativa en relación a la capacidad del cabezal de la Pocket NC, se incorporó un apoyo rodante en la parte posterior del calefactor. Este apoyo consiste en soportes de acero inoxidable, un perfil de aluminio de sección T-slot 3030 y el rodamiento de un rodamiento axial reutilizado, el cual transmite las cargas verticales hacia la estructura de la máquina sin restringir el movimiento horizontal.
+\textbf{1)} En la salida del calefactor se instala una extensión tubular de bronce cuya 
+función es aumentar la distancia entre el cuerpo principal del calefactor y 
+la estructura de la máquina CNC, reduciendo así los efectos de transferencia 
+de calor por radiación. Esta extensión se ancla a la máquina mediante el 
+conjunto de soportes mostrado en la Figura~\ref{fig:carro}, sincronizando 
+sus movimientos con los ejes $X$ y $Z$. En este mismo conjunto se monta una 
+pieza portadora de un imán permanente, cuya función es activar el sensor de 
+fin de carrera del eje $Z$ en la posición de referencia.
 
-Sobre la mesa de trabajo se montan piezas circulares de soporte que cumplen dos funciones: fijar el sustrato en posición y canalizar el flujo de gas y material particulado no adherido hacia la parte posterior del espacio de trabajo, desde donde es extraído mediante un sistema de aspiración.
 
-\subsection{Sistema de extracción y protección}
+
+\textbf{2)} Dado que la masa del calefactor es significativa en relación a la capacidad 
+de carga del cabezal de la Pocket NC, se incorporó un apoyo rodante en la 
+parte posterior del calefactor. Este consiste en soportes de acero 
+inoxidable, un perfil de aluminio de sección T-slot 3030 y un rodamiento 
+axial, permitiendo que el calefactor deslice libremente sobre la mesa de 
+trabajo sin sobrecargar el cabezal.
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/parte1.png}
+	\caption[Adaptaciones a la máquina CNC, ejes X y Z]{Adaptaciones a la máquina CNC, ejes X y Z. a) Modificación 1: Soporte y anclaje para el calefactor en X y Z, b) Modificación 2: soporte posterior para el calefactor.}
+	\label{fig:carro}
+\end{figure}
+
+\textbf{3)} Sobre la mesa de trabajo se montan piezas circulares de soporte que cumplen 
+dos funciones: fijar el sustrato mediante patrones de apernadura, y canalizar 
+el flujo de gas y material particulado no adherido hacia la parte posterior 
+del espacio de trabajo, donde es capturado por el sistema de extracción (Figura \ref{fig:parte2}). Los anclajes al eje B de la máquina están espaciados de la base perforada a través de separadores de bronce con rosca.
+
+\textbf{4)}Para confinar el flujo de gases y polvo, el espacio de trabajo se encierra 
+mediante un fuelle de silicona fabricado a medida. El material empleado es 
+silicona de alta temperatura (hasta \SI{290}{\celsius}) de la marca 
+Smooth-On, la cual combina resistencia térmica con alta elasticidad, 
+permitiendo el desplazamiento libre de la tobera sobre el sustrato sin 
+comprometer el sellado del recinto.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/parte2.png}
+	\caption[Adaptaciones a la máquina CNC, ejes X y Z]{Adaptaciones a la máquina CNC, ejes X y Z. a) Modificación 1: Soporte y anclaje para el calefactor en X y Z, b) Modificación 2: soporte posterior para el calefactor.}
+	\label{fig:parte2}
+\end{figure}
+
+\textbf{5)} Finalmente, los rieles lineales de la máquina CNC se protegen mediante 
+placas de aluminio compuesto fijadas a las partes móviles de la máquina, 
+previniendo el desgaste por polvo sobre los mecanismos 
+de guía.
+
+\subsection{Sistema de extracción}
 
 El dimensionamiento del sistema de extracción se realizó considerando el caudal del jet de gases a la salida de la tobera y el aire ambiente arrastrado por el jet libre. El caudal del jet $Q_0$ se estimó considerando una velocidad promedio de referencia de $\bar{v} = 1000$~m/s en la sección de salida de la tobera de diámetro $d_s = 3$~mm, de acuerdo a las simulaciones de Cerda et al.:
 
@@ -135,17 +188,61 @@ El caudal total que debe manejar el sistema de extracción resulta entonces:
 	\label{eq:qtotal}
 \end{equation}
 
-Cabe destacar que esta estimación corresponde a un jet libre no confinado, por lo que representa un escenario conservador: en la práctica, el fuelle limita el volumen de aire disponible para el entrainment, reduciendo el caudal efectivo. Aplicando un factor de seguridad de 1{,}5 sobre el caudal estimado, se requiere una aspiradora con una capacidad mínima de aproximadamente 85~L/s (305~m$^3$/h). Con base en este análisis, se seleccionó una aspiradora modelo \textbf{[COMPLETAR: modelo]} con un caudal nominal de \textbf{[COMPLETAR: caudal]} L/s.
+Cabe destacar que esta estimación corresponde a un jet libre no confinado, por lo que representa un escenario conservador: en la práctica, el fuelle limita el volumen de aire disponible para el entrainment, reduciendo el caudal efectivo. Aplicando un factor de seguridad de 1{,}5 sobre el caudal estimado, se requiere una aspiradora con una capacidad mínima de aproximadamente 85~L/s (305~m$^3$/h). Con base en este análisis, se seleccionó una aspiradora industrial modelo HT-60 de marca Luster con un caudal nominal de 106 L/s, contenedor de acero inoxidable y compatible con filtro HEPA.
 
 \subsection{Material pulverizado y sustrato}
 
-El material utilizado para los depósitos corresponde a polvo de aleación de titanio Ti-6Al-4V \textbf{[COMPLETAR: grado, p.ej. Grado 5 o ELI]}, con una pureza de \textbf{[COMPLETAR: \%]}, fabricado mediante atomización en gas, lo cual confiere a las partículas una morfología predominantemente esférica. La distribución granulométrica presenta un diámetro $D_{90} = 50~\mu$m, medido por tamizado, y su curva de distribución acumulada se presenta en la Figura~\ref{fig:granulometria}. La hoja de datos del proveedor se incluye en el Anexo~\ref{anx:polvo}.
+El material utilizado para los depósitos corresponde a polvo de titanio
+comercialmente puro Grado~4 (CP-Ti Gr.~4), fabricado mediante el proceso
+de hidruración-deshidruración (HDH) a partir de materia prima forjada,
+lo cual confiere a las partículas una morfología angular de tipo
+\textit{blocky}. Las principales características del polvo, según la
+hoja de datos del proveedor~\cite{Metco4010}, se resumen en la
+Tabla~\ref{tab:polvo_cpti}.
 
-El sustrato corresponde a barras rectangulares de aluminio \textbf{[COMPLETAR: aleación, p.ej. Al 6061 — verificar si es 1010 o corregir]}, cortadas en forma de paralelepípedo según las dimensiones indicadas en la Figura~\ref{fig:sustrato}. Este material fue seleccionado por su disponibilidad como recurso previo del grupo de investigación, y por ser un sustrato habitual en experimentos de CS sobre titanio dado su bajo punto de fluencia, que favorece la adhesión mecánica inicial.
+\begin{table}[h]
+	\centering
+	\caption[Características del polvo CP-Ti Grado~4 empleado]{Características del polvo CP-Ti Grado~4 empleado
+		(Oerlikon Metco, serie Metco~4010~\cite{Metco4010}).}
+	\label{tab:polvo_cpti}
+	\begin{tabular}{ll}
+		\hline
+		\textbf{Parámetro} & \textbf{Valor} \\
+		\hline
+		Función primaria & Biocompatibilidad \\
+		Composición nominal & Ti Grado~4 (ASTM) \\
+		Proceso de fabricación & HDH a partir de material forjado \\
+		Morfología & Angular (\textit{blocky}) \\
+		Distribución granulométrica & $-45{+}11~\mu$m \\
+		Temperatura de fusión & \SI{1649}{\celsius} \\
+		Fe máx. (wt\%) & 0{,}50 \\
+		O máx. (wt\%) & 0{,}40 \\
+		C máx. (wt\%) & 0{,}08 \\
+		N máx. (wt\%) & 0{,}05 \\
+		H máx. (wt\%) & 0{,}015 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+El sustrato corresponde a barras rectangulares de aluminio
+\textbf{[COMPLETAR: aleación]}, cortadas en forma de paralelepípedo
+según las dimensiones indicadas en la Figura~\ref{fig:sustrato}.
+Este material fue seleccionado por su disponibilidad como recurso
+previo del grupo de investigación, y por constituir un sustrato
+habitual en experimentos de CS sobre titanio, dado su bajo límite
+de fluencia, que favorece la adhesión mecánica inicial.
 
 \subsection{Sistema final}
 
-El diagrama del sistema final se observa en la Figura \ref{esqumesis}. El modelo 3D del subsensamble principal del sistema experimental se observa en en la Figura~\ref{fig:sistema_final}. El eje A de la máquina debe posicionarse por defecto a 90° respecto a su referencia, de modo que el sustrato quede orientado normal al eje de la tobera. La máquina CNC se conecta mediante USB a un computador, a través del cual se carga y ejecuta el código G generado para cada trayectoria. 
+El diagrama del sistema final se observa en la Figura \ref{esqumesis}. El eje A de la máquina debe posicionarse por defecto a 90° respecto a su referencia, de modo que el sustrato quede orientado normal al eje de la tobera. La máquina CNC se conecta mediante USB a un computador, a través del cual se carga y ejecuta el código G generado para cada trayectoria. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/diagsys.pdf}
+	\caption{Diagrama del sistema de CS implementado.}
+	\label{esqumesis}
+\end{figure}
+
 
 Este código G se escribe a través de programas específicos implementados en Python para cada experimento y geometría a lograr, pues no se cuenta con un software CAM para el proceso.
 
@@ -202,59 +299,105 @@ En el Cuadro~\ref{tab:parametros} se presentan los acrónimos y rangos operativo
 \subsection{Características de las toberas}
 
 Las toberas fabricadas fueron simuladas numéricamente en Cerda et al., las
-condiciones iniciales se muestran en el Cuadro~\ref{}. Los resultados
-principales de estas simulaciones se resumen en el Cuadro~\ref{tab:sim_toberas},
-e incluyen la velocidad y temperatura de impacto de las partículas para cada
+condiciones iniciales se muestran en el Cuadro~\ref{tab:condiciones_cerda}. Los resultados
+principales de estas simulaciones se resumen en el Cuadro~\ref{tab:resultados_toberas},
+e incluyen la velocidad y temperatura de impacto de la partícula con mayor velocidad para cada
 diseño de tobera.
 
-Es importante destacar que las simulaciones de Cerda et al. fueron realizadas
-con titanio puro como material de polvo, mientras que en esta investigación se
-emplea la aleación Ti-6Al-4V. No obstante, las diferencias en la dinámica
-pre-impacto entre ambos materiales son despreciables, por las siguientes
-razones. La dinámica del gas en la tobera depende exclusivamente de las
-condiciones de estancamiento $T_0$ y $p_0$ y de la geometría de la tobera,
-siendo independiente del material del polvo. La aceleración y el calentamiento
-de las partículas están gobernados, respectivamente, por la ecuación de
-arrastre:
+\begin{table}[h]
+	\centering
+	\caption{Condiciones de borde empleadas en las simulaciones 
+		fluido-dinámicas de Cerda et al.}
+	\label{tab:condiciones_cerda}
+	\begin{tabular}{lc}
+		\hline
+		\textbf{Parámetro} & \textbf{Valor} \\
+		\hline
+		Presión de entrada $p_0$       & \SI{3.40}{MPa}       \\
+		Temperatura de entrada $T_0$   & \SI{750}{K}          \\
+		Presión de salida              & \SI{101.3}{kPa}      \\
+		Temperatura de salida          & \SI{300}{K}          \\
+		Rango granulométrico $d_p$     & 10--50~$\mu$m        \\
+		Morfología del polvo           & Esférica             \\
+		Material del polvo             & Ti~CP                \\
+		\hline
+	\end{tabular}
+\end{table}
 
-\begin{equation}
-	m_p \frac{dv_p}{dt} = \frac{1}{2} C_D \rho_g A_p (v_g - v_p)^2
-	\label{eq:arrastre}
-\end{equation}
+\begin{table}[ht]
+	\centering
+	\caption{Principales resultados de simulación para las toberas T1 y T2 en Cerda et al.}
+	\label{tab:resultados_toberas}
+	\begin{tabular}{lcc}
+		\hline
+		\textbf{Parámetro} & \textbf{T1} & \textbf{T2} \\
+		\hline
+		Velocidad del gas a la salida (m/s)     & 1076 & 1037 \\
+		Velocidad crítica de partícula (m/s)    &  509 &  515 \\
+		Velocidad de partícula a la salida (m/s)&  384 &  539 \\
+		Temperatura de partícula a la salida (K)&  352 &  320 \\
+		Eficiencia de deposición (\%)           &    0 &   28 \\
+		\hline
+	\end{tabular}
+\end{table}
 
-y por la transferencia de calor por convección forzada entre el gas y la
-partícula. En ambos casos, los parámetros materiales relevantes son la densidad
-$\rho_p$ y la conductividad térmica $k_p$. Para Ti cp se tiene $\rho_p \approx
-4{,}51$~g/cm$^3$ y $k_p \approx 17$~W/m·K, mientras que para Ti-6Al-4V los
-valores correspondientes son $\rho_p \approx 4{,}43$~g/cm$^3$ y $k_p \approx
-7$~W/m·K~\cite{Leyens2003}. 
+Nótese que $T_{1}$ no estaría alcanzando la velocidad crítica teórica en base a este estudio, la cual fue calculada para cada caso usando la ecuación \ref{vcrit}. En la Figura \ref{fig:perfiltobs} se observan los perfiles de deposición simulados durante 1 segundo en posición estática en Cerda et al., particularmente de la tobera T2 en color azul.
 
-La diferencia en densidad es de apenas un 2\%,
-lo que implica que la masa $m_p$ y el área proyectada $A_p$ de partículas del
-mismo diámetro son prácticamente idénticas, y por tanto las trayectorias de
-velocidad $v_p(t)$ son indistinguibles entre ambos materiales bajo las mismas
-condiciones de gas. La menor conductividad térmica de Ti-6Al-4V implica un
-perfil térmico ligeramente menos homogéneo al interior de la partícula, pero
-no altera de forma significativa la temperatura promedio $T_p$ al momento del
-impacto, dado que el número de Biot para partículas de $\sim$50~$\mu$m en
-estas condiciones es pequeño ($\text{Bi} \ll 1$), lo que indica que la
-resistencia interna a la conducción es despreciable frente a la resistencia
-convectiva externa.
+Una diferencia relevante entre las simulaciones de Cerda et al. y las 
+condiciones experimentales de la presente investigación radica en la 
+morfología del polvo: las simulaciones asumen partículas esféricas, 
+mientras que el polvo Oerlikon Metco serie 4010 empleado aquí presenta 
+morfología irregular de tipo HDH (\textit{blocky}). Esta distinción 
+afecta principalmente al coeficiente de arrastre $C_D$, que para 
+partículas no esféricas es mayor que el correspondiente a una esfera 
+del mismo diámetro equivalente, lo que implica una aceleración 
+ligeramente superior bajo las mismas condiciones de gas~\cite{Yin2022review}. 
+Por tanto, las velocidades de impacto reportadas por Cerda et al. 
+constituyen una estimación conservadora para el polvo HDH empleado, y 
+los perfiles de temperatura de partícula permanecen cualitativamente 
+válidos dado que el número de Biot se mantiene pequeño en ambos casos.
 
-Por consiguiente, los resultados de Cerda et al. relativos a la dinámica del
-gas y a la velocidad y temperatura de partícula al impacto son directamente
-aplicables a Ti-6Al-4V. Las diferencias entre ambos materiales se manifiestan
-exclusivamente a partir del impacto, en términos de velocidad crítica $v_{cr}$,
-mecanismos de adhesión y propiedades del depósito resultante, aspectos que
-quedan fuera del alcance de las simulaciones de Cerda et al. y son abordados
-de manera independiente en esta investigación.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/perfiltob.png}
+	\caption[Perfil de deposición para las toberas efectivas en Cerda et al.]{Perfil de deposición para las toberas efectivas en Cerda et al. \cite{CerdaLobos2024}.}
+	\label{fig:perfiltobs}
+\end{figure}
+
+Entre las conclusiones principales del estudio de Cerda et al. destacan 
+las siguientes. La tobera de diámetro de garganta de 0{,}5~mm no resulta 
+conveniente, pues el flujo de gas se sobreexpande y se desprende de las 
+paredes de la sección divergente, impidiendo el desarrollo completo del 
+flujo supersónico y reduciendo la energía cinética transferida a las 
+partículas por debajo del umbral de deposición. En cuanto a la longitud 
+de la sección divergente, se verificó que a mayor longitud, mayor es la 
+velocidad alcanzada por las partículas y, en consecuencia, mayor la 
+eficiencia de deposición. 
+
+Respecto a la geometría, si bien la tobera 
+convergente-divergente alcanza velocidades de partícula superiores a la 
+tobera convergente-divergente-barril, la sección de barril estabiliza el 
+flujo y genera un perfil de depósito más centrado y de mayor altura. 
+Finalmente, el análisis de mezclas N$_2$-He mostró aumentos significativos 
+en la velocidad del gas y en la eficiencia de deposición, aunque los 
+autores concluyen que, considerando únicamente los costos de gas y 
+material, la configuración más conveniente es la tobera 
+convergente-divergente-barril de garganta de 1{,}5~mm y longitud total 
+de 70~mm (20~mm de sección divergente y 50~mm de sección barril) 
+operando exclusivamente con nitrógeno.
 
 En la Figura~\ref{fig:temp_gas} se presentan los perfiles de temperatura del
-gas a lo largo del eje de la tobera obtenidos de la simulación. Estos
-resultados confirman que la temperatura del gas en la zona de trabajo es
-compatible con la resistencia térmica de la protección de silicona (Mold
-Max~60, $T_\text{máx} \approx 290$~°C), validando el diseño del sistema de
-protección descrito en la sección~\ref{sec:proteccion}.
+gas a lo largo del eje de la tobera obtenidos de la simulación. Se observa que la temperatura en regiones cercanas a la salida de las toberas difícilmente alcanza los 570 K (296° C). Estos
+resultados confirman que el proceso es nominalmente
+compatible protección de silicona a implementar en la máquina, validando el diseño del sistema de
+protección descrito en la sección 3.1.3.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/tobtemps.png}
+	\caption[Simulación para la temperatura del gas en toberas]{Simulación para la temperatura del gas en toberas \cite{CerdaLobos2024}.}
+	\label{fig:temp_gas}
+\end{figure}
 
 Ambas toberas serán evaluadas experimentalmente mediante una trayectoria
 rectilínea de referencia, y la selección de la tobera de trabajo se realizará
@@ -320,7 +463,7 @@ Complementariamente, se realizan cortes transversales de los cordones
 depositados, seguidos de embutido metalográfico y pulido, para su observación
 en microscopio óptico y/o electrónico de barrido. Esta preparación permite
 evaluar la porosidad interna del depósito, la calidad de la interfaz
-Ti-6Al-4V/aluminio, la morfología de deformación de las partículas
+titanio/aluminio, la morfología de deformación de las partículas
 individuales y la distribución de óxidos interpartícula, características
 que no son accesibles mediante perfilometría superficial y que son
 determinantes para la integridad del depósito~\cite{Huang2020, Yin2022review}.
@@ -344,7 +487,7 @@ Cada estrategia se evalúa cualitativamente en términos de la planicidad de la 
 \subsection{Caracterización mecánica de probetas}
 
 Dada la complejidad de mecanizar probetas de tracción a partir de depósitos de
-Ti-6Al-4V obtenidos con el sistema implementado, la caracterización mecánica se
+titanio obtenidos con el sistema implementado, la caracterización mecánica se
 concentra en mediciones de microdureza Vickers (HV). Esta decisión es coherente
 con el enfoque principal de la investigación, que prioriza la demostración de
 viabilidad del proceso CSAM con aleación de titanio a alta resolución geométrica
@@ -352,7 +495,7 @@ relativa, por sobre la caracterización exhaustiva de propiedades mecánicas bul
 del depósito.
 
 Las mediciones de microdureza se realizan sobre secciones transversales de las
-probetas en estado \textit{as-deposited}, siguiendo la norma ASTM E384~\cite{ASTME384},
+probetas en estado \textit{as-deposited}, siguiendo la norma ASTM E384 \textit{Standard Test Method for Microindentation Hardness of Materials},
 con el fin de evaluar la homogeneidad de las propiedades a lo largo de la
 dirección de construcción. Los valores obtenidos se contrastan con tres estados
 de referencia del mismo material. 
@@ -396,7 +539,7 @@ Estos indicadores se presentan de manera comparativa entre las distintas condici
 
 \subsection{Resumen de indicadores de evaluación}
 
-En el Cuadro~\ref{tab:indicadores} se resumen los indicadores utilizados para evaluar la viabilidad del proceso CSAM implementado como alternativa para la fabricación aditiva de componentes metálicos de alta resolución a partir de polvo de Ti-6Al-4V.
+En el Cuadro~\ref{tab:indicadores} se resumen los indicadores utilizados para evaluar la viabilidad del proceso CSAM implementado como alternativa para la fabricación aditiva de componentes metálicos de alta resolución a partir de polvo de titanio.
 
 \begin{table}[h]
 	\centering

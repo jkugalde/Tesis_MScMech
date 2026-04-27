@@ -119,16 +119,32 @@ D.~H.~L. Seng, Z.~Zhang, Z.-Q. Zhang, T.~L. Meng, S.~L. Teo, B.~H. Tan, Q.~Loi,
   coatings on al6061-t6 substrates,'' {\em Surface and Coatings Technology},
   vol.~432, p.~128068, 2022.
 
-\bibitem{Bae2009}
-G.~Bae, S.~Kumar, S.~Yoon, K.~Kang, H.~Na, H.-J. Kim, and C.~Lee, ``Bonding
-  features and associated mechanisms in kinetic sprayed titanium coatings,''
-  {\em Acta Materialia}, vol.~57, no.~19, pp.~5654--5666, 2009.
+\bibitem{Binder2011}
+K.~Binder, J.~Gottschalk, M.~Kollenda, F.~G{\"a}rtner, and T.~Klassen,
+  ``Influence of impact angle and gas temperature on mechanical properties of
+  titanium cold spray deposits,'' {\em Journal of Thermal Spray Technology},
+  vol.~20, no.~1--2, pp.~234--242, 2010.
+
+\bibitem{Callister2018}
+W.~D. Callister and D.~G. Rethwisch, {\em Materials Science and Engineering: An
+  Introduction}.
+\newblock John Wiley \& Sons, 10~ed., 2018.
 
 \bibitem{Schmidt2009}
 T.~Schmidt, H.~Assadi, F.~Gärtner, H.~Richter, T.~Stoltenhoff, H.~Kreye, and
   T.~Klassen, ``From particle acceleration to impact and bonding in cold
   spraying,'' {\em Journal of Thermal Spray Technology}, vol.~18, no.~5,
   pp.~794--808, 2009.
+
+\bibitem{Bae2009}
+G.~Bae, S.~Kumar, S.~Yoon, K.~Kang, H.~Na, H.-J. Kim, and C.~Lee, ``Bonding
+  features and associated mechanisms in kinetic sprayed titanium coatings,''
+  {\em Acta Materialia}, vol.~57, no.~19, pp.~5654--5666, 2009.
+
+\bibitem{Vanerio2021}
+D.~Vanerio, J.~Kondas, M.~Guagliano, and S.~Bagherifard, ``{3D} modelling of
+  the deposit profile in cold spray additive manufacturing,'' {\em Journal of
+  Manufacturing Processes}, vol.~67, pp.~521--534, 2021.
 
 \bibitem{AFSHARI2025284}
 A.~Afshari, J.-A. Tröger, J.~Meyer, S.~Hartmann, and D.~Inkermann,
@@ -195,11 +211,6 @@ A.~Chepillo~Cortés, ``Determinación de la trayectoria de una tobera de {Cold
   Spray} para su uso en la manufactura aditiva de una pared vertical,'' trabajo
   de título de ingeniero civil mecánico, Universidad de Chile, 2024.
 
-\bibitem{Vanerio2021}
-D.~Vanerio, J.~Kondas, M.~Guagliano, and S.~Bagherifard, ``{3D} modelling of
-  the deposit profile in cold spray additive manufacturing,'' {\em Journal of
-  Manufacturing Processes}, vol.~67, pp.~521--534, 2021.
-
 \bibitem{Vaz2022MetalKnitting}
 R.~F. Vaz, V.~Albaladejo-Fuentes, J.~Sanchez, U.~Ocaña, Z.~G. Corral,
   H.~Canales, and I.~G. Cano, ``Metal knitting: A new strategy for cold gas
@@ -217,21 +228,37 @@ R.~Falco, M.~Jalayer, and S.~Bagherifard, ``Enhanced geometrical control in
   cold spray additive manufacturing through deep neural network predictive
   models,'' {\em Virtual and Physical Prototyping}, vol.~20, no.~1, 2025.
 
-\bibitem{Vo2013heattreatment}
-P.~Vo, E.~Irissou, J.-G. Legoux, and S.~Yue, ``Mechanical and microstructural
-  characterization of cold-sprayed {Ti-6Al-4V} after heat treatment,'' {\em
-  Journal of Thermal Spray Technology}, vol.~22, no.~6, pp.~954--964, 2013.
+\bibitem{MacDonald2017}
+D.~MacDonald, R.~Fern{\'a}ndez, F.~Delloro, and B.~Jodoin, ``Cold spraying of
+  {Armstrong} process titanium powder for additive manufacturing,'' {\em
+  Journal of Thermal Spray Technology}, vol.~26, no.~4, pp.~598--609, 2017.
 
-\bibitem{Lek2018microstructure}
-J.~Y. Lek, A.~Bhowmik, A.~W.-Y. Tan, W.~Sun, X.~Song, W.~Zhai, P.~J.
-  Buenconsejo, F.~Li, E.~Liu, Y.~M. Lam, and C.~B. Boothroyd, ``Understanding
-  the microstructural evolution of cold sprayed {Ti-6Al-4V} coatings on
-  {Ti-6Al-4V} substrates,'' {\em Applied Surface Science}, vol.~459,
-  pp.~492--504, 2018.
+\bibitem{Petrovskiy2019}
+P.~Petrovskiy, A.~Sova, M.~Doubenskaia, and I.~Smurov, ``Influence of hot
+  isostatic pressing on structure and properties of titanium cold-spray
+  deposits,'' {\em The International Journal of Advanced Manufacturing
+  Technology}, vol.~102, no.~1--4, pp.~819--827, 2019.
+
+\bibitem{Luzin2020wall}
+V.~Luzin, A.~Sova, P.~Petrovskiy, M.~Doubenskaia, and I.~Smurov, ``Residual
+  stress buildup in {Ti} components produced by cold spray additive
+  manufacturing ({CSAM}),'' {\em Journal of Thermal Spray Technology}, vol.~29,
+  pp.~1498--1507, 2020.
+
+\bibitem{Kumar2025}
+R.~Kumar, A.~Pattanaik, N.~A. Hasan, {\em et~al.}, ``The influence of hot
+  isostatic pressing pressure on the microstructural evolution and mechanical
+  properties of cold-sprayed additively manufactured titanium,'' {\em Journal
+  of Materials Engineering and Performance}, 2025.
 
 \bibitem{RicouSpalding1961}
 F.~P. Ricou and D.~B. Spalding, ``Measurements of entrainment by axisymmetrical
   turbulent jets,'' {\em Journal of Fluid Mechanics}, vol.~11, no.~1,
   pp.~21--32, 1961.
+
+\bibitem{Metco4010}
+{Oerlikon Metco}, ``Metco 4010 series -- commercially pure titanium powder for
+  thermal spray.'' \url{https://mymetco.oerlikon.com/es-es/product/metco4010c}.
+\newblock Consultado: abril de 2025.
 
 \end{thebibliography}

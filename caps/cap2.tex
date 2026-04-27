@@ -10,7 +10,7 @@ de fabricación que convencionalmente se utiliza para generar recubrimientos sup
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.6\linewidth]{imgs/syspray.pdf}
+	\includegraphics[width=0.7\linewidth]{imgs/syspray.pdf}
 	\caption{Diagrama para un sistema convencional de coldspray.}
 	\label{fig:1}
 \end{figure}
@@ -141,7 +141,7 @@ tobera. Alimentar los polvos aguas abajo de la garganta (alimentación \textit{d
 problemas, pero a costa de reducir la longitud de interacción y, por 
 tanto, la velocidad final de las partículas. Cabe destacar que existen otras formas de alimentar los polvos, incluso directamente en el jet de salida, entre otros.
 
-El tamaño de las partículas es otro factor determinante. En general, 
+El tamaño de las partículas es otro aspecto determinante. En general, 
 las partículas más pequeñas, al tener menor inercia, responden con mayor 
 fidelidad a los cambios en el flujo de gas. Sin embargo, la relación entre 
 tamaño y velocidad de impacto no es monótona: existe un tamaño óptimo para 
@@ -178,9 +178,9 @@ El tamaño de partícula influye también en su calentamiento por convección
 durante el tránsito en la tobera. Esta dependencia puede caracterizarse
 mediante el número de Biot de la partícula:
 
-$$
+\begin{equation}
 \text{Bi} = \frac{h \, d_p}{6 \, k_p}
-$$
+\end{equation}
 
 \noindent donde $h$ es el coeficiente de transferencia de calor convectivo
 entre el gas y la partícula, $d_p$ su diámetro y $k_p$ su conductividad
@@ -189,11 +189,8 @@ de la partícula es despreciable y su temperatura puede considerarse uniforme,
 de modo que el calentamiento queda gobernado exclusivamente por la convección
 externa. En ese régimen, partículas más pequeñas equilibran su temperatura
 con la del gas más rápidamente debido a su mayor relación superficie-volumen.
-Para el Ti-6Al-4V, cuya conductividad térmica es baja
-($k_p \approx \SI{7}{W.m^{-1}.K^{-1}}$), el Bi puede no ser despreciable
-para partículas de mayor tamaño, lo que implica que la temperatura de impacto
-presenta gradientes internos y no refleja fielmente la temperatura del gas
-propulsor.
+Para el titanio, cuya conductividad térmica es moderada
+($k_p \approx \SI{17}{W.m^{-1}.K^{-1}}$) y considerando un diámetro de partícula de 50 $\mu m$, el $Bi$ toma un valor cercano a 0.003, por lo que el gradiente térmico de las partículas es despreciable, luego, asumir temperaturas uniformes para estas podría ser justificado.
 
 A diferencia de otros procesos de proyección térmica, en CS las partículas
 no alcanzan su punto de fusión, por lo que la temperatura de impacto no es
@@ -227,10 +224,10 @@ mecánicas antes del primer impacto.
 Las partículas que inciden sobre la superficie experimentan una desaceleración 
 abrupta desde velocidades en el rango \(10^2-10^3\) m/s hasta el reposo en un intervalo de tiempo del orden de \(10^{-8}\) s. Esta desaceleración genera una onda de presión que se propaga a través de la partícula a la velocidad del sonido en el sólido.
 
-Por ejemplo, para Ti-6Al-4V, dicha velocidad es de aproximadamente 
-6100 m/s, considerablemente mayor que la velocidad 
+Por ejemplo, para el titanio, dicha velocidad es de aproximadamente 
+5100 m/s, considerablemente mayor que la velocidad 
 de impacto, de modo que la onda recorre el diámetro de una partícula 
-de 50~\(\mu\)m en cerca de 8~ns. La presión de contacto en los 
+de 45~\(\mu\)m en cerca de 9~ns. La presión de contacto en los 
 primeros instantes puede estimarse a través de la relación de Hugoniot 
 para impacto simétrico\cite{Marsh1980}:
 
@@ -259,12 +256,12 @@ $u_p \approx v_i/2$, por lo que la presión de contacto resulta:
 	\label{eq:hugoniot_P}
 \end{equation}
 
-Para Ti-6Al-4V, con $\rho_0 = 4430$~kg/m$^3$, $c_0 = 5130$~m/s y 
-$s \approx 1.028$\cite{Assadi2003}, y considerando velocidades de 
+Para el titanio, con $\rho_0 = 4510$~kg/m$^3$, $c_0 = 5020$~m/s y 
+$s \approx 1.066$\cite{Marsh1980}, y considerando velocidades de 
 impacto en el rango $v_i = 600$--$900$~m/s, la ecuación 
 \ref{eq:hugoniot_P} entrega presiones de contacto de aproximadamente 
 7--12~GPa, lo cual supera ampliamente el límite de fluencia estático 
-del material ($\sigma_y \approx 900$~MPa).
+del material ($\sigma_y \approx 400$~MPa).
 
 La elevada tasa de deformación resultante, del orden de 
 \(\dot{\varepsilon} \sim 10^6\)--\(10^9\)~s\(^{-1}\)~\cite{Assadi2003}, 
@@ -369,26 +366,26 @@ de energía es máxima y la deformación es axialmente simétrica.
 \end{figure}
 
 
-A medida que $\theta$ aumenta, la componente normal disminuye y la 
-eficiencia de deposición decrece, existiendo un \textbf{ángulo crítico} más 
-allá del cual la partícula no logra adherirse\cite{Wong2013}. Para 
-Ti-6Al-4V se ha reportado que dicho ángulo se encuentra en torno a los 45°-60° grados respecto a la normal, y sobre 70° permite obtener depósitos aceptables de baja porosidad \cite{Bae2009, SENG2022128068}
+A medida que $\theta$ aumenta, la componente normal disminuye y la eficiencia de deposición decrece, existiendo un \textbf{ángulo crítico} más allá del cual la partícula no logra adherirse \cite{Wong2013}. Para el titanio depositado con $N_{2}$, dicho ángulo se sitúa en torno a los 40°-45° respecto a la normal de la superficie, dependiendo del par partícula-sustrato \cite{Binder2011}.
 
 La respuesta del sustrato al impacto depende de la relación entre sus 
-propiedades mecánicas y las de la partícula. Un sustrato más blando concentra 
-mayor deformación y genera un cráter más profundo, favoreciendo el anclaje 
-mecánico por incrustación. Por ejemplo, en el caso del sistema 
-Ti-6Al-4V sobre Al puro: con una diferencia de dureza de aproximadamente un 
-orden de magnitud (~320 HV vs.~25 HV), la deformación plástica se concentra 
-casi enteramente en el sustrato, y la partícula permanece aproximadamente 
-esférica tras el impacto. La alta conductividad térmica del Al 
-($k \approx 230$~W/m·K, frente a $\sim$7~W/m·K del Ti-6Al-4V) disipa parte 
-del calor adiabático, lo que dificulta marginalmente el ablandamiento 
-localizado; sin embargo, la baja resistencia mecánica del Al compensa este 
-efecto. Un factor adicional a considerar es la capa de Al\textsubscript{2}O\textsubscript{3} 
-nativa del sustrato de aluminio, cuya dureza (~2000 HV) dificulta su 
-fragmentación cuando la deformación se concentra en el sustrato blando y no 
-en la propia interfaz de óxido.
+propiedades mecánicas y las de la partícula. En el caso de la proyección de titanio sobre sustrato de aluminio, el titanio presenta una dureza 
+típica de $\sim$150-180~HV en estado recocido \cite{Callister2018}, 
+frente a los $\sim$30-50~HV del aluminio. Dado que el sustrato es 
+considerablemente más blando que la partícula, la deformación plástica 
+se concentra en él, generando un cráter que favorece el anclaje mecánico 
+por incrustación \cite{Binder2011}. Sin embargo, este mismo mecanismo 
+dificulta la fragmentación de la capa nativa de 
+Al\textsubscript{2}O\textsubscript{3} ($\sim$2000~HV), ya que la 
+deformación no se localiza en la interfaz de óxido sino en el metal 
+subyacente \cite{Assadi2003}.
+
+Desde el punto de vista térmico, la conductividad del aluminio es 
+considerablemente superior a la del titanio, lo que favorece la 
+disipación del calor adiabático generado en la interfaz y puede 
+dificultar marginalmente el ablandamiento localizado necesario para la 
+ASI. Sin embargo, la baja resistencia mecánica del sustrato compensa 
+este efecto, manteniéndose condiciones favorables para la deposición.
 
 Es importante indicar que, a pesar de los avances en la comprensión 
 del proceso, los mecanismos de adhesión en cold spray siguen siendo 
@@ -522,6 +519,7 @@ de uso frecuente en CS.
 		Cu          & 300--400  & \cite{Schmidt2006} \\
 		Al          & 580--680  & \cite{Schmidt2006} \\
 		Ni          & 620--640  & \cite{Assadi2003}  \\
+		Ti          & 500--700  & \cite{Pattison2008} \\
 		Ti-6Al-4V   & 660--900  & \cite{Bae2009}     \\
 		Acero 316L  & 700--800  & \cite{Schmidt2006} \\
 		\hline
@@ -538,11 +536,12 @@ se encuentra dentro del rango admisible\cite{Papyrin2007}.
 Scmidt et al. et al.~\cite{Schmidt2006} proponen 
 la siguiente expresión para la velocidad crítica:
 
-$$
+\begin{equation}
 v_{cr} = \left[ \frac{4F_1\sigma_{TS}}{\rho_p} \left(1 - 
 \frac{T_p - T_{ref}}{T_m - T_{ref}}\right) + 
 F_2 c_p \left(T_m - T_p\right) \right]^{1/2}
-$$
+\label{vcrit}
+\end{equation}
 
 \noindent donde $\sigma_{TS}$ es la resistencia a la tracción de la 
 partícula [Pa], $T_p$ la temperatura de impacto de la partícula [K], 
@@ -577,7 +576,7 @@ Si bien, medir la $m_{dep}$ como la diferencia de masa en el sistema sustrato-de
 	m_{ali}=t Q\rho
 \end{equation}
 
-donde $Q$ es el flujo volumétrico de polvo, $t$ el tiempo del proceso con proyección y $rho$ la densidad del polvo. Otras formas pueden ser, medir la variación de masa del alimentador completo, o si hay una extracción controlada, medir la masa acumulada en el depósito de extracción. 
+donde $Q$ es el flujo volumétrico de polvo, $t$ el tiempo del proceso con proyección y $\rho$ la densidad del polvo. Otras formas pueden ser, medir la variación de masa del alimentador completo, o si hay una extracción controlada, medir la masa acumulada en el depósito de extracción. 
 
 Desde una perspectiva física, la DE está directamente vinculada a la fracción
 de partículas que alcanzan o superan la velocidad crítica $v_c$ al momento del
@@ -961,6 +960,16 @@ a la tracción en dirección vertical es típicamente inferior a la horizontal,
 mientras que la ductilidad muestra el comportamiento inverso, dependiendo 
 del ciclo térmico y la estrategia de escaneo empleada.
 
+El titanio comercialmente puro, aunque de menor resistencia 
+que el Ti-6Al-4V, comparte las mismas dificultades de procesamiento 
+convencional y presenta ventajas adicionales en términos de ductilidad, 
+biocompatibilidad y menor costo de materia prima. Su aplicación en 
+manufactura aditiva es de interés creciente, particularmente en 
+implantes médicos de carga moderada y recubrimientos funcionales, donde 
+la combinación de porosidad controlada y osteointegración favorecida 
+por la superficie de titanio puro supera en algunos aspectos a la 
+aleación~\cite{Leyens2003}.
+
 Para mitigar estos efectos, los procesos PBF utilizan \textbf{estructuras 
 	de soporte} (\textit{support structures}): geometrías auxiliares que no 
 forman parte de la pieza final pero cumplen dos funciones esenciales. 
@@ -1173,47 +1182,66 @@ como el principal obstáculo para la adopción industrial generalizada de esta
 tecnología.
 
 
-\subsubsection{CSAM de Ti-6Al-4V}
+\subsubsection{CSAM de titanio}
 
 Dado que el CS opera en estado sólido y no genera los gradientes térmicos
 propios de procesos como la sinterización láser selectiva (SLS), resulta
-especialmente atractivo para la fabricación aditiva de titanio y sus aleaciones,
-donde el control microestructural y la ausencia de oxidación son requisitos
-críticos~\cite{Yin2022review}. Sin embargo, la alta resistencia mecánica del
-Ti-6Al-4V impone condiciones de proceso más exigentes que en materiales más
-dúctiles, y la obtención de depósitos densos y con propiedades mecánicas
-aceptables sigue siendo un desafío abierto.
+especialmente atractivo para la fabricación aditiva de titanio
+comercialmente puro (CP-Ti), donde el control microestructural y la
+ausencia de oxidación son requisitos críticos~\cite{Yin2022review}. A
+diferencia del Ti-6Al-4V, el CP-Ti presenta mayor ductilidad intrínseca
+y una velocidad crítica de deposición más baja, lo que favorece altas
+eficiencias de deposición. Adicionalmente, el proceso CS permite tasas
+de deposición de hasta \SI{500}{g/min}~\cite{MacDonald2017}, un orden de
+magnitud superior a las tecnologías AM basadas en fusión de polvo, lo que
+posiciona al CSAM de CP-Ti como una alternativa de alto rendimiento para
+la fabricación de piezas de gran escala.
 
-Respecto a las propiedades mecánicas, Kondás et al.~\cite{Kondas2024feedstock}
-evaluaron el efecto de la morfología y microestructura del polvo alimentador
-sobre depósitos CSAM de Ti-6Al-4V, comparando polvos esféricos atomizados por
-plasma con polvos cristalinos. Los depósitos en condición \textit{as-deposited}
-presentaron resistencia mecánica y ductilidad en el rango del 8--30\% respecto
-al Ti-6Al-4V forjado, confirmando que la deposición directa sin tratamiento
-posterior no satisface los estándares de aplicación en FA. No obstante, mediante
-la selección del polvo adecuado y la aplicación de tratamiento térmico
-post-proceso, los autores lograron alcanzar propiedades de tracción conformes a
-la norma ASTM B381 para forjados recocidos de Ti-6Al-4V, con resistencia a la
-fluencia de \SI{887}{MPa} y resistencia a la tracción de \SI{929}{MPa}. Los
-autores concluyen que la selección apropiada del polvo alimentador constituye un
-factor determinante para superar las limitaciones mecánicas del proceso, y que
-depósitos de alta calidad conformes a estándares AM son alcanzables bajo
-condiciones de proceso optimizadas.
+MacDonald et al.~\cite{MacDonald2017} demostraron la viabilidad de
+fabricar componentes bulk de baja porosidad mediante CS de CP-Ti con
+nitrógeno como gas propulsor, empleando polvo de morfología irregular
+producido por el proceso Armstrong. Los autores reportaron que la
+morfología irregular del polvo favorece la densificación durante el
+impacto respecto a polvos esféricos, constituyendo una ruta de bajo
+costo para la fabricación aditiva de piezas de titanio de geometría
+compleja. Sin embargo, los depósitos en condición \textit{as-sprayed}
+presentan porosidad residual y propiedades mecánicas considerablemente
+inferiores a las del material forjado, lo que requiere la aplicación de
+tratamientos post-proceso.
 
-El rol de los tratamientos post-proceso sobre las propiedades mecánicas de
-depósitos CS de Ti-6Al-4V ha sido objeto de estudio sistemático. Tan
-et al.~\cite{Vo2013heattreatment} evaluaron el efecto del prensado isostático en
-caliente (HIP) y del recocido convencional sobre la microestructura y las
-propiedades mecánicas de estos depósitos, mostrando que el HIP es
-significativamente más efectivo que el recocido simple para recuperar la
-ductilidad del material, al promover la difusión interfacial entre partículas y
-reducir la porosidad residual. Complementariamente, Lek
-et al.~\cite{Lek2018microstructure} realizaron una caracterización fractográfica
-detallada de depósitos CSAM de Ti-6Al-4V en condición \textit{as-sprayed} y
-post-tratada, identificando que en condición \textit{as-sprayed} la fractura
-ocurre predominantemente a lo largo de las interfaces interpartícula, mientras
-que los tratamientos térmicos desplazan el modo de fractura hacia el interior de
-las partículas, indicando una mejora sustancial en la cohesión del depósito.
-Ambos trabajos refuerzan la conclusión de Kondás et al.~\cite{Kondas2024feedstock}
-respecto a la necesidad de tratamiento post-proceso para alcanzar propiedades
-mecánicas conformes a estándares de aplicación en FA.
+Respecto a los tratamientos post-proceso, Petrovskiy
+et al.~\cite{Petrovskiy2019} evaluaron el efecto del prensado isostático
+en caliente (HIP) sobre depósitos CS de CP-Ti, reportando un aumento de
+la resistencia a la tracción de \SI{110}{MPa} en condición
+\textit{as-sprayed} a \SI{480}{MPa} tras HIP a \SI{110}{MPa} y
+\SI{1173}{K}, mediante la mejora de la difusión interfacial y la
+eliminación de la porosidad de pequeña escala. No obstante, la
+ductilidad resultante ($\sim$8\%) permaneció por debajo de la del
+titanio puro forjado, indicando que la porosidad residual de mayor
+escala constituye el factor limitante.
+
+Desde el punto de vista de la fabricación de piezas tridimensionales,
+un aspecto crítico del CSAM de CP-Ti es la acumulación de tensiones
+residuales compresivas durante la construcción capa por capa. Spencer
+et al.~\cite{Luzin2020wall} analizaron mediante difracción de neutrones la
+distribución de tensiones residuales en muestras bulk y paredes
+verticales de CP-Ti Grado~4 fabricadas por CSAM, estableciendo que las
+tensiones compresivas generadas por el efecto peening acumulado pueden
+inducir distorsiones dimensionales en geometrías complejas si no se
+controlan adecuadamente mediante la planificación de trayectorias y los
+parámetros de deposición.
+
+Un estudio reciente de Kumar et al.~\cite{Kumar2025} profundizó en la 
+optimización del HIP para depósitos CSAM de CP-Ti, evaluando 
+sistemáticamente el efecto de la presión de consolidación sobre la 
+evolución microestructural mediante difracción de rayos~X y mapas EBSD 
+de densidad de dislocaciones geométricamente necesarias (GND). Los 
+autores identificaron dos regímenes de consolidación dependientes de la 
+presión: por debajo de \SI{90}{MPa}, el cierre de poros se logra 
+principalmente mediante deformación plástica; por encima de este umbral, 
+predominan mecanismos de difusión que conducen a la homogeneización 
+microestructural y la desaparición de la fase~$\beta$ retenida. Este 
+valor de \SI{90}{MPa} se establece como umbral crítico a partir del cual 
+las mejoras en dureza y resistencia a compresión comienzan a saturarse, 
+lo que constituye una guía cuantitativa para el diseño de ciclos HIP en 
+CSAM de CP-Ti.
