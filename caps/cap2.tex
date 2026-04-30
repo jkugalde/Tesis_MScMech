@@ -500,10 +500,17 @@ Figura \ref{fig:ventana_deposicion}.
 La velocidad crítica es una propiedad del par material-sustrato y 
 depende principalmente de la resistencia mecánica y la ductilidad 
 del material de la partícula, su temperatura al momento del impacto 
-(que reduce $\sigma_y$ y por tanto $v_{cr}$), la dureza relativa del 
+(como se observa en la Figura \ref{fig:ventana_deposiciont}), la dureza relativa del 
 sustrato, y el tamaño de partícula\cite{Schmidt2006}. El 
 Cuadro~\ref{tab:vc} presenta valores de referencia para materiales 
 de uso frecuente en CS.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{imgs/tempvel.png}
+	\caption[Ventana de deposición respecto a velocidad y temperatura]{Ventana de deposición respecto a velocidad y temperatura. \textit{WS} se refiere a window of sprayability\cite{Schmidt2006}}
+	\label{fig:ventana_deposiciont}
+\end{figure}
 
 \begin{table}[h]
 	\centering
@@ -530,7 +537,7 @@ Operar dentro de la ventana de deposición
 es condición necesaria pero no suficiente para garantizar adhesión: 
 la temperatura de precalentamiento del gas, el ángulo de impacto, 
 el estado superficial del sustrato y la morfología del polvo modulan 
-la eficiencia de deposición incluso cuando la velocidad de partícula 
+la eficiencia de deposición (sección 2.1.7) incluso cuando la velocidad de partícula 
 se encuentra dentro del rango admisible\cite{Papyrin2007}. 
 
 Scmidt et al. et al.~\cite{Schmidt2006} proponen 
@@ -580,12 +587,19 @@ donde $Q$ es el flujo volumétrico de polvo, $t$ el tiempo del proceso con proye
 
 Desde una perspectiva física, la DE está directamente vinculada a la fracción
 de partículas que alcanzan o superan la velocidad crítica $v_c$ al momento del
-impacto, como se observa en la Figura \ref{fig:ventana_deposicion}. Las partículas con velocidad de impacto $v_p < v_c$ rebotan sin
+impacto, como se observa en las Figura \ref{fig:ventana_deposicion} y \ref{fig:wongde}. Las partículas con velocidad de impacto $v_p < v_c$ rebotan sin
 adherirse, mientras que aquellas con $v_p \geq v_c$ sufren la inestabilidad
 de corte adiabático necesaria para la unión metalúrgica. En consecuencia, la
 DE puede interpretarse como una medida integral de cuán efectivamente el sistema
 — tobera, gas propulsor y parámetros de proceso — acelera las partículas por
 encima de dicho umbral~\cite{Assadi2003, Schmidt2006}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{imgs/wongde.png}
+	\caption[Efecto de la velocidad y forma de partícula sobre la eficiencia de deposición en cold spray de titanio puro]{Efecto de la velocidad y forma de partícula sobre la eficiencia de deposición\cite{Wong2013}.}
+	\label{fig:wongde}
+\end{figure}
 
 Esta dependencia implica que la DE es sensible a todos los factores que afectan
 la velocidad de impacto: presión y temperatura del gas, geometría de la tobera,
@@ -596,7 +610,8 @@ refuerza la importancia del diseño de tobera y la selección de parámetros
 operacionales para maximizar la fracción de partículas depositadas~\cite{Moridi2014}.
 
 \subsection{Perfil de deposición}
-Se genera un régimen dinámico entre la probabilidad de adhesión y la 
+
+La mecánica del proceso de CS genera un régimen dinámico entre la probabilidad de adhesión y la 
 de erosión, modulado por la distribución espacial de partículas en 
 torno al eje de la tobera. Dicha distribución está ligada a los 
 fenómenos convectivos del jet supersónico, la morfología e inercia 
@@ -621,7 +636,7 @@ en deformación plástica, reforzando la acumulación preferencial en
 el centro del depósito.
 
 En términos generales, el PD se aproxima a una distribución 
-Gaussiana simétrica respecto al eje de la tobera~\cite{Kotoban2017}, 
+Gaussiana simétrica respecto al eje de la tobera~\cite{Kotoban2017}, como se observa en la Figura \ref{Kotokoto}, 
 de modo que sus parámetros estadísticos --- valor máximo, desviación 
 estándar y ancho a media altura --- son los descriptores habituales 
 para caracterizar la geometría del depósito. Sin embargo, la 
@@ -629,18 +644,40 @@ aproximación Gaussiana no es universalmente válida: dependiendo de
 las condiciones de proceso y la geometría de la tobera, el PD puede 
 adoptar formas que se ajustan mejor a otras funciones, como 
 distribuciones de tipo super-Gaussiana o perfiles con hombros 
-pronunciados~\cite{Vanerio2021}. Esta distinción es relevante para 
-fines de modelado predictivo, dado que asumir a priori una forma 
+pronunciados~\cite{Vanerio2021}, como se observa en la Figura \ref{fig:scaspis}. Esta distinción es relevante para 
+fines de modelado predictivo para fabricación aditiva, dado que asumir a priori una forma 
 Gaussiana puede introducir errores sistemáticos en la estimación del 
 ancho del cordón y del volumen depositado, especialmente en toberas 
 de geometría no estándar o en condiciones de baja velocidad de 
 barrido.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/kotoban.jpg}
+	\caption[Perfil de deposición en pista única para acero inoxidable a distintas velocidades transversales de herramienta]{Perfil de deposición en pista única para acero inoxidable a distintas velocidades transversales de herramienta\cite{Kotoban2017}.}
+	\label{Kotokoto}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/scaspis.jpg}
+	\caption[Efecto de la velocidad transversal de la herramienta en el PD para Al2024]{Efecto de la velocidad transversal de la herramienta en el PD para Al2024\cite{Vanerio2021}. a) Comparación de perfil simulado y medido. Sección transversal del cordón con 10 pasadas a velocidad b) 125 mm/s c) 250 mms d) 500 mm/s.}
+	\label{fig:scaspis}
+\end{figure}
+
+
 La forma del PD depende además del tiempo de permanencia de la 
 tobera sobre un sector determinado, del flujo másico del jet, y del 
 número de capas, de manera que la velocidad de barrido y la presión 
 de operación son parámetros de proceso que modulan directamente el 
-espesor y la anchura del cordón depositado~\cite{WU2025642}.
+espesor y la anchura del cordón depositado~\cite{WU2025642}, como se observa en la Figura \ref{fig:wuwu}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/masspeed.png}
+	\caption{Efecto de la velocidad y flujo de polvo sobre el PD\cite{WU2025642}.}
+	\label{fig:wuwu}
+\end{figure}
 
 Las partículas que impactan en los extremos del \textit{spot}, donde 
 el ángulo de incidencia local es mayor y la probabilidad de adhesión 
@@ -650,7 +687,16 @@ peening localizado~\cite{Moridi2014}. Esto genera una compactación
 superficial en los bordes del cordón que modifica el PD efectivo 
 respecto al perfil Gaussiano puro, reduciendo la porosidad 
 interlamelar en esas zonas pero sin contribuir al crecimiento en 
-espesor.
+espesor. 
+
+De manera análoga, las capas subsecuentes exhiben una eficiencia de deposición decreciente, dado que la superficie sobre la que impactan ya no es plana sino que replica la topografía del perfil de deposición acumulado. Esta geometría variable impone un ángulo de incidencia efectivo que se desvía progresivamente de la normal a la dirección del chorro, lo que reduce la componente de velocidad normal al sustrato y, con ello, la probabilidad de adhesión de las partículas. El resultado es una disminución sistemática de la DE en capas sucesivas, fenómeno que se ilustra en la Figura~\ref{fig:ncaps}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/ncaps.jpg}
+	\caption[Esquema para el cambio en la eficiencia de deposición con cada capa consecutiva]{Esquema para el cambio en la eficiencia de deposición con cada capa consecutiva \cite{Kotoban2017}.}
+	\label{fig:ncaps}
+\end{figure}
 
 Para fines predictivos, el PD puede modelarse analíticamente como 
 el producto de la distribución espacial de flujo de partículas del 
@@ -662,33 +708,89 @@ de proceso sin recurrir a simulaciones CFD completas, y constituye
 una base para los modelos de planificación de trayectoria en 
 manufactura aditiva por cold spray.
 
+
+
 \section{Fabricación por CS}
 
 \subsection{Parámetros relevantes}
 
-Un proceso convencional de CS está determinado por múltiples factores, los cuales pueden clasificarse en \textbf{parámetros de hardware (PH)}, \textbf{parámetros operativos (PO)} y \textbf{parámetros de trayectoria (PT)}.
+Cualquier proceso de fabricación está determinado por distintas categorías de parámetros, las cuales podemos dividir como: \textbf{parámetros de hardware (PH)}, \textbf{parámetros operativos (PO)} y \textbf{parámetros de trayectoria (PT)}. Los PH están asociados a la construcción del equipo y los componentes instalados, definiendo los rangos de operación disponibles, como lo sería el espacio de trabajo. Los PO suelen tratarse de valores numéricos que definen características generales del proceso, como velocidad transversal de la herramienta, aceleración y temperatura de proceso, entre otros. Estos parámetros varían, por lo general, dependiendo del tipo de material a tratar y el compromiso tiempo/calidad objetivo. Por último, los PT están ligados a la definición geométrica de las rutas de la herramienta. Entre estos se encuentran las estrategias y parámetros de hatching o rasterizado, que corresponden al patrón de pasadas paralelas con que la herramienta recorre y cubre una superficie (Figura \ref{fig_hachi}), y cuya separación entre líneas adyacentes —denominada distancia de hatching o scan step— determina el grado de solapamiento entre pasadas consecutivas.
 
-Los PH están asociados a la construcción del equipo y los componentes instalados, definiendo los rangos de operación disponibles. Ejemplos de estos son la geometría de la tobera, el espacio de trabajo del manipulador y la capacidad del calefactor.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.75\linewidth]{imgs/hatching.png}
+	\caption[Ejemplos de estrategias de hatching]{Ejemplos de estrategias de hatching\cite{Wu2021trajectories}.}
+	\label{fig_hachi}
+\end{figure}
 
-Los PO se configuran para cada operación en función del material y el resultado deseado, determinando el compromiso entre eficiencia y efectividad del proceso. Los parámetros operativos primordiales son la presión de alimentación del gas y la temperatura del calefactor, los cuales se fijan en función de superar la velocidad crítica del material a depositar, y se calibran experimentalmente hasta observar deposición sobre el sustrato. 
+En el proceso de cold spray convencional, los parámetros operativos más relevantes incluyen la presión y temperatura del gas propulsor, el tipo de gas utilizado, la tasa de alimentación de polvo, la velocidad transversal de la boquilla y la distancia de standoff, como se ha discutido en la sección anterior. A estos se suman parámetros de trayectoria como el ángulo de spray, el paso de escaneo y el patrón de movimiento de la boquilla, los cuales ejercen una influencia significativa sobre el espesor, la porosidad y las tensiones residuales del depósito. 
 
-Otro PO relevante es la \textbf{distancia de standoff} \textbf{DS}, que define la separación entre la tobera y el sustrato; existe una distancia óptima dentro de la cual las partículas logran atravesar el bowshock sin perder una fracción significativa de su energía cinética \cite{Pattison2008}. 
+En cuanto a la estrategia de trayectoria, el enfoque tradicional en cold spray para recubrimiento superficial consiste en un patrón de rasterizado rectilíneo planar: la boquilla recorre pasadas paralelas en una dirección fija, desplazándose lateralmente una distancia igual al paso de hatching al completar cada línea, hasta cubrir la totalidad de la superficie objetivo \cite{Garfias2023}. El solapamiento entre pasadas adyacentes es intencional y su magnitud está determinada por la relación entre el paso de hatching y el ancho del spot de deposición, de modo que la superposición de perfiles gaussianos consecutivos produzca un espesor acumulado más uniforme. En deposición multicapa, es práctica habitual alternar la dirección del rasterizado entre capas sucesivas mediante una estrategia de cross-hatching (patrón en el que la dirección de las pasadas se rota entre capas, típicamente 90°, generando una trama cruzada), con el fin de reducir la anisotropía mecánica del depósito asociada a la direccionalidad de las interfaces entre pasadas \cite{Yin2018anisotropy}.
 
-El caudal de alimentación de polvos $\dot{m}_{p}$ es también un PO independiente, pues afecta directamente la eficiencia de deposición y la porosidad del depósito. El perfil transversal de deposición queda determinado por el conjunto de estos parámetros: a menor velocidad transversal de la herramienta, mayor es la altura media del perfil depositado por pasada, mientras que el diámetro del spot está gobernado principalmente por la geometría de la tobera y la distancia de standoff, pues el flujo toma una forma cónica al ser expulsado. El rango de flujos másicos en CS suele encontrarse en el rango de [cita].
+En un estudio de Wu et al, se demostró que la trayectoria tiene influencia significativa sobre la historia térmica del depósito y la distribución de tensiones residuales, sin diferencias apreciables en microestructura ni propiedades mecánicas\cite{Wu2021trajectories}. Asimismo, los depósitos generados presentaron características anisotrópicas atribuibles a la direccionalidad de las pasadas, las cuales no son eliminadas por tratamiento térmico post-deposición, aunque este mejora el desempeño mecánico.
 
-Conocido el perfil de deposición, es posible definir los PT o cinemáticos para cubrir el área requerida con la geometría deseada. Estos incluyen la estrategia de escaneo o \textit{hatching}, que define el patrón general de la trayectoria (zigzag, alternado, concéntrico, entre otros), la distancia entre líneas adyacentes o \textit{hatch distance}, la velocidad transversal de la herramienta, y el número de pasadas sobre una misma región.
+Los parámetros más relevantes se resumen en la Tabla~\ref{tab:parametros_cs}. Existen parámetros secundarios adicionales, como la velocidad de desplazamiento en vacío o la estrategia de ejecución de curvas, que en general dependen de los parámetros principales ya descritos o constituyen variaciones de estos. Cabe destacar que ninguno de estos parámetros define directamente la geometría del volumen depositado: magnitudes como la altura de capa o el diámetro del spot no son entradas del proceso sino resultados que emergen de la caracterización del perfil de deposición para unas condiciones operativas dadas. Es a partir de dicha caracterización que se puede determinar, por ejemplo, el incremento en
+$z$ entre capas sucesivas necesario para alcanzar el espesor final deseado del recubrimiento.
+
+
+\begin{table}[h]
+	\centering
+	\caption{Parámetros del proceso de cold spray clasificados por categoría.}
+	\label{tab:parametros_cs}
+	\begin{tabular}{llp{6cm}}
+		\hline
+		\textbf{Categoría} & \textbf{Símbolo / Acrónimo} & \textbf{Parámetro} \\
+		\hline
+		\multirow{4}{*}{\textbf{Hardware (PH)}}
+		& $L_n$       & Longitud de la boquilla \\
+		& $D_t$       & Diámetro de garganta\\
+		& $D_e$       & Diámetro de salida  \\
+		& $V_w$       & Volumen del espacio de trabajo \\
+		\hline
+		\multirow{7}{*}{\textbf{Operativos (PO)}}
+		& $p_0$       & Presión de estancamiento del gas \\
+		& $T_0$       & Temperatura de estancamiento del gas \\
+		& $\dot{m}_p$ & Tasa de alimentación de polvo \\
+		& $v_t$       & Velocidad transversal de la boquilla \\
+		& $a$         & Aceleración de la boquilla \\
+		& $d_{so}$    & Distancia de standoff \\
+		& $\alpha$    & Ángulo de spray \\
+		\hline
+		\multirow{5}{*}{\textbf{Trayectoria (PT)}}
+		& $h$         & Distancia de hatching  \\
+		& $S_{hat}$   & Estrategia de hatching  \\
+		& $\theta_r$  & Ángulo de rasterizado \\
+		& $\theta_{rot}$ & Ángulo de rotación entre capas \\
+		& $n_c$       & Número de capas \\
+		\hline
+	\end{tabular}
+\end{table}
+
+La selección de los parámetros operativos y de trayectoria no responde a una optimización univariable sino a un balance entre objetivos que frecuentemente se contraponen. En primer lugar, si bien aumentar el número de capas permite construir geometrías de mayor altura, la inclinación de las paredes del depósito crece con la altura acumulada, lo que reduce progresivamente la eficiencia de deposición al aumentar el ángulo efectivo de impacto de las partículas respecto a la superficie local. Existe por tanto un punto de operación más allá del cual continuar depositando resulta contraproducente en términos de eficiencia, independientemente de la altura máxima alcanzable.
+
+ En segundo lugar, minimizar la porosidad no es necesariamente el objetivo en todos los casos: existen aplicaciones donde una porosidad controlada es deseable, como en recubrimientos con función de disipación de energía, estructuras con permeabilidad específica, o superficies de contacto que requieren retención de lubricante. Dado que la porosidad depende de varios parámetros (como la velocidad transversal de la herramienta), su valor puede modularse ajustando las condiciones operativas según el requerimiento funcional. 
+ 
+ Finalmente, un factor determinante puede ser el costo, principalmente por el consumo de gas propulsor: a diferencia de la energía eléctrica, el gas —en particular el nitrógeno o el helio— representa un costo directo proporcional al tiempo de operación, lo que introduce una presión hacia la minimización del tiempo de fabricación que debe ponderarse frente a los objetivos de calidad microestructural y geométrica del depósito.
 
 \subsection{Características de productos por CS}
 
-Los depósitos generados por cold spray presentan, en estado verde (sin 
-tratamiento posterior), cierto grado de porosidad y rugosidad superficial. 
-La porosidad depende principalmente de la ductilidad de las partículas, su 
-morfología y los parámetros operativos del proceso. 
+Los depósitos generados por CS presentan, en \textbf{estado verde}, cierto grado de porosidad y rugosidad superficial, ambas controladas por la morfología y ductilidad de las partículas y por los parámetros operativos del proceso. La porosidad depende adicionalmente de la capacidad de deformación plástica de las partículas al impacto, mientras que la rugosidad está influenciada también por el tamaño del polvo, el material del sustrato y la distancia de proyección.
+
+La rugosidad superficial de los depósitos CS está determinada principalmente
+por el grado de deformación plástica de las partículas al impacto, el cual
+depende primordialmente de su velocidad de impacto y, por tanto, de la presión y temperatura
+de estancamiento del gas portador. A mayor
+presión de estancamiento, mayor velocidad de las partículas, mayor
+aplastamiento de los splats individuales y, en consecuencia, una superficie
+más uniforme. Winnicki et al. estudiaron sistemáticamente
+este efecto en recubrimientos compuestos Al+Al$_2$O$_3$ depositados por LPCS,
+variando la presión entre 0.5 y 0.7~MPa y la temperatura entre 573 y 673~K,
+y confirmaron la influencia de ambos parámetros sobre la estereometría
+superficial del depósito \cite{Winnicki2014stereometry}.
 
 En cuanto a propiedades mecánicas, los depósitos en estado verde presentan una dureza superior a la del material de referencia, consecuencia del 
-endurecimiento por deformación plástica (\textit{strain hardening}) y las 
+endurecimiento por deformación plástica  y las 
 tensiones residuales compresivas generadas por el efecto peening acumulado. 
-
 Sin embargo, la resistencia a la tracción y la ductilidad son 
 considerablemente inferiores a las del material forjado, debido a la 
 adhesión interfacial incompleta entre partículas y a la fragilidad 
@@ -713,6 +815,24 @@ dureza \cite{Huang2020}.
 El prensado isostático en caliente (HIP) es el 
 tratamiento más efectivo para reducir la porosidad y recuperar propiedades mecánicas próximas a las del material forjado, aunque no elimina completamente los poros de mayor tamaño \cite{Moridi2014}. Cabe señalar que el tratamiento térmico por sí solo no elimina la porosidad, sino que actúa principalmente sobre la cohesión interpartícula y la microestructura.
 
+Este comportamiento ha sido documentado cuantitativamente en depósitos de
+Ti-CP: Petrovskiy et al. midieron una resistencia a la
+tracción de apenas 110~MPa en estado verde, la cual aumentó a 480~MPa
+tras HIP a 110~MPa y 1173~K (Figura \ref{fig:hipi}), tratamiento que redujo la porosidad de
+4.3 a 2.2\% mediante la eliminación preferencial de poros de escala
+submicrónica. No obstante, la ductilidad post-HIP ($\sim 8\%$) permaneció
+significativamente por debajo de la del Ti-CP forjado de referencia,
+consecuencia de los poros de mayor tamaño que el HIP no logra cerrar
+completamente \cite{Petrovskiy2019HIP}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{imgs/hipi.png}
+	\caption[Comparación de curvas esfuerzo-deformación para titanio depositado en verde vs HIP]{Comparación de curvas esfuerzo-deformación para titanio depositado en verde vs HIP\cite{Petrovskiy2019HIP}.}
+	\label{fig:hipi}
+\end{figure}
+
+
 La resolución espacial del depósito está determinada en gran medida por 
 la geometría de la tobera. Un mayor diámetro de salida y una mayor 
 distancia de standoff amplían el spot de deposición, reduciendo la 
@@ -722,6 +842,134 @@ deposición más anchos e irregulares \cite{Wong2013}.
 
 Las superficies del depósito pueden someterse a rectificado u otros 
 procesos de mecanizado convencional para ajustar tolerancias dimensionales o mejorar el acabado superficial. Esta etapa es habitual en aplicaciones estructurales o de reparación donde se requieren superficies funcionales de precisión\cite{Champagne2015repairs}.
+
+\subsection{Estructura de costos}
+
+El costo total de una operación de cold spray puede descomponerse en tres 
+componentes principales: el costo de los materiales consumibles, el costo 
+operativo del proceso y el costo de los tratamientos posteriores requeridos \cite{Helfritch2015economics}.
+
+El componente de mayor variabilidad es el \textbf{costo del gas propulsor}, 
+cuyo consumo es proporcional al tiempo de operación. El costo total asociado al gas 
+puede expresarse como:
+
+\begin{equation}
+	C_{gas} = c_g \cdot \dot{V}_g \cdot t_p
+	\label{eq:costo_gas}
+\end{equation}
+
+donde $c_g$ es el costo unitario del gas [USD/m$^3$], $\dot{V}_g$ es el 
+caudal volumétrico consumido por la boquilla [m$^3$/s] y $t_p$ es el tiempo 
+total de proceso [s]. Esta relación evidencia que minimizar el tiempo de 
+fabricación tiene un impacto directo y lineal sobre este componente del costo, 
+lo que introduce una presión hacia la optimización de la velocidad de 
+deposición y la eficiencia de la trayectoria. 
+
+La elección del gas propulsor tiene una incidencia directa y significativa 
+sobre este componente del costo. El helio produce velocidades de partícula 
+considerablemente mayores que el nitrógeno para las mismas condiciones de 
+presión y temperatura, debido a su menor masa molar y mayor constante 
+específica de gas, lo que se traduce en depósitos más densos y mayor 
+eficiencia de deposición \cite{Stier2014}. Sin embargo, el helio es 
+sustancialmente más costoso que el nitrógeno, como se observa en la Tabla \ref{tab:precios_gases}, lo que hace que su uso en 
+producción continua resulte económicamente prohibitivo sin sistemas de 
+recuperación \cite{Helfritch2015economics}. El nitrógeno, en cambio, es 
+ampliamente disponible y de bajo costo, pero impone limitaciones sobre la 
+velocidad de impacto alcanzable, lo que para materiales de alta resistencia 
+como el titanio puede derivar en depósitos con mayor porosidad residual 
+\cite{Moridi2014}. Esta tensión entre rendimiento y costo ha motivado el 
+desarrollo de estrategias intermedias, como el uso de mezclas He--N$_2$ en 
+proporciones variables, que permiten ajustar la velocidad de partícula y la 
+calidad del depósito al mínimo costo de gas necesario para cada aplicación 
+específica \cite{Stier2014, Helfritch2015economics, CerdaLobos2024}.
+
+% Tabla 1: Precios de gases propulsores
+\begin{table}[h]
+	\centering
+	\caption{Precios referenciales de gases propulsores para cold spray (2024).}
+	\label{tab:precios_gases}
+	\begin{tabular}{lccp{6cm}}
+		\hline
+		\textbf{Gas} & \textbf{Precio aprox.} & \textbf{Unidad} & \textbf{Observación} \\
+		\hline
+		Nitrógeno (N$_2$) & 0.07--0.20   & USD/m$^3$ & Precio entregado a granel; 
+		puede reducirse con generador 
+		in situ \\
+		Helio (He) grado A & 14--28       & USD/m$^3$ & Precio base USGS 2024; 
+		sin incluir flete \\
+		Helio (He) ultra puro & 28--92    & USD/m$^3$ & Pureza $>$99.999\%; 
+		requerido en algunas 
+		aplicaciones de investigación \\
+		\hline
+		\multicolumn{4}{l}{\footnotesize Fuentes: USGS Mineral Commodity Summaries 
+			2025; Purity Gas (2023); \cite{Stier2014}.} \\
+	\end{tabular}
+\end{table}
+
+
+
+El \textbf{costo del polvo} constituye el segundo componente relevante. Los 
+polvos para cold spray, al requerir distribuciones granulométricas controladas 
+y morfologías específicas, son considerablemente más costosos que el material 
+en formatos comerciales estándar \cite{Stier2014}. Para titanio en particular, el proceso de 
+atomización puede multiplicar el costo del material bruto por un factor de 
+entre 3 y 10 dependiendo de la pureza y fracción granulométrica requeridas 
+\cite{Champagne2016unique}. La DE determina cuánto 
+polvo se consume por unidad de volumen depositado, por lo que:
+
+\begin{equation}
+	C_{polvo} = \frac{c_p \cdot \rho \cdot V_{dep}}{DE}
+	\label{eq:costo_polvo}
+\end{equation}
+
+donde $c_p$ es el costo unitario del polvo [USD/kg], $\rho$ es la densidad 
+del material depositado [kg/m$^3$] y $V_{dep}$ es el volumen de depósito neto 
+[m$^3$]. Una baja eficiencia de deposición no solo incrementa el costo de 
+material sino también el tiempo de proceso, amplificando simultáneamente el 
+costo de gas. En la Tabla \ref{tab:precios_polvos} se observan rangos de precios para algunos de los materiales más frecuentes en CS.
+
+\begin{table}[h]
+	\centering
+	\caption{Precios referenciales de polvos metálicos para cold spray (2024).}
+	\label{tab:precios_polvos}
+	\begin{tabular}{llcp{5cm}}
+		\hline
+		\textbf{Material} & \textbf{Granulometría} & 
+		\textbf{Precio [USD/kg]} & \textbf{Observación} \\
+		\hline
+		Cobre (Cu)          & $-45{+}5$~\textmu m   & 20--60    & 
+		Material blando, alta DE \\
+		Aluminio (Al)       & $-45{+}5$~\textmu m   & 5--20     & 
+		Bajo costo; DE moderada con N$_2$ \\
+		Níquel (Ni)         & $-45{+}5$~\textmu m   & 30--80    & 
+		Requiere alta velocidad de impacto \\
+		Ti CP (Grado 1--4)  & $-45{+}11$~\textmu m  & 70--150   & 
+		HDH o atomizado; DE variable con N$_2$ \\
+		Ti-6Al-4V           & $-45{+}15$~\textmu m  & 100--300  & 
+		Alta resistencia; DE baja con N$_2$ \\
+		Inconel 718         & $-45{+}15$~\textmu m  & 150--400  & 
+		Material difícil; preferentemente He \\
+		\hline
+		\multicolumn{4}{l}{\footnotesize Fuentes: met3dp.com (2024); 
+			\cite{Helfritch2015economics}. Precios orientativos para lotes pequeños 
+			($<$10~kg); volúmenes} \\
+		\multicolumn{4}{l}{\footnotesize mayores pueden reducir el costo entre 
+			30--60\%.} \\
+	\end{tabular}
+\end{table}
+
+Finalmente, las \textbf{operaciones de postproceso} pueden incrementar 
+significativamente el costo total, ya sean tratamientos térmicos o rectificados. Ambas operaciones añaden tiempo, 
+equipamiento especializado y costo de mano de obra, por lo que la viabilidad 
+económica del proceso depende en gran medida de la capacidad de obtener 
+depósitos con la menor cantidad posible de postproceso requerido.
+
+El impacto del polvo y el gas en la estructura de costos determina que la 
+viabilidad económica del proceso de CS es altamente sensible a dos 
+factores operativos: la eficiencia de deposición DE, que determina 
+cuánto polvo se desperdicia, y el tiempo de proceso $t_p$, que determina el 
+consumo total de gas. Optimizar ambas simultáneamente es, por tanto, el 
+objetivo central de cualquier estrategia de reducción de costos en CS.
 
 \subsection{Aplicaciones típicas}
 
@@ -744,6 +992,24 @@ carcasas de caja de engranajes en aeronaves, componentes estructurales de
 aleaciones de magnesio en plataformas militares, y árboles o 
 cojinetes de equipos industriales desgastados~\cite{Champagne2015repairs}.
 
+En los últimos años, la viabilidad y eficiencia de la reparación mediante CS se han visto significativamente potenciadas por los avances en robótica industrial y en la programación de sistemas CNC. Estas tecnologías han permitido mejorar el control de la trayectoria facilitando la intervención sobre geometrías complejas que exceden las configuraciones simples de placas o cilindros. En consecuencia, es posible abordar la reparación de componentes con superficies curvas, cavidades internas o zonas de difícil acceso, como se muestra en la Figura \ref{reparcs}. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.85\linewidth]{imgs/repari.jpg}
+	\caption[Componentes reparados mediante CS]{Componentes reparados mediante CS: (a) cárter de la caja de engranajes de helicóptero S-92, (b) alojamientos de tubos de aceite en la cubierta de accesorios del helicóptero CH-47, (c) cárter de la caja de engranajes del helicóptero UH-60 y (d) carcasa de la transmisión del rotor del helicóptero UH-60 \cite{Yin2022review}}.
+	\label{reparcs}
+\end{figure}
+
+Asimismo, estas capacidades no solo habilitan la restauración dimensional, sino también la modificación in situ de los componentes mediante la adición controlada de material, permitiendo incorporar nuevas geometrías, refuerzos locales o características funcionales adicionales sin necesidad de reemplazar la pieza original\cite{Yin2022review}, como se observa en la Figura \ref{repair}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/modifi.jpg}
+	\caption[Componente modificado mediante CS]{Componente modificado mediante CS, se agrega una porción lateral más una perforación pasante \cite{Yin2022review}.}
+	\label{repair}
+\end{figure}
+
 El polvo utilizado en reparación puede ser del mismo material que el 
 componente base o de un material distinto con propiedades superiores. 
 Un caso frecuente es la reparación de sustratos de aleaciones de aluminio 
@@ -753,6 +1019,9 @@ de baja presión~\cite{Champagne2015repairs}. En componentes de acero o
 hierro fundido, es frecuente el uso de polvos de níquel o acero inoxidable 
 para recuperar dimensiones con mayor resistencia a la corrosión que el 
 material base.
+
+
+
 
 Un aspecto crítico en reparación es la compatibilidad mecánica entre el 
 depósito y el sustrato: la adhesión debe ser suficiente para soportar las 

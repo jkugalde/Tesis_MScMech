@@ -146,6 +146,49 @@ D.~Vanerio, J.~Kondas, M.~Guagliano, and S.~Bagherifard, ``{3D} modelling of
   the deposit profile in cold spray additive manufacturing,'' {\em Journal of
   Manufacturing Processes}, vol.~67, pp.~521--534, 2021.
 
+\bibitem{Wu2021trajectories}
+H.~Wu, C.~Huang, X.~Xie, S.~Liu, T.~Wu, T.~Niendorf, Y.~Xie, C.~Deng, M.~Liu,
+  H.~Liao, and S.~Deng, ``Influence of spray trajectories on characteristics of
+  cold-sprayed copper deposits,'' {\em Surface and Coatings Technology},
+  vol.~405, p.~126703, 2021.
+
+\bibitem{Garfias2023}
+A.~Garfias, R.~Bolot, C.~Verdy, F.~Seichepine, and T.~Grosdidier, ``Geometry
+  and microstructure control of remanufactured metallic parts by cold spray
+  additive manufacturing,'' {\em Materials}, vol.~16, no.~13, p.~4735, 2023.
+
+\bibitem{Yin2018anisotropy}
+S.~Yin, R.~Jenkins, X.~Yan, and R.~Lupoi, ``Microstructure and mechanical
+  anisotropy of additively manufactured cold spray copper deposits,'' {\em
+  Materials Science and Engineering: A}, vol.~734, pp.~67--76, 2018.
+
+\bibitem{Winnicki2014stereometry}
+M.~Winnicki, T.~Piwowarczyk, A.~Ma{\l}achowska, and A.~Ambroziak, ``Effect of
+  gas pressure and temperature on stereometric properties of {Al+Al$_2$O$_3$}
+  composite coatings deposited by {LPCS} method,'' {\em Archives of Metallurgy
+  and Materials}, vol.~59, no.~3, pp.~879--886, 2014.
+
+\bibitem{Petrovskiy2019HIP}
+P.~Petrovskiy, A.~Sova, M.~Doubenskaia, and I.~Smurov, ``Influence of hot
+  isostatic pressing on structure and properties of titanium cold-spray
+  deposits,'' {\em The International Journal of Advanced Manufacturing
+  Technology}, vol.~102, no.~1--4, pp.~819--827, 2019.
+
+\bibitem{Helfritch2015economics}
+D.~Helfritch, O.~Stier, and J.~Villafuerte, ``Cold spray economics,'' in {\em
+  Modern Cold Spray: Materials, Process, and Applications} (J.~Villafuerte,
+  ed.), pp.~377--401, Springer, 2015.
+
+\bibitem{Stier2014}
+O.~Stier, ``Fundamental cost analysis of cold spray,'' {\em Journal of Thermal
+  Spray Technology}, vol.~23, no.~1--2, pp.~131--139, 2014.
+
+\bibitem{CerdaLobos2024}
+B.~M. Cerda~Lobos, ``Dimensionamiento de microtoberas de cold spray para
+  deposición de partículas de titanio mediante modelamiento
+  fluidodinámico,'' tesis de magíster, Universidad de Chile, Santiago, Chile,
+  2024.
+
 \bibitem{AFSHARI2025284}
 A.~Afshari, J.-A. Tröger, J.~Meyer, S.~Hartmann, and D.~Inkermann,
   ``Non-planar 3d printing enhancing design potentials by advanced slicing
@@ -188,12 +231,6 @@ A.~Sova, A.~Okunkova, S.~Grigoriev, and I.~Smurov, ``Velocity of the particles
 A.~Sova, S.~Grigoriev, A.~Okunkova, and I.~Smurov, ``Potential of cold gas
   dynamic spray as additive manufacturing technology,'' {\em The International
   Journal of Advanced Manufacturing Technology}, vol.~69, pp.~2269--2278, 2013.
-
-\bibitem{CerdaLobos2024}
-B.~M. Cerda~Lobos, ``Dimensionamiento de microtoberas de cold spray para
-  deposición de partículas de titanio mediante modelamiento
-  fluidodinámico,'' tesis de magíster, Universidad de Chile, Santiago, Chile,
-  2024.
 
 \bibitem{Cao2022nozzle}
 C.~Cao, W.~Li, Z.~Zhang, X.~Yang, and Y.~Xu, ``Cold spray additive
