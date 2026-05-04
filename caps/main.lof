@@ -25,16 +25,18 @@
 \contentsline {figure}{\numberline {2.22}{\ignorespaces Componentes reparados mediante CS}}{31}{figure.caption.31}%
 \contentsline {figure}{\numberline {2.23}{\ignorespaces Componente modificado mediante CS}}{32}{figure.caption.32}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Fresadora de escritorio Pocket NC V2-10}}{42}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Modelo 3D para calefactor de 1kW a) vista isométrica b) vista en corte}}{42}{figure.caption.41}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Modelos 3D de toberas fabricadas en base a Cerda et al.}}{44}{figure.caption.45}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Modelo 3D de las adaptaciones en torno a la máquina CNC }}{45}{figure.caption.47}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Adaptaciones a la máquina CNC, ejes X y Z}}{46}{figure.caption.48}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Vista en corte de las adaptaciones en el espacio de trabajo}}{46}{figure.caption.49}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Imagen obtenida por microscopía del polvo 4010 C. \cite {Metco4010}}}{48}{figure.caption.50}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Diagrama del sistema de CS implementado.}}{49}{figure.caption.52}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Perfil de deposición para las toberas efectivas en Cerda et al.}}{52}{figure.caption.57}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Simulación para la temperatura del gas en toberas}}{53}{figure.caption.58}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Flujo de trabajo para el desarrollo de la investigación}}{41}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Fresadora de escritorio Pocket NC V2-10}}{43}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Modelo 3D para calefactor de 1kW a) vista isométrica b) vista en corte}}{44}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Alimentador de polvo PF-SB-2855}}{45}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Modelos 3D de toberas fabricadas en base a Cerda et al.}}{45}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Modelo 3D de las adaptaciones en torno a la máquina CNC }}{46}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Adaptaciones a la máquina CNC, ejes X y Z}}{47}{figure.caption.50}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Vista en corte de las adaptaciones en el espacio de trabajo}}{48}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Imagen obtenida por microscopía del polvo 4010 C. \cite {Metco4010}}}{49}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Diagrama del sistema de CS implementado.}}{50}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Perfil de deposición para las toberas efectivas en Cerda et al.}}{53}{figure.caption.59}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Simulación para la temperatura del gas en toberas}}{54}{figure.caption.60}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

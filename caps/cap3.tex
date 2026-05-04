@@ -1,6 +1,25 @@
 \chapter{Metodología}
 
-\section{Implementación de un sistema experimental de CS}
+\section{Flujo de trabajo}
+
+Se plantean 4 etapas principales con actividades consecutivas para el cumplimiento de los objetivos específicos establecidos, ilustrando el flujo en la Figura \ref{fig:etapas}. Estas etapas son secuenciales, puesto que cada una funciona como insumo para la ejecución de la siguiente.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/etapas.pdf}
+	\caption[Flujo de trabajo para el desarrollo de la investigación]{Flujo de trabajo para el desarrollo de la investigación.}
+	\label{fig:etapas}
+\end{figure}
+
+La etapa 1 comprende la construcción y caracterización del sistema de CS, así como la caracterización del material de trabajo. El insumo para la $P_H$ del sistema tras las modificaciones efectuadas, y al rango de $P_O$ que garantizan deposición efectiva sobre el sustrato. En caso de que no se logre deposición, se considera modificación del polvo de trabajo o aumento de la potencia de calefacción y/o presión de estancamiento.
+
+En la etapa 2 se explora y optimiza la generación de estructuras en un plano, como paredes simples homogéneas de uno o más trazos a partir de los parámetros entregados por la etapa anterior. Las estrategias de trayectoria se obtienen desde el análisis bibliográfico y la caracterización del perfil de deposición individual. Se evalúa la eficacia de cada estrategia y se determinan los parámetros óptimos asociados, para finalmente establecer lineamientos generales para la generación de paredes planas en el sistema.
+
+En la etapa 3 se estudia la construcción de capas sucesivas sobre depósitos previos, buscando estrategias que permitan mantener una estructura de pared homogénea y plana conforme se avanza en la dirección $Z$. De este modo, se establecen los parámetros que habilitan la fabricación de geometrías tridimensionales elementales en el sistema. Estas geometrías se fabrican y se iteran, tanto en diseño como en parámetros de proceso, hasta obtener resultados morfológicamente aceptables y un proceso repetible.
+
+Finalmente, en la etapa 4 se analiza el proceso en términos de su caracterización mecánica, fidelidad con el diseño, eficiencia de deposición y costos operativos, comparándolo con otros métodos de fabricación aditiva metálica. A partir de este análisis se concluye respecto al potencial del sistema establecido como alternativa de fabricación 3D metálica, contrastando los resultados obtenidos con las hipótesis planteadas y los alcances definidos para el trabajo.
+
+\section{Implementación de un sistema experimental de CSAM}
 
 \subsection{Recursos}
 
@@ -26,11 +45,11 @@ La arquitectura cinemática utilizada corresponde a una fresadora de escritorio 
 		\hline
 		Parámetro & X & Y & Z & A & B \\
 		\hline
-		Recorrido     & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]}° & \textbf{[x]}° \\
-		Velocidad máxima                 & \textbf{[x]} mm/s & \textbf{[x]} mm/s & \textbf{[x]} mm/s & \textbf{[x]} °/s & \textbf{[x]} °/s \\
-		Backlash                         & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]}° & \textbf{[x]}° \\
-		Resolución                       & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]}° & \textbf{[x]}° \\
-		Repetibilidad                    & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]} mm & \textbf{[x]}° & \textbf{[x]}° \\
+		Recorrido     & 115.5 mm & 128.3 mm & 90.1 mm & -25° a 135° & Contínuo \\
+		Velocidad max                & 1524 mm/min &  1524 mm/min  &  1524 mm/min & 40 °/s & 40 °/s  \\
+		Backlash                         & 12.7 $\mu$m & 12.7 $\mu$m & 12.7 $\mu$m & 0.01° & 0.01° \\
+		Resolución                       & 6.1 $\mu$m & 6.1 $\mu$m & 6.1 $\mu$m & 0.01° & 0.01° \\
+		Repetibilidad                    & 12.7 $\mu$m & 12.7 $\mu$m & 12.7 $\mu$m & 0.05° & 0.05° \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -58,7 +77,15 @@ El calefactor requiere un pre-calentamiento antes de iniciar la operación de CS
 
 \subsubsection{Alimentador de polvos}
 
-El alimentador de polvos utilizado es un modelo \textbf{[COMPLETAR: modelo alimentador]}, el cual opera mediante \textbf{[COMPLETAR: principio de operación: disco rotatorio / tornillo sin fin / fluidización, etc.]} y permite regular la tasa de alimentación en el rango de \textbf{[COMPLETAR: rango]} g/min. Este equipo se conecta a uno de los tanques de N2.
+El alimentador de polvos utilizado es un modelo PF-SB-2855 de marca \textit{Metallizing Equipment Co}, el cual opera mediante disco rotatorio para regular la tasa de alimentación (Figura \ref{fig:alim}). Este equipo se conecta a uno de los tanques de N2, su presión máxima de operación es de 2.5 bar, cuenta con un rotámetro de hasta 32 SLPM (\textit{standard liter per minute}).
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.3\linewidth]{imgs/alimentador.png}
+	\caption[Alimentador de polvo PF-SB-2855]{Alimentador de polvo PF-SB-2855. Fuente: mecpl.com}
+	\label{fig:alim}
+\end{figure}
+
 
 \subsubsection{Toberas}
 
@@ -73,7 +100,7 @@ A partir del trabajo de Cerda et al., se fabricaron dos toberas convergente-dive
 
 Las toberas disponen de una entrada tipo downstream para la inyección de polvo; en caso de que esta configuración no resulte efectiva, se contempla la alternativa de emplear la entrada upstream. La entrada que no se utiliza queda sellada mediante un prisionero y sellante. Adicionalmente, y en caso de que se use la entrada upstream, se plantea conectar una termocupla en la entrada downstream con el fin de obtener una estimación más precisa de la temperatura de remanso $T_{0}$.
 
-La diferencia principal entre las dos toberas radica en la presencia de una sección de barril en la tobera T2: esta extensión downstream de la sección divergente aumenta el tiempo de residencia de las partículas en el jet, favoreciendo la transferencia de momentum y de calor desde el gas hacia las partículas, y permitiendo un mejor desarrollo y estabilización del flujo. En consecuencia, se espera que la tobera con barril produzca mayores velocidades de impacto y temperaturas de partícula. La tobera T1, al carecer de barril, presenta una longitud total menor, lo que podría reducir la dispersión radial del jet y disminuir el diámetro efectivo del punto de deposición (\textit{spot}). Como contrapartida, la sección de barril puede incrementar las pérdidas energéticas por fricción y presentar mayor desgaste por erosión en operación prolongada.
+La diferencia principal entre las dos toberas radica en la presencia de una sección de barril en la tobera T2: esta extensión downstream de la sección divergente aumenta el tiempo de residencia de las partículas en el jet, favoreciendo la transferencia de momentum y de calor desde el gas hacia las partículas, y permitiendo un mejor desarrollo y estabilización del flujo. En consecuencia, se espera que la tobera con barril produzca mayores velocidades de impacto y temperaturas de partícula. Por otro lado, la sección de barril puede incrementar las pérdidas energéticas por fricción y presentar mayor desgaste por erosión en operación prolongada.La tobera T1, al carecer de barril, presenta una longitud total menor, lo que podría reducir la dispersión radial del jet y disminuir el diámetro efectivo del punto de deposición (\textit{spot}). 
 
 \begin{table}[h]
 	\centering
@@ -254,13 +281,13 @@ El diagrama del sistema final se observa en la Figura \ref{esqumesis}. El eje A 
 \end{figure}
 
 
-Este código G se escribe a través de programas específicos implementados en Python para cada experimento y geometría a lograr, pues no se cuenta con un software CAM para el proceso.
+Este código G se escribe a través de programas específicos implementados en Python para cada experimento y estrategia o pieza a lograr, pues no se cuenta con un software CAM para el proceso.
 
 La máquina no dispone de un sistema de deflexión o bloqueo del jet, por lo que no es posible detener la proyección de partículas en los movimientos sin fabricar de las trayectorias, o durante la preparación del jet antes de fabricar.
 
 \subsection{Caracterización del espacio de trabajo}
 
-Con el sistema ensamblado se realizaron pruebas de movimiento para determinar el espacio de trabajo útil respecto a las capacidades nominales de la máquina original. Posicionando la tobera en contacto con la periferia del área de trabajo y recorriendo su contorno, se comprueba que es posible recorrer la circunferencia completa deformando la protección de silicona. En consecuencia, el espacio de trabajo útil puede definirse en coordenadas cilíndricas según el Cuadro~\ref{tab:espacio_trabajo}.
+Con el sistema ensamblado se realizaron pruebas de movimiento para determinar el espacio de trabajo útil respecto a las capacidades nominales de la máquina original. Posicionando la tobera en contacto con la periferia del área de trabajo y recorriendo su contorno, se comprueba que es posible recorrer la circunferencia completa deformando la protección de silicona. En consecuencia, el espacio de trabajo útil puede definirse en coordenadas cilíndricas según el Cuadro~\ref{tab:espacio_trabajo} para la configuración estándar de la máquina con el eje A a 90°.
 
 \begin{table}[h]
 	\centering
@@ -281,7 +308,9 @@ Este rango se ve reducido al utilizar el eje A, puesto que la deformación impue
 
 Es importante notar que en fabricación aditiva tridimensional se generan nuevas superficies al construir las paredes que definen un objeto. En un sistema cartesiano convencional, la deposición ocurre siempre sobre la cara superior de la pared en construcción, siguiendo un paradigma de fabricación estrictamente planar. Sin embargo, un sistema con mayor número de grados de libertad ofrece capacidades adicionales: permite depositar de manera oblicua o normal a las caras laterales de las paredes ya fabricadas (Figura~\ref{fig:deposicion_oblicua}). En este caso, el ángulo crítico se evalúa respecto a la cara lateral de la pared, lo cual resulta más favorable geométricamente que respecto a la cara superior. Este modo de deposición queda fuera del alcance de la presente investigación, ya que la protección de silicona restringe el acceso lateral a las paredes fabricadas.
 
-La deposición oblicua también abre la posibilidad de fabricar voladizos, aunque esta estrategia enfrenta restricciones severas en CSAM, dado que cada capa nueva requiere impactar sobre material sólido subyacente para adherirse. Como aproximación, se plantea que un voladizo podría generarse mediante una deposición oblicua ejecutada sobre el borde de una pared ya consolidada, de modo que el material depositado sobresalga lateralmente y actúe como voladizo incipiente. Esta posibilidad se considera fuera del alcance principal de la investigación, pero se documenta como una proyección para trabajo futuro.
+La deposición oblicua también abre la posibilidad de fabricar trazos sin soporte inferior directo (voladizo), aunque esta estrategia enfrenta restricciones severas en CSAM, dado que cada capa nueva requiere impactar sobre material sólido subyacente para adherirse. Como aproximación, se plantea que un voladizo podría generarse mediante una deposición oblicua ejecutada sobre el borde de una pared ya consolidada, de modo que el material depositado sobresalga lateralmente y actúe como voladizo incipiente. 
+
+La velocidad máxima de cada eje se verifica con el sistema completamente ensamblado, incluyendo todas las conexiones de polvo, gases y alimentación eléctrica. Durante estas pruebas no se detecta pérdida de pasos ni se registra el sonido característico de desincronización en ninguno de los ejes. Dado que el control de los motores paso a paso de la Pocket NC opera en lazo abierto —sin retroalimentación de posición— la ausencia de estos indicadores constituye el criterio de validación disponible, por lo que se estima que las velocidades máximas nominales se mantienen bajo las condiciones de carga impuestas.
 
 \subsection{Resumen de parámetros operativos}
 
@@ -295,18 +324,20 @@ En el Cuadro~\ref{tab:parametros} se presentan los acrónimos y rangos operativo
 		\hline
 		Símbolo & Parámetro & Mínimo & Máximo \\
 		\hline
-		$T_0$       & Temperatura de estancamiento [°C]   & \textbf{[COMPLETAR]} & \textbf{[COMPLETAR]} \\
-		$p_0$       & Presión de estancamiento [bar]      & 4   & 8   \\
+		$T_0$       & Temperatura de estancamiento [°C]   & 25 & 480 \\
+		$p_0$       & Presión de estancamiento [bar]      & 10   & 20   \\
 		$\theta$    & Ángulo de deposición [°]            & 70  & 90  \\
-		$v_f$       & Velocidad de avance [mm/s]          & \textbf{[COMPLETAR]} & \textbf{[COMPLETAR]} \\
-		$d_s$       & Distancia de standoff [mm]          & \textbf{[COMPLETAR]} & \textbf{[COMPLETAR]} \\
+		$v_f$       & Velocidad de avance [mm/min]          & - & 1524 \\
+		$d_s$       & Distancia de standoff [mm]          & 0 & 50 \\
 		\hline
 	\end{tabular}
 \end{table}
 
-\section{Planificación de experimentos de trazo y pared}
+\section{Planificación de experimentos de una capa}
 
 \subsection{Características de las toberas}
+
+Los perfiles de depósito obtenidos experimentalmente están directamente condicionados por las características geométricas y fluidodinámicas de las toberas empleadas. Por ello, antes de planificar los experimentos de pista única, corresponde caracterizar estas toberas y contrastar su desempeño nominal de diseño con el comportamiento real a medir, de modo de establecer el marco de referencia dentro del cual se interpretan los resultados experimentales posteriores.
 
 Las toberas fabricadas fueron simuladas numéricamente en Cerda et al., las
 condiciones iniciales se muestran en el Cuadro~\ref{tab:condiciones_cerda}. Los resultados
@@ -416,8 +447,6 @@ aquella que logre adherencia a menor velocidad crítica para igual flujo másico
 En caso de que la diferencia no sea apreciable, la selección se realizará
 mediante análisis comparativo del perfil de depósito obtenido.
 
-
-
 \subsection{Caracterización del perfil de deposición}
 
 Una vez establecidas las condiciones operativas del sistema --- temperatura de
@@ -478,21 +507,156 @@ individuales y la distribución de óxidos interpartícula, características
 que no son accesibles mediante perfilometría superficial y que son
 determinantes para la integridad del depósito~\cite{Huang2020, Yin2022review}.
 
+Cabe señalar que no existe a priori un perfil de deposición óptimo universal, puesto que 
+los criterios de evaluación relevantes son en parte contrapuestos. Un perfil de menor 
+deposición presenta menor ancho y altura de cordón, lo que se traduce en mayor resolución 
+geométrica y menor convexidad superficial, facilitando la compensación de pared en etapas 
+posteriores. Sin embargo, este perfil reduce la tasa de fabricación. Un perfil de mayor 
+deposición presenta el comportamiento inverso: mayor tasa de fabricación a expensas de 
+menor resolución y mayor requerimiento de compensación. La selección del perfil de trabajo 
+constituye por tanto una decisión de compromiso, condicionada por los objetivos específicos 
+de cada geometría a fabricar.
+
 \subsection{Estrategias de deposición}
 
-Con base en el perfil de cordón caracterizado en la subsección anterior y siguiendo el enfoque propuesto por Chepillo et al.~\cite{Chepillo2024}, se plantean estrategias de compensación de paredes para lograr una superficie superior plana y homogénea al construir capas sucesivas.
+El problema central en el CS es que una pasada simple produce un cordón 
+con perfil transversal convexo. Al superponer pasadas adyacentes o capas 
+sucesivas sin compensación, el material se acumula de forma no uniforme, 
+generando una superficie irregular que se propaga y amplifica con cada 
+capa, así como paredes con pérdida de borde.
 
-El problema central es que una pasada simple de CS produce un cordón con perfil convexo, de modo que al superponer pasadas adyacentes o capas sucesivas sin compensación, se acumula material de manera no uniforme, generando una superficie irregular que se propaga y amplifica con cada capa. Para contrarrestar este efecto, se consideran las siguientes estrategias:
+Para contrarrestar este último efecto, se considera la estrategia de 
+\textbf{deposición oblicua} definida por Chepillo et al., consistente en 
+generar pasadas de compensación sobre los trazos principales inclinando 
+la pieza en el eje $A$, de modo de exponer y tratar el borde del cordón. 
+Esta estrategia permite obtener trazos aproximadamente planos y de 
+sección reducida, adecuados para la resolución de detalles puntuales y 
+estructuras de pared delgada.
 
-\textbf{Compensación por solapamiento:} se ajusta el solapamiento entre pasadas adyacentes $s$ como fracción del ancho del cordón $w$, de modo que la suma de los perfiles individuales aproxime una superficie plana. El valor óptimo de $s/w$ se determina a partir del perfil medido, siguiendo el criterio de minimización de la rugosidad superficial compuesta.
+Para la fabricación de sectores de mayor volumen, resulta más conveniente 
+una lógica de \textbf{solapamiento}, en la que se ajusta la distancia 
+entre pasadas adyacentes $s$ como fracción del ancho del cordón $w$, de 
+modo que la superposición de los perfiles individuales aproxime una 
+superficie plana. En caso de que el solapamiento induzca una ondulación 
+residual en la superficie conformada que dificulte la conformación de una nueva capa encima, esta puede atenuarse mediante 
+pasadas de compensación perpendiculares intercaladas entre los trazos 
+principales, o \textbf{deposición inter-trazo}, hasta alcanzar una planitud aceptable. Los bordes de estos 
+sectores macizos se refinan posteriormente mediante la compensación 
+oblicua descrita.
 
-\textbf{Compensación por variación de velocidad de avance:} dado que $v_f$ controla directamente el área depositada por unidad de longitud, se puede modular $v_f$ a lo largo de la trayectoria para depositar más material donde el perfil acumulado es deficiente, de manera análoga a las estrategias de compensación adaptativa reportadas en la literatura~\cite{WU2025642}.
+Cada estrategia se evalúa en términos de dos criterios geométricos medidos mediante 
+perfilometría confocal con el equipo Keyence VK-5000. El primero corresponde al ángulo 
+promedio de la pared depositada respecto a la perpendicular al sustrato, obtenido desde 
+el perfil transversal del depósito, donde un valor cercano a \ang{0} indica una pared 
+vertical. El segundo criterio corresponde a la rugosidad de la superficie superior del 
+cordón, caracterizada mediante el parámetro $R_a$, cuya minimización favorece la 
+deposición uniforme de capas sucesivas. La estrategia o combinación de estrategias que 
+produzca simultáneamente el menor ángulo de inclinación y el menor $R_a$ superficial 
+será adoptada para la fabricación de las probetas y geometrías descritas en las etapas 
+siguientes.
 
-\textbf{Deposición oblicua:} aprovechando los cinco ejes de la máquina, se evalúa la deposición con el eje A desviado respecto a la normal al sustrato, dentro del rango operativo definido en la sección~\ref{sec:espacio_trabajo}. Siguiendo a Chepillo et al.~\cite{Chepillo2024}, esta estrategia permite compensar la asimetría del perfil en las paredes laterales de una pieza en construcción.
+No obstante, aun cuando algunas estrategias resulten exitosas, es 
+previsible que emerjan limitaciones de distinta naturaleza. Por un lado, 
+existen restricciones inherentes al sistema: el espacio de trabajo 
+disponible, los rangos de velocidad y aceleración alcanzables, y la 
+resolución geométrica impuesta por el ancho del cordón depositado. Este 
+último factor define un radio mínimo de curvatura por debajo del cual no 
+es posible reproducir fielmente una trayectoria sin incurrir en 
+solapamientos no deseados o zonas sin cobertura. Adicionalmente, al 
+trazar curvas, la velocidad tangencial del punto de deposición es mayor 
+en el lado exterior del arco que en el interior, dado que ambos lados 
+recorren ángulos iguales en el mismo intervalo de tiempo pero a radios 
+distintos. Esto produce una mayor acumulación de material hacia el 
+interior de la curva y una potencial falta de cobertura en el exterior.
 
-Cada estrategia se evalúa cualitativamente en términos de la planicidad de la superficie resultante tras $N$ capas \textbf{[COMPLETAR: N a definir según espesor de capa y altura objetivo]}, medida mediante perfilometría. La estrategia o combinación de estrategias que produzca la superficie más homogénea será adoptada para la fabricación de las probetas y piezas descritas en las secciones siguientes.
+Por otro lado, ciertas limitaciones son propias de cada estrategia. La deposición con 
+compensación oblicua, por ejemplo, introduce un efecto sombra geométrico asociado al ángulo 
+de inclinación de la boquilla y a la distancia de \textit{standoff}, imponiendo una separación 
+mínima entre paredes paralelas fabricables sin interferencia mutua. La caracterización de 
+estas limitaciones delimita el espacio de geometrías alcanzables con el sistema y constituye 
+el punto de partida para el análisis de deposición multicapa desarrollado en la etapa siguiente.
 
-\section{Caracterización del proceso CSAM}
+\section{Planificación de experimentos multicapa}
+
+\subsection{Estretegias multicapa}
+
+La etapa de deposición multicapa constituye una extensión natural de los resultados 
+obtenidos en la etapa anterior, donde se establecieron estrategias exitosas para la 
+generación de paredes simples. El primer paso consiste en replicar dichas estrategias 
+de forma iterativa en la dirección $Z$, incrementando la altura de la pared capa a capa, 
+con el objetivo de validar la estabilidad del proceso en profundidad y determinar si los 
+parámetros optimizados para una sola capa mantienen su eficacia en deposiciones sucesivas.
+
+Un aspecto de particular interés en esta etapa es el comportamiento de la compensación 
+de pared conforme aumenta el número de capas. No es evidente que el offset de compensación 
+determinado para la primera capa se mantenga constante a lo largo de la dirección $Z$, 
+puesto que la geometría local de la superficie de deposición puede variar por efecto de 
+la acumulación de material o 
+variaciones en la compactación inter-capa. Por ello, se analiza la dependencia de la 
+compensación requerida en función de la capa, buscando determinar si esta es constante, 
+lineal o presenta un comportamiento más complejo.
+
+Adicionalmente, se explora la capacidad del sistema para generar voladizos. Esta capacidad es determinante para evaluar 
+la viabilidad de geometrías con \textit{overhang}, cuya fabricación requiere que la 
+sección transversal del depósito pueda crecer en el plano $XY$ conforme avanza la 
+construcción en $Z$. Sin esta capacidad, las geometrías fabricables quedan restringidas 
+a secciones transversales constantes o decrecientes, lo que limita significativamente 
+el espacio de piezas producibles con el sistema.
+
+Finalmente, la generación de trayectorias para los cinco ejes se implementa mediante 
+código paramétrico en Python, lo que permite sistematizar la variación de parámetros 
+geométricos y de proceso de forma reproducible.
+
+Un aspecto crítico para la viabilidad de la fabricación aditiva multicapa es la adhesión 
+entre capas sucesivas de material CS. A diferencia de la primera capa, donde la adhesión 
+ocurre entre la partícula proyectada y el sustrato base, en las capas posteriores la 
+deposición ocurre sobre material CS previamente depositado. Esta condición es más exigente, 
+puesto que la superficie del depósito previo presenta mayor resistencia a la deformación 
+plástica debido al endurecimiento por deformación acumulado durante los impactos anteriores, 
+lo que eleva efectivamente la velocidad crítica local requerida para la adhesión. A esto se 
+suma la posibilidad de oxidación superficial del titanio entre pasadas, cuya capa de óxido 
+puede inhibir la unión metálica entre partícula y sustrato. 
+
+Por tanto, la evaluación de la adhesión intercapa y su dependencia paramétrica —mediante análisis metalográfico de secciones transversales o caracterización del esfuerzo de corte— constituiría un criterio de aceptabilidad relevante para establecer interrelaciones como la velocidad de fabricación en función de la resistencia intercapa alcanzada, y su proyección tras tratamiento térmico para definir conjuntos de parámetros multivariables óptimos. No obstante, esto queda fuera de los alcances de esta investigación, en la que se prioriza la constructibilidad y la precisión geométrica de las piezas por sobre su desempeño mecánico.
+
+\subsection{Geometrías 3D}
+
+La validación del sistema como plataforma de fabricación aditiva se realiza mediante la 
+fabricación de geometrías de complejidad creciente, evaluadas cualitativamente en términos 
+de integridad estructural y con una \textbf{tolerancia dimensional de referencia de $\pm 2$ mm }
+respecto a las dimensiones nominales de diseño, medida sobre las cotas principales de cada 
+pieza. La progresión propuesta permite aislar las capacidades del sistema de forma 
+incremental, de modo que cada nivel de complejidad introduce una nueva exigencia geométrica 
+sobre los resultados de la etapa anterior.
+
+El primer nivel corresponde a geometrías de extrusión plana con sección transversal 
+constante, específicamente cajas rectangulares y tubos cilíndricos de pared delgada sin 
+tapa. Estas geometrías son simétricas y parametrizables de forma directa por lo que constituyen la validación más directa de la 
+estrategia multicapa establecida en la subsección anterior. Su fabricación exitosa 
+confirma la capacidad del sistema para mantener una sección transversal estable a lo 
+largo de la dirección $Z$.
+
+El segundo nivel introduce geometrías con variación de sección transversal en $Z$, 
+específicamente conos y pirámides. Estas piezas permiten evaluar 
+la capacidad del sistema para fabricar geometrías con \textit{overhang} progresivo. La 
+inclinación de cada capa respecto a la anterior introduce exigencias adicionales sobre 
+la adhesión intercapa y sobre la planificación de trayectorias en el espacio de cinco ejes.
+
+El tercer nivel corresponde a una pieza de referencia de geometría simple pero 
+funcionalmente representativa de aplicaciones típicas del titanio, como un fitting 
+tubular o una pieza de revolución con variación de diámetro. La elección de una pieza 
+con referente en la industria permite contextualizar los resultados en términos de 
+resolución geométrica y desviación dimensional alcanzables con el sistema establecido.
+
+Finalmente, cabe señalar una restricción transversal a todas las geometrías: el sistema 
+no dispone de un mecanismo para interrumpir el flujo de polvo durante el reposicionamiento 
+de la herramienta entre segmentos de trayectoria. Por ello, el diseño del G-code debe 
+privilegiar trayectorias continuas por capa, o bien contemplar zonas de deposición de 
+sacrificio hacia las cuales se dirija el chorro durante los movimientos de transición. 
+Esta restricción condiciona tanto la complejidad de las geometrías abordables como la 
+estrategia de generación paramétrica de trayectorias implementada en Python.
+
+\section{Medición de resultados}
 
 \subsection{Caracterización mecánica de probetas}
 
@@ -504,50 +668,142 @@ viabilidad del proceso CSAM con aleación de titanio a alta resolución geométr
 relativa, por sobre la caracterización exhaustiva de propiedades mecánicas bulk
 del depósito.
 
-Las mediciones de microdureza se realizan sobre secciones transversales de las
-probetas en estado \textit{as-deposited}, siguiendo la norma ASTM E384 \textit{Standard Test Method for Microindentation Hardness of Materials},
+Las mediciones de microdureza se realizan siguiendo la norma ASTM E384 \textit{Standard Test Method for Microindentation Hardness of Materials},
 con el fin de evaluar la homogeneidad de las propiedades a lo largo de la
-dirección de construcción. Los valores obtenidos se contrastan con tres estados
-de referencia del mismo material. 
+dirección de construcción.
 
-El polvo feedstock atomizado presenta
-típicamente valores de 280--320~HV, reflejo de la microestructura finamente
-dendrítica generada por la solidificación rápida durante la atomización. El
-material bulk en estado recocido exhibe valores de 300--340~HV, mientras que
-en estado envejecido se reportan valores de 360--400~HV~\cite{Leyens2003}.
-Dado que los depósitos obtenidos por CS acumulan deformación plástica severa
-durante el impacto, es habitual que la microdureza \textit{as-deposited} supere
-la del material recocido, constituyendo un indicador indirecto del grado de
-consolidación y del trabajo en frío introducido por el proceso~\cite{Huang2020,
-	Yin2022review}.
+Las probetas para este experimento consisten en paredes lineales de $n$ 
+capas, cada una compuesta por dos trazos principales en solapamiento y 
+sus respectivas pasadas de compensación, con una longitud de \SI{30}{mm}. 
+El perfil de cada trayectoria —principal y de compensación— se muestrea 
+en su línea central cada \SI{1}{mm} a lo largo de la dirección de 
+construcción.
+
+El Ti CP Grado~4 presenta, en estado bulk recocido, valores de dureza 
+típicos en torno a \SI{200}{HV}, siendo el más resistente de los grados 
+de titanio comercialmente puro debido a su mayor contenido de elementos 
+intersticiales, particularmente oxígeno \cite{Leyens2003}. A diferencia 
+de las aleaciones $\alpha$+$\beta$ como el Ti-6Al-4V, el Ti CP no 
+responde al envejecimiento, por lo que el endurecimiento por tratamiento 
+térmico queda limitado al recocido de alivio de tensiones. En depósitos 
+obtenidos por proyección fría, es habitual que la microdureza 
+\textit{as-deposited} supere la del material bulk recocido, como 
+consecuencia de la deformación plástica severa acumulada durante el 
+impacto de las partículas, efecto análogo al trabajo en frío 
+\cite{Huang2020, Yin2022review}. Los valores obtenidos en este trabajo 
+se contrastan con esta referencia bulk con el objeto de estimar el grado 
+de endurecimiento introducido por el proceso.
 
 \subsection{Caracterización de piezas tridimensionales}
 
-Para evaluar la capacidad del sistema de reproducir geometrías definidas, se fabrican piezas de referencia consistentes en extrusiones de perfiles 2D de geometría simple \textbf{[COMPLETAR: p.ej. paralelepípedo, cilindro, L-shape]}, cuyas dimensiones nominales se definen en el Cuadro~\ref{tab:piezas_ref}. La selección de geometrías simples permite aislar los efectos geométricos del proceso de las complejidades propias de formas orgánicas.
-
 La evaluación de cada pieza fabricada considera los siguientes indicadores:
 
-\textbf{Precisión geométrica:} se comparan las dimensiones externas medidas mediante calibre digital y/o escáner 3D \textbf{[COMPLETAR: especificar instrumento disponible]} con las dimensiones nominales del diseño, calculando la desviación absoluta y relativa en cada dirección ($x$, $y$, $z$).
+medidas principales con pie de metro
 
-\textbf{Continuidad y densidad relativa:} se preparan secciones metalográficas transversales y longitudinales, las cuales se observan en microscopio óptico. Mediante análisis de imagen se cuantifica la porosidad aparente $\phi$ como fracción de área de poros respecto al área total de la sección, siguiendo el procedimiento descrito en \textbf{[COMPLETAR: norma o referencia metodológica]}.
 
-\textbf{Calidad superficial:} se mide la rugosidad superficial $R_a$ en las caras externas de las piezas mediante perfilometría, distinguiendo entre la cara superior (última capa depositada) y las caras laterales.
 
 \subsection{Análisis de desempeño del proceso}
 
 El desempeño global del proceso se evalúa mediante los siguientes indicadores operativos, calculados para cada condición experimental y para la fabricación de piezas:
 
-\textbf{Eficiencia de deposición} $\eta_d$: definida en la ecuación~\ref{eq:eficiencia}, cuantifica la fracción de polvo suministrado que efectivamente se incorpora a la pieza.
+\textbf{Eficiencia de deposición} $DE$: cuantifica la fracción de polvo suministrado que efectivamente se incorpora a la pieza.
 
 \textbf{Tasa volumétrica de deposición} $\dot{V}_d$ [mm$^3$/s]: indica la productividad del proceso en términos de volumen de material consolidado por unidad de tiempo.
 
 \textbf{Consumo específico de gas} $C_g$ [L/mm$^3$]: volumen de N$_2$ consumido por unidad de volumen depositado, calculado a partir del caudal másico de gas y la tasa volumétrica de deposición. Este indicador es relevante para proyectar la escalabilidad y costo operativo del proceso.
 
-\textbf{Tiempo de fabricación} $t_f$ [min]: tiempo total de deposición activa para producir una pieza de volumen $V$ dado, excluyendo tiempos de preparación y cambio de sustrato.
+\section{Sumario}
 
-Estos indicadores se presentan de manera comparativa entre las distintas condiciones paramétricas y estrategias de trayectoria evaluadas, con el fin de identificar la configuración que mejor equilibra calidad geométrica, propiedades mecánicas y eficiencia del proceso.
+\subsection{Resumen de experimentos de CSAM}
 
-\subsection{Resumen de indicadores de evaluación}
+En los Cuadros \ref{tab:resumen_etapa2}, \ref{tab:resumen_etapa3} y \ref{tab:resumen_etapa4} se presenta el compilado de experimentos de CSAM a desarrollar en esta investigación, separados por etapa del flujo de trabajo.
+
+% Requiere \usepackage{booktabs} y \usepackage{array} en el preámbulo
+
+% ============================================================
+% ETAPA 2
+% ============================================================
+\begin{table}[htbp]
+	\centering
+	\small
+	\caption{Resumen de experimentos -- Etapa 2: Paredes simples.}
+	\label{tab:resumen_etapa2}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{>{\bfseries}p{0.20\textwidth} p{0.22\textwidth} p{0.22\textwidth} p{0.26\textwidth}}
+		\toprule
+		Experimento & Objetivo & Variables / Respuesta & Resultado / Métrica \\
+		\midrule
+		Selección de tobera &
+		Determinar la tobera de mayor eficiencia de deposición &
+		Geometría de tobera (T1 vs.\ T2) / masa depositada &
+		$DE$ \\
+		\midrule
+		Perfil de deposición &
+		Caracterizar la geometría transversal del cordón individual en función de los parámetros operativos &
+		$P_0$, $T_0$, $v_t$ / perfil transversal; sección metalográfica &
+		Parámetros del ajuste gaussiano/super-gaussiano ($w$, $h$, $n$), $R^2$, porosidad \\
+		\midrule
+		Compensación por trayectoria oblicua &
+		Determinar el conjunto de parámetros que minimiza la desviación angular de la pared respecto a la perpendicular &
+		Ángulo de trayectoria, $v_t$, distancia entre pasadas / desviación angular de la pared &
+		Ángulo óptimo, $v_t$ óptima, desviación angular residual \\
+		\midrule
+		Overhang &
+		Caracterizar el ángulo máximo de voladizo alcanzable en una pared simple &
+		Parámetros operativos, estrategia de trayectoria / ángulo de overhang &
+		Ángulo máximo de overhang $\theta_{oh}$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+% ============================================================
+% ETAPA 3
+% ============================================================
+\begin{table}[htbp]
+	\centering
+	\small
+	\caption{Resumen de experimentos -- Etapa 3: Multicapa.}
+	\label{tab:resumen_etapa3}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{>{\bfseries}p{0.20\textwidth} p{0.22\textwidth} p{0.22\textwidth} p{0.26\textwidth}}
+		\toprule
+		Experimento & Objetivo & Variables / Respuesta & Resultado / Métrica \\
+		\midrule
+		Conicidad de pared multicapa &
+		Cuantificar el ángulo de conicidad generado al apilar capas sucesivas de pared directamente sobre depósito previo &
+		Número de capas $n$, parámetros operativos / perfil lateral de la pared &
+		Ángulo de conicidad $\theta_c$ en función de $n$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+% ============================================================
+% ETAPA 4
+% ============================================================
+\begin{table}[htbp]
+	\centering
+	\small
+	\caption{Resumen de experimentos -- Etapa 4: Piezas volumétricas.}
+	\label{tab:resumen_etapa4}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{>{\bfseries}p{0.20\textwidth} p{0.22\textwidth} p{0.22\textwidth} p{0.26\textwidth}}
+		\toprule
+		Experimento & Objetivo & Variables / Respuesta & Resultado / Métrica \\
+		\midrule
+		Fidelidad dimensional &
+		Evaluar la precisión geométrica de las piezas fabricadas respecto al diseño nominal &
+		Estrategia de trayectoria, parámetros operativos / dimensiones principales &
+		Error dimensional absoluto y relativo ($\Delta d$, $\Delta d / d_0$) \\
+		\midrule
+		Microdureza &
+		Evaluar la homogeneidad de las propiedades mecánicas a lo largo de la dirección de construcción &
+		Posición en dirección $Z$ / dureza Vickers &
+		Perfil de $HV$ vs.\ posición, homogeneidad \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsection{Resumen de indicadores de evaluación de CSAM}
 
 En el Cuadro~\ref{tab:indicadores} se resumen los indicadores utilizados para evaluar la viabilidad del proceso CSAM implementado como alternativa para la fabricación aditiva de componentes metálicos de alta resolución a partir de polvo de titanio.
 
@@ -562,11 +818,8 @@ En el Cuadro~\ref{tab:indicadores} se resumen los indicadores utilizados para ev
 		Desviación geométrica        & $\delta_g$      & mm / \%        & Calibre / escáner 3D \\
 		Porosidad aparente           & $\phi$          & \%             & Análisis metalográfico \\
 		Rugosidad superficial        & $R_a$           & $\mu$m         & Perfilometría \\
-		Resistencia a la tracción    & $\sigma_\text{UTS}$ & MPa        & Ensayo ASTM E8 \\
-		Límite de fluencia           & $\sigma_{0,2}$  & MPa            & Ensayo ASTM E8 \\
-		Elongación a la fractura     & $\varepsilon_f$ & \%             & Ensayo ASTM E8 \\
 		Microdureza                  & HV              & —              & Vickers \\
-		Eficiencia de deposición     & $\eta_d$        & \%             & Ec.~\ref{eq:eficiencia} \\
+		Eficiencia de deposición     & $DE$        & \%             & - \\
 		Consumo específico de gas    & $C_g$           & L/mm$^3$       & Cálculo operativo \\
 		Tasa volumétrica             & $\dot{V}_d$     & mm$^3$/s       & Perfilometría / geometría \\
 		\hline
