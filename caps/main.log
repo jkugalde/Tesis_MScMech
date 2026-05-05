@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.6)  5 MAY 2026 12:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.6)  5 MAY 2026 12:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -795,156 +795,157 @@ File: imgs/bowshick.pdf Graphic file (type pdf)
 Package pdftex.def Info: imgs/bowshick.pdf  used on input line 156.
 (pdftex.def)             Requested size: 424.82523pt x 158.55162pt.
  [9 <./imgs/bowshick.pdf>] [10] [11]
-<imgs/pop.jpg, id=622, 341.40347pt x 137.60208pt>
+<imgs/pop.jpg, id=621, 341.40347pt x 137.60208pt>
 File: imgs/pop.jpg Graphic file (type jpg)
 <use imgs/pop.jpg>
-Package pdftex.def Info: imgs/pop.jpg  used on input line 299.
+Package pdftex.def Info: imgs/pop.jpg  used on input line 308.
 (pdftex.def)             Requested size: 401.22942pt x 161.72653pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imgs/pip.jpg, id=625, 341.40347pt x 191.5155pt>
+<imgs/pip.jpg, id=624, 341.40347pt x 191.5155pt>
 File: imgs/pip.jpg Graphic file (type jpg)
 <use imgs/pip.jpg>
-Package pdftex.def Info: imgs/pip.jpg  used on input line 306.
+Package pdftex.def Info: imgs/pip.jpg  used on input line 315.
 (pdftex.def)             Requested size: 401.22942pt x 225.09209pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12]
-<imgs/jett.jpg, id=637, 341.40347pt x 149.16528pt>
+[12] [13 <./imgs/pop.jpg> <./imgs/pip.jpg>]
+<imgs/jett.jpg, id=642, 341.40347pt x 149.16528pt>
 File: imgs/jett.jpg Graphic file (type jpg)
 <use imgs/jett.jpg>
-Package pdftex.def Info: imgs/jett.jpg  used on input line 327.
+Package pdftex.def Info: imgs/jett.jpg  used on input line 336.
 (pdftex.def)             Requested size: 377.62642pt x 165.0041pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13 <./imgs/pop.jpg> <./imgs/pip.jpg>] [14 <./imgs/jett.jpg>]
-<imgs/partipangli.jpg, id=655, 399.894pt x 298.716pt>
+ [14 <./imgs/jett.jpg>]
+<imgs/partipangli.jpg, id=654, 399.894pt x 298.716pt>
 File: imgs/partipangli.jpg Graphic file (type jpg)
 <use imgs/partipangli.jpg>
-Package pdftex.def Info: imgs/partipangli.jpg  used on input line 363.
+Package pdftex.def Info: imgs/partipangli.jpg  used on input line 372.
 (pdftex.def)             Requested size: 377.62642pt x 282.0921pt.
  [15 <./imgs/partipangli.jpg>]
 <imgs/partpart.jpg, id=676, 399.894pt x 163.0893pt>
 File: imgs/partpart.jpg Graphic file (type jpg)
 <use imgs/partpart.jpg>
-Package pdftex.def Info: imgs/partpart.jpg  used on input line 429.
+Package pdftex.def Info: imgs/partpart.jpg  used on input line 438.
 (pdftex.def)             Requested size: 330.42041pt x 134.76184pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imgs/porosi.jpg, id=683, 421.62318pt x 104.7915pt>
+[16]
+<imgs/porosi.jpg, id=687, 421.62318pt x 104.7915pt>
 File: imgs/porosi.jpg Graphic file (type jpg)
 <use imgs/porosi.jpg>
-Package pdftex.def Info: imgs/porosi.jpg  used on input line 445.
+Package pdftex.def Info: imgs/porosi.jpg  used on input line 454.
 (pdftex.def)             Requested size: 424.82523pt x 105.59393pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<imgs/porosiang.jpg, id=686, 421.62318pt x 105.65874pt>
+<imgs/porosiang.jpg, id=690, 421.62318pt x 105.65874pt>
 File: imgs/porosiang.jpg Graphic file (type jpg)
 <use imgs/porosiang.jpg>
-Package pdftex.def Info: imgs/porosiang.jpg  used on input line 452.
+Package pdftex.def Info: imgs/porosiang.jpg  used on input line 461.
 (pdftex.def)             Requested size: 424.82523pt x 106.46779pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<imgs/morfo.jpg, id=689, 335.91096pt x 255.8358pt>
+<imgs/morfo.jpg, id=693, 335.91096pt x 255.8358pt>
 File: imgs/morfo.jpg Graphic file (type jpg)
 <use imgs/morfo.jpg>
-Package pdftex.def Info: imgs/morfo.jpg  used on input line 459.
+Package pdftex.def Info: imgs/morfo.jpg  used on input line 468.
 (pdftex.def)             Requested size: 354.02342pt x 269.63097pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16] [17 <./imgs/partpart.jpg> <./imgs/porosi.jpg> <./imgs/porosiang.jpg>]
+[17 <./imgs/partpart.jpg> <./imgs/porosi.jpg> <./imgs/porosiang.jpg>]
 <imgs/deposiwindow.jpeg, id=707, 1632.0975pt x 1039.885pt>
 File: imgs/deposiwindow.jpeg Graphic file (type jpg)
 <use imgs/deposiwindow.jpeg>
-Package pdftex.def Info: imgs/deposiwindow.jpeg  used on input line 495.
+Package pdftex.def Info: imgs/deposiwindow.jpeg  used on input line 504.
 (pdftex.def)             Requested size: 330.42041pt x 210.52795pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imgs/tempvel.png, id=713, 1954.30125pt x 1183.42125pt>
+[18 <./imgs/morfo.jpg>]
+<imgs/tempvel.png, id=717, 1954.30125pt x 1183.42125pt>
 File: imgs/tempvel.png Graphic file (type png)
 <use imgs/tempvel.png>
-Package pdftex.def Info: imgs/tempvel.png  used on input line 510.
+Package pdftex.def Info: imgs/tempvel.png  used on input line 519.
 (pdftex.def)             Requested size: 330.42041pt x 200.07744pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18 <./imgs/morfo.jpg>] [19 <./imgs/deposiwindow.jpeg> <./imgs/tempvel.png>]
-[20]
+[19 <./imgs/deposiwindow.jpeg> <./imgs/tempvel.png>] [20]
 <imgs/wongde.png, id=748, 1352.80406pt x 1108.8928pt>
 File: imgs/wongde.png Graphic file (type png)
 <use imgs/wongde.png>
-Package pdftex.def Info: imgs/wongde.png  used on input line 599.
+Package pdftex.def Info: imgs/wongde.png  used on input line 608.
 (pdftex.def)             Requested size: 283.22162pt x 232.14679pt.
  [21 <./imgs/wongde.png>]
 <imgs/kotoban.jpg, id=763, 493.74864pt x 117.94464pt>
 File: imgs/kotoban.jpg Graphic file (type jpg)
 <use imgs/kotoban.jpg>
-Package pdftex.def Info: imgs/kotoban.jpg  used on input line 656.
+Package pdftex.def Info: imgs/kotoban.jpg  used on input line 665.
 (pdftex.def)             Requested size: 472.03123pt x 112.76303pt.
 <imgs/scaspis.jpg, id=766, 362.50632pt x 132.54318pt>
 File: imgs/scaspis.jpg Graphic file (type jpg)
 <use imgs/scaspis.jpg>
-Package pdftex.def Info: imgs/scaspis.jpg  used on input line 663.
+Package pdftex.def Info: imgs/scaspis.jpg  used on input line 672.
 (pdftex.def)             Requested size: 472.03123pt x 172.59126pt.
- [22 <./imgs/kotoban.jpg> <./imgs/scaspis.jpg>]
-<imgs/masspeed.png, id=776, 944.7797pt x 639.89063pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<imgs/masspeed.png, id=771, 944.7797pt x 639.89063pt>
 File: imgs/masspeed.png Graphic file (type png)
 <use imgs/masspeed.png>
-Package pdftex.def Info: imgs/masspeed.png  used on input line 677.
+Package pdftex.def Info: imgs/masspeed.png  used on input line 686.
 (pdftex.def)             Requested size: 424.82523pt x 287.7333pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22 <./imgs/kotoban.jpg>]
 <imgs/ncaps.jpg, id=781, 309.02652pt x 79.78609pt>
 File: imgs/ncaps.jpg Graphic file (type jpg)
 <use imgs/ncaps.jpg>
-Package pdftex.def Info: imgs/ncaps.jpg  used on input line 696.
+Package pdftex.def Info: imgs/ncaps.jpg  used on input line 705.
 (pdftex.def)             Requested size: 424.82523pt x 109.69217pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23 <./imgs/masspeed.png>]
+[23 <./imgs/scaspis.jpg> <./imgs/masspeed.png>]
 <imgs/hatching.png, id=792, 855.94781pt x 799.48688pt>
 File: imgs/hatching.png Graphic file (type png)
 <use imgs/hatching.png>
-Package pdftex.def Info: imgs/hatching.png  used on input line 721.
+Package pdftex.def Info: imgs/hatching.png  used on input line 730.
 (pdftex.def)             Requested size: 354.02342pt x 330.67075pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24 <./imgs/ncaps.jpg>]
-Underfull \hbox (badness 2662) in paragraph at lines 752--753
+[24 <./imgs/ncaps.jpg>] [25 <./imgs/hatching.png>]
+Underfull \hbox (badness 2662) in paragraph at lines 761--762
 []|\OT1/cmr/m/n/12 Temperatura de es-tan-ca-mien-to
  []
 
-[25 <./imgs/hatching.png>] [26]
+[26]
 <imgs/aniled.jpg, id=821, 361.35pt x 123.43716pt>
 File: imgs/aniled.jpg Graphic file (type jpg)
 <use imgs/aniled.jpg>
-Package pdftex.def Info: imgs/aniled.jpg  used on input line 810.
+Package pdftex.def Info: imgs/aniled.jpg  used on input line 819.
 (pdftex.def)             Requested size: 424.82523pt x 145.12154pt.
- [27 <./imgs/aniled.jpg>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[27]
 <imgs/hipi.png, id=832, 747.54282pt x 549.55313pt>
 File: imgs/hipi.png Graphic file (type png)
 <use imgs/hipi.png>
-Package pdftex.def Info: imgs/hipi.png  used on input line 830.
+Package pdftex.def Info: imgs/hipi.png  used on input line 839.
 (pdftex.def)             Requested size: 330.42041pt x 242.90262pt.
- [28 <./imgs/hipi.png>] [29]
-Overfull \hbox (1.5844pt too wide) in paragraph at lines 935--959
+ [28 <./imgs/aniled.jpg> <./imgs/hipi.png>] [29]
+Overfull \hbox (1.5844pt too wide) in paragraph at lines 944--968
  [][] 
  []
 
@@ -952,22 +953,19 @@ Overfull \hbox (1.5844pt too wide) in paragraph at lines 935--959
 <imgs/repari.jpg, id=874, 361.35pt x 218.68903pt>
 File: imgs/repari.jpg Graphic file (type jpg)
 <use imgs/repari.jpg>
-Package pdftex.def Info: imgs/repari.jpg  used on input line 999.
+Package pdftex.def Info: imgs/repari.jpg  used on input line 1008.
 (pdftex.def)             Requested size: 401.22942pt x 242.82443pt.
-<imgs/modifi.jpg, id=879, 361.35pt x 84.12228pt>
+ [31 <./imgs/repari.jpg>]
+<imgs/modifi.jpg, id=883, 361.35pt x 84.12228pt>
 File: imgs/modifi.jpg Graphic file (type jpg)
 <use imgs/modifi.jpg>
-Package pdftex.def Info: imgs/modifi.jpg  used on input line 1008.
+Package pdftex.def Info: imgs/modifi.jpg  used on input line 1017.
 (pdftex.def)             Requested size: 424.82523pt x 98.90016pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[31 <./imgs/repari.jpg>] [32 <./imgs/modifi.jpg>]
+ [32 <./imgs/modifi.jpg>]
 <imgs/optam.png, id=900, 1779.64874pt x 450.68375pt>
 File: imgs/optam.png Graphic file (type png)
 <use imgs/optam.png>
-Package pdftex.def Info: imgs/optam.png  used on input line 1095.
+Package pdftex.def Info: imgs/optam.png  used on input line 1104.
 (pdftex.def)             Requested size: 472.03123pt x 119.53377pt.
 
 
@@ -977,7 +975,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <imgs/nonpla.png, id=914, 1397.22pt x 514.92375pt>
 File: imgs/nonpla.png Graphic file (type png)
 <use imgs/nonpla.png>
-Package pdftex.def Info: imgs/nonpla.png  used on input line 1143.
+Package pdftex.def Info: imgs/nonpla.png  used on input line 1152.
 (pdftex.def)             Requested size: 424.82523pt x 156.56044pt.
 
 
@@ -987,7 +985,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <imgs/sinter.png, id=927, 931.22906pt x 494.59781pt>
 File: imgs/sinter.png Graphic file (type png)
 <use imgs/sinter.png>
-Package pdftex.def Info: imgs/sinter.png  used on input line 1176.
+Package pdftex.def Info: imgs/sinter.png  used on input line 1185.
 (pdftex.def)             Requested size: 377.62642pt x 200.5676pt.
 
 
@@ -997,13 +995,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <imgs/poro.jpg, id=937, 433.62pt x 129.19061pt>
 File: imgs/poro.jpg Graphic file (type jpg)
 <use imgs/poro.jpg>
-Package pdftex.def Info: imgs/poro.jpg  used on input line 1205.
+Package pdftex.def Info: imgs/poro.jpg  used on input line 1214.
 (pdftex.def)             Requested size: 472.03123pt x 140.6415pt.
  [36 <./imgs/sinter.png> <./imgs/poro.jpg>]
 <imgs/residual.png, id=951, 2116.15594pt x 1589.1872pt>
 File: imgs/residual.png Graphic file (type png)
 <use imgs/residual.png>
-Package pdftex.def Info: imgs/residual.png  used on input line 1277.
+Package pdftex.def Info: imgs/residual.png  used on input line 1286.
 (pdftex.def)             Requested size: 377.62642pt x 283.59221pt.
 
 
@@ -1013,13 +1011,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <imgs/lynch.png, id=977, 803.25093pt x 505.13719pt>
 File: imgs/lynch.png Graphic file (type png)
 <use imgs/lynch.png>
-Package pdftex.def Info: imgs/lynch.png  used on input line 1384.
+Package pdftex.def Info: imgs/lynch.png  used on input line 1393.
 (pdftex.def)             Requested size: 377.62642pt x 237.48387pt.
  [39]
 <imgs/microtobi.png, id=991, 1001.24063pt x 353.82187pt>
 File: imgs/microtobi.png Graphic file (type png)
 <use imgs/microtobi.png>
-Package pdftex.def Info: imgs/microtobi.png  used on input line 1401.
+Package pdftex.def Info: imgs/microtobi.png  used on input line 1410.
 (pdftex.def)             Requested size: 472.03123pt x 166.80919pt.
 
 
@@ -1320,7 +1318,7 @@ y6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Pr
 ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (82 pages, 23091280 bytes).
+Output written on main.pdf (82 pages, 23091348 bytes).
 PDF statistics:
  1418 PDF objects out of 1440 (max. 8388607)
  299 named destinations out of 1000 (max. 500000)

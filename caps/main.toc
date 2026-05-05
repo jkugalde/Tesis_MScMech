@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {2.2.1}Parámetros relevantes}{24}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Características de productos por CS}{27}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Estructura de costos}{29}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Aplicaciones típicas}{30}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.4}Aplicaciones típicas}{31}{subsection.2.2.4}%
 \contentsline {section}{\numberline {2.3}Fabricación aditiva}{33}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Fundamentos de FA}{33}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}FA de piezas metálicas}{35}{subsection.2.3.2}%
