@@ -189,12 +189,37 @@ B.~M. Cerda~Lobos, ``Dimensionamiento de microtoberas de cold spray para
   fluidodinámico,'' tesis de magíster, Universidad de Chile, Santiago, Chile,
   2024.
 
+\bibitem{Meng2020topology}
+L.~Meng, W.~Zhang, D.~Quan, G.~Shi, L.~Tang, Y.~Hou, P.~Breitkopf, J.~Zhu, and
+  T.~Gao, ``From topology optimization design to additive manufacturing:
+  {Today's} success and tomorrow's roadmap,'' {\em Archives of Computational
+  Methods in Engineering}, vol.~27, no.~3, pp.~805--830, 2020.
+
 \bibitem{AFSHARI2025284}
 A.~Afshari, J.-A. Tröger, J.~Meyer, S.~Hartmann, and D.~Inkermann,
   ``Non-planar 3d printing enhancing design potentials by advanced slicing
   algorithms and path planning,'' {\em Procedia CIRP}, vol.~136, pp.~284--289,
   2025.
 \newblock 35th CIRP Design 2025.
+
+\bibitem{Aboulkhair2014porosity}
+N.~T. Aboulkhair, N.~M. Everitt, I.~Ashcroft, and C.~Tuck, ``Reducing porosity
+  in {AlSi10Mg} parts processed by selective laser melting,'' {\em Additive
+  Manufacturing}, vol.~1--4, pp.~77--86, 2014.
+
+\bibitem{Malashin2024porosity}
+I.~Malashin, D.~Martysyuk, V.~Tynchenko, V.~Nelyub, A.~Borodulin,
+  A.~Gantimurov, A.~Nisan, N.~Novozhilov, V.~Zelentsov, A.~Filimonov, and
+  A.~Galinovsky, ``Controlled porosity of selective laser melting-produced
+  thermal pipes: {Experimental} analysis and machine learning approach for pore
+  recognition on pipes surfaces,'' {\em Sensors}, vol.~24, no.~15, p.~4959,
+  2024.
+
+\bibitem{Bastola2023residual}
+N.~Bastola, M.~P. Jahan, N.~Rangasamy, and S.~Rakshit, ``A review of the
+  residual stress generation in metal additive manufacturing: {Analysis} of
+  cause, measurement, effects, and prevention,'' {\em Micromachines}, vol.~14,
+  no.~7, p.~1480, 2023.
 
 \bibitem{Kondas2024feedstock}
 J.~Kondás, M.~Guagliano, S.~Bagherifard, R.~Singh, J.~Cizek, F.~Lukac,
@@ -214,6 +239,12 @@ S.~Bagherifard, S.~Monti, M.~V. Zuccoli, M.~Riccio, J.~Kondás, and
   M.~Guagliano, ``Cold spray deposition for additive manufacturing of freeform
   structural components compared to selective laser melting,'' {\em Materials
   Science and Engineering: A}, vol.~721, pp.~339--350, 2018.
+
+\bibitem{Lynch2013topology}
+M.~E. Lynch, W.~Gu, T.~El-Wardany, A.~Hsu, D.~Viens, A.~Nardi, and M.~Klecka,
+  ``Design and topology/shape structural optimisation for additively
+  manufactured cold sprayed components,'' {\em Virtual and Physical
+  Prototyping}, vol.~8, no.~3, pp.~213--231, 2013.
 
 \bibitem{Li2007nozzledesign}
 W.-Y. Li, H.~Liao, G.~Douchy, and C.~Coddet, ``Optimal design of a cold spray

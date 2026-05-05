@@ -1081,12 +1081,21 @@ segundo lugar, posibilita la distribución optimizada del material en función
 del servicio de la pieza: estructuras con gradiente de propiedades, canales 
 internos de refrigeración o geometrías con densidad variable según el campo 
 de esfuerzos son ejemplos que escapan a las capacidades de los procesos 
-convencionales \cite{Herzog2016}. En tercer lugar, la MA trasciende las 
+convencionales \cite{Herzog2016}. En tercer lugar, la FA trasciende las 
 restricciones geométricas inherentes a los procesos sustractivos: mientras 
 un torno limita las geometrías a superficies de revolución y una fresadora 
-requiere acceso de herramienta a cada cara, la MA construye la pieza sin 
+requiere acceso de herramienta a cada cara, la FA construye la pieza sin 
 restricciones de acceso, permitiendo voladizos, cavidades internas y 
 estructuras reticulares \cite{Gibson2015}.
+
+La libertad geométrica que ofrece la FA encuentra su complemento computacional en la optimización topológica (OT), método numérico que, dado un dominio de diseño y condiciones de borde, determina la distribución óptima de material minimizando una función objetivo —típicamente la flexibilidad global— sujeta a una restricción de volumen, produciendo geometrías de alta relación rigidez-masa con morfologías orgánicas y no convexas \cite{Meng2020topology}, como se observa en la Figura \ref{optiam}. Estas geometrías resultan en general irrealizables mediante procesos sustractivos convencionales, pero son directamente manufacturables por FA. La integración de ambas tecnologías ha consolidado el paradigma del \textit{Design for Additive Manufacturing} (DfAM), en el cual las restricciones propias del proceso —ángulo de voladizo, resolución mínima y anisotropía microestructural— se incorporan como restricciones dentro del problema de optimización \cite{Meng2020topology}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/optam.png}
+	\caption[Optimización topológica de componente para manufactura aditiva]{Optimización topológica de componente para manufactura aditiva. Se observa la optimización del diseño para el soporte de montaje de una antena, generando un componente orgánico \cite{Meng2020topology}.}
+	\label{optiam}
+\end{figure}
 
 En contrapartida, la FA presenta limitaciones relevantes. Las tasas de 
 deposición son generalmente bajas en comparación con procesos de fabricación 
@@ -1111,7 +1120,7 @@ visualización.
 La gran mayoría de los procesos de FA operan bajo un paradigma de 
 fabricación planar, en el que cada capa se deposita en un plano horizontal 
 fijo y la pieza crece en la dirección vertical mediante la acumulación 
-sucesiva de estas láminas. Este enfoque simplifica considerablemente la 
+sucesiva de estas láminas, como se ejemplifica en el diagrama para un proceso de impresión FDM en la Figura \ref{nonpla}. Este enfoque simplifica considerablemente la 
 planificación de trayectorias, pues el problema 
 se reduce a la generación de contornos e infill en planos paralelos, 
 estrategia que es compatible con sistemas de tres ejes de libertad. No 
@@ -1122,13 +1131,19 @@ pueden requerir para cierto rango estructuras de soporte sacrificiales que deben
 postproceso, incrementando el tiempo de fabricación y pudiendo comprometer 
 la integridad superficial de la pieza~\cite{Gibson2015}.
 
-La fabricación no planar (\textit{non-planar} o \textit{multi-axis AM}) 
-extiende este paradigma al permitir que las capas se depositen sobre 
+La fabricación no planar extiende este paradigma al permitir que las capas se depositen sobre 
 superficies curvas o en direcciones variables, aprovechando los grados de 
 libertad adicionales de sistemas con cuatro o más ejes. Esta capacidad 
-reduce el efecto de escalonado en superficies inclinadas, puede eliminar 
+reduce el efecto de escalonado en superficies inclinadas (Figura \ref{nonpla}), puede eliminar 
 la necesidad de soportes en ciertas geometrías y permite orientar el 
 material de manera favorable respecto a las cargas de servicio~\cite{AFSHARI2025284}. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/nonpla.png}
+	\caption[Diagramas de impresión planar y no planar]{Diagramas de impresión por deposición a) planar, y b) no planar, se observa la eliminación del efecto escalonado al usar la estrategia no planar \cite{AFSHARI2025284}.}
+	\label{nonpla}
+\end{figure}
 
 
 \subsection{FA de piezas metálicas}
@@ -1147,7 +1162,7 @@ traza la sección transversal de la pieza mediante un haz láser de alta
 energía, el cual funde completamente las partículas y las suelda con la 
 capa inferior. Completada una capa, la plataforma desciende un espesor 
 de capa (típicamente 20--60~\(\mu\)m), se deposita polvo nuevo y se 
-repite el proceso hasta completar el volumen~\cite{Gibson2015}. El proceso 
+repite el proceso hasta completar el volumen~\cite{Gibson2015}, como se muestra en la Figura \ref{fig:sinter}. El proceso 
 ocurre en cámara con atmósfera inerte de nitrógeno o argón para evitar 
 la oxidación del material fundido. La granulometría y morfología del polvo 
 tienen un papel determinante en la resolución espacial y en la transferencia 
@@ -1155,11 +1170,42 @@ de calor durante la fusión: polvos esféricos con distribución estrecha
 (típicamente 10--45~\(\mu\)m para SLM) favorecen la densificación y 
 reproducibilidad del proceso~\cite{Herzog2016}.
 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/sinter.png}
+	\caption[Diagramas para impresión SLM]{Diagrama para impresión SLM, un láser traza la sección transversal de una pieza sobre polvo metálico, luego la cama baja un paso y la superficie vuelve a ser cubierta por polvo, iniciando una nueva capa en el ciclo de impresión.}
+	\label{fig:sinter}
+\end{figure}
+
 Las piezas fabricadas presentan superficies rugosas inherentes a la 
 construcción por capas de polvo. Adicionalmente, la cohesión incompleta 
-entre partículas introduce una porosidad intrínseca, que puede tratarse 
-mediante los mismos procedimientos descritos para depósitos de cold spray: 
-recocido o HIP para reducir porosidad y aliviar tensiones residuales.
+entre partículas introduce una porosidad intrínseca, cuya magnitud depende 
+fuertemente de parámetros operativos como la potencia del láser, la 
+velocidad de escaneo y la densidad de energía volumétrica: valores 
+insuficientes generan fusión incompleta, mientras que valores excesivos 
+inducen evaporación del material y formación de poros por 
+\textit{keyholing}~\cite{Aboulkhair2014porosity}. Esta porosidad no deseada 
+puede tratarse mediante los mismos procedimientos descritos para depósitos 
+de cold spray: recocido o HIP para reducir porosidad y aliviar tensiones 
+residuales.
+
+No obstante, la porosidad no constituye en todos los casos una condición 
+a eliminar. En aplicaciones donde se requiere permeabilidad, intercambio 
+térmico o absorción de energía, una porosidad controlada y reproducible 
+es un objetivo de diseño en sí mismo. Estudios recientes han demostrado 
+que mediante la modulación deliberada de los parámetros de proceso SLM 
+es posible obtener estructuras con distribución y fracción volumétrica 
+de poros predefinidas, abriendo el uso de la FA metálica en componentes 
+funcionales como tuberías térmicas y estructuras 
+porosas~\cite{Malashin2024porosity}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/poro.jpg}
+	\caption[Dependencia de la porosidad en fabricación SLM con AlSi10Mg con la velocidad de escaneo]{Dependencia de la porosidad en fabricación SLM con AlSi10Mg con la velocidad de escaneo. a) 250 mm/s b) 500 mm/s c)7 mm/s d) 1000 mm/s \cite{Aboulkhair2014porosity}.}
+	\label{fig:poripi}
+\end{figure}
 
 Entre los materiales y aplicaciones más representativos de SLM en metales se encuentran:
 
@@ -1200,36 +1246,42 @@ soportes estructurales, brackets y componentes de airframe con optimización
 topológica que pueden reducir la masa hasta un 25--30\% respecto al diseño 
 convencional manteniendo la vida a fatiga requerida; en medicina, implantes 
 ortopédicos de cadera, rodilla y columna vertebral con estructuras de 
-celosía porosa (\textit{lattice}) que emulan la rigidez del hueso esponjoso 
+celda porosa (\textit{lattice}) que emulan la rigidez del hueso esponjoso 
 y favorecen la osteointegración; y en industria espacial, toberas y 
 componentes de propulsión donde la relación resistencia-peso es 
 crítica~\cite{Herzog2016}.
 
-La desventaja fundamental de los procesos PBF radica en los gradientes 
-térmicos intensos generados por la naturaleza localizada y cíclica de la 
-fuente de energía. Localmente, la temperatura puede superar la de fusión 
-del material mientras las zonas adyacentes permanecen frías, generando 
-esfuerzos térmicos que se traducen en deformación dimensional, alabeo 
-(\textit{warping}) y en casos extremos, delaminación entre capas si la 
-acumulación de calor no se controla adecuadamente~\cite{Herzog2016}. 
-Estos gradientes promueven además la oxidación en materiales reactivos 
-y pueden inducir transformaciones de fase no deseadas que alteran la 
-microestructura final, como la formación de martensita $\alpha'$ 
-metaestable en Ti-6Al-4V por enfriamiento rápido, lo que resulta en 
-mayor resistencia pero menor ductilidad respecto al material 
-forjado~\cite{Leyens2003}.
 
 Una consecuencia directa de la construcción capa por capa bajo gradientes 
-térmicos direccionales es la \textbf{anisotropía} de las propiedades 
-mecánicas. Durante la solidificación, los granos crecen epitaxialmente 
-en la dirección del gradiente térmico, que es preferentemente perpendicular 
-al plano de construcción. Esto genera columnas de grano orientadas en la 
-dirección de construcción, de modo que la resistencia y ductilidad medidas 
-en esa dirección difieren de las medidas en el plano paralelo a las 
-capas~\cite{Herzog2016}. En Ti-6Al-4V fabricado por SLM, la resistencia 
-a la tracción en dirección vertical es típicamente inferior a la horizontal, 
-mientras que la ductilidad muestra el comportamiento inverso, dependiendo 
-del ciclo térmico y la estrategia de escaneo empleada.
+térmicos direccionales es la acumulación de estrés residual en la pieza 
+consolidada. Este estrés, de naturaleza tensil en las capas superiores y 
+compresivo en las inferiores, promueve la nucleación y propagación de 
+grietas bajo carga cíclica, reduciendo la vida a fatiga respecto al 
+material convencional, y puede desencadenar delaminación intercapa incluso 
+en ausencia de defectos geométricos macroscópicos~\cite{Bastola2023residual}.
+
+Una segunda consecuencia de estos mismos gradientes térmicos direccionales 
+es la \textbf{anisotropía} de las propiedades mecánicas. Durante la 
+solidificación, los granos crecen epitaxialmente en la dirección del 
+gradiente térmico, preferentemente perpendicular al plano de construcción, 
+generando columnas de grano orientadas en la dirección de construcción, de 
+modo que la resistencia y ductilidad medidas en esa dirección difieren de 
+las medidas en el plano paralelo a las capas~\cite{Herzog2016}. En 
+Ti-6Al-4V fabricado por SLM, la resistencia a la tracción en dirección 
+vertical es típicamente inferior a la horizontal, mientras que la 
+ductilidad muestra el comportamiento inverso, dependiendo del ciclo térmico 
+y la estrategia de escaneo empleada.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/residual.png}
+	\caption[Defectos en impresión SLM por esfuerzos residuales]{Defectos en impresión SLM por esfuerzos residuales \cite{Bastola2023residual} (a) Fisuración en una pieza de aleación Inconel-718, 
+		(b) fisuración en una pieza de aleación Ti-6Al-4V, 
+		(c) distorsión y separación de la placa base, y 
+		(d) formación de grietas.}
+	\label{fig:residual}
+\end{figure}
+
 
 El titanio comercialmente puro, aunque de menor resistencia 
 que el Ti-6Al-4V, comparte las mismas dificultades de procesamiento 
@@ -1242,7 +1294,7 @@ por la superficie de titanio puro supera en algunos aspectos a la
 aleación~\cite{Leyens2003}.
 
 Para mitigar estos efectos, los procesos PBF utilizan \textbf{estructuras 
-	de soporte} (\textit{support structures}): geometrías auxiliares que no 
+	de soporte}: geometrías auxiliares que no 
 forman parte de la pieza final pero cumplen dos funciones esenciales. 
 Primero, actúan como conductores térmicos que disipan el calor generado 
 en zonas críticas hacia la placa base, reduciendo los gradientes y el 
@@ -1289,8 +1341,7 @@ cohesión interpartícula limitada, determinadas principalmente por la energía
 cinética de impacto y la deformabilidad del material. La densificación y la
 recuperación de propiedades mecánicas se logran típicamente mediante tratamientos
 post-proceso como el recocido o el prensado isostático en caliente
-(HIP)~\cite{Kondas2024feedstock}. No obstante, incluso en condición
-\textit{as-deposited}, el CSAM permite obtener geometrías funcionales con tasas
+(HIP)~\cite{Kondas2024feedstock}. No obstante, incluso en estado verde, el CSAM permite obtener geometrías funcionales con tasas
 de deposición elevadas y sin las restricciones térmicas propias de los procesos
 de fusión, lo que lo posiciona como una alternativa competitiva para la
 fabricación y reparación de componentes metálicos de alta
@@ -1312,13 +1363,48 @@ interpartícula en condición \textit{as-sprayed} constituyen las principales
 limitantes para alcanzar propiedades mecánicas comparables a las del material
 procesado por fusión. 
 
+Lynch et al.~\cite{Lynch2013topology} demostraron la fabricabilidad de 
+componentes estructurales de geometría compleja mediante CSAM al integrar 
+optimización topológica en el ciclo de diseño. Partiendo de las restricciones 
+propias del proceso —línea de visión, ángulo de deposición, transiciones 
+graduales entre planos y geometría de sección transversal del depósito— los 
+autores establecieron un conjunto de directrices de diseño para CSAM y las 
+aplicaron sobre un componente estructural real, depositado sobre un soporte 
+removible diseñado específicamente para satisfacer las restricciones 
+geométricas del proceso y garantizar aristas definidas sin planificación 
+compleja de trayectoria (Figura \ref{fig:lynch}). Mediante optimización topológica y morfológica se 
+obtuvo una reducción de hasta tres veces en el esfuerzo máximo y una 
+disminución del 20$\%$ en masa respecto a la pieza original, constituyendo 
+una de las primeras demostraciones sistemáticas de que la optimización topológica puede 
+formularse con restricciones específicas del proceso CS, cerrando el ciclo 
+entre diseño computacional y fabricación sólida en estado frío.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/lynch.png}
+	\caption[Pieza fabricada mediante CSAM]{Pieza fabricada mediante CSAM \cite{Lynch2013topology} a) Pieza en verde sobre soporte b) Pieza post maquinado.}
+	\label{fig:lynch}
+\end{figure}
+
 \subsubsection{Microtoberas en CSAM}
 
 Una de las características fundamentales de la fabricación aditiva es la
 resolución espacial necesaria para lograr geometrías complejas. En CS, este
 atributo puede mejorarse controlando parámetros operacionales como la distancia
-de trabajo (\textit{standoff}) y, principalmente, mediante el uso de
-\textbf{microtoberas}. Al tener una garganta y un diámetro de salida reducidos,
+de \textit{standoff} y, principalmente, mediante el uso de
+microtoberas. 
+
+En el contexto del cold spray, el término microtobera (micronozzle) fue introducido por Sova et al.~\cite{Sova2013micronozzle, Sova2013velocity} para designar toberas convergente-divergentes cuya dimensión característica es sensiblemente inferior al rango convencional del proceso —diámetros de salida típicos de 4 a 10~mm— alcanzando diámetros del orden del milímetro o inferiores. La denominación no responde a una escala micrométrica en sentido metrológico estricto, sino a la reducción relativa de escala respecto a los sistemas estándar, motivada por el objetivo de aumentar la resolución espacial del depósito. Se observan microtoberas usadas por Sova et al. en la Figura \ref{microtobi}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/microtobi.png}
+	\caption[Microtoberas del grupo de investigación de Sova et al.]{[Microtoberas del grupo de investigación de Sova et al. \cite{Sova2013micronozzle} a) y b) Esquemas de microtoberas y c) Fotografía de microtobera.}
+	\label{microtobi}
+\end{figure}
+
+
+Al tener una garganta y un diámetro de salida reducidos,
 las microtoberas permiten controlar con mayor precisión tanto la forma del
 \textit{spot} de deposición como el flujo másico de
 partículas~\cite{Sova2013micronozzle, Li2007nozzledesign}.
