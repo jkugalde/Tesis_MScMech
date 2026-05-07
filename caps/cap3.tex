@@ -336,17 +336,17 @@ En el Cuadro~\ref{tab:parametros} se presentan los acrónimos y rangos operativo
 
 \subsection{Características de las toberas}
 
-Los perfiles de depósito obtenidos experimentalmente están directamente condicionados por las características geométricas y fluidodinámicas de las toberas empleadas. Por ello, antes de planificar los experimentos de pista única, corresponde caracterizar estas toberas y contrastar su desempeño nominal de diseño con el comportamiento real a medir, de modo de establecer el marco de referencia dentro del cual se interpretan los resultados experimentales posteriores.
+Los perfiles de depósito obtenidos experimentalmente están directamente condicionados por las características geométricas y fluidodinámicas de las toberas empleadas. Por ello, antes de planificar los experimentos de pista única, corresponde describir estas toberas y contrastar su desempeño nominal de diseño con el comportamiento real a medir, a modo de establecer el marco de referencia dentro del cual se interpretan los resultados experimentales posteriores.
 
 Las toberas fabricadas fueron simuladas numéricamente en Cerda et al., las
 condiciones iniciales se muestran en el Cuadro~\ref{tab:condiciones_cerda}. Los resultados
 principales de estas simulaciones se resumen en el Cuadro~\ref{tab:resultados_toberas},
 e incluyen la velocidad y temperatura de impacto de la partícula con mayor velocidad para cada
-diseño de tobera.
+diseño de tobera seleccionado.
 
 \begin{table}[h]
 	\centering
-	\caption{Condiciones de borde empleadas en las simulaciones 
+	\caption{Condiciones iniciales empleadas en las simulaciones 
 		fluido-dinámicas de Cerda et al.}
 	\label{tab:condiciones_cerda}
 	\begin{tabular}{lc}
@@ -360,6 +360,7 @@ diseño de tobera.
 		Rango granulométrico $d_p$     & 10--50~$\mu$m        \\
 		Morfología del polvo           & Esférica             \\
 		Material del polvo             & Ti~CP                \\
+		Gas de proceso & $N_{2}$ \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -381,7 +382,20 @@ diseño de tobera.
 	\end{tabular}
 \end{table}
 
-Nótese que $T_{1}$ no estaría alcanzando la velocidad crítica teórica en base a este estudio, la cual fue calculada para cada caso usando la ecuación \ref{vcrit}. En la Figura \ref{fig:perfiltobs} se observan los perfiles de deposición simulados durante 1 segundo en posición estática en Cerda et al., particularmente de la tobera T2 en color azul.
+Nótese que en $T_{1}$, a pesar de que el gas alcanza una mayor velocidad de salida
+respecto a $T_{2}$, las partículas no logran alcanzar la velocidad crítica teórica
+calculada mediante la ecuación~\ref{vcrit}. Este resultado puede atribuirse a la
+insuficiente longitud de la sección divergente y, por tanto, al reducido tiempo de
+residencia disponible para que las partículas aceleren y sigan la trayectoria del gas
+de manera efectiva. Así, la sección de barril en $T_{2}$ otorga más tiempo de residencia y estabiliza el 
+flujo, logrando generar deposición, aunque escasa. En la Figura \ref{fig:perfiltobs} se observan los perfiles de deposición simulados durante 1 segundo en posición estática en Cerda et al. para distintas toberas, el perfil para la tobera $T_{2}$ se observa en azul.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/perfiltob.png}
+	\caption[Perfil de deposición para las toberas efectivas en Cerda et al.]{Perfil de deposición para las toberas efectivas en Cerda et al. \cite{CerdaLobos2024}.}
+	\label{fig:perfiltobs}
+\end{figure}
 
 Una diferencia relevante entre las simulaciones de Cerda et al. y las 
 condiciones experimentales de la presente investigación radica en la 
@@ -397,11 +411,77 @@ constituyen una estimación conservadora para el polvo HDH empleado, y
 los perfiles de temperatura de partícula permanecen cualitativamente 
 válidos dado que el número de Biot se mantiene pequeño en ambos casos.
 
+Un factor crítico que no fue abordado directamente en el estudio de Cerda et al.\ es el análisis 
+de la longitud crítica de Fanno, descrita en la sección 2.1.2. Este parámetro 
+representa la longitud máxima de ducto de sección constante a partir de la cual un flujo 
+supersónico con fricción alcanzaría condiciones sónicas, y su evaluación permite 
+cuantificar el efecto de la fricción viscosa sobre el flujo en la sección de barril de 
+la tobera.
+
+Para la tobera $T_{2}$, cuya sección de barril posee diámetro $D = \SI{6}{mm}$ y longitud 
+$L = \SI{50}{mm}$, se emplearon las condiciones del gas a la entrada de dicha sección, 
+estimadas a partir de los resultados de simulación (Figuras \ref{fig:velocipi} y \ref{fig:temp_gas}): velocidad $v_1 \approx \SI{1100}{m/s}$ 
+y temperatura $T_1 \approx \SI{200}{K}$. El número de Mach de entrada se calcula como:
+
+\begin{equation}
+	M_1 = \frac{v_1}{\sqrt{\gamma R T_1}} = \frac{1100}{\sqrt{1.4 \times 296.8 \times 200}} 
+	\approx 3.82
+	\label{eq:mach_barril_T2}
+\end{equation}
+
+Para el factor de fricción, se consideró la rugosidad superficial característica del 
+acero inoxidable mecanizado por EDM, $\varepsilon \approx \SI{1.6}{\micro m}$, lo que 
+para $D = \SI{6}{mm}$ entrega una rugosidad relativa $\varepsilon/D \approx 2.67\times10^{-4}$. 
+En el régimen de flujo completamente rugoso, la correlación de Colebrook-White simplificada 
+entrega \cite{White2016}:
+
+\begin{equation}
+	\frac{1}{\sqrt{f}} = -2\log\left(\frac{\varepsilon/D}{3.7}\right) 
+	= -2\log(7.21\times10^{-5}) \approx 8.28 
+	\implies f \approx 0.0146
+	\label{eq:factor_friccion}
+\end{equation}
+
+Evaluando la ecuación de Fanno~\eqref{eq:fanno} en $M_1 = 3.82$:
+
+\begin{equation}
+	\left.\frac{4fL^{*}}{D}\right|_{M_1} = \frac{1-M_1^2}{\gamma M_1^2} + 
+	\frac{\gamma+1}{2\gamma}\ln\left(\frac{(\gamma+1)M_1^2}{2\left(1+
+		\dfrac{\gamma-1}{2}M_1^2\right)}\right) \approx 0.618
+	\label{eq:fanno_eval}
+\end{equation}
+
+de donde se obtiene la longitud crítica:
+
+\begin{equation}
+	L^{*}_{T_{2}} = \frac{0.618 \times D}{4f} = 
+	\frac{0.618 \times \SI{6}{mm}}{4 \times 0.0146} \approx \SI{63.5}{mm}
+	\label{eq:fanno_T2}
+\end{equation}
+
+Dado que la sección de barril mide $L = \SI{50}{mm} < L^{*}_{T_{2}}$, la fricción 
+viscosa por sí sola no es suficiente para llevar el flujo a condiciones sónicas dentro 
+de la tobera, lo cual es consistente con la observación de flujo supersónico a la salida.
+
+No obstante, los resultados de simulación de Cerda et al. muestran la presencia de 
+celdas de choque en la sección de barril , evidenciadas por los característicos diamantes 
+de Mach visibles. Estas estructuras, producto del desajuste 
+entre el Mach de diseño de la sección divergente y las condiciones de contrapresión, 
+generan un patrón periódico de ondas de choque oblicuas y ondas de expansión de 
+Prandtl-Meyer \cite{Anderson2021}. A diferencia de la fricción viscosa, cada onda de choque oblicua 
+introduce pérdidas irreversibles de presión de estancamiento, reduciendo el Mach 
+promedio a lo largo del barril de manera adicional a lo predicho por Fanno. En 
+consecuencia, la longitud crítica calculada en la ecuación~\eqref{eq:fanno_T2} debe 
+interpretarse como una \textbf{cota superior}: la desaceleración real del flujo es más 
+pronunciada debido a la combinación de fricción viscosa y pérdidas por ondas de choque, 
+lo que explica la discrepancia entre el Mach isentrópico ideal y el Mach efectivo 
+observado a la salida de $T_{2}$.
+
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.8\linewidth]{imgs/perfiltob.png}
-	\caption[Perfil de deposición para las toberas efectivas en Cerda et al.]{Perfil de deposición para las toberas efectivas en Cerda et al. \cite{CerdaLobos2024}.}
-	\label{fig:perfiltobs}
+	\includegraphics[width=1.0\linewidth]{imgs/velocipi.png}
+	\caption[Resultados de la simulación del perfil de velocidad del gas en la tobera $T_{2}$]{Resultados de la simulación del perfil de velocidad del gas en la tobera $T_{2}$ \cite{CerdaLobos2024}.}
+	\label{fig:velocipi}
 \end{figure}
 
 Entre las conclusiones principales del estudio de Cerda et al. destacan 
@@ -414,10 +494,6 @@ de la sección divergente, se verificó que a mayor longitud, mayor es la
 velocidad alcanzada por las partículas y, en consecuencia, mayor la 
 eficiencia de deposición. 
 
-Respecto a la geometría, si bien la tobera 
-convergente-divergente alcanza velocidades de partícula superiores a la 
-tobera convergente-divergente-barril, la sección de barril estabiliza el 
-flujo y genera un perfil de depósito más centrado y de mayor altura. 
 Finalmente, el análisis de mezclas N$_2$-He mostró aumentos significativos 
 en la velocidad del gas y en la eficiencia de deposición, aunque los 
 autores concluyen que, considerando únicamente los costos de gas y 

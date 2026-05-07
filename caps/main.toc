@@ -45,26 +45,26 @@
 \contentsline {subsection}{\numberline {3.2.7}Resumen de parámetros operativos}{59}{subsection.3.2.7}%
 \contentsline {section}{\numberline {3.3}Planificación de experimentos de una capa}{59}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Características de las toberas}{59}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Caracterización del perfil de deposición}{61}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Estrategias de deposición}{63}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Planificación de experimentos multicapa}{64}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Estretegias multicapa}{64}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Geometrías 3D}{65}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Medición de resultados}{66}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Caracterización mecánica de probetas}{66}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Caracterización de piezas tridimensionales}{67}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Análisis de desempeño del proceso}{67}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Sumario}{67}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Resumen de experimentos de CSAM}{67}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Resumen de indicadores de evaluación de CSAM}{67}{subsection.3.6.2}%
-\contentsline {chapter}{\numberline {4}Resultados y discusión}{70}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Caracterización del perfil}{70}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Estrategias de compensación}{70}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Ensayos mecánicos}{70}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Fidelidad geométrica}{70}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Estructura de costos}{70}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{71}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{71}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{71}{section.5.2}%
-\contentsline {chapter}{\numberline {}Bibliograf\'ia}{77}{chapter*.76}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{78}{Appendix.alph1.Alph1}%
+\contentsline {subsection}{\numberline {3.3.2}Caracterización del perfil de deposición}{63}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Estrategias de deposición}{64}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Planificación de experimentos multicapa}{66}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Estretegias multicapa}{66}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Geometrías 3D}{67}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Medición de resultados}{67}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Caracterización mecánica de probetas}{67}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Caracterización de piezas tridimensionales}{68}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Análisis de desempeño del proceso}{68}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Sumario}{69}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Resumen de experimentos de CSAM}{69}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Resumen de indicadores de evaluación de CSAM}{69}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {4}Resultados y discusión}{72}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Caracterización del perfil}{72}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Estrategias de compensación}{72}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Ensayos mecánicos}{72}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Fidelidad geométrica}{72}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Estructura de costos}{72}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{73}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{73}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{73}{section.5.2}%
+\contentsline {chapter}{\numberline {}Bibliograf\'ia}{79}{chapter*.77}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{80}{Appendix.alph1.Alph1}%

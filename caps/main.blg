@@ -7,45 +7,45 @@ Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografia.bib
 Warning--I didn't find a database entry for "Wu2021trajectories"
 Warning--I didn't find a database entry for "Sova2017micronozzle"
-You've used 64 entries,
+You've used 65 entries,
             1876 wiz_defined-function locations,
-            911 strings with 17869 characters,
-and the built_in function-call counts, 20816 in all, are:
-= -- 2066
-> -- 987
+            915 strings with 17917 characters,
+and the built_in function-call counts, 20968 in all, are:
+= -- 2081
+> -- 991
 < -- 0
-+ -- 352
-- -- 288
-* -- 1553
-:= -- 2942
-add.period$ -- 72
-call.type$ -- 64
-change.case$ -- 63
++ -- 354
+- -- 289
+* -- 1560
+:= -- 2964
+add.period$ -- 74
+call.type$ -- 65
+change.case$ -- 64
 chr.to.int$ -- 0
-cite$ -- 64
-duplicate$ -- 1034
-empty$ -- 1738
-format.name$ -- 288
-if$ -- 5050
+cite$ -- 65
+duplicate$ -- 1043
+empty$ -- 1758
+format.name$ -- 289
+if$ -- 5089
 int.to.chr$ -- 0
-int.to.str$ -- 64
-missing$ -- 67
-newline$ -- 203
-num.names$ -- 66
-pop$ -- 151
+int.to.str$ -- 65
+missing$ -- 69
+newline$ -- 207
+num.names$ -- 67
+pop$ -- 156
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 802
+skip$ -- 803
 stack$ -- 0
 substring$ -- 1454
-swap$ -- 519
+swap$ -- 520
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 197
-width$ -- 66
-write$ -- 665
+while$ -- 198
+width$ -- 67
+write$ -- 675
 (There were 2 warnings)
