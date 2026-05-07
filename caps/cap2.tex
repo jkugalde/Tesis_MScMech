@@ -125,6 +125,34 @@ $v_e \propto \sqrt{T_0/M_{mol}}$\cite{Huang2020}.
 
 Nótese que en la ecuación~\ref{eq:velocidad_salida} la velocidad de salida del gas depende de la temperatura de estancamiento \( T_0 \), pero no de la presión de estancamiento \( p_0 \). Por lo tanto, una vez superada la condición de estrangulamiento, incrementar la presión de operación no produce un aumento en la velocidad del gas a la salida. Sin embargo, el aumento de presión sí incrementa la densidad del gas y, en consecuencia, el flujo másico a través de la tobera. Esto se traduce en una mayor tasa de transferencia de momentum lineal hacia las partículas, favoreciendo su aceleración. Así, la presión y la temperatura de operación actúan como parámetros independientes en el proceso: la temperatura determina la velocidad del gas, mientras que la presión regula la cantidad de momentum disponible para transferir a las partículas.
 
+El análisis anterior asume flujo isoentrópico a lo largo de toda la tobera. 
+Sin embargo, en la práctica, la fricción viscosa con las paredes introduce 
+pérdidas de presión total que modifican el desarrollo del flujo supersónico 
+en la sección divergente y, de manera más crítica, en una eventual sección 
+de área constante aguas abajo. Este fenómeno se describe mediante 
+el modelo de flujo de Fanno, que considera un flujo compresible adiabático 
+con fricción en un ducto de sección constante~\cite{Anderson2021}.
+
+En el flujo de Fanno, la fricción actúa como mecanismo disipativo que 
+impulsa el número de Mach hacia la unidad, independientemente del régimen 
+de entrada: un flujo supersónico es desacelerado y un flujo subsónico es 
+acelerado, ambos convergiendo hacia $M = 1$ como estado límite. La longitud 
+máxima de ducto a partir de la cual el flujo alcanza este límite se denomina 
+longitud crítica de Fanno $L^*$, y se expresa como~\cite{Anderson2021}:
+
+\begin{equation}
+	\frac{4fL^*}{D} = \frac{1-M^2}{\gamma M^2} + 
+	\frac{\gamma+1}{2\gamma}\ln\left(\frac{(\gamma+1)M^2}
+	{2\left(1+\dfrac{\gamma-1}{2}M^2\right)}\right)
+	\label{eq:fanno}
+\end{equation}
+
+donde $f$ es el factor de fricción de Darcy-Weisbach, $D$ es el diámetro 
+hidráulico del ducto, $M$ es el número de Mach a la entrada de la sección 
+de área constante, y $\gamma$ es el coeficiente de calores específicos del 
+gas. Si la longitud física del ducto supera $L^*$, el flujo supersónico no 
+puede mantenerse y ocurre un choque normal interno que fuerza la transición 
+a régimen subsónico. 
 \subsection{Proyección de partículas}
 
 El gas acelerado arrastra a las partículas en la tobera, aumentando su 
@@ -1400,7 +1428,7 @@ entre diseño computacional y fabricación sólida en estado frío.
 Una de las características fundamentales de la fabricación aditiva es la
 resolución espacial necesaria para lograr geometrías complejas. En CS, este
 atributo puede mejorarse controlando parámetros operacionales como la distancia
-de \textit{standoff} y, principalmente, mediante el uso de
+de \textit{standoff} (por el cono de dispersión) y, principalmente, mediante el uso de
 microtoberas. 
 
 En el contexto del cold spray, el término microtobera (micronozzle) fue introducido por Sova et al.~\cite{Sova2013micronozzle, Sova2013velocity} para designar toberas convergente-divergentes cuya dimensión característica es sensiblemente inferior al rango convencional del proceso —diámetros de salida típicos de 4 a 10~mm— alcanzando diámetros del orden del milímetro o inferiores. La denominación no responde a una escala micrométrica en sentido metrológico estricto, sino a la reducción relativa de escala respecto a los sistemas estándar, motivada por el objetivo de aumentar la resolución espacial del depósito. Se observan microtoberas usadas por Sova et al. en la Figura \ref{microtobi}.
@@ -1413,10 +1441,14 @@ En el contexto del cold spray, el término microtobera (micronozzle) fue introdu
 \end{figure}
 
 
-Al tener una garganta y un diámetro de salida reducidos,
-las microtoberas permiten controlar con mayor precisión tanto la forma del
-\textit{spot} de deposición como el flujo másico de
-partículas~\cite{Sova2013micronozzle, Li2007nozzledesign}.
+Al tener una garganta y un diámetro de salida reducidos, las microtoberas permiten controlar con mayor precisión tanto la forma del \textit{spot} de deposición como el flujo másico de partículas~\cite{Sova2013micronozzle, Li2007nozzledesign}. En toberas convencionales, el diámetro del \textit{spot} es del orden del diámetro de salida o ligeramente superior, situándose típicamente entre 4 y \SI{10}{\milli\meter}~\cite{2017micronozzle}. La miniaturización de la tobera reduce proporcionalmente este valor: Sova et al.~\cite{Sova2017micronozzle} reportan un diámetro de \textit{spot} no superior a 1.7--\SI{1.8}{\milli\meter} para una tobera con diámetro de salida de \SI{1}{\milli\meter}, lo que representa una mejora sustancial en resolución espacial respecto al rango convencional. En la Figura \ref{spotsis} se observan trazos de 1 o 2 milímetros de ancho realizados con microtobera de 0.5 mm de diámetro de garganta, comparados con trazos de cerca de 1 cm de ancho fabricados con una tobera convencional de 2.7 mm de diámetro de garganta. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/spotsis.png}
+	\caption[Trazos realizados con microtobera vs tobera convencional]{Trazos realizados con microtobera vs tobera convencional, a) Depósito de cobre sobre aluminio usando microtobera \cite{Sova2013micronozzle} y b) Depósitos de acero inoxidable sobre acero inoxidable a distintas velocidades usando tobera convencional \cite{Kotoban2017}.}
+	\label{spotsis}
+\end{figure}
 
 El grupo de Sova e Smurov en ENISE/Universidad de Lyon ha sido pionero en el
 desarrollo experimental de microtoberas para CS. En trabajos previos,
@@ -1442,7 +1474,7 @@ con mayor control geométrico que el alcanzable con toberas convencionales.
 En esta línea, se ha analizado mediante simulaciones fluidodinámicas el efecto
 de la geometría y dimensiones de microtoberas sobre el comportamiento del flujo
 compresible y la dinámica de partículas en el proceso de CS, considerando la
-deposición de partículas de titanio en el rango de
+deposición de partículas esféricas de titanio puro en el rango de
 10--50~$\mu$m~\cite{CerdaLobos2024}. El estudio evalúa configuraciones con
 variaciones en el diámetro de garganta, la longitud total y la geometría
 (convergente-divergente y convergente-divergente con sección de barril),
@@ -1481,31 +1513,108 @@ apoyarse. La corrección de este perfil para lograr paredes homogéneas y
 controlables es el principal desafío geométrico del proceso, y se han propuesto
 distintas estrategias para abordarlo~\cite{Moridi2014}.
 
-El modelado del perfil de deposición y del solapamiento entre pasadas constituye
-una herramienta fundamental para el diseño de estas estrategias de corrección.
-Cai et al.~\cite{Cai2014overlap} desarrollaron uno de los primeros modelos
-orientados a simular la acumulación de pasadas consecutivas en CS, aproximando
-el perfil de pista individual mediante una distribución gaussiana y
-superponiendo perfiles adyacentes a paso de escaneo variable para predecir el
-espesor total y la ondulación de la superficie. Este enfoque estableció una base
-metodológica sobre la cual se apoyan enfoques posteriores como los de Chepillo
-et al.~\cite{Chepillo2024} y Vanerio et al.~\cite{Vanerio2021}.
+Así, el modelado del perfil de deposición y del solapamiento entre pasadas 
+constituye una herramienta fundamental para el diseño de estrategias 
+de corrección. Cai et al.~\cite{Cai2014overlap} desarrollaron uno de los 
+primeros modelos orientados a simular la acumulación de pasadas consecutivas 
+en CS, aproximando el perfil de pista individual mediante una distribución 
+gaussiana y superponiendo perfiles adyacentes a paso de escaneo variable 
+para predecir el espesor total y la ondulación superficial resultante. 
+El modelo permite identificar el paso de escaneo óptimo que minimiza la 
+ondulación entre trazos consecutivos, condición necesaria para garantizar 
+una base plana sobre la cual depositar capas sucesivas en estrategias de 
+fabricación volumétrica.
 
-Chepillo et al.~\cite{Chepillo2024} y Wu et al.~\cite{WU2025642} convergen en
-una misma estrategia esencial: inclinar la tobera respecto a la normal del
-sustrato para que las pasadas de corrección incidan directamente sobre las
-paredes laterales del perfil gaussiano acumulado, logrando bordes más verticales
-sin recurrir a mecanizado intermedio. Chepillo et al.\ desarrollan además un
-modelo numérico que simula la evolución del perfil depositado en función de
-parámetros como la velocidad transversal, la distancia de trabajo, la separación
-entre pistas y el ángulo de corrección, identificando tres valores de separación
-entre pistas que generan superficies uniformes y concluyendo que ángulos de
-corrección menores producen bordes más cercanos a la vertical. Wu et al.\
-complementan este enfoque partiendo explícitamente de la forma piramidal que
-adopta naturalmente el depósito acumulado como consecuencia del perfil gaussiano,
-orientando la tobera hacia las paredes inclinadas de dicha pirámide en cada capa
-sucesiva, construyendo así paredes verticales estables y repetibles sin requerir
-estrategias de compensación externas al propio proceso.
+Pattison et al.~\cite{Pattison2007CGDM} introdujeron el concepto de 
+inclinar la tobera respecto a la normal del sustrato para rociar 
+perpendicularmente sobre las paredes inclinadas del perfil acumulado, 
+evitando así la formación de una morfología triangular característica 
+del depósito multicapa. No obstante, los autores no establecieron 
+criterios cuantitativos para determinar el ángulo de inclinación ni el 
+momento en que debe aplicarse la corrección.
+
+Wu et al.~\cite{Wu2020stable} identificaron que las estrategias de 
+formación volumétrica basadas en teselación, predominantes hasta entonces 
+en CSAM, presentan dificultades de control y limitaciones para producir 
+geometrías complejas con precisión aceptable, contraviniendo además el 
+principio fundamental de la FA capa a capa. En respuesta, propusieron 
+una estrategia de construcción estable por capas que considera los 
+parámetros cinemáticos del robot y la morfología característica del 
+depósito en CS. La estrategia define tres parámetros: el ángulo de 
+deflexión $\theta$, la distancia de desplazamiento lateral $s$ y la 
+distancia de retroceso de la tobera $d$, equivalente al espesor de capa. 
+Los valores óptimos determinados para el sistema estudiado son $\theta = 
+\ang{30}$ y $s = 2\sigma$, donde $\sigma$ es la desviación estándar del 
+perfil gaussiano del depósito individual. En la Figura \ref{stratti} se observa un diagrama para la estrategia de teselación triangular, donde se refuerza el borde del depósito para generar una pared homogénea. En la Figura \ref{stratti2} se representa una estrategia análoga, con pistas superpuestas para generar volumenes mayores a una pared de un solo trazo.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{imgs/stratti.jpg}
+	\caption[Estrategia de teselación triangular]{Estrategia de teselación trinagular \cite{Wu2020stable}.}
+	\label{stratti}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/stratti2.jpg}
+	\caption[Estrategia de teselación triangular con solapamiento]{Estrategia de teselación trinagular con solapamiento \cite{Wu2020stable}.}
+	\label{stratti2}
+\end{figure}
+
+Li et al.~\cite{Li2023mesh} extendieron la estrategia de construcción 
+capa a capa de teselación triangular mediante el 
+desarrollo de una metodología numérica de propósito general implementada 
+en MATLAB, basada en una estrategia de reconstrucción iterativa de la 
+geometría de malla del sustrato. A diferencia de los modelos gaussianos 
+clásicos, cuya validez está restringida a sustratos planos, la metodología 
+propuesta es aplicable a geometrías arbitrarias. Un resultado central del 
+trabajo es la comparación entre modelos de distribución del chorro cónico 
+y cilíndrico: aunque ambos producen perfiles equivalentes para una sola 
+capa, en deposición multicapa el modelo cilíndrico reproduce con mayor 
+fidelidad el crecimiento real del depósito, con errores relativos de 
+\SI{16.9}{\percent} en el ancho de base y \SI{1.7}{\percent} en la altura 
+de pared, frente a \SI{106.0}{\percent} y \SI{14.1}{\percent} del modelo 
+cónico, respectivamente. La metodología fue validada adicionalmente sobre 
+sustratos de geometría compleja, demostrando su aplicabilidad a la 
+planificación de trayectorias en componentes de forma arbitraria.
+
+Chepillo et al.~\cite{Chepillo2024} retoman la estrategia de teselación triangular y desarrollan un modelo 
+numérico propio que simula la evolución del perfil depositado en función 
+de parámetros como la velocidad transversal, la distancia de trabajo, la 
+separación entre pistas y el ángulo de corrección de la tobera. El modelo 
+identifica tres valores de separación entre pistas que producen superficies 
+uniformes, y concluye que ángulos de corrección menores generan bordes más 
+cercanos a la vertical, confirmando los principios establecidos por Wu et 
+al. y extendiéndolos mediante un análisis paramétrico sistemático orientado 
+a la optimización del proceso.
+
+Vargas-Uscategui et al.~\cite{VargasUscategui2021} abordaron 
+experimentalmente la fabricación de paredes verticales y esquinas 
+cuadradas en titanio mediante CSAM con robots de seis grados de libertad, 
+variando el ángulo de contorno de la trayectoria, la velocidad transversal 
+y el radio de suavizado de esquina. Los resultados demuestran que es posible 
+obtener geometrías razonablemente cercanas al modelo CAD mediante la 
+comprensión y ajuste de los parámetros cinemáticos del robot. La velocidad 
+transversal y el radio de suavizado actúan de forma opuesta sobre la 
+geometría de esquina: velocidades elevadas generan sobredeposición local, 
+mientras que radios de suavizado mayores producen subdeposición; la 
+combinación adecuada de ambos parámetros permite obtener esquinas de 
+mayor precisión dimensional (Figura \ref{vargas}). No obstante, la distribución de porosidad 
+en el volumen depositado está fuertemente condicionada por estos mismos 
+parámetros: se observa una estructura de porosidad en espina de pez en 
+la sección transversal, con mayor concentración entre capas y en los 
+bordes laterales, y las condiciones de sobredeposición generan depósitos 
+sistemáticamente más porosos que las de subdeposición, evidenciando que 
+el control de la trayectoria no es únicamente un problema geométrico 
+sino también microestructural.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.95\linewidth]{imgs/Vargas.jpg}
+	\caption[Influencia de la velocidad transversal en el radio de esquinas en la fabricación por CSAM de un marco cuadrado de titanio]{Influencia de la velocidad transversal en el radio de esquinas en la fabricación por CSAM de un marco cuadrado de titanio \cite{VargasUscategui2021}, a) Marco fabricado, b) Fotografías de las esquinas c) Perfil medido en dirección XY y d) Perfil medido en dirección XX.}
+	\label{vargas}
+\end{figure}
+
 
 Una estrategia diferente en este ámbito es la denominada \textit{Metal Knitting},
 desarrollada por el grupo del \textit{Thermal Spray Centre} de la Universitat de

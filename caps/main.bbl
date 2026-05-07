@@ -76,6 +76,10 @@ J.~G. Legoux, E.~Irissou, S.~Desaulniers, J.~Bobyn, B.~Harvey, W.~Wong,
   helium recovery system designed for cold spraying,'' in {\em Thermal Spray:
   Global Solutions for Future Application, ITSC 2010}, pp.~560--565, 2010.
 
+\bibitem{Anderson2021}
+J.~D. Anderson, {\em Modern Compressible Flow: With Historical Perspective}.
+\newblock McGraw-Hill Education, 4~ed., 2021.
+
 \bibitem{Pattison2008}
 J.~Pattison, S.~Celotto, A.~Khan, and W.~O'Neill, ``Standoff distance and bow
   shock phenomena in the {Cold Spray} process,'' {\em Surface and Coatings
@@ -145,12 +149,6 @@ G.~Bae, S.~Kumar, S.~Yoon, K.~Kang, H.~Na, H.-J. Kim, and C.~Lee, ``Bonding
 D.~Vanerio, J.~Kondas, M.~Guagliano, and S.~Bagherifard, ``{3D} modelling of
   the deposit profile in cold spray additive manufacturing,'' {\em Journal of
   Manufacturing Processes}, vol.~67, pp.~521--534, 2021.
-
-\bibitem{Wu2021trajectories}
-H.~Wu, C.~Huang, X.~Xie, S.~Liu, T.~Wu, T.~Niendorf, Y.~Xie, C.~Deng, M.~Liu,
-  H.~Liao, and S.~Deng, ``Influence of spray trajectories on characteristics of
-  cold-sprayed copper deposits,'' {\em Surface and Coatings Technology},
-  vol.~405, p.~126703, 2021.
 
 \bibitem{Garfias2023}
 A.~Garfias, R.~Bolot, C.~Verdy, F.~Seichepine, and T.~Grosdidier, ``Geometry
@@ -246,17 +244,22 @@ M.~E. Lynch, W.~Gu, T.~El-Wardany, A.~Hsu, D.~Viens, A.~Nardi, and M.~Klecka,
   manufactured cold sprayed components,'' {\em Virtual and Physical
   Prototyping}, vol.~8, no.~3, pp.~213--231, 2013.
 
+\bibitem{Sova2013velocity}
+A.~Sova, A.~Okunkova, S.~Grigoriev, and I.~Smurov, ``Velocity of the particles
+  accelerated by a cold spray micronozzle: Experimental measurements and
+  numerical simulation,'' {\em Journal of Thermal Spray Technology}, vol.~22,
+  no.~1, pp.~75--80, 2013.
+
 \bibitem{Li2007nozzledesign}
 W.-Y. Li, H.~Liao, G.~Douchy, and C.~Coddet, ``Optimal design of a cold spray
   nozzle by numerical analysis of particle velocity and experimental validation
   with {316L} stainless steel powder,'' {\em Materials \& Design}, vol.~28,
   no.~7, pp.~2129--2137, 2007.
 
-\bibitem{Sova2013velocity}
-A.~Sova, A.~Okunkova, S.~Grigoriev, and I.~Smurov, ``Velocity of the particles
-  accelerated by a cold spray micronozzle: Experimental measurements and
-  numerical simulation,'' {\em Journal of Thermal Spray Technology}, vol.~22,
-  no.~1, pp.~75--80, 2013.
+\bibitem{2017micronozzle}
+A.~Sova, M.~Doubenskaia, S.~Grigoriev, A.~Okunkova, and I.~Smurov, ``Deposition
+  of aluminum powder by cold spray micronozzle,'' {\em The International
+  Journal of Advanced Manufacturing Technology}, vol.~93, pp.~3057--3064, 2017.
 
 \bibitem{Sova2013AMpotential}
 A.~Sova, S.~Grigoriev, A.~Okunkova, and I.~Smurov, ``Potential of cold gas
@@ -274,10 +277,27 @@ Z.~Cai, S.~Deng, H.~Liao, C.~Zeng, and G.~Montavon, ``The effect of spray
   process,'' {\em Journal of Thermal Spray Technology}, vol.~23, no.~3,
   pp.~354--362, 2014.
 
+\bibitem{Wu2020stable}
+H.~Wu, X.~Xie, M.~Liu, C.~Verdy, Y.~Zhang, H.~Liao, and S.~Deng, ``Stable
+  layer-building strategy to enhance cold-spray-based additive manufacturing,''
+  {\em Additive Manufacturing}, vol.~35, p.~101356, 2020.
+
+\bibitem{Li2023mesh}
+W.~Li, H.~Wu, M.~Sokore, R.~N. Raoelison, H.~Liao, S.~Costil, and S.~Deng,
+  ``General-purpose numerical deposition modeling methodology based on mesh
+  geometry reconstruction strategy in cold spray additive manufacturing
+  system,'' {\em Surface and Coatings Technology}, vol.~464, p.~129563, 2023.
+
 \bibitem{Chepillo2024}
 A.~Chepillo~Cortés, ``Determinación de la trayectoria de una tobera de {Cold
   Spray} para su uso en la manufactura aditiva de una pared vertical,'' trabajo
   de título de ingeniero civil mecánico, Universidad de Chile, 2024.
+
+\bibitem{VargasUscategui2021}
+A.~Vargas-Uscategui, P.~C. King, S.~Yang, C.~Chu, and J.~Li, ``Toolpath
+  planning for cold spray additively manufactured titanium walls and corners:
+  {Effect} on geometry and porosity,'' {\em Journal of Materials Processing
+  Technology}, vol.~298, p.~117272, 2021.
 
 \bibitem{Vaz2022MetalKnitting}
 R.~F. Vaz, V.~Albaladejo-Fuentes, J.~Sanchez, U.~Ocaña, Z.~G. Corral,
