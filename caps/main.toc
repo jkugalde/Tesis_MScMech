@@ -14,7 +14,7 @@
 \contentsline {subsection}{\numberline {2.1.5}Impacto entre partículas}{17}{subsection.2.1.5}%
 \contentsline {subsection}{\numberline {2.1.6}Velocidad crítica}{19}{subsection.2.1.6}%
 \contentsline {subsection}{\numberline {2.1.7}Eficiencia de deposición}{21}{subsection.2.1.7}%
-\contentsline {subsection}{\numberline {2.1.8}Perfil de deposición}{21}{subsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.1.8}Perfil de deposición}{22}{subsection.2.1.8}%
 \contentsline {section}{\numberline {2.2}Fabricación por CS}{25}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Parámetros relevantes}{25}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Características de productos por CS}{27}{subsection.2.2.2}%
@@ -25,46 +25,46 @@
 \contentsline {subsection}{\numberline {2.3.2}FA de piezas metálicas}{35}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}FA mediante CS}{39}{subsection.2.3.3}%
 \contentsline {subsubsection}{Cold Spray Additive Manufacturing: concepto y fundamentos}{39}{section*.38}%
-\contentsline {subsubsection}{Microtoberas en CSAM}{41}{section*.40}%
+\contentsline {subsubsection}{Microtoberas en CSAM}{40}{section*.40}%
 \contentsline {subsubsection}{Estrategias de deposición en CSAM}{43}{section*.43}%
 \contentsline {subsubsection}{CSAM de titanio}{47}{section*.47}%
-\contentsline {chapter}{\numberline {3}Metodología}{48}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Flujo de trabajo}{48}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Implementación de un sistema experimental de CSAM}{49}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Recursos}{49}{subsection.3.2.1}%
-\contentsline {subsubsection}{Arquitectura cinemática}{49}{section*.49}%
-\contentsline {subsubsection}{Calefactor de gases}{50}{section*.52}%
-\contentsline {subsubsection}{Gases de proceso}{50}{section*.54}%
-\contentsline {subsubsection}{Alimentador de polvos}{51}{section*.55}%
-\contentsline {subsubsection}{Toberas}{51}{section*.57}%
-\contentsline {subsection}{\numberline {3.2.2}Adaptaciones mecánicas}{53}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Sistema de extracción}{54}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Material pulverizado y sustrato}{56}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Sistema final}{57}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}Caracterización del espacio de trabajo}{58}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Resumen de parámetros operativos}{59}{subsection.3.2.7}%
-\contentsline {section}{\numberline {3.3}Planificación de experimentos de una capa}{59}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Características de las toberas}{59}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Caracterización del perfil de deposición}{63}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Estrategias de deposición}{64}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Planificación de experimentos multicapa}{66}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Estretegias multicapa}{66}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Geometrías 3D}{67}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Medición de resultados}{67}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Caracterización mecánica de probetas}{67}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Caracterización de piezas tridimensionales}{68}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Análisis de desempeño del proceso}{68}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Sumario}{69}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Resumen de experimentos de CSAM}{69}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Resumen de indicadores de evaluación de CSAM}{69}{subsection.3.6.2}%
-\contentsline {chapter}{\numberline {4}Resultados y discusión}{72}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Caracterización del perfil}{72}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Estrategias de compensación}{72}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Ensayos mecánicos}{72}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Fidelidad geométrica}{72}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Estructura de costos}{72}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{73}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{73}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{73}{section.5.2}%
-\contentsline {chapter}{\numberline {}Bibliograf\'ia}{79}{chapter*.77}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{80}{Appendix.alph1.Alph1}%
+\contentsline {chapter}{\numberline {3}Metodología}{49}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Flujo de trabajo}{49}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Implementación de un sistema experimental de CSAM}{50}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Recursos}{50}{subsection.3.2.1}%
+\contentsline {subsubsection}{Arquitectura cinemática}{50}{section*.49}%
+\contentsline {subsubsection}{Calefactor de gases}{51}{section*.52}%
+\contentsline {subsubsection}{Gases de proceso}{51}{section*.54}%
+\contentsline {subsubsection}{Alimentador de polvos}{52}{section*.55}%
+\contentsline {subsubsection}{Toberas}{52}{section*.57}%
+\contentsline {subsection}{\numberline {3.2.2}Adaptaciones mecánicas}{54}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Sistema de extracción}{55}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Material pulverizado y sustrato}{57}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Sistema final}{59}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Caracterización del espacio de trabajo}{59}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Resumen de parámetros operativos}{60}{subsection.3.2.7}%
+\contentsline {section}{\numberline {3.3}Planificación de experimentos de una capa}{61}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Características de las toberas}{61}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Caracterización del perfil de deposición}{64}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Estrategias de deposición}{66}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Planificación de experimentos multicapa}{67}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Estretegias multicapa}{67}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Geometrías 3D}{68}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Medición de resultados}{69}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Caracterización mecánica de probetas}{69}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Caracterización de piezas tridimensionales}{70}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Análisis de desempeño del proceso}{70}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Sumario}{70}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Resumen de experimentos de CSAM}{70}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Resumen de indicadores de evaluación de CSAM}{70}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {4}Resultados y discusión}{73}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Caracterización del perfil}{73}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Estrategias de compensación}{73}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Ensayos mecánicos}{73}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Fidelidad geométrica}{73}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Estructura de costos}{73}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{74}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{74}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{74}{section.5.2}%
+\contentsline {chapter}{\numberline {}Bibliograf\'ia}{80}{chapter*.77}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{81}{Appendix.1.Alph1}%
