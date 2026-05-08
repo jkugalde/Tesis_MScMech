@@ -2,7 +2,17 @@
 
 \section{Flujo de trabajo}
 
-Se plantean 4 etapas principales con actividades consecutivas para el cumplimiento de los objetivos específicos establecidos, ilustrando el flujo en la Figura \ref{fig:etapas}. Estas etapas son secuenciales, puesto que cada una funciona como insumo para la ejecución de la siguiente.
+El objetivo de este trabajo es una evaluación experimental de fabricar de manera aditiva piezas de titanio por CSAM. Para tales efectos, el flujo general requiere de un sistema robotizado o CNC, estrategias de deposición y metodologías de evaluación.
+
+Dado que no existen en la infraestuctura de la Universidad de Chile sistemas estbalecidos de coldspray con más de 3 ejes de libertad, pues se reuqiere la variación del angulo de depsoicion para una exploracion fundamentada en el estado del arte, se plantea implementar un sistema de CSAM a aprtir de la adaptacipoin de una maquina CNC y su integración con compontentes de CS. La caracterización del sistema y los materiales de trabajo constituirían la primera fase del trabajo, concluynedo con la entrega de los rangos de los aprametros de hardware y operativos del sistema establceido, una vez que se demuestre que existe deposicion viable.
+
+ Se plantea el inicio de la exploracion experimental del trabajo partiendo por la caracterizacion de trazos unicapa, lo cual corresponderia a la etapa 2, cubriendo aspectos como el perfil de deposicion, evaluacion de compensacion angular y solapamiento, asi como tambien de las trayectorias curvilineas, buscando optimizar la construccion de paredes homogeneas, y proyectando la resolución del proceso.
+
+En la etapa 3 se estudia la construcción de capas sucesivas sobre depósitos previos, buscando estrategias que permitan mantener una estructura de pared homogénea y plana conforme se avanza en la dirección $Z$. De este modo, se establecen los parámetros que habilitan la fabricación de geometrías tridimensionales elementales en el sistema, así como sus limitaciones. Estas geometrías primitivas se fabrican y se iteran, tanto en diseño como en parámetros de proceso, hasta obtener resultados morfológicamente aceptables y un proceso repetible.
+
+Finalmente, en la etapa 4 se analiza el proceso en términos de su caracterización mecánica, fidelidad con el diseño, eficiencia de deposición y costos operativos, comparándolo con otros métodos de fabricación aditiva metálica. A partir de este análisis se concluye respecto al potencial del sistema establecido como alternativa de fabricación 3D metálica, contrastando los resultados obtenidos con las hipótesis planteadas y los alcances definidos para el trabajo.
+
+De lo anterior, se estbalce entonces un flujo de trabajo con 4 etapas principales como muestra la Figura \ref{fig:etapas}. Estas etapas son secuenciales, puesto que cada una funciona como insumo para la ejecución de la siguiente.
 
 \begin{figure}[h!]
 	\centering
@@ -10,14 +20,6 @@ Se plantean 4 etapas principales con actividades consecutivas para el cumplimien
 	\caption[Flujo de trabajo para el desarrollo de la investigación]{Flujo de trabajo para el desarrollo de la investigación.}
 	\label{fig:etapas}
 \end{figure}
-
-La etapa 1 comprende la construcción y caracterización del sistema de CS, así como la caracterización del material de trabajo. El insumo para la $P_H$ del sistema tras las modificaciones efectuadas, y al rango de $P_O$ que garantizan deposición efectiva sobre el sustrato. En caso de que no se logre deposición, se considera modificación del polvo de trabajo o aumento de la potencia de calefacción y/o presión de estancamiento.
-
-En la etapa 2 se explora y optimiza la generación de estructuras en un plano, como paredes simples homogéneas de uno o más trazos a partir de los parámetros entregados por la etapa anterior. Las estrategias de trayectoria se obtienen desde el análisis bibliográfico y la caracterización del perfil de deposición individual. Se evalúa la eficacia de cada estrategia y se determinan los parámetros óptimos asociados, para finalmente establecer lineamientos generales para la generación de paredes planas en el sistema.
-
-En la etapa 3 se estudia la construcción de capas sucesivas sobre depósitos previos, buscando estrategias que permitan mantener una estructura de pared homogénea y plana conforme se avanza en la dirección $Z$. De este modo, se establecen los parámetros que habilitan la fabricación de geometrías tridimensionales elementales en el sistema. Estas geometrías se fabrican y se iteran, tanto en diseño como en parámetros de proceso, hasta obtener resultados morfológicamente aceptables y un proceso repetible.
-
-Finalmente, en la etapa 4 se analiza el proceso en términos de su caracterización mecánica, fidelidad con el diseño, eficiencia de deposición y costos operativos, comparándolo con otros métodos de fabricación aditiva metálica. A partir de este análisis se concluye respecto al potencial del sistema establecido como alternativa de fabricación 3D metálica, contrastando los resultados obtenidos con las hipótesis planteadas y los alcances definidos para el trabajo.
 
 \section{Implementación de un sistema experimental de CSAM}
 
