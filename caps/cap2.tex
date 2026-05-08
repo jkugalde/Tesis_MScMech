@@ -405,26 +405,38 @@ de energía es máxima y la deformación es axialmente simétrica.
 
 A medida que $\theta$ aumenta, la componente normal disminuye y la eficiencia de deposición decrece, existiendo un \textbf{ángulo crítico} más allá del cual la partícula no logra adherirse \cite{Wong2013}. Para el titanio depositado con $N_{2}$, dicho ángulo se sitúa en torno a los 40°-45° respecto a la normal de la superficie, dependiendo del par partícula-sustrato \cite{Binder2011}.
 
-La respuesta del sustrato al impacto depende de la relación entre sus 
-propiedades mecánicas y las de la partícula. En el caso de la proyección de titanio sobre sustrato de aluminio, el titanio presenta una dureza 
-típica de $\sim$150-180~HV en estado recocido \cite{Callister2018}, 
-frente a los $\sim$30-50~HV del aluminio. Dado que el sustrato es 
-considerablemente más blando que la partícula, la deformación plástica 
-se concentra en él, generando un cráter que favorece el anclaje mecánico 
-por incrustación \cite{Binder2011}. Sin embargo, este mismo mecanismo 
-dificulta la fragmentación de la capa nativa de 
-Al\textsubscript{2}O\textsubscript{3} ($\sim$2000~HV), ya que la 
-deformación no se localiza en la interfaz de óxido sino en el metal 
-subyacente \cite{Assadi2003}.
+La respuesta del sustrato al impacto está gobernada por la relación entre
+sus propiedades mecánicas y las de la partícula proyectada. Cuando existe
+una marcada asimetría de dureza entre ambos materiales ---como ocurre,
+por ejemplo, en la proyección de titanio sobre aluminio, donde el primero
+presenta $\sim$150--180~HV en estado recocido \cite{Callister2018} frente
+a los $\sim$30--50~HV del segundo--- la deformación plástica se concentra
+en el sustrato, generando un cráter que promueve el anclaje mecánico por
+incrustación \cite{Binder2011}. No obstante, este mismo mecanismo
+dificulta la fragmentación de la capa de óxido nativa: cuando la
+deformación no se localiza en la interfaz sino en el metal subyacente de
+menor resistencia, la ruptura del óxido resulta incompleta, lo que puede
+comprometer la calidad del enlace \cite{Assadi2003}. 
 
-Desde el punto de vista térmico, la conductividad del aluminio es 
-considerablemente superior a la del titanio, lo que favorece la 
-disipación del calor adiabático generado en la interfaz y puede 
-dificultar marginalmente el ablandamiento localizado necesario para la 
-ASI. Sin embargo, la baja resistencia mecánica del sustrato compensa 
-este efecto, manteniéndose condiciones favorables para la deposición.
+Dado que la escala
+de tiempo del impacto es varios órdenes de magnitud inferior a la escala
+de difusión térmica, la conductividad del sustrato no tiene influencia
+apreciable sobre la dinámica de la ASI; el comportamiento térmico en la
+interfaz queda determinado por las condiciones adiabáticas locales, con
+independencia de la difusividad bulk de los materiales involucrados.
 
-Sustratos con microestructura homogénea y baja complejidad de fases presentan una deformación más uniforme y predecible bajo impacto, mientras que un endurecimiento progresivo y moderado favorece la continuidad del colapso superficial requerido para el establecimiento de contacto interfacial efectivo. En conjunto, estos factores condicionan la estabilidad de la transición hacia el régimen de deposición sin recurrir a consideraciones térmicas o difusivas significativas.
+Adicionalmente, la microestructura del sustrato influye en la uniformidad
+de la deformación bajo impacto. Un material de microestructura homogénea
+y baja complejidad de fases responde de forma más predecible al impacto,
+mientras que un endurecimiento por deformación progresivo y moderado
+favorece la continuidad del colapso superficial necesario para el
+establecimiento de un contacto interfacial efectivo. Por el contrario,
+sustratos de dureza elevada inhiben tanto el anclaje mecánico por
+incrustación como la prominencia del \textit{jetting} interfacial,
+reduciendo el área de contacto efectiva y, en consecuencia, la resistencia
+de adhesión \cite{Yin2014substrate}. En conjunto, estos factores mecánicos
+y microestructurales condicionan la estabilidad de la transición hacia el
+régimen de deposición.
 
 Es importante indicar que, a pesar de los avances en la comprensión 
 del proceso, los mecanismos de adhesión en cold spray siguen siendo 
@@ -1345,8 +1357,6 @@ sustentación y colapsarían durante la construcción~\cite{Gibson2015}.
 Los soportes se eliminan en el postprocesado, generalmente por mecanizado, 
 y su diseño tiene un impacto directo en el costo y tiempo total del proceso.
 
-
-
 \subsection{FA mediante CS}
 
 \subsubsection{Cold Spray Additive Manufacturing: concepto y fundamentos}
@@ -1659,7 +1669,7 @@ como el principal obstáculo para la adopción industrial generalizada de esta
 tecnología.
 
 
-\subsubsection{CSAM de titanio}
+\subsubsection{CSAM de titanio comercialmente puro}
 
 Dado que el CS opera en estado sólido y no genera los gradientes térmicos
 propios de procesos como la sinterización láser selectiva (SLS), resulta
@@ -1668,57 +1678,83 @@ comercialmente puro (CP-Ti), donde el control microestructural y la
 ausencia de oxidación son requisitos críticos~\cite{Yin2022review}. A
 diferencia del Ti-6Al-4V, el CP-Ti presenta mayor ductilidad intrínseca
 y una velocidad crítica de deposición más baja, lo que favorece altas
-eficiencias de deposición. Adicionalmente, el proceso CS permite tasas
-de deposición de hasta \SI{500}{g/min}~\cite{MacDonald2017}, un orden de
-magnitud superior a las tecnologías AM basadas en fusión de polvo, lo que
-posiciona al CSAM de CP-Ti como una alternativa de alto rendimiento para
-la fabricación de piezas de gran escala.
+eficiencias de deposición. 
 
-MacDonald et al.~\cite{MacDonald2017} demostraron la viabilidad de
-fabricar componentes bulk de baja porosidad mediante CS de CP-Ti con
-nitrógeno como gas propulsor, empleando polvo de morfología irregular
-producido por el proceso Armstrong. Los autores reportaron que la
-morfología irregular del polvo favorece la densificación durante el
-impacto respecto a polvos esféricos, constituyendo una ruta de bajo
-costo para la fabricación aditiva de piezas de titanio de geometría
-compleja. Sin embargo, los depósitos en condición \textit{as-sprayed}
-presentan porosidad residual y propiedades mecánicas considerablemente
-inferiores a las del material forjado, lo que requiere la aplicación de
-tratamientos post-proceso.
+El proceso de CS permite además tasas de
+deposición del orden de varios \si{kg/h}, considerablemente superiores
+a las de las tecnologías AM basadas en fusión de lecho de
+polvo~\cite{Lomo2023CSAM}, lo que posiciona al CSAM de CP-Ti como una
+alternativa de alto rendimiento para la fabricación de piezas de gran
+escala.
 
-Respecto a los tratamientos post-proceso, Petrovskiy
-et al.~\cite{Petrovskiy2019} evaluaron el efecto del prensado isostático
-en caliente (HIP) sobre depósitos CS de CP-Ti, reportando un aumento de
-la resistencia a la tracción de \SI{110}{MPa} en condición
-\textit{as-sprayed} a \SI{480}{MPa} tras HIP a \SI{110}{MPa} y
-\SI{1173}{K}, mediante la mejora de la difusión interfacial y la
-eliminación de la porosidad de pequeña escala. No obstante, la
-ductilidad resultante ($\sim$8\%) permaneció por debajo de la del
-titanio puro forjado, indicando que la porosidad residual de mayor
-escala constituye el factor limitante.
+La viabilidad de fabricar componentes bulk de baja porosidad mediante
+CSAM de CP-Ti con nitrógeno como gas propulsor fue demostrada por
+MacDonald et al.~\cite{MacDonald2017}, quienes emplearon polvo de
+morfología irregular producido por el proceso Armstrong. Como se observa
+en la Figura~\ref{fig:peeq}, las partículas de morfología coral presentan
+una deformación plástica equivalente notablemente mayor que las esféricas
+tras el impacto, lo que se traduce en un mayor grado de aplastamiento y
+una menor fracción de vacíos interparticulares. Los autores reportaron que
+esta mayor deformabilidad favorece la densificación durante el impacto,
+constituyendo una ruta de bajo costo para la fabricación de piezas de
+geometría compleja. Sin embargo, los depósitos en condición
+\textit{as-sprayed} presentan porosidad residual y propiedades mecánicas
+considerablemente inferiores a las del material forjado~\cite{Lomo2023CSAM},
+lo que hace necesaria la aplicación de tratamientos post-proceso para
+alcanzar propiedades estructuralmente aceptables.
 
-Desde el punto de vista de la fabricación de piezas tridimensionales,
-un aspecto crítico del CSAM de CP-Ti es la acumulación de tensiones
-residuales compresivas durante la construcción capa por capa. Spencer
-et al.~\cite{Luzin2020wall} analizaron mediante difracción de neutrones la
-distribución de tensiones residuales en muestras bulk y paredes
-verticales de CP-Ti Grado~4 fabricadas por CSAM, estableciendo que las
-tensiones compresivas generadas por el efecto peening acumulado pueden
-inducir distorsiones dimensionales en geometrías complejas si no se
-controlan adecuadamente mediante la planificación de trayectorias y los
-parámetros de deposición.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\linewidth]{imgs/peeq.png}
+	\caption[Simulación de impacto entre partículas de titanio esféricas y con forma de coral]{Simulación de impacto y PEEQ (deformación plástica equivalente) entre partículas de titanio esféricas y con forma de coral a) esféricas y b) forma de coral.\cite{MacDonald2017}.}
+	\label{fig:peeq}
+\end{figure}
 
-Un estudio reciente de Kumar et al.~\cite{Kumar2025} profundizó en la 
-optimización del HIP para depósitos CSAM de CP-Ti, evaluando 
-sistemáticamente el efecto de la presión de consolidación sobre la 
-evolución microestructural mediante difracción de rayos~X y mapas EBSD 
-de densidad de dislocaciones geométricamente necesarias (GND). Los 
-autores identificaron dos regímenes de consolidación dependientes de la 
-presión: por debajo de \SI{90}{MPa}, el cierre de poros se logra 
-principalmente mediante deformación plástica; por encima de este umbral, 
-predominan mecanismos de difusión que conducen a la homogeneización 
-microestructural y la desaparición de la fase~$\beta$ retenida. Este 
-valor de \SI{90}{MPa} se establece como umbral crítico a partir del cual 
-las mejoras en dureza y resistencia a compresión comienzan a saturarse, 
-lo que constituye una guía cuantitativa para el diseño de ciclos HIP en 
-CSAM de CP-Ti.
+Esta limitación ha motivado el estudio sistemático del prensado
+isostático en caliente (HIP) como tratamiento de consolidación.
+Petrovskiy et al.~\cite{Petrovskiy2019} reportaron que depósitos CS de
+CP-Ti en condición \textit{as-sprayed} exhiben una resistencia a
+tracción de tan solo \SI{110}{MPa}, atribuible a la débil cohesión
+interparticular y a la porosidad residual. Tras HIP a \SI{110}{MPa} y
+\SI{1173}{K}, la resistencia aumentó a \SI{480}{MPa} mediante la mejora
+de la difusión interfacial y la eliminación de la porosidad de pequeña
+escala; no obstante, la ductilidad resultante ($\sim$8\%) permaneció por
+debajo de la del titanio puro forjado, indicando que la porosidad
+residual de mayor escala constituye el factor limitante.
+
+ Kumar
+et al.~\cite{Kumar2025} profundizaron en esta problemática identificando
+dos regímenes de consolidación dependientes de la presión aplicada: por
+debajo de \SI{90}{MPa}, el cierre de poros ocurre principalmente mediante
+deformación plástica, mientras que por encima de este umbral predominan
+mecanismos de difusión que conducen a la homogeneización microestructural
+y a la desaparición de la fase~$\beta$ retenida. Este umbral de
+\SI{90}{MPa} marca la saturación de las mejoras en dureza y resistencia
+a compresión, proporcionando una guía cuantitativa para el diseño de
+ciclos HIP en CSAM de CP-Ti.
+
+Desde el punto de vista de la fabricación de geometrías tridimensionales,
+un aspecto crítico es la acumulación de tensiones residuales compresivas
+durante la construcción capa por capa. Luzin et al.~\cite{Luzin2020wall}
+analizaron mediante difracción de neutrones la distribución de tensiones
+residuales en muestras bulk y paredes verticales de CP-Ti Grado~4
+fabricadas por CSAM, estableciendo que las tensiones compresivas
+generadas por el efecto \textit{peening} acumulado pueden inducir
+distorsiones dimensionales en geometrías complejas si no se controlan
+adecuadamente mediante la planificación de trayectorias y la selección
+de parámetros de deposición.
+
+En conjunto, los trabajos revisados evidencian un panorama en el que la
+investigación en CSAM de CP-Ti se ha concentrado predominantemente en la
+caracterización de propiedades mecánicas de los depósitos, el estudio de
+tratamientos post-proceso y el análisis de tensiones residuales en
+geometrías de referencia. Si bien algunos trabajos abordan la fabricación
+de estructuras tridimensionales~\cite{MacDonald2017, Luzin2020wall,
+VargasUscategui2021}, la exploración sistemática de la resolución
+geométrica, la fidelidad dimensional y la obtención de piezas
+near-net-shape de alta precisión mediante CSAM de CP-Ti constituye un
+área escasamente desarrollada en la literatura. Esta brecha motiva el
+enfoque del presente trabajo, orientado a estudiar la viabilidad de
+fabricar geometrías volumétricas de CP-Ti con control dimensional
+explícito, empleando una boquilla miniaturizada como elemento diferenciador
+del sistema.

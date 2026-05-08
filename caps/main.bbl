@@ -134,6 +134,12 @@ W.~D. Callister and D.~G. Rethwisch, {\em Materials Science and Engineering: An
   Introduction}.
 \newblock John Wiley \& Sons, 10~ed., 2018.
 
+\bibitem{Yin2014substrate}
+S.~Yin, X.~Suo, J.~Su, Z.~Guo, H.~Liao, and X.~Wang, ``Effects of substrate
+  hardness and spray angle on the deposition behavior of cold-sprayed {Ti}
+  particles,'' {\em Journal of Thermal Spray Technology}, vol.~23, no.~1--2,
+  pp.~76--83, 2014.
+
 \bibitem{Schmidt2009}
 T.~Schmidt, H.~Assadi, F.~Gärtner, H.~Richter, T.~Stoltenhoff, H.~Kreye, and
   T.~Klassen, ``From particle acceleration to impact and bonding in cold
@@ -229,7 +235,7 @@ J.~Kondás, M.~Guagliano, S.~Bagherifard, R.~Singh, J.~Cizek, F.~Lukac,
 \bibitem{Pattison2007CGDM}
 J.~Pattison, S.~Celotto, R.~Morgan, M.~Bray, and W.~O'Neill, ``Cold gas dynamic
   manufacturing: A non-thermal approach to freeform fabrication,'' {\em
-  International Journal of Machine Tools and Manufacture}, vol.~47, no.~3--4,
+  International Journal of machine Tools and Manufacture}, vol.~47, no.~3--4,
   pp.~627--634, 2007.
 
 \bibitem{Bagherifard2018freeform}
@@ -316,6 +322,12 @@ R.~Falco, M.~Jalayer, and S.~Bagherifard, ``Enhanced geometrical control in
   cold spray additive manufacturing through deep neural network predictive
   models,'' {\em Virtual and Physical Prototyping}, vol.~20, no.~1, 2025.
 
+\bibitem{Lomo2023CSAM}
+F.~Lomo, A.~Vargas-Uscategui, P.~King, M.~Patel, and I.~Cole, ``Microstructure
+  and mechanical properties of heat-treated cold spray additively manufactured
+  titanium metal matrix composites,'' {\em Journal of Manufacturing Processes},
+  vol.~99, pp.~12--26, 2023.
+
 \bibitem{MacDonald2017}
 D.~MacDonald, R.~Fern{\'a}ndez, F.~Delloro, and B.~Jodoin, ``Cold spraying of
   {Armstrong} process titanium powder for additive manufacturing,'' {\em
@@ -327,17 +339,17 @@ P.~Petrovskiy, A.~Sova, M.~Doubenskaia, and I.~Smurov, ``Influence of hot
   deposits,'' {\em The International Journal of Advanced Manufacturing
   Technology}, vol.~102, no.~1--4, pp.~819--827, 2019.
 
-\bibitem{Luzin2020wall}
-V.~Luzin, A.~Sova, P.~Petrovskiy, M.~Doubenskaia, and I.~Smurov, ``Residual
-  stress buildup in {Ti} components produced by cold spray additive
-  manufacturing ({CSAM}),'' {\em Journal of Thermal Spray Technology}, vol.~29,
-  pp.~1498--1507, 2020.
-
 \bibitem{Kumar2025}
 R.~Kumar, A.~Pattanaik, N.~A. Hasan, {\em et~al.}, ``The influence of hot
   isostatic pressing pressure on the microstructural evolution and mechanical
   properties of cold-sprayed additively manufactured titanium,'' {\em Journal
   of Materials Engineering and Performance}, 2025.
+
+\bibitem{Luzin2020wall}
+V.~Luzin, A.~Sova, P.~Petrovskiy, M.~Doubenskaia, and I.~Smurov, ``Residual
+  stress buildup in {Ti} components produced by cold spray additive
+  manufacturing ({CSAM}),'' {\em Journal of Thermal Spray Technology}, vol.~29,
+  pp.~1498--1507, 2020.
 
 \bibitem{RicouSpalding1961}
 F.~P. Ricou and D.~B. Spalding, ``Measurements of entrainment by axisymmetrical
