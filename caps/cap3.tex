@@ -340,11 +340,26 @@ Este rango se ve reducido al utilizar el eje A, puesto que la deformación impue
 	\label{fig:espacio_A}
 \end{figure}
 
-Es importante notar que en fabricación aditiva tridimensional se generan nuevas superficies al construir las paredes que definen un objeto. En un sistema cartesiano convencional, la deposición ocurre siempre sobre la cara superior de la pared en construcción, siguiendo un paradigma de fabricación estrictamente planar. Sin embargo, un sistema con mayor número de grados de libertad ofrece capacidades adicionales: permite depositar de manera oblicua o normal a las caras laterales de las paredes ya fabricadas (Figura~\ref{fig:deposicion_oblicua}). En este caso, el ángulo crítico se evalúa respecto a la cara lateral de la pared, lo cual resulta más favorable geométricamente que respecto a la cara superior. Este modo de deposición queda fuera del alcance de la presente investigación, ya que la protección de silicona restringe el acceso lateral a las paredes fabricadas.
+Es importante notar que en fabricación aditiva tridimensional se generan nuevas superficies al construir las paredes que definen un objeto. En un sistema cartesiano convencional, la deposición ocurre siempre sobre la cara superior de la pared en construcción, siguiendo un paradigma de fabricación estrictamente planar. Sin embargo, un sistema con mayor número de grados de libertad ofrece capacidades adicionales: permite depositar de manera oblicua o normal a las caras laterales de las paredes ya fabricadas (Figura~\ref{fig:deposicion_oblicua}), eliminando la necesidad de soportes. En este caso, el ángulo crítico se evalúa respecto a la cara lateral de la pared, lo cual resulta más favorable geométricamente que respecto a la cara superior. Este modo de deposición queda fuera del alcance de la presente investigación, ya que la protección de silicona restringe el acceso lateral a las paredes fabricadas.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/volad.png}
+	\caption{Generación de sector en voladizo mediante trayectoria no planar.}
+	\label{fig:deposicion_oblicua}
+\end{figure}
+
 
 Se reconoce que la protección de silicona constituye un mecanismo sencillo para otorgar contención al proceso; sin embargo, limita la versatilidad de las estrategias y trayectorias de deposición posibles. Una alternativa a esta solución consistiría en construir un recinto rígido y translúcido que cubra la totalidad de la máquina —por ejemplo, una caja de acrílico o policarbonato— equipado con un sistema de extracción de polvo, complementado con cubiertas localizadas sobre las zonas críticas de la máquina, tales como rieles lineales y sectores con movimiento relativo. Una opción adicional sería la incorporación de cortinas de aire dirigidas hacia las superficies a proteger, desviando el polvo suspendido antes de que pueda contaminarlas.
 
-La deposición oblicua también abre la posibilidad de fabricar trazos sin soporte inferior directo (voladizo), aunque esta estrategia enfrenta restricciones severas en CSAM, dado que cada capa nueva requiere impactar sobre material sólido subyacente para adherirse. Como aproximación, se plantea que un voladizo podría generarse mediante una deposición oblicua ejecutada sobre el borde de una pared ya consolidada, de modo que el material depositado sobresalga lateralmente y actúe como voladizo incipiente. 
+Dado que no es factible la deposición completamente normal a las caras laterales de las paredes fabricadas ni la generación de soportes funcionales, se plantea que un voladizo limitado podría generarse mediante una deposición oblicua ejecutada sobre el borde de una pared ya consolidada, de modo que el material depositado sobresalga lateralmente, como se observa en la Figura \ref{fig:sopob}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/volobl.png}
+	\caption{Generación de sector en voladizo mediante deposición oblicua.}
+	\label{fig:sopob}
+\end{figure}
 
 La velocidad máxima de cada eje se verifica con el sistema completamente ensamblado, incluyendo todas las conexiones de polvo, gases y alimentación eléctrica. Durante estas pruebas no se detecta pérdida de pasos ni se registra el sonido característico de desincronización en ninguno de los ejes. Dado que el control de los motores paso a paso de la Pocket NC opera en lazo abierto —sin retroalimentación de posición— la ausencia de estos indicadores constituye el criterio de validación disponible, por lo que se estima que las velocidades máximas nominales se mantienen bajo las condiciones de carga impuestas.
 
@@ -640,23 +655,25 @@ generando una superficie irregular que se propaga y amplifica con cada
 capa, así como paredes con pérdida de borde.
 
 Para contrarrestar este último efecto, se considera la estrategia de 
-\textbf{deposición oblicua} definida por Chepillo et al., consistente en 
+\textbf{deposición oblicua} definida por Chepillo et al. y Wu et al., la cual consiste en 
 generar pasadas de compensación sobre los trazos principales inclinando 
 la pieza en el eje $A$, de modo de exponer y tratar el borde del cordón. 
 Esta estrategia permite obtener trazos aproximadamente planos y de 
 sección reducida, adecuados para la resolución de detalles puntuales y 
 estructuras de pared delgada.
 
-Para la fabricación de sectores de mayor volumen, resulta más conveniente 
+La nomenclatura para referise a las trayectorias corresponde a pistas principales, las cuales definen la geoemtría de la pieza y la tobera aplica el material de manera normal a la superficie, y las pistas de corrección, donde la tobera aplica el material de manera oblicua para compensar la pérdida de borde.
+
+Si bien, no es análoga la designación FDM a este caso entre definir infills para el material interno y wall para el material perimetral, pues ciertamente, no es factible generar estrcutras de soporte interior que ahorren material, sí podria definirse de todas maneras al material interior como relleno o infill, y a las paredes exteriroes simplemente como paredes. Así, las trayectorias interiores de deposicion oblicua se pueden denominar pistas principales de relleno.
+
+Para la fabricación de tales sectores volumétricos (o de relleno), resulta más conveniente 
 una lógica de \textbf{solapamiento}, en la que se ajusta la distancia 
 entre pasadas adyacentes $s$ como fracción del ancho del cordón $w$, de 
 modo que la superposición de los perfiles individuales aproxime una 
 superficie plana. En caso de que el solapamiento induzca una ondulación 
 residual en la superficie conformada que dificulte la conformación de una nueva capa encima, esta puede atenuarse mediante 
 pasadas de compensación perpendiculares intercaladas entre los trazos 
-principales, o \textbf{deposición inter-trazo}, hasta alcanzar una planitud aceptable. Los bordes de estos 
-sectores macizos se refinan posteriormente mediante la compensación 
-oblicua descrita.
+principales de relleno, o \textbf{deposición inter-trazo}, hasta alcanzar una planitud aceptable. Así, estas trayectorias se denominarian pistas inter-trazo.
 
 Cada estrategia se evalúa en términos de dos criterios geométricos medidos mediante 
 perfilometría confocal con el equipo Keyence VK-5000. El primero corresponde al ángulo 
@@ -683,12 +700,25 @@ recorren ángulos iguales en el mismo intervalo de tiempo pero a radios
 distintos. Esto produce una mayor acumulación de material hacia el 
 interior de la curva y una potencial falta de cobertura en el exterior.
 
-Por otro lado, ciertas limitaciones son propias de cada estrategia. La deposición con 
+Por esto, y por los resultados de Vargas-Uscategui et. al, es necesario definir una acción par amitigar este efecto, considerando ademas que la deposicion es continua. Se plantea que las geometrías a fabricar no puden contar con bordes rectos, sino que con cierta curvatura mínima, en el caso de generar un perímetro de forma contínua. 
+
+Otra estrategia para cubrir el área que ocupará parte de una pieza es mediante un raster paralelo bidireccional. Dado que la despoicion es continiua, se deben buscar maneras para minimizar la deposicion en las zonas de transdicion entre cada pista principal, como el aumento de velocidad, la reduccion de angulo, y el alejamiento de la zona de deposicion.
+
+
+Cabe mencionar que ciertas limitaciones serán propias de cada estrategia. La deposición con 
 compensación oblicua, por ejemplo, introduce un efecto sombra geométrico asociado al ángulo 
 de inclinación de la boquilla y a la distancia de \textit{standoff}, imponiendo una separación 
 mínima entre paredes paralelas fabricables sin interferencia mutua. La caracterización de 
 estas limitaciones delimita el espacio de geometrías alcanzables con el sistema y constituye 
 el punto de partida para el análisis de deposición multicapa desarrollado en la etapa siguiente.
+
+Lso valores obtebidos en Chepillo et al para los rangos operativos del proceso no son directamente homologables para el rpesente trabajo, pues las simulaciones realziadas suceden en condiciones ideales, sin efectos inerciales de la máquina, y se basan en el uso de cobre como material y aluminio como sustrato.
+
+caracterizacion del perfil con perfilometro - standoff, velocidad - ancho, altura, convexidad.
+metaloggrafica - porosidad, interfaz, 
+solapamiento - distancia entre pistas - rugosidad
+oblicuo - angulo de deposicion (velocidad, flujo, standoff) - angulo
+
 
 \section{Planificación de experimentos multicapa}
 
@@ -732,6 +762,10 @@ suma la posibilidad de oxidación superficial del titanio entre pasadas, cuya ca
 puede inhibir la unión metálica entre partícula y sustrato. 
 
 Por tanto, la evaluación de la adhesión intercapa y su dependencia paramétrica —mediante análisis metalográfico de secciones transversales o caracterización del esfuerzo de corte— constituiría un criterio de aceptabilidad relevante para establecer interrelaciones como la velocidad de fabricación en función de la resistencia intercapa alcanzada, y su proyección tras tratamiento térmico para definir conjuntos de parámetros multivariables óptimos. No obstante, esto queda fuera de los alcances de esta investigación, en la que se prioriza la constructibilidad y la precisión geométrica de las piezas por sobre su desempeño mecánico.
+
+- conicidad
+- angulo de voladizo
+- metalografico 
 
 \subsection{Geometrías 3D}
 

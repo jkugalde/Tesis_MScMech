@@ -42,29 +42,29 @@
 \contentsline {subsection}{\numberline {3.2.4}Material pulverizado y sustrato}{57}{subsection.3.2.4}%
 \contentsline {subsection}{\numberline {3.2.5}Sistema final}{59}{subsection.3.2.5}%
 \contentsline {subsection}{\numberline {3.2.6}Caracterización del espacio de trabajo}{59}{subsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.2.7}Resumen de parámetros operativos}{61}{subsection.3.2.7}%
-\contentsline {section}{\numberline {3.3}Planificación de experimentos de una capa}{61}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Características de las toberas}{61}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Caracterización del perfil de deposición}{65}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.2.7}Resumen de parámetros operativos}{62}{subsection.3.2.7}%
+\contentsline {section}{\numberline {3.3}Planificación de experimentos de una capa}{62}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Características de las toberas}{62}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Caracterización del perfil de deposición}{66}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Estrategias de deposición}{67}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Planificación de experimentos multicapa}{68}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Estretegias multicapa}{68}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Geometrías 3D}{69}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Medición de resultados}{70}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Caracterización mecánica de probetas}{70}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Caracterización de piezas tridimensionales}{70}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Análisis de desempeño del proceso}{71}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Sumario}{71}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Resumen de experimentos de CSAM}{71}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Resumen de indicadores de evaluación de CSAM}{71}{subsection.3.6.2}%
-\contentsline {chapter}{\numberline {4}Resultados y discusión}{74}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Caracterización del perfil}{74}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Estrategias de compensación}{74}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Ensayos mecánicos}{74}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Fidelidad geométrica}{74}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Estructura de costos}{74}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{75}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusiones}{75}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{75}{section.5.2}%
-\contentsline {chapter}{\numberline {}Bibliograf\'ia}{81}{chapter*.79}%
-\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{82}{Appendix.alph1.Alph1}%
+\contentsline {section}{\numberline {3.4}Planificación de experimentos multicapa}{69}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Estretegias multicapa}{69}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Geometrías 3D}{70}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Medición de resultados}{71}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Caracterización mecánica de probetas}{71}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Caracterización de piezas tridimensionales}{72}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Análisis de desempeño del proceso}{72}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Sumario}{72}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Resumen de experimentos de CSAM}{72}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Resumen de indicadores de evaluación de CSAM}{72}{subsection.3.6.2}%
+\contentsline {chapter}{\numberline {4}Resultados y discusión}{75}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Caracterización del perfil}{75}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Estrategias de compensación}{75}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Ensayos mecánicos}{75}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Fidelidad geométrica}{75}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Estructura de costos}{75}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{76}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones}{76}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{76}{section.5.2}%
+\contentsline {chapter}{\numberline {}Bibliograf\'ia}{82}{chapter*.81}%
+\contentsline {chapter}{Ap\'{e}ndice \numberline {A}Anexo}{83}{Appendix.1.Alph1}%
