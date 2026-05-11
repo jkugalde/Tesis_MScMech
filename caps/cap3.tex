@@ -2,17 +2,17 @@
 
 \section{Flujo de trabajo}
 
-El objetivo de este trabajo es una evaluación experimental de fabricar de manera aditiva piezas de titanio por CSAM. Para tales efectos, el flujo general requiere de un sistema robotizado o CNC, estrategias de deposición y metodologías de evaluación.
+El objetivo de este trabajo es la evaluación experimental de la fabricación aditiva de piezas de titanio mediante CSAM. Para tales efectos, el flujo de trabajo general requiere de un sistema de movimiento robotizado o CNC, estrategias de deposición definidas, y metodologías de evaluación apropiadas.
 
-Dado que no existen en la infraestuctura de la Universidad de Chile sistemas estbalecidos de coldspray con más de 3 ejes de libertad, pues se reuqiere la variación del angulo de depsoicion para una exploracion fundamentada en el estado del arte, se plantea implementar un sistema de CSAM a aprtir de la adaptacipoin de una maquina CNC y su integración con compontentes de CS. La caracterización del sistema y los materiales de trabajo constituirían la primera fase del trabajo, concluynedo con la entrega de los rangos de los aprametros de hardware y operativos del sistema establceido, una vez que se demuestre que existe deposicion viable.
+Dado que la infraestructura de la Universidad de Chile no cuenta con sistemas de CS con más de tres ejes de libertad, y considerando que el estado del arte fundamenta la variación del ángulo de deposición como un parámetro relevante para la exploración aditiva, se plantea implementar un sistema de CSAM a partir de la adaptación de una máquina CNC y su integración con los componentes de CS disponibles. La caracterización de este sistema integrado, junto con la de los materiales de trabajo, constituye la primera etapa del flujo propuesto. Esta etapa concluye con la determinación de los rangos para los parámetros operativos y para los parámetros de hardware, condicionado a la verificación de deposición viable sobre sustrato plano.
 
- Se plantea el inicio de la exploracion experimental del trabajo partiendo por la caracterizacion de trazos unicapa, lo cual corresponderia a la etapa 2, cubriendo aspectos como el perfil de deposicion, evaluacion de compensacion angular y solapamiento, asi como tambien de las trayectorias curvilineas, buscando optimizar la construccion de paredes homogeneas, y proyectando la resolución del proceso.
+A partir de ello, la etapa 2 inicia la exploración experimental mediante la caracterización de trazos monocapa. En esta etapa se abordan aspectos como el perfil de deposición, la compensación angular, el solapamiento entre trazos adyacentes y las trayectorias curvilíneas, con el objetivo de optimizar la construcción de paredes homogéneas y definir la resolución espacial del proceso.
 
-En la etapa 3 se estudia la construcción de capas sucesivas sobre depósitos previos, buscando estrategias que permitan mantener una estructura de pared homogénea y plana conforme se avanza en la dirección $Z$. De este modo, se establecen los parámetros que habilitan la fabricación de geometrías tridimensionales elementales en el sistema, así como sus limitaciones. Estas geometrías primitivas se fabrican y se iteran, tanto en diseño como en parámetros de proceso, hasta obtener resultados morfológicamente aceptables y un proceso repetible.
+En la etapa 3 se estudia la construcción por capas sucesivas sobre depósitos previos, buscando estrategias que permitan mantener una estructura de pared homogénea y dimensionalmente estable a medida que se avanza en la dirección $Z$. De este modo, se establecen los parámetros que habilitan la fabricación de geometrías tridimensionales elementales, así como sus limitaciones inherentes. Estas geometrías primitivas se fabrican y se iteran, tanto en diseño como en parámetros de proceso, hasta obtener resultados morfológicamente aceptables y un proceso repetible.
 
-Finalmente, en la etapa 4 se analiza el proceso en términos de su caracterización mecánica, fidelidad con el diseño, eficiencia de deposición y costos operativos, comparándolo con otros métodos de fabricación aditiva metálica. A partir de este análisis se concluye respecto al potencial del sistema establecido como alternativa de fabricación 3D metálica, contrastando los resultados obtenidos con las hipótesis planteadas y los alcances definidos para el trabajo.
+Finalmente, la etapa 4 corresponde al análisis integral del proceso, abarcando su caracterización mecánica, la fidelidad geométrica respecto al diseño, la eficiencia de deposición y los costos operativos, contrastándolo con otros métodos de fabricación aditiva metálica. A partir de este análisis se concluye respecto al potencial del sistema establecido como alternativa de manufactura aditiva metálica, contrastando los resultados obtenidos con las hipótesis planteadas y los alcances definidos para el trabajo.
 
-De lo anterior, se estbalce entonces un flujo de trabajo con 4 etapas principales como muestra la Figura \ref{fig:etapas}. Estas etapas son secuenciales, puesto que cada una funciona como insumo para la ejecución de la siguiente.
+De lo anterior se desprende un flujo de trabajo estructurado en cuatro etapas principales, según se ilustra en la Figura~\ref{fig:etapas}. Estas etapas son secuenciales, en tanto cada una constituye insumo necesario para la ejecución de la siguiente.
 
 \begin{figure}[h!]
 	\centering
@@ -314,7 +314,7 @@ La máquina no dispone de un sistema de deflexión o bloqueo del jet, por lo que
 
 \subsection{Caracterización del espacio de trabajo}
 
-Con el sistema ensamblado se realizaron pruebas de movimiento para determinar el espacio de trabajo útil respecto a las capacidades nominales de la máquina original. Posicionando la tobera en contacto con la periferia del área de trabajo y recorriendo su contorno, se comprueba que es posible recorrer la circunferencia completa deformando la protección de silicona. En consecuencia, el espacio de trabajo útil puede definirse en coordenadas cilíndricas según el Cuadro~\ref{tab:espacio_trabajo} para la configuración estándar de la máquina con el eje A a 90°.
+Con el sistema ensamblado se realizaron pruebas de movimiento para determinar el espacio de trabajo útil respecto a las capacidades nominales de la máquina original. Posicionando la tobera en contacto con la periferia del área de trabajo y recorriendo su contorno, se comprueba que es posible recorrer la circunferencia completa deformando ligeramente la protección de silicona. En consecuencia, el espacio de trabajo útil puede definirse en coordenadas cilíndricas según el Cuadro~\ref{tab:espacio_trabajo} para la configuración estándar de la máquina con el eje A a 90°.
 
 \begin{table}[h]
 	\centering
@@ -331,9 +331,18 @@ Con el sistema ensamblado se realizaron pruebas de movimiento para determinar el
 	\end{tabular}
 \end{table}
 
-Este rango se ve reducido al utilizar el eje A, puesto que la deformación impuesta sobre la protección de silicona aumenta con la desviación angular respecto a la normal, con la profundidad en $z$ y con la desviación radial respecto al centro del área de trabajo, tal como se ilustra en la Figura~\ref{fig:espacio_A}. Dado que la literatura reporta un ángulo crítico de deposición para titanio por encima del cual la eficiencia cae drásticamente~\cite{WU2025642}, se fija el rango operativo del eje A en un mínimo de 70° respecto a la superficie del sustrato.
+Este rango se ve reducido al utilizar el eje A, puesto que la deformación impuesta sobre la protección de silicona aumenta con la desviación angular respecto a la normal, con la profundidad en $z$ y con la desviación radial respecto al centro del área de trabajo, tal como se ilustra en la Figura~\ref{fig:espacio_A}. Dado que la literatura reporta un ángulo crítico de deposición para titanio por encima del cual la eficiencia cae drásticamente~\cite{WU2025642}, se fija el rango operativo del eje A en un mínimo de 70° respecto a la superficie del sustrato. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/anguli.png}
+	\caption{Diagrama para la limitación del ángulo de deposición.}
+	\label{fig:espacio_A}
+\end{figure}
 
 Es importante notar que en fabricación aditiva tridimensional se generan nuevas superficies al construir las paredes que definen un objeto. En un sistema cartesiano convencional, la deposición ocurre siempre sobre la cara superior de la pared en construcción, siguiendo un paradigma de fabricación estrictamente planar. Sin embargo, un sistema con mayor número de grados de libertad ofrece capacidades adicionales: permite depositar de manera oblicua o normal a las caras laterales de las paredes ya fabricadas (Figura~\ref{fig:deposicion_oblicua}). En este caso, el ángulo crítico se evalúa respecto a la cara lateral de la pared, lo cual resulta más favorable geométricamente que respecto a la cara superior. Este modo de deposición queda fuera del alcance de la presente investigación, ya que la protección de silicona restringe el acceso lateral a las paredes fabricadas.
+
+Se reconoce que la protección de silicona constituye un mecanismo sencillo para otorgar contención al proceso; sin embargo, limita la versatilidad de las estrategias y trayectorias de deposición posibles. Una alternativa a esta solución consistiría en construir un recinto rígido y translúcido que cubra la totalidad de la máquina —por ejemplo, una caja de acrílico o policarbonato— equipado con un sistema de extracción de polvo, complementado con cubiertas localizadas sobre las zonas críticas de la máquina, tales como rieles lineales y sectores con movimiento relativo. Una opción adicional sería la incorporación de cortinas de aire dirigidas hacia las superficies a proteger, desviando el polvo suspendido antes de que pueda contaminarlas.
 
 La deposición oblicua también abre la posibilidad de fabricar trazos sin soporte inferior directo (voladizo), aunque esta estrategia enfrenta restricciones severas en CSAM, dado que cada capa nueva requiere impactar sobre material sólido subyacente para adherirse. Como aproximación, se plantea que un voladizo podría generarse mediante una deposición oblicua ejecutada sobre el borde de una pared ya consolidada, de modo que el material depositado sobresalga lateralmente y actúe como voladizo incipiente. 
 
@@ -354,7 +363,7 @@ En el Cuadro~\ref{tab:parametros} se presentan los acrónimos y rangos operativo
 		$T_0$       & Temperatura de estancamiento [°C]   & 25 & 480 \\
 		$p_0$       & Presión de estancamiento [bar]      & 10   & 20   \\
 		$\theta$    & Ángulo de deposición [°]            & 70  & 90  \\
-		$v_f$       & Velocidad de avance [mm/min]          & - & 1524 \\
+		$v_f$       & Velocidad de avance [mm/min]          & 0 & 1524 \\
 		$d_s$       & Distancia de standoff [mm]          & 0 & 50 \\
 		\hline
 	\end{tabular}
@@ -522,6 +531,13 @@ de la sección divergente, se verificó que a mayor longitud, mayor es la
 velocidad alcanzada por las partículas y, en consecuencia, mayor la 
 eficiencia de deposición. 
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/tobtemps.png}
+	\caption[Simulación para la temperatura del gas en toberas $T_{1}$ y $T_{2}$]{Simulación para la temperatura del gas en toberas $T_{1}$ y $T_{2}$ \cite{CerdaLobos2024}.}
+	\label{fig:temp_gas}
+\end{figure}
+
 Finalmente, el análisis de mezclas N$_2$-He mostró aumentos significativos 
 en la velocidad del gas y en la eficiencia de deposición, aunque los 
 autores concluyen que, considerando únicamente los costos de gas y 
@@ -536,12 +552,7 @@ resultados confirman que el proceso es nominalmente
 compatible protección de silicona a implementar en la máquina, validando el diseño del sistema de
 protección descrito en la sección 3.1.3.
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=1.0\linewidth]{imgs/tobtemps.png}
-	\caption[Simulación para la temperatura del gas en toberas]{Simulación para la temperatura del gas en toberas \cite{CerdaLobos2024}.}
-	\label{fig:temp_gas}
-\end{figure}
+
 
 Ambas toberas serán evaluadas experimentalmente mediante una trayectoria
 rectilínea de referencia, y la selección de la tobera de trabajo se realizará
@@ -605,7 +616,7 @@ Complementariamente, se realizan cortes transversales de los cordones
 depositados, seguidos de embutido metalográfico y pulido, para su observación
 en microscopio óptico y/o electrónico de barrido. Esta preparación permite
 evaluar la porosidad interna del depósito, la calidad de la interfaz
-titanio/aluminio, la morfología de deformación de las partículas
+titanio/aluminio, la porosidad, la morfología de deformación de las partículas
 individuales y la distribución de óxidos interpartícula, características
 que no son accesibles mediante perfilometría superficial y que son
 determinantes para la integridad del depósito~\cite{Huang2020, Yin2022review}.
