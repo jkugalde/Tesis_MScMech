@@ -646,73 +646,146 @@ menor resolución y mayor requerimiento de compensación. La selección del perf
 constituye por tanto una decisión de compromiso, condicionada por los objetivos específicos 
 de cada geometría a fabricar.
 
-\subsection{Estrategias de deposición}
+\subsection{Estrategia de deposición planar}
 
-El problema central en el CS es que una pasada simple produce un cordón 
-con perfil transversal convexo. Al superponer pasadas adyacentes o capas 
-sucesivas sin compensación, el material se acumula de forma no uniforme, 
-generando una superficie irregular que se propaga y amplifica con cada 
-capa, así como paredes con pérdida de borde.
+El problema central en la fabricación por CS es que una pasada simple 
+produce un cordón con perfil transversal convexo. Al superponer pasadas 
+adyacentes o capas sucesivas sin compensación, el material se acumula de 
+forma no uniforme, lo que genera una superficie irregular que se propaga y 
+amplifica con cada capa depositada, así como una degradación progresiva de 
+la definición de borde en las paredes de la pieza. En esta investigación se aplicará la \textbf{estrategia de teselación triangular} descrita en Wu et. al.
 
-Para contrarrestar este último efecto, se considera la estrategia de 
-\textbf{deposición oblicua} definida por Chepillo et al. y Wu et al., la cual consiste en 
-generar pasadas de compensación sobre los trazos principales inclinando 
-la pieza en el eje $A$, de modo de exponer y tratar el borde del cordón. 
-Esta estrategia permite obtener trazos aproximadamente planos y de 
-sección reducida, adecuados para la resolución de detalles puntuales y 
-estructuras de pared delgada.
+Para contrarrestar la pérdida de borde en las paredes, Chepillo et 
+al.~\cite{Chepillo2024} y Wu et al.~\cite{WU2025642} definen la \textbf{deposición oblicua}, que consiste en ejecutar pistas 
+de corrección sobre los trazos principales inclinando la pieza en el eje 
+$A$, de modo de exponer el borde del cordón y depositarlo de manera 
+efectiva. Esta técnica es la que gobierna la resolución de detalles 
+puntuales y la conformación de estructuras de pared delgada.
 
-La nomenclatura para referise a las trayectorias corresponde a pistas principales, las cuales definen la geoemtría de la pieza y la tobera aplica el material de manera normal a la superficie, y las pistas de corrección, donde la tobera aplica el material de manera oblicua para compensar la pérdida de borde.
+Para sectores cuyo ancho supere el perfil de deposición individual, el 
+volumen se genera mediante \textbf{solapamiento} de pistas interiores, de 
+modo que la superposición de los perfiles aproxime una superficie plana. En 
+caso de que el solapamiento induzca una ondulación residual que dificulte 
+la deposición de capas sucesivas, esta puede atenuarse mediante pistas 
+inter-trazo perpendiculares intercaladas entre los trazos de relleno, hasta 
+alcanzar una planitud aceptable.
 
-Si bien, no es análoga la designación FDM a este caso entre definir infills para el material interno y wall para el material perimetral, pues ciertamente, no es factible generar estrcutras de soporte interior que ahorren material, sí podria definirse de todas maneras al material interior como relleno o infill, y a las paredes exteriroes simplemente como paredes. Así, las trayectorias interiores de deposicion oblicua se pueden denominar pistas principales de relleno.
+Para describir las trayectorias involucradas en la construcción de una 
+pieza, se adoptará la nomenclatura propia de la impresión FDM, 
+distinguiendo entre \textbf{pistas externas} (\textit{walls}), que definen 
+la geometría superficial de la pieza con la tobera en orientación normal a 
+la superficie, y \textbf{pistas interiores} o de \textbf{relleno} 
+(\textit{infill}), que generan el volumen interior mediante solapamiento de 
+cordones adyacentes. Adicionalmente, se definen \textbf{pistas de 
+	corrección}, aplicadas con la tobera en orientación oblicua para compensar 
+la pérdida de borde en las paredes, y \textbf{pistas inter-trazo}, 
+intercaladas entre las pistas de relleno para atenuar la ondulación 
+superficial residual. 
 
-Para la fabricación de tales sectores volumétricos (o de relleno), resulta más conveniente 
-una lógica de \textbf{solapamiento}, en la que se ajusta la distancia 
-entre pasadas adyacentes $s$ como fracción del ancho del cordón $w$, de 
-modo que la superposición de los perfiles individuales aproxime una 
-superficie plana. En caso de que el solapamiento induzca una ondulación 
-residual en la superficie conformada que dificulte la conformación de una nueva capa encima, esta puede atenuarse mediante 
-pasadas de compensación perpendiculares intercaladas entre los trazos 
-principales de relleno, o \textbf{deposición inter-trazo}, hasta alcanzar una planitud aceptable. Así, estas trayectorias se denominarian pistas inter-trazo.
+Para la fabricación de las piezas se adoptará una estrategia de 
+\textbf{rasterizado concéntrico} y \textbf{rasterizado paralelo bidireccional} según sea conveniente, ejecutando las pistas en el siguiente 
+orden: pistas externas, pistas interiores de relleno, pistas inter-trazo y, 
+finalmente, pistas de corrección oblicua. En la Figura \ref{fig:trazos} se observa la nomenclatura descrita, donde una sección rectangular es fabricada a través de una estrategia paralela bidireccional compensada finalmente por una deposición oblicua contínua.
 
-Cada estrategia se evalúa en términos de dos criterios geométricos medidos mediante 
-perfilometría confocal con el equipo Keyence VK-5000. El primero corresponde al ángulo 
-promedio de la pared depositada respecto a la perpendicular al sustrato, obtenido desde 
-el perfil transversal del depósito, donde un valor cercano a \ang{0} indica una pared 
-vertical. El segundo criterio corresponde a la rugosidad de la superficie superior del 
-cordón, caracterizada mediante el parámetro $R_a$, cuya minimización favorece la 
-deposición uniforme de capas sucesivas. La estrategia o combinación de estrategias que 
-produzca simultáneamente el menor ángulo de inclinación y el menor $R_a$ superficial 
-será adoptada para la fabricación de las probetas y geometrías descritas en las etapas 
-siguientes.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/transversal.pdf}
+	\caption[Diagrama de teselación triangular en geometría rectangular y nomenclatura en la sección transversal]{Diagrama de teselación triangular en geometría rectangular y nomenclatura en la sección transversal, a) Vista superior de trayectorias para geometría rectangular y b) corte transversal.}
+	\label{fig:trazos}
+\end{figure}
 
-No obstante, aun cuando algunas estrategias resulten exitosas, es 
-previsible que emerjan limitaciones de distinta naturaleza. Por un lado, 
-existen restricciones inherentes al sistema: el espacio de trabajo 
-disponible, los rangos de velocidad y aceleración alcanzables, y la 
-resolución geométrica impuesta por el ancho del cordón depositado. Este 
-último factor define un radio mínimo de curvatura por debajo del cual no 
-es posible reproducir fielmente una trayectoria sin incurrir en 
-solapamientos no deseados o zonas sin cobertura. Adicionalmente, al 
-trazar curvas, la velocidad tangencial del punto de deposición es mayor 
-en el lado exterior del arco que en el interior, dado que ambos lados 
-recorren ángulos iguales en el mismo intervalo de tiempo pero a radios 
-distintos. Esto produce una mayor acumulación de material hacia el 
-interior de la curva y una potencial falta de cobertura en el exterior.
+Cabe notar que, a diferencia de la impresión FDM de polímeros, la 
+fabricación de piezas metálicas implica requisitos de servicio potencialmente 
+exigentes, por lo que la optimización de los parámetros operativos en cada 
+sector de la pieza está directamente condicionada por las dependencias del 
+perfil de deposición y el potencial de subsanación que pueda aportar un 
+tratamiento térmico posterior. Por ejemplo, es probable que se quiera optimizar la precisión y el detalle en el exterior, mientras que en el interior se desea disminuir el tiempo de fabricación. Tal análisis queda fuera del alcance de este 
+trabajo; en consecuencia, se operará con los mismos parámetros tanto para 
+pistas externas como para pistas de relleno.
 
-Por esto, y por los resultados de Vargas-Uscategui et. al, es necesario definir una acción par amitigar este efecto, considerando ademas que la deposicion es continua. Se plantea que las geometrías a fabricar no puden contar con bordes rectos, sino que con cierta curvatura mínima, en el caso de generar un perímetro de forma contínua. 
+Para el estudio paramétrico de la compensación oblicua en pistas únicas, 
+la calidad de la deposición se evalúa mediante dos criterios geométricos 
+medidos por perfilometría confocal. El primero es el ángulo promedio de la 
+pared depositada respecto a la perpendicular al sustrato, extraído del 
+perfil transversal del depósito; un valor próximo a \ang{0} indica una 
+pared de geometría vertical, como se muestra en la Figura \ref{fig:metris}. El segundo es la rugosidad de la superficie 
+superior del cordón, caracterizada mediante el parámetro $R_a$, cuya 
+minimización favorece la deposición uniforme de capas sucesivas. La 
+estrategia, o combinación de estrategias, que produzca simultáneamente el 
+menor ángulo de inclinación y el menor $R_a$ superficial será adoptada 
+para la fabricación de las probetas y geometrías descritas en las etapas 
+subsiguientes.
 
-Otra estrategia para cubrir el área que ocupará parte de una pieza es mediante un raster paralelo bidireccional. Dado que la despoicion es continiua, se deben buscar maneras para minimizar la deposicion en las zonas de transdicion entre cada pista principal, como el aumento de velocidad, la reduccion de angulo, y el alejamiento de la zona de deposicion.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/metris.png}
+	\caption[Diagrama para métricas de interés en experimentos planares]{Diagrama para métricas de interés en experimentos planares a) Pruebas de compensación oblicua y b) Pruebas de solapamiento.}
+	\label{fig:metris}
+\end{figure}
 
+Del estudio de compensación oblicua se desprende también la posibilidad de 
+explorar la generación de voladizos en condición de sobredeposición, en 
+respuesta a los requerimientos expuestos en la Sección 3.2.6. En 
+este caso, el criterio rector es igualmente la minimización de la rugosidad 
+superficial de la pared resultante.
 
-Cabe mencionar que ciertas limitaciones serán propias de cada estrategia. La deposición con 
-compensación oblicua, por ejemplo, introduce un efecto sombra geométrico asociado al ángulo 
-de inclinación de la boquilla y a la distancia de \textit{standoff}, imponiendo una separación 
-mínima entre paredes paralelas fabricables sin interferencia mutua. La caracterización de 
-estas limitaciones delimita el espacio de geometrías alcanzables con el sistema y constituye 
-el punto de partida para el análisis de deposición multicapa desarrollado en la etapa siguiente.
+Para el estudio del solapamiento se evaluará la rugosidad superficial en 
+función de la distancia entre pistas (\textit{hatch distance}), sin y 
+con aplicar la corrección inter-trazo (Figura \ref{fig:metris}). Si bien el objetivo general 
+es minimizar $R_a$, no se descarta que cierta rugosidad residual resulte 
+beneficiosa para la adhesión de las capas sucesivas: Bruera et 
+al.~\cite{Bruera2023adhesion} demuestran que, en cold spray, la relación 
+entre rugosidad superficial y adhesión no es monótona, sino que existe un 
+valor óptimo de rugosidad —del orden de $R_z \approx 34\,\mu\text{m}$ para 
+el sistema Cu/AISI~304— a partir del cual la adhesión disminuye, y que 
+dicho óptimo depende además de la dureza del sustrato. Dado que esta 
+dependencia no ha sido caracterizada para el sistema Ti/Ti en condición de 
+interfaz entre capas depositadas por CSAM, la determinación del criterio de 
+optimización de $R_a$ requiere validación experimental en el presente 
+trabajo.
 
-Lso valores obtebidos en Chepillo et al para los rangos operativos del proceso no son directamente homologables para el rpesente trabajo, pues las simulaciones realziadas suceden en condiciones ideales, sin efectos inerciales de la máquina, y se basan en el uso de cobre como material y aluminio como sustrato.
+Aun cuando determinadas configuraciones resulten exitosas en los estudios 
+paramétricos, es previsible que emerjan limitaciones de distinta naturaleza. 
+Existen, en primer lugar, restricciones inherentes al sistema: el volumen 
+de trabajo disponible, los rangos de velocidad y aceleración alcanzables, y 
+la resolución geométrica impuesta por el ancho del cordón depositado. Este 
+último factor define un radio mínimo de curvatura por debajo del cual no es 
+posible reproducir fielmente una trayectoria sin incurrir en solapamientos 
+no deseados o en zonas sin cobertura.
+
+Al trazar curvas, la velocidad tangencial del punto de deposición es mayor 
+en el lado exterior del arco que en el interior, dado que ambos recorren el 
+mismo ángulo en el mismo intervalo de tiempo pero a radios distintos. Esto 
+produce una mayor acumulación de material hacia el interior de la curva y 
+una potencial falta de cobertura en el exterior. En consecuencia, y en 
+concordancia con los resultados de Vargas-Uscategui et 
+al., se establece que las geometrías fabricadas no 
+pueden presentar vértices de ángulo recto, sino que deben incorporar una 
+curvatura mínima en los cambios de dirección del perímetro cuando este se 
+recorre de forma continua.
+
+Una segunda restricción deriva del carácter continuo de la deposición: 
+deben minimizarse los depósitos indeseados en las zonas de transición entre 
+pistas consecutivas. Las acciones contempladas para este fin incluyen el 
+aumento puntual de la velocidad de travesía, la reducción del ángulo de 
+incidencia y el alejamiento transitorio de la zona de deposición al término 
+de cada pista.
+
+Cabe señalar que ciertas limitaciones son propias de cada estrategia. La 
+deposición con compensación oblicua, por ejemplo, introduce un efecto de 
+sombra geométrica asociado al ángulo de inclinación de la boquilla y a la 
+distancia de \textit{standoff}, lo que impone una separación mínima entre 
+paredes paralelas fabricables sin interferencia mutua. La caracterización de 
+estas restricciones delimita el espacio de geometrías alcanzables con el 
+sistema y constituye el punto de partida para el análisis de deposición 
+multicapa desarrollado en la etapa siguiente.
+
+Se hace notar que los rangos operativos reportados por Chepillo et 
+al.~\cite{Chepillo2024} no son directamente homologables al presente 
+trabajo, dado que las simulaciones correspondientes se realizaron en 
+condiciones ideales que no contemplan efectos inerciales de la máquina ni 
+las perturbaciones asociadas a la dinámica real del sistema de 
+posicionamiento., y se basan en el uso de cobre como material y aluminio como sustrato.
 
 caracterizacion del perfil con perfilometro - standoff, velocidad - ancho, altura, convexidad.
 metaloggrafica - porosidad, interfaz, 
@@ -722,46 +795,63 @@ oblicuo - angulo de deposicion (velocidad, flujo, standoff) - angulo
 
 \section{Planificación de experimentos multicapa}
 
-\subsection{Estretegias multicapa}
+\subsection{Estrategias multicapa}
 
-La etapa de deposición multicapa constituye una extensión natural de los resultados 
-obtenidos en la etapa anterior, donde se establecieron estrategias exitosas para la 
-generación de paredes simples. El primer paso consiste en replicar dichas estrategias 
-de forma iterativa en la dirección $Z$, incrementando la altura de la pared capa a capa, 
-con el objetivo de validar la estabilidad del proceso en profundidad y determinar si los 
-parámetros optimizados para una sola capa mantienen su eficacia en deposiciones sucesivas.
+La etapa de deposición multicapa constituye una extensión natural de los 
+resultados obtenidos en la etapa anterior, en la que se establecieron 
+estrategias exitosas para la generación de pistas simples. El primer paso 
+consiste en replicar dichas estrategias de forma iterativa en la dirección 
+$Z$ para la fabricación de una pared de altura creciente, midiendo ancho y 
+altura al término de cada capa depositada.
 
-Un aspecto de particular interés en esta etapa es el comportamiento de la compensación 
-de pared conforme aumenta el número de capas. No es evidente que el offset de compensación 
-determinado para la primera capa se mantenga constante a lo largo de la dirección $Z$, 
-puesto que la geometría local de la superficie de deposición puede variar por efecto de 
-la acumulación de material o 
-variaciones en la compactación inter-capa. Por ello, se analiza la dependencia de la 
-compensación requerida en función de la capa, buscando determinar si esta es constante, 
-lineal o presenta un comportamiento más complejo.
+No es evidente que las configuraciones óptimas para la primera capa sean 
+transferibles al resto de la construcción. La geometría local de la 
+superficie de deposición puede variar progresivamente por efecto de la 
+acumulación de material y del endurecimiento por deformación acumulado en 
+capas previas, alterando tanto el perfil del cordón como la compactación 
+inter-capa. Por ello, se analiza la dependencia de la compensación 
+requerida en función del número de capa, con el objeto de determinar si 
+dicha compensación es constante, evoluciona linealmente o presenta un 
+comportamiento más complejo que requiera corrección adaptativa por la pérdida de deposición (Figura \ref{fig:paredi}).
 
-Adicionalmente, se explora la capacidad del sistema para generar voladizos. Esta capacidad es determinante para evaluar 
-la viabilidad de geometrías con \textit{overhang}, cuya fabricación requiere que la 
-sección transversal del depósito pueda crecer en el plano $XY$ conforme avanza la 
-construcción en $Z$. Sin esta capacidad, las geometrías fabricables quedan restringidas 
-a secciones transversales constantes o decrecientes, lo que limita significativamente 
-el espacio de piezas producibles con el sistema.
+Posteriormente, se evalúa la fabricación de una pared alta en ángulo mediante capas con pared sobrecompensada en la deposición oblicua, lo que 
+pone a prueba la capacidad de crecimiento de una sección en el plano $XY$ conforme se avanza en $Z$. 
+Esta característica es necesaria para superar la restricción de sección 
+transversal constante o decreciente que impone la deposición normal; sin 
+ella, el espacio de geometrías producibles con el sistema quedaría 
+significativamente reducido.
 
-Finalmente, la generación de trayectorias para los cinco ejes se implementa mediante 
-código paramétrico en Python, lo que permite sistematizar la variación de parámetros 
-geométricos y de proceso de forma reproducible.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{imgs/pared.pdf}
+	\caption[Diagrama de pruebas de pared alta multicapa]{Diagrama de pruebas de pared alta multicapa a) Caso ideal, b) Caso probable con pérdida de deposición y c) Prueba de pared oblicua.}
+	\label{fig:paredi}
+\end{figure}
 
-Un aspecto crítico para la viabilidad de la fabricación aditiva multicapa es la adhesión 
-entre capas sucesivas de material CS. A diferencia de la primera capa, donde la adhesión 
-ocurre entre la partícula proyectada y el sustrato base, en las capas posteriores la 
-deposición ocurre sobre material CS previamente depositado. Esta condición es más exigente, 
-puesto que la superficie del depósito previo presenta mayor resistencia a la deformación 
-plástica debido al endurecimiento por deformación acumulado durante los impactos anteriores, 
-lo que eleva efectivamente la velocidad crítica local requerida para la adhesión. A esto se 
-suma la posibilidad de oxidación superficial del titanio entre pasadas, cuya capa de óxido 
-puede inhibir la unión metálica entre partícula y sustrato. 
 
-Por tanto, la evaluación de la adhesión intercapa y su dependencia paramétrica —mediante análisis metalográfico de secciones transversales o caracterización del esfuerzo de corte— constituiría un criterio de aceptabilidad relevante para establecer interrelaciones como la velocidad de fabricación en función de la resistencia intercapa alcanzada, y su proyección tras tratamiento térmico para definir conjuntos de parámetros multivariables óptimos. No obstante, esto queda fuera de los alcances de esta investigación, en la que se prioriza la constructibilidad y la precisión geométrica de las piezas por sobre su desempeño mecánico.
+Un aspecto crítico para la viabilidad de la fabricación aditiva multicapa 
+es la adhesión entre capas sucesivas de material depositado por CS. A 
+diferencia de la primera capa, donde la adhesión ocurre entre la partícula 
+proyectada y el sustrato base, en las capas posteriores la deposición 
+ocurre sobre material CS previamente consolidado. Esta condición es más 
+exigente desde el punto de vista del mecanismo de enlace: la superficie 
+del depósito previo presenta mayor resistencia a la deformación plástica 
+como consecuencia del endurecimiento por deformación acumulado durante los 
+impactos anteriores, lo que eleva efectivamente la velocidad crítica local 
+requerida para la adhesión~\cite{Schmidt2006}. A esto se suma la 
+posibilidad de oxidación superficial del titanio entre pasadas sucesivas, 
+cuya capa de óxido nativo puede inhibir la formación de unión metálica 
+directa entre partícula y sustrato~\cite{Huang2020}.
+
+La evaluación cuantitativa de la adhesión inter-capa y su dependencia 
+paramétrica —mediante análisis metalográfico de secciones transversales o 
+caracterización del esfuerzo de corte inter-lámina— constituiría un 
+criterio de aceptabilidad relevante para establecer interrelaciones entre 
+velocidad de fabricación y resistencia mecánica inter-capa, así como para 
+proyectar el efecto de un tratamiento térmico posterior sobre el conjunto 
+de parámetros óptimos. No obstante, dicho análisis queda fuera del alcance 
+de esta investigación, en la que se prioriza la constructibilidad y la 
+precisión geométrica de las piezas por sobre su desempeño mecánico.
 
 - conicidad
 - angulo de voladizo
@@ -778,7 +868,7 @@ incremental, de modo que cada nivel de complejidad introduce una nueva exigencia
 sobre los resultados de la etapa anterior.
 
 El primer nivel corresponde a geometrías de extrusión plana con sección transversal 
-constante, específicamente cajas rectangulares y tubos cilíndricos de pared delgada sin 
+constante, específicamente cajas rectangulares de brode redondeado y tubos cilíndricos de pared delgada sin 
 tapa. Estas geometrías son simétricas y parametrizables de forma directa por lo que constituyen la validación más directa de la 
 estrategia multicapa establecida en la subsección anterior. Su fabricación exitosa 
 confirma la capacidad del sistema para mantener una sección transversal estable a lo 
@@ -796,7 +886,7 @@ tubular o una pieza de revolución con variación de diámetro. La elección de 
 con referente en la industria permite contextualizar los resultados en términos de 
 resolución geométrica y desviación dimensional alcanzables con el sistema establecido.
 
-Finalmente, cabe señalar una restricción transversal a todas las geometrías: el sistema 
+Finalmente, cabe recordar una restricción transversal a todas las geometrías: el sistema 
 no dispone de un mecanismo para interrumpir el flujo de polvo durante el reposicionamiento 
 de la herramienta entre segmentos de trayectoria. Por ello, el diseño del G-code debe 
 privilegiar trayectorias continuas por capa, o bien contemplar zonas de deposición de 
