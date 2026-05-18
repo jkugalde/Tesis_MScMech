@@ -352,7 +352,7 @@ Es importante notar que en fabricación aditiva tridimensional se generan nuevas
 
 Se reconoce que la protección de silicona constituye un mecanismo sencillo para otorgar contención al proceso; sin embargo, limita la versatilidad de las estrategias y trayectorias de deposición posibles. Una alternativa a esta solución consistiría en construir un recinto rígido y translúcido que cubra la totalidad de la máquina —por ejemplo, una caja de acrílico o policarbonato— equipado con un sistema de extracción de polvo, complementado con cubiertas localizadas sobre las zonas críticas de la máquina, tales como rieles lineales y sectores con movimiento relativo. Una opción adicional sería la incorporación de cortinas de aire dirigidas hacia las superficies a proteger, desviando el polvo suspendido antes de que pueda contaminarlas.
 
-Dado que no es factible la deposición completamente normal a las caras laterales de las paredes fabricadas ni la generación de soportes funcionales, se plantea que un voladizo limitado podría generarse mediante una deposición oblicua ejecutada sobre el borde de una pared ya consolidada, de modo que el material depositado sobresalga lateralmente, como se observa en la Figura \ref{fig:sopob}
+Dado que no es factible la deposición completamente normal a las caras laterales de las paredes fabricadas ni la generación de soportes funcionales, se plantea que un voladizo limitado podría generarse mediante una deposición oblicua ejecutada sobre el borde de una pared ya consolidada o sobrecompensando una pared en fabricación, de modo que el material depositado sobresalga lateralmente, como se observa en la Figura \ref{fig:sopob}
 
 \begin{figure}[h!]
 	\centering
@@ -646,6 +646,15 @@ menor resolución y mayor requerimiento de compensación. La selección del perf
 constituye por tanto una decisión de compromiso, condicionada por los objetivos específicos 
 de cada geometría a fabricar.
 
+El perfil observado en la Figura 3.14 no debe interpretarse, en forma directa, como una referencia para el diseño del \textit{toolpath} o la resolución de deposición, ya que, más allá de las condiciones específicas consideradas en la simulación, dicho resultado corresponde a un caso estático. En este contexto, la ausencia de desplazamiento relativo entre la tobera y el sustrato implica un tiempo de interacción continuo en un mismo punto, lo que conduce a una sobreestimación de la altura de depósito respecto a condiciones reales de proceso.
+
+En un escenario dinámico, el desplazamiento de la tobera introduce tiempos de exposición finitos y espacialmente distribuidos sobre el sustrato, por lo que se espera una reducción significativa del espesor local del depósito. Adicionalmente, esta reducción no sigue necesariamente una dependencia lineal con la velocidad de la herramienta, debido a la naturaleza no lineal de la eficiencia de deposición, la superposición de impactos y los fenómenos de consolidación progresiva característicos del proceso de CS.
+
+Por otro lado, el diámetro efectivo del \textit{spot} depositado sí puede considerarse comparable con el diámetro de garganta reportado en la literatura, lo que sugiere que el ancho del perfil simulado en la Figura 3.14 (del orden de 2 mm) es representativo de la zona principal de deposición. No obstante, en la periferia del \textit{spot} se observa una disminución significativa de la tasa de deposición, asociada a una menor densidad de impacto y a condiciones angulares menos favorables.
+
+Asimismo, debe considerarse que este diámetro nominal del \textit{spot}, si bien, va a ser directamente observable en los bordes de la primera capa, no definirá la resolución del proceso. Al implementarse la compnesacipón olbicua de pared, esta podría apuntar desde una zona más al interior del perfil lejos de las zonas con menor concentracion. De esta forma, el ancho de pared efectivo es menor al spot nominal, y la superficie disponible para la siguioente capa tambien queda limitada a un ancho menor al perfil nominal de deposicion. En este sentido, una capa homogénea podría construirse a partir de aproximadamente 0.4 mm desde el centro del perfil mostrado en la Figura 3.14, concentrando la deposición en la región de mayor intensidad del \textit{spot}. Sería relevante entonces el estudio del perfil depositado en nuevas capas, sobretodo en torno al borde, y su comparación con el perfil en la primera capa.
+
+
 \subsection{Estrategia de deposición planar}
 
 El problema central en la fabricación por CS es que una pasada simple 
@@ -868,14 +877,14 @@ incremental, de modo que cada nivel de complejidad introduce una nueva exigencia
 sobre los resultados de la etapa anterior.
 
 El primer nivel corresponde a geometrías de extrusión plana con sección transversal 
-constante, específicamente cajas rectangulares de brode redondeado y tubos cilíndricos de pared delgada sin 
+constante, específicamente cajas rectangulares de borde redondeado y tubos cilíndricos de pared delgada sin 
 tapa. Estas geometrías son simétricas y parametrizables de forma directa por lo que constituyen la validación más directa de la 
 estrategia multicapa establecida en la subsección anterior. Su fabricación exitosa 
 confirma la capacidad del sistema para mantener una sección transversal estable a lo 
 largo de la dirección $Z$.
 
 El segundo nivel introduce geometrías con variación de sección transversal en $Z$, 
-específicamente conos y pirámides. Estas piezas permiten evaluar 
+específicamente conos y pirámides redondeadas. Estas piezas permiten evaluar 
 la capacidad del sistema para fabricar geometrías con \textit{overhang} progresivo. La 
 inclinación de cada capa respecto a la anterior introduce exigencias adicionales sobre 
 la adhesión intercapa y sobre la planificación de trayectorias en el espacio de cinco ejes.
@@ -886,7 +895,7 @@ tubular o una pieza de revolución con variación de diámetro. La elección de 
 con referente en la industria permite contextualizar los resultados en términos de 
 resolución geométrica y desviación dimensional alcanzables con el sistema establecido.
 
-Finalmente, cabe recordar una restricción transversal a todas las geometrías: el sistema 
+Finalmente, cabe mencionar nuevamente una restricción transversal a todas las geometrías: el sistema 
 no dispone de un mecanismo para interrumpir el flujo de polvo durante el reposicionamiento 
 de la herramienta entre segmentos de trayectoria. Por ello, el diseño del G-code debe 
 privilegiar trayectorias continuas por capa, o bien contemplar zonas de deposición de 
@@ -900,22 +909,11 @@ estrategia de generación paramétrica de trayectorias implementada en Python.
 
 Dada la complejidad de mecanizar probetas de tracción a partir de depósitos de
 titanio obtenidos con el sistema implementado, la caracterización mecánica se
-concentra en mediciones de microdureza Vickers (HV). Esta decisión es coherente
+concentra en mediciones de \textbf{microdureza Vickers (HV)}. Esta decisión es coherente
 con el enfoque principal de la investigación, que prioriza la demostración de
 viabilidad del proceso CSAM con aleación de titanio a alta resolución geométrica
 relativa, por sobre la caracterización exhaustiva de propiedades mecánicas bulk
-del depósito.
-
-Las mediciones de microdureza se realizan siguiendo la norma ASTM E384 \textit{Standard Test Method for Microindentation Hardness of Materials},
-con el fin de evaluar la homogeneidad de las propiedades a lo largo de la
-dirección de construcción.
-
-Las probetas para este experimento consisten en paredes lineales de $n$ 
-capas, cada una compuesta por dos trazos principales en solapamiento y 
-sus respectivas pasadas de compensación, con una longitud de \SI{30}{mm}. 
-El perfil de cada trayectoria —principal y de compensación— se muestrea 
-en su línea central cada \SI{1}{mm} a lo largo de la dirección de 
-construcción.
+del depósito. Las mediciones de microdureza se realizan siguiendo la norma ASTM E384 \textit{Standard Test Method for Microindentation Hardness of Materials}.
 
 El Ti CP Grado~4 presenta, en estado bulk recocido, valores de dureza 
 típicos en torno a \SI{200}{HV}, siendo el más resistente de los grados 
@@ -923,20 +921,56 @@ de titanio comercialmente puro debido a su mayor contenido de elementos
 intersticiales, particularmente oxígeno \cite{Leyens2003}. A diferencia 
 de las aleaciones $\alpha$+$\beta$ como el Ti-6Al-4V, el Ti CP no 
 responde al envejecimiento, por lo que el endurecimiento por tratamiento 
-térmico queda limitado al recocido de alivio de tensiones. En depósitos 
+térmico quedaría limitado al recocido de alivio de tensiones. En depósitos 
 obtenidos por proyección fría, es habitual que la microdureza 
 \textit{as-deposited} supere la del material bulk recocido, como 
 consecuencia de la deformación plástica severa acumulada durante el 
 impacto de las partículas, efecto análogo al trabajo en frío 
-\cite{Huang2020, Yin2022review}. Los valores obtenidos en este trabajo 
-se contrastan con esta referencia bulk con el objeto de estimar el grado 
-de endurecimiento introducido por el proceso.
+\cite{Huang2020, Yin2022review}. 
+
+En las probetas se evaluará el grado de endurecimiento por deformación inducido durante el proceso de CS, así como la homogeneidad mecánica del depósito. Los valores obtenidos permitirán inferir indirectamente el nivel de deformación plástica sufrido por las partículas de titanio durante el impacto, la calidad de consolidación interparticular y la posible presencia de gradientes microestructurales asociados a variaciones en las condiciones de deposición. Adicionalmente, el análisis de dureza contribuirá a identificar posibles efectos de oxidación, porosidad local o zonas con deficiente cohesión, parámetros que influirían directamente en el desempeño mecánico del recubrimiento.
+
+Las probetas para este experimento consisten en secciones cuadradas con número de capas variable, con una longitud de arista de 20 mm, compuestas por todos los tipos de pista mencionados. Los datos se tomarán en los sectores indicados en la Figura \ref{fig:microdureza} y en ambas direcciones de construcción de la probeta. Se fabricarán muestras con varios números de capa para estudiar el cambio de dureza entre capas.
+
+La norma ASTM E384 establece criterios geométricos para la realización de ensayos de microdureza Vickers, definiendo distancias mínimas entre indentaciones, entre estas y el borde de la muestra, así como requisitos relacionados con el espesor mínimo del material, los cuales dependen del tamaño de la huella de indentación caracterizada por la diagonal $d$.
+
+Se utilizá una carga HV0.1 (100 gf), dado que corresponde a la condición más ampliamente reportada en la literatura para recubrimientos de titanio obtenidos por CS, permitiendo una adecuada resolución de las variaciones microestructurales del depósito. Para esta condición, la diagonal de indentación en titanio se encuentra típicamente en el rango de 30--40 $\mu$m, adoptándose de forma conservadora un valor representativo de $d = 40 \, \mu$m.
+
+La norma indica que el espesor mínimo del material debe ser suficiente para evitar la influencia del sustrato sobre la huella de indentación, lo cual se expresa mediante el criterio:
+
+\begin{equation}
+	t \geq 10d
+\end{equation}
+
+Sustituyendo el valor adoptado de la diagonal, se obtiene:
+
+\begin{equation}
+	t \geq 10 \cdot 40 \, \mu m = 400 \, \mu m
+\end{equation}
+
+En consecuencia, se establece un espesor mínimo de probeta de 800 $\mu$m, lo que proporciona un margen de seguridad respecto al criterio normativo y permite asegurar la validez de las mediciones de microdureza bajo las condiciones experimentales definidas.
+
+De forma adicional, la norma ASTM E384 establece que la distancia mínima entre indentaciones debe ser al menos tres veces la diagonal de la huella, mientras que la distancia de la indentación respecto al borde de la muestra debe ser como mínimo 2.5 veces dicha diagonal. Para el valor adoptado de $d = 40 \, \mu$m, estas distancias corresponden a:
+
+\begin{equation}
+	\text{Distancia mínima entre indentaciones} \geq 3d = 120 \, \mu m
+\end{equation}
+
+\begin{equation}
+	\text{Distancia mínima al borde} \geq 2.5d = 100 \, \mu m
+\end{equation}
+
+Estos criterios aseguran que no exista interacción entre los campos de deformación plástica generados por indentaciones adyacentes ni influencia de superficies libres sobre la respuesta mecánica medida.
+
+Debe notarse que el criterio de borde de la norma podría invalidar la toma de datos en las pistas de compensación oblicua, si es que estas tienen un ancho efectivo menor al designado.
 
 \subsection{Caracterización de piezas tridimensionales}
 
 La evaluación de cada pieza fabricada considera los siguientes indicadores:
 
 medidas principales con pie de metro
+cloud compare
+cualificacion tactil
 
 
 
