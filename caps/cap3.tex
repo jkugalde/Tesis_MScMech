@@ -648,11 +648,18 @@ de cada geometría a fabricar.
 
 El perfil observado en la Figura 3.14 no debe interpretarse, en forma directa, como una referencia para el diseño del \textit{toolpath} o la resolución de deposición, ya que, más allá de las condiciones específicas consideradas en la simulación, dicho resultado corresponde a un caso estático. En este contexto, la ausencia de desplazamiento relativo entre la tobera y el sustrato implica un tiempo de interacción continuo en un mismo punto, lo que conduce a una sobreestimación de la altura de depósito respecto a condiciones reales de proceso.
 
-En un escenario dinámico, el desplazamiento de la tobera introduce tiempos de exposición finitos y espacialmente distribuidos sobre el sustrato, por lo que se espera una reducción significativa del espesor local del depósito. Adicionalmente, esta reducción no sigue necesariamente una dependencia lineal con la velocidad de la herramienta, debido a la naturaleza no lineal de la eficiencia de deposición, la superposición de impactos y los fenómenos de consolidación progresiva característicos del proceso de CS.
+En un escenario dinámico, el desplazamiento de la tobera introduce tiempos de exposición finitos y espacialmente distribuidos sobre el sustrato, por lo que se espera una reducción significativa del espesor local del depósito respecto a la figura de referencia. Adicionalmente, esta reducción no sigue necesariamente una dependencia lineal con la velocidad de la herramienta, debido a la naturaleza no lineal de la eficiencia de deposición, la superposición de impactos y los fenómenos de consolidación progresiva característicos del proceso de CS.
 
-Por otro lado, el diámetro efectivo del \textit{spot} depositado sí puede considerarse comparable con el diámetro de garganta reportado en la literatura, lo que sugiere que el ancho del perfil simulado en la Figura 3.14 (del orden de 2 mm) es representativo de la zona principal de deposición. No obstante, en la periferia del \textit{spot} se observa una disminución significativa de la tasa de deposición, asociada a una menor densidad de impacto y a condiciones angulares menos favorables.
+Por otro lado, el diámetro efectivo del \textit{spot} depositado sí puede considerarse comparable con el diámetro de garganta reportado en la literatura, lo que sugiere que el ancho del perfil simulado en la Figura 3.14 (del orden de 2 mm) podría ser representativo de la zona completa de deposición. No obstante, debe considerarse que en la periferia del \textit{spot} se observa una disminución significativa de la tasa de deposición, asociada a una menor densidad de impacto y a condiciones angulares menos favorables.
 
-Asimismo, debe considerarse que este diámetro nominal del \textit{spot}, si bien, va a ser directamente observable en los bordes de la primera capa, no definirá la resolución del proceso. Al implementarse la compnesacipón olbicua de pared, esta podría apuntar desde una zona más al interior del perfil lejos de las zonas con menor concentracion. De esta forma, el ancho de pared efectivo es menor al spot nominal, y la superficie disponible para la siguioente capa tambien queda limitada a un ancho menor al perfil nominal de deposicion. En este sentido, una capa homogénea podría construirse a partir de aproximadamente 0.4 mm desde el centro del perfil mostrado en la Figura 3.14, concentrando la deposición en la región de mayor intensidad del \textit{spot}. Sería relevante entonces el estudio del perfil depositado en nuevas capas, sobretodo en torno al borde, y su comparación con el perfil en la primera capa.
+Asimismo, debe considerarse que el diámetro nominal del \textit{spot} de deposición, si bien será directamente observable en los bordes de la primera capa, no define por sí solo la resolución efectiva del proceso. Al implementarse la compensación oblicua de pared, la boquilla podría apuntar desde una posición desplazada hacia el interior del perfil, alejándose de las zonas de menor concentración de partículas (Figura \ref{fig:perfiltob2}). De este modo, el ancho de pared efectivo resulta menor que el diámetro nominal del \textit{spot}, y la superficie disponible para la deposición de capas sucesivas queda igualmente acotada a un ancho inferior al perfil nominal. En este sentido, una capa homogénea podría construirse concentrando la deposición a partir de aproximadamente \SI{0.4}{mm} desde el centro del perfil mostrado en la Figura 3.14, aprovechando la región de mayor intensidad del \textit{spot}. Por consiguiente, el estudio del perfil depositado en capas sucesivas —en particular en torno al borde de la pared— y su comparación con el perfil de la primera capa constituyen aspectos relevantes de la caracterización experimental propuesta.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/perfiltob2.png}
+	\caption[Ejemplo de zona a tratar en el perfil de deposición]{Ejemplo de zona a tratar en el perfil de deposición, potencial pared homogénea en línea discontinua roja. Adaptación desde \cite{CerdaLobos2024}}
+	\label{fig:perfiltob2}
+\end{figure}
 
 
 \subsection{Estrategia de deposición planar}
@@ -728,7 +735,7 @@ subsiguientes.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth]{imgs/metris.png}
-	\caption[Diagrama para métricas de interés en experimentos planares]{Diagrama para métricas de interés en experimentos planares a) Pruebas de compensación oblicua y b) Pruebas de solapamiento.}
+	\caption[Diagrama para métricas de interés en experimentos planares]{Diagrama para métricas de interés en experimentos planares a) Pruebas de compensación oblicua y b) Pruebas de solapamiento e inter-trazo.}
 	\label{fig:metris}
 \end{figure}
 
@@ -784,10 +791,17 @@ Cabe señalar que ciertas limitaciones son propias de cada estrategia. La
 deposición con compensación oblicua, por ejemplo, introduce un efecto de 
 sombra geométrica asociado al ángulo de inclinación de la boquilla y a la 
 distancia de \textit{standoff}, lo que impone una separación mínima entre 
-paredes paralelas fabricables sin interferencia mutua. La caracterización de 
+paredes paralelas fabricables sin interferencia mutua, como se presenta en la Figura \ref{sombra}. La caracterización de 
 estas restricciones delimita el espacio de geometrías alcanzables con el 
 sistema y constituye el punto de partida para el análisis de deposición 
 multicapa desarrollado en la etapa siguiente.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/efectosombra.png}
+	\caption[Efecto sombra en compensación oblicua entre pistas cercanas]{Efecto sombra en compensación oblicua entre pistas cercanas a) Compensación completa en distancia compatible entre pistas, y b) Compensación incompleta por distancia incompatible entre pistas.}
+	\label{sombra}
+\end{figure}
 
 Se hace notar que los rangos operativos reportados por Chepillo et 
 al.~\cite{Chepillo2024} no son directamente homologables al presente 
@@ -795,12 +809,6 @@ trabajo, dado que las simulaciones correspondientes se realizaron en
 condiciones ideales que no contemplan efectos inerciales de la máquina ni 
 las perturbaciones asociadas a la dinámica real del sistema de 
 posicionamiento., y se basan en el uso de cobre como material y aluminio como sustrato.
-
-caracterizacion del perfil con perfilometro - standoff, velocidad - ancho, altura, convexidad.
-metaloggrafica - porosidad, interfaz, 
-solapamiento - distancia entre pistas - rugosidad
-oblicuo - angulo de deposicion (velocidad, flujo, standoff) - angulo
-
 
 \section{Planificación de experimentos multicapa}
 
@@ -832,8 +840,8 @@ significativamente reducido.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.8\linewidth]{imgs/pared.pdf}
-	\caption[Diagrama de pruebas de pared alta multicapa]{Diagrama de pruebas de pared alta multicapa a) Caso ideal, b) Caso probable con pérdida de deposición y c) Prueba de pared oblicua.}
+	\includegraphics[width=0.8\linewidth]{imgs/multicapi.png}
+	\caption[Diagrama de casos de pared alta multicapa]{Diagrama de casos de pared alta multicapa a) Caso ideal, b) Caso probable con pérdida de deposición y c) Prueba de pared oblicua.}
 	\label{fig:paredi}
 \end{figure}
 
@@ -862,29 +870,32 @@ de parámetros óptimos. No obstante, dicho análisis queda fuera del alcance
 de esta investigación, en la que se prioriza la constructibilidad y la 
 precisión geométrica de las piezas por sobre su desempeño mecánico.
 
-- conicidad
-- angulo de voladizo
-- metalografico 
-
 \subsection{Geometrías 3D}
 
 La validación del sistema como plataforma de fabricación aditiva se realiza mediante la 
 fabricación de geometrías de complejidad creciente, evaluadas cualitativamente en términos 
 de integridad estructural y con una \textbf{tolerancia dimensional de referencia de $\pm 2$ mm }
 respecto a las dimensiones nominales de diseño, medida sobre las cotas principales de cada 
-pieza. La progresión propuesta permite aislar las capacidades del sistema de forma 
+pieza para considerar la fabricación válida. La progresión propuesta permite aislar las capacidades del sistema de forma 
 incremental, de modo que cada nivel de complejidad introduce una nueva exigencia geométrica 
 sobre los resultados de la etapa anterior.
 
 El primer nivel corresponde a geometrías de extrusión plana con sección transversal 
 constante, específicamente cajas rectangulares de borde redondeado y tubos cilíndricos de pared delgada sin 
-tapa. Estas geometrías son simétricas y parametrizables de forma directa por lo que constituyen la validación más directa de la 
+tapa, como se observa en la Figura \ref{fig:3dmods}. Estas geometrías son simétricas y parametrizables de forma directa por lo que constituyen la validación más sencilla de la 
 estrategia multicapa establecida en la subsección anterior. Su fabricación exitosa 
 confirma la capacidad del sistema para mantener una sección transversal estable a lo 
 largo de la dirección $Z$.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/3dmods.png}
+	\caption[Ejemplos de geometrías básicas para pruebas 3D]{Geometrías básicas para pruebas 3D a) Sección redonda b) Sección cuadrada de bordes redondeados, con I vista superior de extrusión plana y pared delgada, II, vista frontal de extrusión plana, III, vista frontal de extrusión con inclinación positiva, IV vista frontal de extrusión con inclinación negativa.}
+	\label{fig:3dmods}
+\end{figure}
+
 El segundo nivel introduce geometrías con variación de sección transversal en $Z$, 
-específicamente conos y pirámides redondeadas. Estas piezas permiten evaluar 
+específicamente secciones de conos y pirámides redondeadas, es decir, la proyección inclinada en $Z$ de los cuerpos 3D anteriores, como se observa en la Figura \ref{fig:3dmods}. Estas piezas permiten evaluar 
 la capacidad del sistema para fabricar geometrías con \textit{overhang} progresivo. La 
 inclinación de cada capa respecto a la anterior introduce exigencias adicionales sobre 
 la adhesión intercapa y sobre la planificación de trayectorias en el espacio de cinco ejes.
@@ -930,7 +941,7 @@ impacto de las partículas, efecto análogo al trabajo en frío
 
 En las probetas se evaluará el grado de endurecimiento por deformación inducido durante el proceso de CS, así como la homogeneidad mecánica del depósito. Los valores obtenidos permitirán inferir indirectamente el nivel de deformación plástica sufrido por las partículas de titanio durante el impacto, la calidad de consolidación interparticular y la posible presencia de gradientes microestructurales asociados a variaciones en las condiciones de deposición. Adicionalmente, el análisis de dureza contribuirá a identificar posibles efectos de oxidación, porosidad local o zonas con deficiente cohesión, parámetros que influirían directamente en el desempeño mecánico del recubrimiento.
 
-Las probetas para este experimento consisten en secciones cuadradas con número de capas variable, con una longitud de arista de 20 mm, compuestas por todos los tipos de pista mencionados. Los datos se tomarán en los sectores indicados en la Figura \ref{fig:microdureza} y en ambas direcciones de construcción de la probeta. Se fabricarán muestras con varios números de capa para estudiar el cambio de dureza entre capas.
+Las probetas para este experimento consisten en secciones cuadradas con número de capas variable, con una longitud de arista de 20 mm, compuestas por todos los tipos de pista mencionados. Los datos se tomarán en los en ambas direcciones de construcción de la probeta, generando una matriz de datos. En las filas se ubicará cada pista según su disposición en la probeta, mientras que en la columna estarán los datos de una misma pista en su longitud. Se fabricarán muestras con varios números de capa para estudiar el cambio de dureza entre capas.
 
 La norma ASTM E384 establece criterios geométricos para la realización de ensayos de microdureza Vickers, definiendo distancias mínimas entre indentaciones, entre estas y el borde de la muestra, así como requisitos relacionados con el espesor mínimo del material, los cuales dependen del tamaño de la huella de indentación caracterizada por la diagonal $d$.
 
@@ -960,17 +971,134 @@ De forma adicional, la norma ASTM E384 establece que la distancia mínima entre 
 	\text{Distancia mínima al borde} \geq 2.5d = 100 \, \mu m
 \end{equation}
 
-Estos criterios aseguran que no exista interacción entre los campos de deformación plástica generados por indentaciones adyacentes ni influencia de superficies libres sobre la respuesta mecánica medida.
-
-Debe notarse que el criterio de borde de la norma podría invalidar la toma de datos en las pistas de compensación oblicua, si es que estas tienen un ancho efectivo menor al designado.
+Estos criterios aseguran que no exista interacción entre los campos de deformación plástica generados por indentaciones adyacentes ni influencia de superficies libres sobre la respuesta mecánica medida. Debe notarse que el criterio de borde de la norma podría invalidar la toma de datos en las pistas de compensación oblicua, si es que estas tienen un ancho efectivo menor al designado.
 
 \subsection{Caracterización de piezas tridimensionales}
 
-La evaluación de cada pieza fabricada considera los siguientes indicadores:
+La verificación dimensional de las piezas fabricadas mediante CSAM se realizará mediante
+comparación geométrica cuantitativa entre el modelo CAD nominal y la geometría real
+obtenida por escaneo tridimensional de la pieza depositada. Este enfoque, conocido como
+comparación CAD-to-scan, permite evaluar la fidelidad geométrica del proceso de fabricación
+de manera espacialmente distribuida.
 
-medidas principales con pie de metro
-cloud compare
-cualificacion tactil
+El flujo de procesamiento comprende cuatro etapas principales. En primer lugar, se realiza
+la \textbf{adquisición del escaneo tridimensional} de la pieza fabricada, obteniendo una nube
+de puntos densa que representa la geometría real depositada. En segundo lugar, se trata la nube de puntos obtenida para obtener una malla válida y suficientemente suave. En tercer lugar, se efectúa
+la \textbf{alineación} entre la malla escaneada y la malla del modelo CAD mediante un procedimiento en
+dos pasos: una alineación inicial por selección manual de puntos homólogos, seguida de un
+refinamiento automático mediante el algoritmo \textit{Iterative Closest Point} (ICP), que
+minimiza iterativamente la distancia cuadrática media entre ambas geometrías hasta alcanzar
+convergencia. En tercer lugar, se calcula el \textbf{campo escalar de distancias signed}
+(C2M, \textit{Cloud-to-Mesh distance}) entre cada punto de la malla escaneada y la superficie
+CAD de referencia, asignando signo positivo a los puntos exteriores al nominal
+(sobredepósito) y negativo a los interiores (subdepósito). Finalmente, se realiza el
+\textbf{análisis estadístico y volumétrico} del campo escalar resultante. El flujo de trabajo para la comparación se observa en la Figura \ref{fig:flowi}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/flowi.png}
+	\caption[Flujo del proceso para la comparación geométrica del diseño vs la fabricación de cuerpos 3D]{Flujo del proceso para la comparación geométrica del diseño vs la fabricación de cuerpos 3D}
+	\label{fig:flowi}
+\end{figure}
+
+
+Todo el procesamiento se realizará en el software de código abierto 
+\texttt{CloudCompare}, utilizado en metrología dimensional y con precedentes
+de uso en caracterización de piezas fabricadas por adición de material
+\cite{Winnicki2014stereometry}. En la Figura \ref{fig:claud} se observa la comparación de dos cuerpos obtenidos mediante CAD, los cuales corresponden a una sección tubular de 50 mm de diámetro y una copia idéntica pero con salientes en la periferia. Se observa en el mapa de calor una desviación marcada en las salientes, pero también una tendencia visible en el manto, producto de una combinación de error de alineación y resolución del mallado.
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imgs/claud.png}
+	\caption[Comparación de mallas tridimensionales en CloudCompare]{Comparación de mallas tridimensionales en CloudCompare, a) Cuerpos a comparar, b) Cuerpos superpuestos mediante ICP con mapa de calor de desviaciones.}
+	\label{fig:claud}
+\end{figure}
+
+A partir del campo escalar de distancias signed se extraerán las siguientes métricas:
+
+La desviación media $\bar{d}$ cuantifica el sesgo sistemático del proceso, es decir, si
+existe una tendencia global al sobredepósito ($\bar{d} > 0$) o subdepósito ($\bar{d} < 0$)
+respecto al nominal. La desviación estándar $\sigma_d$ refleja la dispersión espacial del
+error geométrico. Ambos valores se reportan en milímetros.
+
+El RMSE pondera las desviaciones de mayor magnitud más que la media aritmética, siendo
+especialmente sensible a errores locales de gran amplitud:
+
+\begin{equation}
+	\text{RMSE} = \sqrt{\frac{1}{N}\sum_{i=1}^{N} d_i^2}
+	\label{eq:rmse}
+\end{equation}
+
+\noindent donde $N$ es el número total de puntos y $d_i$ la distancia signed del punto $i$.
+
+Se evaluará el porcentaje de puntos cuya desviación absoluta se encuentre dentro de bandas
+de tolerancia progresivas ($\pm 0.05$, $\pm 0.10$, $\pm 0.20$ y $\pm 0.50$ mm), permitiendo
+establecer una curva de cumplimiento geométrico en función de una tolerancia objetivo.
+
+El volumen de material en exceso o déficit respecto al nominal se estima mediante integración
+numérica del campo escalar sobre la superficie:
+
+\begin{equation}
+	V^{+} = \sum_{d_i > 0} d_i \cdot A_i, \qquad V^{-} = \sum_{d_i < 0} d_i \cdot A_i
+	\label{eq:volumenes}
+\end{equation}
+
+\noindent donde $A_i$ es el área de superficie local asociada a cada punto, estimada a partir
+de la distancia media al vecino más cercano mediante un árbol KD. La desviación volumétrica
+neta se define como $V_{\text{neto}} = V^{+} + V^{-}$, cuyo valor absoluto pequeño indica
+compensación entre zonas de exceso y déficit, mientras que su signo indica la tendencia
+dominante del proceso.
+
+En la Figura \ref{fig:maps} se observa la aplicación del análisis estadístico descrito en los párrafos previos sobre las secciones tubulares de la Figura \ref{fig:claud}, obteniendo un RMSE de 0.49 mm. Nótese que la subdeposición es consecuencia del error de alineación, no obstante, se logra identificar correctamente las zonas críticas de desviación, que corresponden a las salientes del segundo tubo.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{imgs/maps.png}
+	\caption[Comparación de mallas tridimensionales en CloudCompare]{Comparación de mallas tridimensionales en CloudCompare, a) Cuerpos a comparar, b) Cuerpos superpuestos mediante ICP con mapa de calor de desviaciones.}
+	\label{fig:maps}
+\end{figure}
+
+
+Si bien el cálculo de los volúmenes de desviación puede realizarse mediante la integración
+numérica del campo escalar descrita en la ecuación~\eqref{eq:volumenes}, una alternativa
+directa consiste en emplear operaciones booleanas de sustracción entre las mallas
+tridimensionales. La sustracción del modelo comparado respecto al modelo de referencia
+entrega el volumen de subdepósito $V^{-}$, mientras que la sustracción inversa —referencia
+menos comparado— entrega el volumen de sobredepósito $V^{+}$. Este enfoque presenta la
+ventaja de entregar simultáneamente un valor numérico para cada componente volumétrica y
+una representación geométrica explícita de las zonas de desviación, lo que facilita su
+interpretación visual y su inclusión como figura en el análisis de resultados. Como
+restricción, este método requiere que ambas mallas sean sólidos cerrados,
+condición que debe verificarse antes de ejecutar la operación.
+
+La exactitud de la comparación geométrica está sujeta a diversas fuentes de error que deben
+tenerse en cuenta al interpretar los resultados. Por ejemplo, la calidad del registro ICP es condición necesaria para la validez de todo el análisis
+posterior. Un registro deficiente introduce un error sistemático que se superpone a las
+desviaciones geométricas reales. Se reportará el RMSE de alineación entregado por el
+algoritmo ICP como indicador de la calidad del registro, y se verificará visualmente la
+superposición de ambas geometrías antes de proceder al cálculo C2M.
+
+Todo escaneo tridimensional introduce ruido de medición inherente al equipo utilizado,
+típicamente del orden de décimas de milímetro para escáneres de luz estructurada de gama
+media. Este ruido se manifiesta como dispersión aleatoria en el campo escalar y contribuye
+artificialmente a $\sigma_d$. Su efecto puede estimarse, por ejemplo, escaneando una superficie de
+referencia plana calibrada y reportando la desviación estándar resultante como cota del
+ruido instrumental.
+
+La exportación del modelo CAD a formato STL implica una discretización de las superficies
+curvas en facetas planas triangulares. Una resolución insuficiente introduce un error de
+facetado que se suma a las distancias C2M calculadas. Para minimizar este efecto, el modelo
+STL se exportará con una tolerancia de cuerda inferior a \SI{0.01}{mm}, garantizando que
+el error de discretización sea despreciable frente a las desviaciones geométricas esperadas
+del proceso CSAM.
+
+El cálculo volumétrico mediante la ecuación~\eqref{eq:volumenes} asume que el área local
+$A_i$ es uniforme y aproximable por el área de un disco de radio igual a la distancia media
+al vecino más cercano. Esta aproximación es válida cuando la densidad de puntos es
+aproximadamente uniforme sobre la superficie, condición que se verificará inspeccionando
+la distribución espacial de la nube de puntos antes del análisis.
+
 
 
 
@@ -988,7 +1116,29 @@ El desempeño global del proceso se evalúa mediante los siguientes indicadores 
 
 \subsection{Resumen de experimentos de CSAM}
 
-En los Cuadros \ref{tab:resumen_etapa2}, \ref{tab:resumen_etapa3} y \ref{tab:resumen_etapa4} se presenta el compilado de experimentos de CSAM a desarrollar en esta investigación, separados por etapa del flujo de trabajo.
+En el Cuadro \ref{tab:simbologia_experimental} se presentan las variables a estudiar en los experimentos y su simbología. En los Cuadros \ref{tab:resumen_etapa2}, \ref{tab:resumen_etapa3} y \ref{tab:resumen_etapa4} se presenta el compilado de experimentos de CSAM a desarrollar, separados por etapa del flujo de trabajo
+
+\begin{table}[htbp]
+	\centering
+	\caption{Simbología empleada para los parámetros en experimentos.}
+	\label{tab:simbologia_experimental}
+	\footnotesize
+	\begin{tabular}{clc}
+		\toprule
+		\textbf{Símbolo} & \textbf{Variable} & \textbf{Unidad}   \\
+		\midrule
+		$d_s$       & Distancia de \textit{standoff}              & mm           \\
+		$N$         & Número de capas                             & ---          \\
+		$\alpha$    & Ángulo de inclinación de la tobera          & $^\circ$    \\
+		$v_t$       & Velocidad transversal de la herramienta     & mm/s         \\
+		$\dot{m}_p$ & Caudal másico de polvo                      & g/min       \\
+		$\dot{m}_g$ & Caudal másico de gas                        & g/min        \\
+		$\psi$      & Ángulo de pared                             & $^\circ$    \\
+		$\phi$      & Ángulo de \textit{overhang}                 & $^\circ$     \\
+		$d_h$       & Distancia de \textit{hatching}              & mm           \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
 % Requiere \usepackage{booktabs} y \usepackage{array} en el preámbulo
 
@@ -997,9 +1147,9 @@ En los Cuadros \ref{tab:resumen_etapa2}, \ref{tab:resumen_etapa3} y \ref{tab:res
 % ============================================================
 \begin{table}[htbp]
 	\centering
-	\small
 	\caption{Resumen de experimentos -- Etapa 2: Paredes simples.}
 	\label{tab:resumen_etapa2}
+	\footnotesize
 	\renewcommand{\arraystretch}{1.5}
 	\begin{tabular}{>{\bfseries}p{0.20\textwidth} p{0.22\textwidth} p{0.22\textwidth} p{0.26\textwidth}}
 		\toprule
@@ -1012,18 +1162,17 @@ En los Cuadros \ref{tab:resumen_etapa2}, \ref{tab:resumen_etapa3} y \ref{tab:res
 		\midrule
 		Perfil de deposición &
 		Caracterizar la geometría transversal del cordón individual en función de los parámetros operativos &
-		$P_0$, $T_0$, $v_t$ / perfil transversal; sección metalográfica &
+	    $v_t$, $d_{s}$ / perfil transversal; sección metalográfica &
 		Parámetros del ajuste gaussiano/super-gaussiano ($w$, $h$, $n$), $R^2$, porosidad \\
 		\midrule
 		Compensación por trayectoria oblicua &
 		Determinar el conjunto de parámetros que minimiza la desviación angular de la pared respecto a la perpendicular &
-		Ángulo de trayectoria, $v_t$, distancia entre pasadas / desviación angular de la pared &
-		Ángulo óptimo, $v_t$ óptima, desviación angular residual \\
+ 	    $\theta$, $v_t$, $d_{s}$  / $\theta_{w}$ &
+		$\theta$ óptimo, $v_t$ óptima, desviación angular residual, voladizos \\
 		\midrule
-		Overhang &
-		Caracterizar el ángulo máximo de voladizo alcanzable en una pared simple &
-		Parámetros operativos, estrategia de trayectoria / ángulo de overhang &
-		Ángulo máximo de overhang $\theta_{oh}$ \\
+		Solapamiento & Caracterizar la rugosidad del depósito en función de la distancia de hatching & $d_{h}$/ Ra & Ra\\
+		\midrule 
+		Compensación intertrazo & Encontrar $v_{t}$ óptimo para homogeneizar la ondulación por solapamiento & $v_{t}$ & Ra\\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1033,9 +1182,10 @@ En los Cuadros \ref{tab:resumen_etapa2}, \ref{tab:resumen_etapa3} y \ref{tab:res
 % ============================================================
 \begin{table}[htbp]
 	\centering
-	\small
+
 	\caption{Resumen de experimentos -- Etapa 3: Multicapa.}
 	\label{tab:resumen_etapa3}
+		\footnotesize
 	\renewcommand{\arraystretch}{1.5}
 	\begin{tabular}{>{\bfseries}p{0.20\textwidth} p{0.22\textwidth} p{0.22\textwidth} p{0.26\textwidth}}
 		\toprule
@@ -1043,8 +1193,11 @@ En los Cuadros \ref{tab:resumen_etapa2}, \ref{tab:resumen_etapa3} y \ref{tab:res
 		\midrule
 		Conicidad de pared multicapa &
 		Cuantificar el ángulo de conicidad generado al apilar capas sucesivas de pared directamente sobre depósito previo &
-		Número de capas $n$, parámetros operativos / perfil lateral de la pared &
-		Ángulo de conicidad $\theta_c$ en función de $n$ \\
+		Número de capas $n$  / perfil lateral de la pared &
+		Ángulo de conicidad $\theta_c$ en función de $n$ \\ 		\midrule
+		Compensación multicapa & Caracterizar y compensar la pérdida de borde en depósitos multicapa & $\theta$ & $\phi$ \\
+				\midrule
+				Construcción en overhang & Cuantificar el máximo overhang funcional del sistema  & $\theta$, $v_{t}$, $n$ / $\theta_{o}$ & Max $\theta_{o}$ \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -1054,9 +1207,9 @@ En los Cuadros \ref{tab:resumen_etapa2}, \ref{tab:resumen_etapa3} y \ref{tab:res
 % ============================================================
 \begin{table}[htbp]
 	\centering
-	\small
 	\caption{Resumen de experimentos -- Etapa 4: Piezas volumétricas.}
 	\label{tab:resumen_etapa4}
+		\footnotesize
 	\renewcommand{\arraystretch}{1.5}
 	\begin{tabular}{>{\bfseries}p{0.20\textwidth} p{0.22\textwidth} p{0.22\textwidth} p{0.26\textwidth}}
 		\toprule
@@ -1069,7 +1222,7 @@ En los Cuadros \ref{tab:resumen_etapa2}, \ref{tab:resumen_etapa3} y \ref{tab:res
 		\midrule
 		Microdureza &
 		Evaluar la homogeneidad de las propiedades mecánicas a lo largo de la dirección de construcción &
-		Posición en dirección $Z$ / dureza Vickers &
+		Posición en dirección longitudinal y tipo de pista / dureza Vickers &
 		Perfil de $HV$ vs.\ posición, homogeneidad \\
 		\bottomrule
 	\end{tabular}
@@ -1083,6 +1236,7 @@ En el Cuadro~\ref{tab:indicadores} se resumen los indicadores utilizados para ev
 	\centering
 	\caption{Indicadores de evaluación del proceso CSAM implementado.}
 	\label{tab:indicadores}
+	\footnotesize
 	\begin{tabular}{llll}
 		\hline
 		Indicador & Símbolo & Unidad & Método de medición \\
