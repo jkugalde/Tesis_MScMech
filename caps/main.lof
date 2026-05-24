@@ -1,11 +1,11 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama para un sistema convencional de coldspray.}}{5}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama para una tobera de Laval convergente-divergente, con inyección de polvos antes o después de la garganta.}}{7}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama para el fenómeno de \textit {bow shock} en CS.}}{10}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Simulación para impacto de una partícula de cobre en distintos momentos, la cual incluye endurecimiento Johnson-Cook y ablandamiento. Razón entre esfuerzo de Von Mises y de fluencia}}{13}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Simulación para impacto de una partícula de cobre en distintos momentos, la cual incluye endurecimiento Johnson-Cook y ablandamiento. Deformación plástica y temperatura}}{14}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagrama para un sistema convencional de coldspray}}{5}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama de una tobera de Laval convergente-divergente}}{7}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama del fenómeno de \textit {bow shock} en CS}}{10}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Simulación de esfuerzos respecto a la fluencia en el impacto de una partícula de cobre en distintos momentos}}{13}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Simulación de la deformación plástica y el campo de temperatura en el impacto de una partícula de cobre en distintos momentos}}{14}{figure.caption.10}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Representación esquemática del fenómeno de \textit {jetting} en CS}}{14}{figure.caption.11}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Representación esquemática del ángulo de incidencia sobre el sustrato}}{16}{figure.caption.12}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Representación esquemática del cambio de ángulo de incidencia por deposición previa de partículas}}{17}{figure.caption.13}%
@@ -14,54 +14,55 @@
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Relación entre la velocidad de impacto de partículas de Ti, la porosidad y la microdureza}}{19}{figure.caption.16}%
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Correlación esquemática entre la velocidad de partícula, la eficiencia de deposición y los efectos del impacto a temperatura de impacto constante}}{20}{figure.caption.17}%
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Ventana de deposición respecto a velocidad y temperatura}}{20}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Efecto de la velocidad y forma de partícula sobre la eficiencia de deposición en cold spray de titanio puro}}{22}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Efecto de la velocidad y forma de partícula sobre la eficiencia de deposición en CS de titanio puro}}{22}{figure.caption.20}%
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Perfil de deposición en pista única para acero inoxidable a distintas velocidades transversales de herramienta}}{23}{figure.caption.21}%
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Efecto de la velocidad transversal de la herramienta en el PD para Al2024}}{23}{figure.caption.22}%
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Efecto de la velocidad y flujo de polvo sobre el PD\cite {WU2025642}.}}{24}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Esquema para el cambio en la eficiencia de deposición con cada capa consecutiva}}{24}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Efecto de la velocidad y flujo de polvo sobre el PD}}{24}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Esquema del cambio en la eficiencia de deposición con cada capa consecutiva}}{25}{figure.caption.24}%
 \contentsline {figure}{\numberline {2.19}{\ignorespaces Ejemplos de estrategias de hatching}}{26}{figure.caption.25}%
 \contentsline {figure}{\numberline {2.20}{\ignorespaces Comparación de microestructuras en depositos de cobre en verde y recocido}}{28}{figure.caption.27}%
 \contentsline {figure}{\numberline {2.21}{\ignorespaces Comparación de curvas esfuerzo-deformación para titanio depositado en verde vs HIP}}{29}{figure.caption.28}%
 \contentsline {figure}{\numberline {2.22}{\ignorespaces Componentes reparados mediante CS}}{32}{figure.caption.31}%
-\contentsline {figure}{\numberline {2.23}{\ignorespaces Componente modificado mediante CS}}{32}{figure.caption.32}%
-\contentsline {figure}{\numberline {2.24}{\ignorespaces Optimización topológica de componente para manufactura aditiva}}{34}{figure.caption.33}%
-\contentsline {figure}{\numberline {2.25}{\ignorespaces Diagramas de impresión planar y no planar}}{35}{figure.caption.34}%
-\contentsline {figure}{\numberline {2.26}{\ignorespaces Diagramas para impresión SLM}}{36}{figure.caption.35}%
-\contentsline {figure}{\numberline {2.27}{\ignorespaces Dependencia de la porosidad en fabricación SLM con AlSi10Mg con la velocidad de escaneo}}{37}{figure.caption.36}%
-\contentsline {figure}{\numberline {2.28}{\ignorespaces Defectos en impresión SLM por esfuerzos residuales}}{38}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Componente modificado mediante CS}}{33}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Optimización topológica de componente para manufactura aditiva}}{35}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Diagramas de impresión planar y no planar}}{36}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Diagramas para impresión SLM}}{37}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces Dependencia de la porosidad en fabricación SLM de AlSi10Mg con la velocidad de escaneo}}{37}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.28}{\ignorespaces Defectos en impresión SLM por esfuerzos residuales}}{39}{figure.caption.37}%
 \contentsline {figure}{\numberline {2.29}{\ignorespaces Pieza fabricada mediante CSAM}}{41}{figure.caption.39}%
-\contentsline {figure}{\numberline {2.30}{\ignorespaces Microtoberas del grupo de investigación de Sova et al.}}{41}{figure.caption.41}%
+\contentsline {figure}{\numberline {2.30}{\ignorespaces Microtoberas desarrolladas por el grupo de investigación de Sova et al.}}{42}{figure.caption.41}%
 \contentsline {figure}{\numberline {2.31}{\ignorespaces Trazos realizados con microtobera vs tobera convencional}}{42}{figure.caption.42}%
 \contentsline {figure}{\numberline {2.32}{\ignorespaces Estrategia de teselación triangular}}{44}{figure.caption.44}%
-\contentsline {figure}{\numberline {2.33}{\ignorespaces Estrategia de teselación triangular con solapamiento}}{44}{figure.caption.45}%
-\contentsline {figure}{\numberline {2.34}{\ignorespaces Influencia de la velocidad transversal en el radio de esquinas en la fabricación por CSAM de un marco cuadrado de titanio}}{46}{figure.caption.46}%
-\contentsline {figure}{\numberline {2.35}{\ignorespaces Simulación de impacto entre partículas de titanio esféricas y con forma de coral}}{47}{figure.caption.48}%
+\contentsline {figure}{\numberline {2.33}{\ignorespaces Estrategia de teselación triangular con solapamiento}}{45}{figure.caption.45}%
+\contentsline {figure}{\numberline {2.34}{\ignorespaces Influencia de la velocidad transversal en el radio de esquinas de un marco cuadrado de titanio fabricado por CSAM}}{46}{figure.caption.46}%
+\contentsline {figure}{\numberline {2.35}{\ignorespaces Simulación de impacto entre partículas de titanio esféricas y con forma de coral}}{48}{figure.caption.48}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Flujo de trabajo para el desarrollo de la investigación}}{50}{figure.caption.49}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Fresadora de escritorio Pocket NC V2-10}}{51}{figure.caption.51}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Modelo 3D para calefactor de 1kW a) vista isométrica b) vista en corte}}{52}{figure.caption.54}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Alimentador de polvo PF-SB-2855}}{53}{figure.caption.57}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Modelos 3D de toberas fabricadas en base a Cerda et al.}}{53}{figure.caption.59}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Modelo 3D de las adaptaciones en torno a la máquina CNC }}{55}{figure.caption.61}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Adaptaciones a la máquina CNC, ejes X y Z}}{55}{figure.caption.62}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Vista en corte de las adaptaciones en el espacio de trabajo}}{56}{figure.caption.63}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Imagen obtenida por microscopía (SEM) del polvo 4010 C. }}{58}{figure.caption.64}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Diagrama del sistema de CS implementado.}}{59}{figure.caption.66}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Diagrama para la limitación del ángulo de deposición.}}{60}{figure.caption.68}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Generación de sector en voladizo mediante trayectoria no planar.}}{61}{figure.caption.69}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Generación de sector en voladizo mediante deposición oblicua.}}{61}{figure.caption.70}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Perfil de deposición para las toberas efectivas en Cerda et al.}}{63}{figure.caption.74}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Resultados de la simulación del perfil de velocidad del gas en la tobera $T_{2}$}}{65}{figure.caption.75}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Simulación para la temperatura del gas en toberas $T_{1}$ y $T_{2}$}}{66}{figure.caption.76}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Ejemplo de zona a tratar en el perfil de deposición}}{68}{figure.caption.77}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Diagrama de teselación triangular en geometría rectangular y nomenclatura en la sección transversal}}{70}{figure.caption.78}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Diagrama para métricas de interés en experimentos planares}}{70}{figure.caption.79}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Efecto sombra en compensación oblicua entre pistas cercanas}}{72}{figure.caption.80}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Diagrama de casos de pared alta multicapa}}{73}{figure.caption.81}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Ejemplos de geometrías básicas para pruebas 3D}}{74}{figure.caption.82}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Flujo del proceso para la comparación geométrica del diseño vs la fabricación de cuerpos 3D}}{77}{figure.caption.83}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Comparación de mallas tridimensionales en CloudCompare}}{78}{figure.caption.84}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Flujo de trabajo para el desarrollo de la investigación}}{51}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Fresadora de escritorio Pocket NC V2-10}}{52}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Modelo 3D para calefactor de 1kW }}{53}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Alimentador de polvo PF-SB-2855}}{54}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Modelos 3D de toberas fabricadas en base a Cerda et al.}}{54}{figure.caption.59}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Modelo 3D de las adaptaciones para la máquina CNC }}{56}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Adaptaciones a la máquina CNC, ejes X y Z}}{56}{figure.caption.62}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Vista en corte de las adaptaciones en el espacio de trabajo}}{57}{figure.caption.63}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Imagen obtenida por microscopía (SEM) del polvo 4010 C}}{59}{figure.caption.64}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Diagrama del sistema de CS implementado}}{60}{figure.caption.66}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Diagrama para la limitación del ángulo de deposición}}{61}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Generación de sector en voladizo mediante trayectoria no planar}}{62}{figure.caption.69}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Generación de sector en voladizo mediante deposición oblicua}}{62}{figure.caption.70}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Perfil de deposición para las toberas efectivas en Cerda et al.}}{64}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Resultados de la simulación del perfil de velocidad del gas en la tobera $T_{2}$}}{66}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Simulación para la temperatura del gas en toberas $T_{1}$ y $T_{2}$}}{67}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Ejemplo de la reconstrucción del perfil de deposición promedio mediante datos simulados}}{68}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Ejemplo de zona a tratar en el perfil de deposición}}{70}{figure.caption.78}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Diagrama de teselación triangular en geometría rectangular y nomenclatura en la sección transversal}}{71}{figure.caption.79}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Diagrama para métricas de interés en experimentos planares}}{72}{figure.caption.80}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Efecto sombra en compensación oblicua entre pistas cercanas}}{73}{figure.caption.81}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Diagrama de casos de pared alta multicapa}}{75}{figure.caption.82}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Ejemplos de geometrías básicas para pruebas 3D}}{76}{figure.caption.83}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Flujo del proceso para la comparación geométrica del diseño vs la fabricación de cuerpos 3D}}{79}{figure.caption.84}%
 \contentsline {figure}{\numberline {3.25}{\ignorespaces Comparación de mallas tridimensionales en CloudCompare}}{79}{figure.caption.85}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Estadísticas del proceso de comparación de mallas 3D}}{81}{figure.caption.86}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
