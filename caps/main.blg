@@ -5,47 +5,48 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: ieeetr.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografia.bib
-Warning--I didn't find a database entry for "Wu2021trajectories"
-Warning--I didn't find a database entry for "Sova2017micronozzle"
+Name 2 in "Li, Wenya and Congcong, and Shuo, Yin" has a comma at the end for entry Huang2020
+while executing---line 969 of file ieeetr.bst
+Warning--empty booktitle in Stier2014
 You've used 68 entries,
             1876 wiz_defined-function locations,
-            931 strings with 18561 characters,
-and the built_in function-call counts, 21969 in all, are:
-= -- 2178
-> -- 1045
+            935 strings with 18794 characters,
+and the built_in function-call counts, 22019 in all, are:
+= -- 2164
+> -- 1070
 < -- 0
-+ -- 373
-- -- 305
-* -- 1636
-:= -- 3108
++ -- 381
+- -- 313
+* -- 1637
+:= -- 3117
 add.period$ -- 77
 call.type$ -- 68
 change.case$ -- 67
 chr.to.int$ -- 0
-cite$ -- 68
-duplicate$ -- 1094
-empty$ -- 1836
-format.name$ -- 305
-if$ -- 5331
+cite$ -- 69
+duplicate$ -- 1105
+empty$ -- 1832
+format.name$ -- 313
+if$ -- 5348
 int.to.chr$ -- 0
 int.to.str$ -- 68
 missing$ -- 72
 newline$ -- 216
 num.names$ -- 70
-pop$ -- 162
+pop$ -- 170
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 844
+skip$ -- 855
 stack$ -- 0
-substring$ -- 1514
-swap$ -- 547
+substring$ -- 1475
+swap$ -- 554
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 208
+warning$ -- 1
+while$ -- 202
 width$ -- 70
-write$ -- 706
-(There were 2 warnings)
+write$ -- 704
+(There was 1 error message)

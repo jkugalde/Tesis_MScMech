@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.6)  24 MAY 2026 01:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.6)  24 MAY 2026 23:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -913,34 +913,21 @@ Package pdftex.def Info: imgs/hatching.png  used on input line 773.
 (pdftex.def)             Requested size: 354.02342pt x 330.67075pt.
 
 
-LaTeX Warning: Citation `Wu2021trajectories' on page 25 undefined on input line
- 774.
-
-
-LaTeX Warning: Citation `Wu2021trajectories' on page 25 undefined on input line
- 774.
-
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [25 <./imgs/ncaps.jpg>]
-
-LaTeX Warning: Citation `Wu2021trajectories' on page 26 undefined on input line
- 782.
-
-
 Underfull \hbox (badness 2662) in paragraph at lines 804--805
 []|\OT1/cmr/m/n/12 Temperatura de es-tan-ca-mien-to
  []
 
 [26 <./imgs/hatching.png>] [27]
-<imgs/aniled.jpg, id=868, 361.35pt x 123.43716pt>
+<imgs/aniled.jpg, id=871, 361.35pt x 123.43716pt>
 File: imgs/aniled.jpg Graphic file (type jpg)
 <use imgs/aniled.jpg>
 Package pdftex.def Info: imgs/aniled.jpg  used on input line 862.
 (pdftex.def)             Requested size: 424.82523pt x 145.12154pt.
  [28 <./imgs/aniled.jpg>]
-<imgs/hipi.png, id=880, 747.54282pt x 549.55313pt>
+<imgs/hipi.png, id=883, 747.54282pt x 549.55313pt>
 File: imgs/hipi.png Graphic file (type png)
 <use imgs/hipi.png>
 Package pdftex.def Info: imgs/hipi.png  used on input line 882.
@@ -951,12 +938,12 @@ Overfull \hbox (1.5844pt too wide) in paragraph at lines 987--1011
  []
 
 [31]
-<imgs/repari.jpg, id=921, 361.35pt x 218.68903pt>
+<imgs/repari.jpg, id=924, 361.35pt x 218.68903pt>
 File: imgs/repari.jpg Graphic file (type jpg)
 <use imgs/repari.jpg>
 Package pdftex.def Info: imgs/repari.jpg  used on input line 1051.
 (pdftex.def)             Requested size: 401.22942pt x 242.82443pt.
-<imgs/modifi.jpg, id=926, 361.35pt x 84.12228pt>
+<imgs/modifi.jpg, id=929, 361.35pt x 84.12228pt>
 File: imgs/modifi.jpg Graphic file (type jpg)
 <use imgs/modifi.jpg>
 Package pdftex.def Info: imgs/modifi.jpg  used on input line 1060.
@@ -966,7 +953,7 @@ Package pdftex.def Info: imgs/modifi.jpg  used on input line 1060.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [32 <./imgs/repari.jpg>] [33 <./imgs/modifi.jpg>]
-<imgs/optam.png, id=947, 1779.64874pt x 450.68375pt>
+<imgs/optam.png, id=950, 1779.64874pt x 450.68375pt>
 File: imgs/optam.png Graphic file (type png)
 <use imgs/optam.png>
 Package pdftex.def Info: imgs/optam.png  used on input line 1147.
@@ -976,7 +963,7 @@ Package pdftex.def Info: imgs/optam.png  used on input line 1147.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [34]
-<imgs/nonpla.png, id=962, 1397.22pt x 514.92375pt>
+<imgs/nonpla.png, id=965, 1397.22pt x 514.92375pt>
 File: imgs/nonpla.png Graphic file (type png)
 <use imgs/nonpla.png>
 Package pdftex.def Info: imgs/nonpla.png  used on input line 1195.
@@ -986,7 +973,7 @@ Package pdftex.def Info: imgs/nonpla.png  used on input line 1195.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [35 <./imgs/optam.png>]
-<imgs/sinter.png, id=975, 931.22906pt x 494.59781pt>
+<imgs/sinter.png, id=978, 931.22906pt x 494.59781pt>
 File: imgs/sinter.png Graphic file (type png)
 <use imgs/sinter.png>
 Package pdftex.def Info: imgs/sinter.png  used on input line 1228.
@@ -996,13 +983,13 @@ Package pdftex.def Info: imgs/sinter.png  used on input line 1228.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [36 <./imgs/nonpla.png>]
-<imgs/poro.jpg, id=984, 433.62pt x 129.19061pt>
+<imgs/poro.jpg, id=987, 433.62pt x 129.19061pt>
 File: imgs/poro.jpg Graphic file (type jpg)
 <use imgs/poro.jpg>
 Package pdftex.def Info: imgs/poro.jpg  used on input line 1257.
 (pdftex.def)             Requested size: 472.03123pt x 140.6415pt.
  [37 <./imgs/sinter.png> <./imgs/poro.jpg>]
-<imgs/residual.png, id=998, 2116.15594pt x 1589.1872pt>
+<imgs/residual.png, id=1001, 2116.15594pt x 1589.1872pt>
 File: imgs/residual.png Graphic file (type png)
 <use imgs/residual.png>
 Package pdftex.def Info: imgs/residual.png  used on input line 1329.
@@ -1012,13 +999,13 @@ Package pdftex.def Info: imgs/residual.png  used on input line 1329.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [38] [39 <./imgs/residual.png>]
-<imgs/lynch.png, id=1024, 803.25093pt x 505.13719pt>
+<imgs/lynch.png, id=1027, 803.25093pt x 505.13719pt>
 File: imgs/lynch.png Graphic file (type png)
 <use imgs/lynch.png>
 Package pdftex.def Info: imgs/lynch.png  used on input line 1434.
 (pdftex.def)             Requested size: 377.62642pt x 237.48387pt.
  [40]
-<imgs/microtobi.png, id=1039, 1001.24063pt x 353.82187pt>
+<imgs/microtobi.png, id=1042, 1001.24063pt x 353.82187pt>
 File: imgs/microtobi.png Graphic file (type png)
 <use imgs/microtobi.png>
 Package pdftex.def Info: imgs/microtobi.png  used on input line 1451.
@@ -1027,23 +1014,19 @@ Package pdftex.def Info: imgs/microtobi.png  used on input line 1451.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Citation `Sova2017micronozzle' on page 41 undefined on input lin
-e 1457.
-
-<imgs/spotsis.png, id=1046, 1432.60219pt x 539.01375pt>
+<imgs/spotsis.png, id=1050, 1432.60219pt x 539.01375pt>
 File: imgs/spotsis.png Graphic file (type png)
 <use imgs/spotsis.png>
 Package pdftex.def Info: imgs/spotsis.png  used on input line 1461.
 (pdftex.def)             Requested size: 472.03123pt x 177.59544pt.
 [41 <./imgs/lynch.png>] [42 <./imgs/microtobi.png> <./imgs/spotsis.png>]
 [43]
-<imgs/stratti.jpg, id=1085, 313.21819pt x 245.28438pt>
+<imgs/stratti.jpg, id=1089, 313.21819pt x 245.28438pt>
 File: imgs/stratti.jpg Graphic file (type jpg)
 <use imgs/stratti.jpg>
 Package pdftex.def Info: imgs/stratti.jpg  used on input line 1565.
 (pdftex.def)             Requested size: 283.22162pt x 221.81308pt.
-<imgs/stratti2.jpg, id=1088, 481.75182pt x 188.48016pt>
+<imgs/stratti2.jpg, id=1092, 481.75182pt x 188.48016pt>
 File: imgs/stratti2.jpg Graphic file (type jpg)
 <use imgs/stratti2.jpg>
 Package pdftex.def Info: imgs/stratti2.jpg  used on input line 1572.
@@ -1053,13 +1036,13 @@ Package pdftex.def Info: imgs/stratti2.jpg  used on input line 1572.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [44 <./imgs/stratti.jpg>]
-<imgs/Vargas.jpg, id=1101, 2147.77406pt x 2160.57187pt>
+<imgs/Vargas.jpg, id=1105, 2147.77406pt x 2160.57187pt>
 File: imgs/Vargas.jpg Graphic file (type jpg)
 <use imgs/Vargas.jpg>
 Package pdftex.def Info: imgs/Vargas.jpg  used on input line 1626.
 (pdftex.def)             Requested size: 448.42822pt x 451.09608pt.
  [45 <./imgs/stratti2.jpg>] [46 <./imgs/Vargas.jpg>]
-<imgs/peeq.png, id=1127, 686.565pt x 435.87843pt>
+<imgs/peeq.png, id=1131, 686.565pt x 435.87843pt>
 File: imgs/peeq.png Graphic file (type png)
 <use imgs/peeq.png>
 Package pdftex.def Info: imgs/peeq.png  used on input line 1709.
@@ -1070,12 +1053,12 @@ Cap\'{\i }tulo 3.
 [50
 
 ]
-<imgs/etapas.pdf, id=1161, 675.3005pt x 266.71492pt>
+<imgs/etapas.pdf, id=1164, 675.3005pt x 266.71492pt>
 File: imgs/etapas.pdf Graphic file (type pdf)
 <use imgs/etapas.pdf>
 Package pdftex.def Info: imgs/etapas.pdf  used on input line 19.
 (pdftex.def)             Requested size: 472.03123pt x 186.43462pt.
-<imgs/pocketnc.jpg, id=1166, 1080.035pt x 705.63625pt>
+<imgs/pocketnc.jpg, id=1169, 1080.035pt x 705.63625pt>
 File: imgs/pocketnc.jpg Graphic file (type jpg)
 <use imgs/pocketnc.jpg>
 Package pdftex.def Info: imgs/pocketnc.jpg  used on input line 36.
@@ -1088,7 +1071,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [51 <./imgs/etapas.pdf>]
-<imgs/kalefa.png, id=1177, 632.3625pt x 387.69844pt>
+<imgs/kalefa.png, id=1180, 632.3625pt x 387.69844pt>
 File: imgs/kalefa.png Graphic file (type png)
 <use imgs/kalefa.png>
 Package pdftex.def Info: imgs/kalefa.png  used on input line 67.
@@ -1098,7 +1081,7 @@ Package pdftex.def Info: imgs/kalefa.png  used on input line 67.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [52 <./imgs/pocketnc.jpg>]
-<imgs/alimentador.png, id=1185, 435.87843pt x 596.2275pt>
+<imgs/alimentador.png, id=1188, 435.87843pt x 596.2275pt>
 File: imgs/alimentador.png Graphic file (type png)
 <use imgs/alimentador.png>
 Package pdftex.def Info: imgs/alimentador.png  used on input line 86.
@@ -1108,13 +1091,13 @@ Package pdftex.def Info: imgs/alimentador.png  used on input line 86.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [53 <./imgs/kalefa.png>]
-<imgs/toberasblanki.png, id=1195, 682.80093pt x 373.395pt>
+<imgs/toberasblanki.png, id=1198, 682.80093pt x 373.395pt>
 File: imgs/toberasblanki.png Graphic file (type png)
 <use imgs/toberasblanki.png>
 Package pdftex.def Info: imgs/toberasblanki.png  used on input line 98.
 (pdftex.def)             Requested size: 330.42041pt x 180.69753pt.
  [54 <./imgs/alimentador.png> <./imgs/toberasblanki.png>]
-<imgs/3dsys.png, id=1204, 575.90157pt x 406.51875pt>
+<imgs/3dsys.png, id=1207, 575.90157pt x 406.51875pt>
 File: imgs/3dsys.png Graphic file (type png)
 <use imgs/3dsys.png>
 Package pdftex.def Info: imgs/3dsys.png  used on input line 135.
@@ -1123,7 +1106,7 @@ Package pdftex.def Info: imgs/3dsys.png  used on input line 135.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<imgs/parte1.png, id=1206, 913.91437pt x 406.51875pt>
+<imgs/parte1.png, id=1209, 913.91437pt x 406.51875pt>
 File: imgs/parte1.png Graphic file (type png)
 <use imgs/parte1.png>
 Package pdftex.def Info: imgs/parte1.png  used on input line 161.
@@ -1132,7 +1115,7 @@ Package pdftex.def Info: imgs/parte1.png  used on input line 161.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [55]
-<imgs/parte2.png, id=1212, 633.86812pt x 402.75468pt>
+<imgs/parte2.png, id=1215, 633.86812pt x 402.75468pt>
 File: imgs/parte2.png Graphic file (type png)
 <use imgs/parte2.png>
 Package pdftex.def Info: imgs/parte2.png  used on input line 180.
@@ -1142,7 +1125,7 @@ Package pdftex.def Info: imgs/parte2.png  used on input line 180.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [56 <./imgs/3dsys.png> <./imgs/parte1.png>] [57 <./imgs/parte2.png>]
-<imgs/bloki.png, id=1231, 767.86874pt x 709.90219pt>
+<imgs/bloki.png, id=1234, 767.86874pt x 709.90219pt>
 File: imgs/bloki.png Graphic file (type png)
 <use imgs/bloki.png>
 Package pdftex.def Info: imgs/bloki.png  used on input line 233.
@@ -1152,18 +1135,18 @@ Package pdftex.def Info: imgs/bloki.png  used on input line 233.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [58] [59 <./imgs/bloki.png>]
-<imgs/diagsys.pdf, id=1252, 694.20033pt x 385.91145pt>
+<imgs/diagsys.pdf, id=1255, 694.20033pt x 385.91145pt>
 File: imgs/diagsys.pdf Graphic file (type pdf)
 <use imgs/diagsys.pdf>
 Package pdftex.def Info: imgs/diagsys.pdf  used on input line 305.
 (pdftex.def)             Requested size: 424.82523pt x 236.16525pt.
  [60 <./imgs/diagsys.pdf>]
-<imgs/anguli.png, id=1265, 1776.6375pt x 892.08281pt>
+<imgs/anguli.png, id=1268, 1776.6375pt x 892.08281pt>
 File: imgs/anguli.png Graphic file (type png)
 <use imgs/anguli.png>
 Package pdftex.def Info: imgs/anguli.png  used on input line 338.
 (pdftex.def)             Requested size: 424.82523pt x 213.30113pt.
-<imgs/volad.png, id=1267, 960.58875pt x 473.51906pt>
+<imgs/volad.png, id=1270, 960.58875pt x 473.51906pt>
 File: imgs/volad.png Graphic file (type png)
 <use imgs/volad.png>
 Package pdftex.def Info: imgs/volad.png  used on input line 347.
@@ -1173,7 +1156,7 @@ Package pdftex.def Info: imgs/volad.png  used on input line 347.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [61 <./imgs/anguli.png>]
-<imgs/volobl.png, id=1274, 896.59969pt x 492.33937pt>
+<imgs/volobl.png, id=1277, 896.59969pt x 492.33937pt>
 File: imgs/volobl.png Graphic file (type png)
 <use imgs/volobl.png>
 Package pdftex.def Info: imgs/volobl.png  used on input line 359.
@@ -1182,7 +1165,7 @@ Package pdftex.def Info: imgs/volobl.png  used on input line 359.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imgs/perfiltob.png, id=1286, 1048.66782pt x 666.99188pt>
+<imgs/perfiltob.png, id=1289, 1048.66782pt x 666.99188pt>
 File: imgs/perfiltob.png Graphic file (type png)
 <use imgs/perfiltob.png>
 Package pdftex.def Info: imgs/perfiltob.png  used on input line 448.
@@ -1191,12 +1174,12 @@ Package pdftex.def Info: imgs/perfiltob.png  used on input line 448.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [63] [64 <./imgs/perfiltob.png>] [65]
-<imgs/velocipi.png, id=1316, 1090.82532pt x 335.00156pt>
+<imgs/velocipi.png, id=1319, 1090.82532pt x 335.00156pt>
 File: imgs/velocipi.png Graphic file (type png)
 <use imgs/velocipi.png>
 Package pdftex.def Info: imgs/velocipi.png  used on input line 535.
 (pdftex.def)             Requested size: 472.03123pt x 144.96284pt.
-<imgs/tobtemps.png, id=1319, 1333.23094pt x 784.43062pt>
+<imgs/tobtemps.png, id=1322, 1333.23094pt x 784.43062pt>
 File: imgs/tobtemps.png Graphic file (type png)
 <use imgs/tobtemps.png>
 Package pdftex.def Info: imgs/tobtemps.png  used on input line 552.
@@ -1206,7 +1189,7 @@ Package pdftex.def Info: imgs/tobtemps.png  used on input line 552.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [66 <./imgs/velocipi.png>]
-<imgs/preview_mapa.png, id=1329, 631.60968pt x 963.6pt>
+<imgs/preview_mapa.png, id=1332, 631.60968pt x 963.6pt>
 File: imgs/preview_mapa.png Graphic file (type png)
 <use imgs/preview_mapa.png>
 Package pdftex.def Info: imgs/preview_mapa.png  used on input line 603.
@@ -1216,31 +1199,35 @@ Package pdftex.def Info: imgs/preview_mapa.png  used on input line 603.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [67 <./imgs/tobtemps.png>] [68 <./imgs/preview_mapa.png>] [69]
-<imgs/perfiltob2.png, id=1350, 843.15pt x 313.17pt>
+<imgs/perfiltob2.png, id=1353, 843.15pt x 313.17pt>
 File: imgs/perfiltob2.png Graphic file (type png)
 <use imgs/perfiltob2.png>
 Package pdftex.def Info: imgs/perfiltob2.png  used on input line 666.
 (pdftex.def)             Requested size: 472.03123pt x 175.3262pt.
  [70 <./imgs/perfiltob2.png>]
-<imgs/transversal.pdf, id=1362, 702.62653pt x 372.91187pt>
+<imgs/transversal.pdf, id=1365, 702.62653pt x 372.91187pt>
 File: imgs/transversal.pdf Graphic file (type pdf)
 <use imgs/transversal.pdf>
 Package pdftex.def Info: imgs/transversal.pdf  used on input line 715.
 (pdftex.def)             Requested size: 424.82523pt x 225.47865pt.
  [71 <./imgs/transversal.pdf>]
-<imgs/metris.png, id=1373, 779.91376pt x 432.86719pt>
+<imgs/metris.png, id=1376, 779.91376pt x 432.86719pt>
 File: imgs/metris.png Graphic file (type png)
 <use imgs/metris.png>
 Package pdftex.def Info: imgs/metris.png  used on input line 744.
 (pdftex.def)             Requested size: 377.62642pt x 209.59026pt.
  [72 <./imgs/metris.png>]
-<imgs/efectosombra.png, id=1383, 808.52063pt x 417.81094pt>
+<imgs/efectosombra.png, id=1386, 808.52063pt x 417.81094pt>
 File: imgs/efectosombra.png Graphic file (type png)
 <use imgs/efectosombra.png>
 Package pdftex.def Info: imgs/efectosombra.png  used on input line 808.
 (pdftex.def)             Requested size: 424.82523pt x 219.53253pt.
- [73 <./imgs/efectosombra.png>]
-<imgs/multicapi.png, id=1391, 721.94719pt x 411.03563pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[73]
+<imgs/multicapi.png, id=1393, 721.94719pt x 411.03563pt>
 File: imgs/multicapi.png Graphic file (type png)
 <use imgs/multicapi.png>
 Package pdftex.def Info: imgs/multicapi.png  used on input line 850.
@@ -1249,8 +1236,8 @@ Package pdftex.def Info: imgs/multicapi.png  used on input line 850.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[74]
-<imgs/3dmods.png, id=1399, 1084.80281pt x 481.8pt>
+[74 <./imgs/efectosombra.png>]
+<imgs/3dmods.png, id=1402, 1084.80281pt x 481.8pt>
 File: imgs/3dmods.png Graphic file (type png)
 <use imgs/3dmods.png>
 Package pdftex.def Info: imgs/3dmods.png  used on input line 899.
@@ -1259,24 +1246,23 @@ Package pdftex.def Info: imgs/3dmods.png  used on input line 899.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[75 <./imgs/multicapi.png>] [76 <./imgs/3dmods.png>] [77]
-<imgs/flowi.png, id=1421, 988.44281pt x 599.23875pt>
+[75 <./imgs/multicapi.png>] [76 <./imgs/3dmods.png>] [77] [78]
+<imgs/flowi.png, id=1431, 988.44281pt x 599.23875pt>
 File: imgs/flowi.png Graphic file (type png)
 <use imgs/flowi.png>
 Package pdftex.def Info: imgs/flowi.png  used on input line 1006.
 (pdftex.def)             Requested size: 424.82523pt x 257.54877pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[78]
-<imgs/claud.png, id=1431, 1135.24126pt x 529.22719pt>
+<imgs/claud.png, id=1434, 1135.24126pt x 529.22719pt>
 File: imgs/claud.png Graphic file (type png)
 <use imgs/claud.png>
 Package pdftex.def Info: imgs/claud.png  used on input line 1020.
 (pdftex.def)             Requested size: 424.82523pt x 198.04785pt.
- [79 <./imgs/flowi.png> <./imgs/claud.png>]
-<imgs/maps.png, id=1441, 738.50906pt x 810.02625pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[79 <./imgs/flowi.png>]
+<imgs/maps.png, id=1443, 738.50906pt x 810.02625pt>
 File: imgs/maps.png Graphic file (type png)
 <use imgs/maps.png>
 Package pdftex.def Info: imgs/maps.png  used on input line 1064.
@@ -1285,7 +1271,7 @@ Package pdftex.def Info: imgs/maps.png  used on input line 1064.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[80] [81 <./imgs/maps.png>]
+[80 <./imgs/claud.png>] [81 <./imgs/maps.png>] [82]
 Underfull \hbox (badness 6542) in paragraph at lines 1162--1162
 []|\OT1/cmr/m/n/10 Geometr^^S^^Pa de to-be-ra
  []
@@ -1395,7 +1381,10 @@ Overfull \hbox (0.79398pt too wide) in paragraph at lines 1211--1226
  [][] 
  []
 
-[82] [83] [84]) (cap4.tex [85]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (cap4.tex [83] [84] [85]
 Cap\'{\i }tulo 4.
 ) (conclu.tex [86
 
@@ -1417,19 +1406,15 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: EB45302FDF2C44A60B13BD18F87AD99D;10489.
  ) 
 Here is how much of TeX's memory you used:
- 25823 strings out of 474486
- 499088 string characters out of 5753571
- 1950542 words of memory out of 5000000
- 47413 multiletter control sequences out of 15000+600000
- 571264 words of font info for 85 fonts, out of 8000000 for 9000
+ 25822 strings out of 474486
+ 499066 string characters out of 5753571
+ 1949542 words of memory out of 5000000
+ 47412 multiletter control sequences out of 15000+600000
+ 570956 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,12n,93p,1262b,1388s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\56942\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
@@ -1451,9 +1436,9 @@ KTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 ti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (103 pages, 29995216 bytes).
+Output written on main.pdf (103 pages, 29995577 bytes).
 PDF statistics:
- 1689 PDF objects out of 1728 (max. 8388607)
+ 1693 PDF objects out of 1728 (max. 8388607)
  359 named destinations out of 1000 (max. 500000)
  767 words of extra memory for PDF output out of 10000 (max. 10000000)
 

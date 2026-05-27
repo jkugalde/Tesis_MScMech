@@ -6,8 +6,8 @@ from sklearn.neighbors import KDTree
 # ─────────────────────────────────────────
 # 1. CARGAR DATOS
 # ─────────────────────────────────────────
-df = pd.read_csv("vertices2.txt", header=None, sep=r"\s+",
-                 names=["x", "y", "z", "R", "G", "B", "d"])
+df = pd.read_csv("vertices4.txt", header=None, sep=r"\s+",
+                 names=["x", "y", "z", "d"])
 
 print(f"Puntos totales: {len(df)}")
 print(f"Rango distancias: {df['d'].min():.6f} a {df['d'].max():.6f} mm\n")

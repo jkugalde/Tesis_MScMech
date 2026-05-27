@@ -13,7 +13,7 @@ H.~Assadi, F.~G{\"a}rtner, T.~Stoltenhoff, and H.~Kreye, ``Bonding mechanism in
 \bibitem{Champagne2016unique}
 V.~Champagne and D.~Helfritch, ``The unique abilities of cold spray
   deposition,'' {\em International Materials Reviews}, vol.~61, no.~7,
-  pp.~436--455, 2016.
+  pp.~437--455, 2016.
 
 \bibitem{Champagne2015repairs}
 V.~Champagne and D.~Helfritch, ``Critical assessment 11: Structural repairs by
@@ -35,15 +35,15 @@ C.~Leyens and M.~Peters, {\em Titanium and Titanium Alloys: Fundamentals and
 \newblock Weinheim, Germany: Wiley-VCH, 2003.
 
 \bibitem{Huang2020}
-W.~Li, C.~Congcong, and Y.~Shuo, ``Solid-state cold spraying of {Ti} and its
+W.~Li, Congcong, and Y.~Shuo, ``Solid-state cold spraying of {Ti} and its
   alloys: A literature review,'' {\em Progress in Materials Science}, vol.~110,
   p.~100633, 2020.
 
 \bibitem{Yin2022review}
 S.~Yin, P.~Cavaliere, B.~Aldwell, R.~Jenkins, H.~Liao, W.~Li, and R.~Lupoi,
   ``Cold spray additive manufacturing and repair: Fundamentals and
-  applications,'' {\em Journal of Thermal Spray Technology}, vol.~31, no.~4,
-  pp.~848--865, 2022.
+  applications,'' {\em Additive Manufacturing}, vol.~21, no.~4, pp.~628--650,
+  2018.
 
 \bibitem{Moridi2014}
 A.~Moridi, S.~M. Hassani-Gangaraj, M.~Guagliano, and M.~Dao, ``Cold spray
@@ -53,7 +53,7 @@ A.~Moridi, S.~M. Hassani-Gangaraj, M.~Guagliano, and M.~Dao, ``Cold spray
 \bibitem{Kotoban2017}
 D.~Kotoban, S.~Grigoriev, A.~Okunkova, and A.~Sova, ``Influence of a shape of
   single track on deposition efficiency of metal powder in cold spray,'' {\em
-  Additive Manufacturing}, vol.~17, pp.~1--12, 2017.
+  Surface and coating technologies}, vol.~309, pp.~951--958, 2017.
 
 \bibitem{Sova2013micronozzle}
 A.~Sova, S.~Klinkov, V.~Kosarev, N.~Ryashin, and I.~Smurov, ``Preliminary study
@@ -83,7 +83,7 @@ J.~D. Anderson, {\em Modern Compressible Flow: With Historical Perspective}.
 \bibitem{Pattison2008}
 J.~Pattison, S.~Celotto, A.~Khan, and W.~O'Neill, ``Standoff distance and bow
   shock phenomena in the {Cold Spray} process,'' {\em Surface and Coatings
-  Technology}, vol.~202, no.~8, pp.~1443--1454, 2008.
+  Technology}, vol.~202, no.~8, pp.~1443--1454, 2007.
 
 \bibitem{Wong2013}
 W.~Wong, P.~Vo, E.~Irissou, A.~N. Ryabinin, J.~G. Legoux, and S.~Yue, ``Effect
@@ -115,7 +115,7 @@ M.~Hassani-Gangaraj, D.~Veysset, V.~K. Champagne, K.~A. Nelson, and C.~A.
 \bibitem{Schmidt2006}
 T.~Schmidt, F.~G{\"a}rtner, H.~Assadi, and H.~Kreye, ``Development of a
   generalized parameter window for cold spray deposition,'' {\em Acta
-  Materialia}, vol.~54, no.~3, pp.~729--742, 2006.
+  Materialia}, vol.~54, no.~3, pp.~729--742, 2005.
 
 \bibitem{SENG2022128068}
 D.~H.~L. Seng, Z.~Zhang, Z.-Q. Zhang, T.~L. Meng, S.~L. Teo, B.~H. Tan, Q.~Loi,
@@ -127,7 +127,7 @@ D.~H.~L. Seng, Z.~Zhang, Z.-Q. Zhang, T.~L. Meng, S.~L. Teo, B.~H. Tan, Q.~Loi,
 K.~Binder, J.~Gottschalk, M.~Kollenda, F.~G{\"a}rtner, and T.~Klassen,
   ``Influence of impact angle and gas temperature on mechanical properties of
   titanium cold spray deposits,'' {\em Journal of Thermal Spray Technology},
-  vol.~20, no.~1--2, pp.~234--242, 2010.
+  vol.~20, no.~1--2, pp.~234--242, 2011.
 
 \bibitem{Callister2018}
 W.~D. Callister and D.~G. Rethwisch, {\em Materials Science and Engineering: An
@@ -138,7 +138,7 @@ W.~D. Callister and D.~G. Rethwisch, {\em Materials Science and Engineering: An
 S.~Yin, X.~Suo, J.~Su, Z.~Guo, H.~Liao, and X.~Wang, ``Effects of substrate
   hardness and spray angle on the deposition behavior of cold-sprayed {Ti}
   particles,'' {\em Journal of Thermal Spray Technology}, vol.~23, no.~1--2,
-  pp.~76--83, 2014.
+  pp.~76--83, 2013.
 
 \bibitem{Schmidt2009}
 T.~Schmidt, H.~Assadi, F.~Gärtner, H.~Richter, T.~Stoltenhoff, H.~Kreye, and
@@ -156,6 +156,12 @@ D.~Vanerio, J.~Kondas, M.~Guagliano, and S.~Bagherifard, ``{3D} modelling of
   the deposit profile in cold spray additive manufacturing,'' {\em Journal of
   Manufacturing Processes}, vol.~67, pp.~521--534, 2021.
 
+\bibitem{Wu2021trajectories}
+H.~Wu, C.~Huang, X.~Xie, S.~Liu, T.~Wu, T.~Niendorf, Y.~Xie, C.~Deng, M.~Liu,
+  H.~Liao, and S.~Deng, ``Influence of spray trajectories on characteristics of
+  cold-sprayed copper deposits,'' {\em Surface and Coatings Technology},
+  vol.~405, p.~126703, 2021.
+
 \bibitem{Garfias2023}
 A.~Garfias, R.~Bolot, C.~Verdy, F.~Seichepine, and T.~Grosdidier, ``Geometry
   and microstructure control of remanufactured metallic parts by cold spray
@@ -167,12 +173,12 @@ S.~Yin, R.~Jenkins, X.~Yan, and R.~Lupoi, ``Microstructure and mechanical
   Materials Science and Engineering: A}, vol.~734, pp.~67--76, 2018.
 
 \bibitem{Winnicki2014stereometry}
-M.~Winnicki, T.~Piwowarczyk, A.~Ma{\l}achowska, and A.~Ambroziak, ``Effect of
-  gas pressure and temperature on stereometric properties of {Al+Al$_2$O$_3$}
+M.~Winnicki, T.~Piwowarczyk, A.~Malachowska, and A.~Ambroziak, ``Effect of gas
+  pressure and temperature on stereometric properties of {Al+Al$_2$O$_3$}
   composite coatings deposited by {LPCS} method,'' {\em Archives of Metallurgy
   and Materials}, vol.~59, no.~3, pp.~879--886, 2014.
 
-\bibitem{Petrovskiy2019HIP}
+\bibitem{Petrovskiy2019}
 P.~Petrovskiy, A.~Sova, M.~Doubenskaia, and I.~Smurov, ``Influence of hot
   isostatic pressing on structure and properties of titanium cold-spray
   deposits,'' {\em The International Journal of Advanced Manufacturing
@@ -184,8 +190,8 @@ D.~Helfritch, O.~Stier, and J.~Villafuerte, ``Cold spray economics,'' in {\em
   ed.), pp.~377--401, Springer, 2015.
 
 \bibitem{Stier2014}
-O.~Stier, ``Fundamental cost analysis of cold spray,'' {\em Journal of Thermal
-  Spray Technology}, vol.~23, no.~1--2, pp.~131--139, 2014.
+O.~Stier and A.~Siemens, ``Fundamental cost analysis of cold spray,''
+  pp.~221--226, 05 2013.
 
 \bibitem{CerdaLobos2024}
 B.~M. Cerda~Lobos, ``Dimensionamiento de microtoberas de cold spray para
@@ -197,7 +203,7 @@ B.~M. Cerda~Lobos, ``Dimensionamiento de microtoberas de cold spray para
 L.~Meng, W.~Zhang, D.~Quan, G.~Shi, L.~Tang, Y.~Hou, P.~Breitkopf, J.~Zhu, and
   T.~Gao, ``From topology optimization design to additive manufacturing:
   {Today's} success and tomorrow's roadmap,'' {\em Archives of Computational
-  Methods in Engineering}, vol.~27, no.~3, pp.~805--830, 2020.
+  Methods in Engineering}, vol.~27, no.~8, pp.~805--830, 2019.
 
 \bibitem{AFSHARI2025284}
 A.~Afshari, J.-A. Tröger, J.~Meyer, S.~Hartmann, and D.~Inkermann,
@@ -265,7 +271,7 @@ W.-Y. Li, H.~Liao, G.~Douchy, and C.~Coddet, ``Optimal design of a cold spray
 \bibitem{2017micronozzle}
 A.~Sova, M.~Doubenskaia, S.~Grigoriev, A.~Okunkova, and I.~Smurov, ``Deposition
   of aluminum powder by cold spray micronozzle,'' {\em The International
-  Journal of Advanced Manufacturing Technology}, vol.~93, pp.~3057--3064, 2017.
+  Journal of Advanced Manufacturing Technology}, vol.~95, pp.~3745--3752, 2017.
 
 \bibitem{Sova2013AMpotential}
 A.~Sova, S.~Grigoriev, A.~Okunkova, and I.~Smurov, ``Potential of cold gas
@@ -281,7 +287,7 @@ C.~Cao, W.~Li, Z.~Zhang, X.~Yang, and Y.~Xu, ``Cold spray additive
 Z.~Cai, S.~Deng, H.~Liao, C.~Zeng, and G.~Montavon, ``The effect of spray
   distance and scanning step on the coating thickness uniformity in cold spray
   process,'' {\em Journal of Thermal Spray Technology}, vol.~23, no.~3,
-  pp.~354--362, 2014.
+  p.~1582, 2013.
 
 \bibitem{Wu2020stable}
 H.~Wu, X.~Xie, M.~Liu, C.~Verdy, Y.~Zhang, H.~Liao, and S.~Deng, ``Stable
@@ -305,7 +311,7 @@ A.~Vargas-Uscategui, P.~C. King, S.~Yang, C.~Chu, and J.~Li, ``Toolpath
   {Effect} on geometry and porosity,'' {\em Journal of Materials Processing
   Technology}, vol.~298, p.~117272, 2021.
 
-\bibitem{Vaz2022MetalKnitting}
+\bibitem{2022MetalKnitting}
 R.~F. Vaz, V.~Albaladejo-Fuentes, J.~Sanchez, U.~Ocaña, Z.~G. Corral,
   H.~Canales, and I.~G. Cano, ``Metal knitting: A new strategy for cold gas
   spray additive manufacturing,'' {\em Materials}, vol.~15, no.~19, p.~6785,
@@ -329,21 +335,15 @@ F.~Lomo, A.~Vargas-Uscategui, P.~King, M.~Patel, and I.~Cole, ``Microstructure
   vol.~99, pp.~12--26, 2023.
 
 \bibitem{MacDonald2017}
-D.~MacDonald, R.~Fern{\'a}ndez, F.~Delloro, and B.~Jodoin, ``Cold spraying of
+D.~MacDonald, R.~Fernández, F.~Delloro, and B.~Jodoin, ``Cold spraying of
   {Armstrong} process titanium powder for additive manufacturing,'' {\em
   Journal of Thermal Spray Technology}, vol.~26, no.~4, pp.~598--609, 2017.
-
-\bibitem{Petrovskiy2019}
-P.~Petrovskiy, A.~Sova, M.~Doubenskaia, and I.~Smurov, ``Influence of hot
-  isostatic pressing on structure and properties of titanium cold-spray
-  deposits,'' {\em The International Journal of Advanced Manufacturing
-  Technology}, vol.~102, no.~1--4, pp.~819--827, 2019.
 
 \bibitem{Kumar2025}
 R.~Kumar, A.~Pattanaik, N.~A. Hasan, {\em et~al.}, ``The influence of hot
   isostatic pressing pressure on the microstructural evolution and mechanical
   properties of cold-sprayed additively manufactured titanium,'' {\em Journal
-  of Materials Engineering and Performance}, 2025.
+  of Materials Engineering and Performance}, vol.~35, no.~16, 2025.
 
 \bibitem{Luzin2020wall}
 V.~Luzin, A.~Sova, P.~Petrovskiy, M.~Doubenskaia, and I.~Smurov, ``Residual
@@ -368,6 +368,6 @@ F.~M. White, {\em Fluid Mechanics}.
 \bibitem{Bruera2023adhesion}
 A.~Bruera, M.~Vedani, S.~Valet, F.~Gärtner, and T.~Klassen, ``Adhesion of cold
   sprayed soft coatings: {Effect} of substrate roughness and hardness,'' {\em
-  Surface and Coatings Technology}, vol.~464, p.~129522, 2023.
+  Surface and Coatings Technology}, vol.~466, p.~129561, 2023.
 
 \end{thebibliography}

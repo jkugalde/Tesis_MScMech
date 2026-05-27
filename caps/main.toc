@@ -47,16 +47,16 @@
 \contentsline {subsection}{\numberline {3.3.1}Características de las toberas}{63}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Caracterización del perfil de deposición}{67}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Estrategia de deposición planar}{70}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Planificación de experimentos multicapa}{74}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Estrategias multicapa}{74}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.4}Planificación de experimentos multicapa}{73}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Estrategias multicapa}{73}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Geometrías 3D}{75}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Medición de resultados}{76}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Caracterización mecánica de probetas}{76}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.5}Medición de resultados}{77}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Caracterización mecánica de probetas}{77}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Caracterización de piezas tridimensionales}{78}{subsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.5.3}Análisis de desempeño del proceso}{82}{subsection.3.5.3}%
-\contentsline {section}{\numberline {3.6}Sumario}{82}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Resumen de experimentos de CSAM}{82}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Resumen de indicadores de evaluación de CSAM}{85}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.6}Sumario}{83}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Resumen de experimentos de CSAM}{83}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Resumen de indicadores de evaluación de CSAM}{83}{subsection.3.6.2}%
 \contentsline {chapter}{\numberline {4}Resultados y discusión}{86}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Caracterización del perfil}{86}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Estrategias de compensación}{86}{section.4.2}%
