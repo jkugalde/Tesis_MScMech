@@ -6,51 +6,47 @@ El \textbf{Cold Spray (CS)} es un proceso de fabricación en el cual partículas
 
 En su aplicación convencional, el CS ha sido utilizado principalmente para generar recubrimientos metálicos sobre superficies con el objetivo de mejorar propiedades funcionales, como la resistencia al desgaste, a la corrosión o a la fatiga\cite{Champagne2016unique}. Asimismo, se ha consolidado como una técnica eficaz para la reparación de componentes dañados o desgastados, permitiendo restaurar geometrías originales sin afectar térmicamente el material base. Estas ventajas lo han convertido en una herramienta valiosa en sectores como el aeroespacial, la defensa y la industria energética, donde la integridad del material es crítica y los costos de fabricar nuevos componentes son elevados\cite{Champagne2015repairs}. Así, estas características otorgan a este proceso un potencial como método de \textbf{fabricación aditiva (FA)} para la manufactura de piezas 3D.
 
-Las tecnologías de FA se han incorporado progresivamente en los sistemas de manufactura debido a su capacidad para integrar múltiples etapas y procesos productivos en un único procedimiento. A través de la deposición controlada de material capa por capa, la FA permite obtener geometrías complejas sin necesidad de herramientas específicas, mecanizados adicionales o ensamblajes intermedios. Además, posibilita el control localizado y optimizado de la distribución del material dentro de la estructura, lo que permite diseñar componentes con una relación masa-resistencia eficiente, característica especialmente relevante para sectores como el aeroespacial donde la reducción de peso es crítica\cite{Gibson2015}.
+Las tecnologías de FA se han incorporado progresivamente en los sistemas de manufactura debido a su capacidad para integrar múltiples etapas y procesos productivos en un único procedimiento. A través de la deposición controlada de material capa por capa, la FA permite obtener geometrías complejas sin necesidad de herramientas específicas, mecanizados adicionales o ensamblajes intermedios. Además, posibilita el control localizado y optimizado de la distribución del material dentro de la estructura, lo que permite diseñar componentes con una relación masa-resistencia eficiente, característica especialmente relevante para sectores como el aeroespacial, donde la reducción de peso es crítica\cite{Gibson2015}.
 
-Las tecnologías de FA metálica más difundidas se basan en la fusión selectiva de polvo mediante fuentes de energía térmica, como láseres (Selective Laser Melting SLM, Selective Laser Sintering SLS) o haces de electrones (Electron Beam Melting EBM)\cite{Herzog2016}. Aunque estas técnicas permiten fabricar piezas densas con buenas propiedades mecánicas, presentan limitaciones importantes. Entre ellas destacan la necesidad de atmósferas controladas para evitar la contaminación, la generación de tensiones residuales y distorsiones geométricas por gradientes térmicos, y la formación de microestructuras indeseadas que pueden afectar negativamente al desempeño mecánico del componente final\cite{Herzog2016}. El titanio es un caso particular y relevante.
+Las tecnologías de FA metálica más difundidas se basan en la fusión selectiva de polvo mediante fuentes de energía térmica, como láseres (Selective Laser Melting SLM, Selective Laser Sintering SLS) o haces de electrones (Electron Beam Melting EBM)\cite{Herzog2016}. Aunque estas técnicas permiten fabricar piezas densas con buenas propiedades mecánicas, presentan limitaciones importantes. Entre ellas destacan la necesidad de atmósferas controladas para evitar la contaminación, la generación de tensiones residuales y distorsiones geométricas por gradientes térmicos, y la formación de microestructuras indeseadas que pueden afectar negativamente al desempeño mecánico del componente final\cite{Herzog2016}. 
 
-Este material y sus aleaciones son ampliamente utilizados en aplicaciones estructurales y funcionales debido a su alta resistencia mecánica, baja densidad, resistencia a la corrosión y biocompatibilidad\cite{Leyens2003}. Sin embargo, su elevada reactividad a temperaturas altas y la formación de óxidos superficiales limitan su procesabilidad mediante métodos térmicos\cite{Huang2020}. Estas dificultades motivan la exploración de técnicas que permitan consolidar el titanio en estado sólido, preservando sus propiedades originales y evitando defectos metalúrgicos asociados al calentamiento. De esta manera, se genera una oportunidad clara para el CS como método de FA. 
-
-El uso del CS como proceso de FA presenta desafíos técnicos respecto a la resolución geométrica que han limitado su adopción generalizada en FA 3D. Entre ellos se encuentra la continuidad del chorro, el diámetro de este, y el control limitado sobre la distribución del material depositado\cite{Yin2022review}. Además, la consolidación efectiva de las partículas requiere condiciones específicas de impacto que pueden dificultar la formación de detalles finos o estructuras con geometrías complejas. Por otro lado, por la naturaleza del proceso, las piezas naturalmente presentarían rugosidad y porosidad, cualidades que deberían ser posteriormente tratadas, lo cual es un evidente obstáculo para la producción de piezas completamente listas o finales\cite{Moridi2014}.
+El uso del CS como proceso de FA presenta desafíos técnicos respecto a la resolución geométrica que han limitado su adopción generalizada en FA 3D. Entre ellos se encuentra la continuidad del chorro, el diámetro de este, y el control limitado sobre la distribución del material depositado\cite{Yin2022review}. Además, la consolidación efectiva de las partículas requiere condiciones específicas de impacto que pueden dificultar la formación de detalles finos o estructuras con geometrías complejas. Por otro lado, por la naturaleza del proceso, las piezas naturalmente presentarían rugosidad y porosidad, cualidades que deberían ser posteriormente tratadas, lo cual es un evidente obstáculo para la producción de piezas completamente listas o finales\cite{Moridi2014}. De esta manera, una propuesta mesurada para el proceso es la generación de piezas casi finales, o \textit{near-net-shape} (\textbf{NNS}).
 
 Una forma directa de abordar las limitaciones geométricas del proceso es reducir el diámetro de la tobera, lo cual no solo disminuye el tamaño del chorro de partículas proyectado, mejorando así la resolución espacial del depósito, sino que también influye en la velocidad de las partículas y en la concentración del impacto\cite{Kotoban2017}. Estos factores afectan directamente la definición del material depositado y la eficiencia de adhesión\cite{Sova2013micronozzle}.
 
-Por otro lado, en investigaciones recientes se ha logrado consolidar piezas volumétricas mediante CS utilizando toberas convencionales y trayectorias optimizadas\cite{WU2025642}. No obstante, se reportan desviaciones geométricas significativas respecto a las formas objetivo, con errores promedio del orden de 0.44 mm y valores máximos superiores a 3.9 mm en piezas de escala centimétrica. Estas desviaciones son atribuidas en parte al perfil de depósito gaussiano característico del proceso, cuya distribución espacial amplia limita el control local del material depositado\cite{Falco2025ColdSA}.
+Por otro lado, en investigaciones recientes se ha logrado consolidar piezas volumétricas mediante CS utilizando toberas convencionales y trayectorias optimizadas\cite{WU2025642}. No obstante, se reportan desviaciones geométricas significativas respecto a las formas objetivo, con errores promedio del orden de medio milímetro y valores máximos cercanos a 4 mm en piezas de escala centimétrica. Estas desviaciones son atribuidas en parte al perfil de depósito gaussiano característico del proceso, cuya distribución espacial amplia limita el control local del material depositado\cite{Falco2025ColdSA}.
 
-De esta manera, el presente trabajo propone desarrollar y evaluar un sistema de fabricación aditiva mediante CS con \textbf{microtoberas} para la consolidación de piezas \textit{near-net-shape} a partir de polvo de \textbf{titanio comercialmente puro (Ti-CP)}. Se generarán trayectorias de deposición óptimas en función de los parámetros operativos del proceso, para luego evaluar la calidad del material consolidado en muestras y así determinar la viabilidad técnica de esta tecnología para aplicaciones en la manufactura de componentes casi finales de alta resolución en titanio.
-
-
+En base a todo lo anterior, el presente trabajo propone desarrollar y evaluar un sistema de fabricación aditiva mediante CS con \textbf{microtoberas} para la consolidación de piezas NNS a partir de polvos metálicos. Se definirán parámetros de deposición óptimos y trayectorias de herramienta, para luego evaluar la calidad del material consolidado en muestras y así determinar la viabilidad técnica de esta tecnología para aplicaciones en la manufactura de componentes NNS alta resolución.
 
 
 \section{Objetivos y alcances}
 
 \subsubsection{Objetivo general}
 
-Desarrollar y evaluar un proceso de FA mediante CS con microtoberas para la consolidación de polvo de titanio en geometrías tridimensionales para determinar su viabilidad como piezas casi finales.
+Desarrollar y evaluar un proceso de FA mediante CS con microtoberas para la consolidación de polvo en geometrías tridimensionales para determinar su viabilidad como piezas NNS.
 
 \subsubsection{Objetivos específicos}
 
 \begin{enumerate}
-	\item Implementar un sistema de deposición por CS que utilice microtoberas para la consolidación de polvo de titanio en geometrías tridimensionales y definir el rango de sus parámetros operativos.
+	
+	\item Implementar un sistema de deposición por CS que utilice microtoberas para la consolidación de polvo en geometrías tridimensionales y establecer el rango de sus parámetros operativos.
 	\item Comprender y caracterizar la relación entre parámetros operativos y el perfil de deposición.
 	\item Definir y evaluar estrategias para generar paredes planas u homogéneas a través de trayectorias de herramienta.
-	\item  Definir y evaluar estrategias para generar piezas volumétricas multicapa a través de trayectorias de herramienta.
-	\item Proyectar, diseñar y fabricar geometrías representativas, identificando las limitaciones del procesos establecido.
-	\item Proponer indicadores y cuantificar los resultados del proceso.
-	\item Analizar la viabilidad técnica global del proceso como alternativa para la fabricación aditiva de componentes metálicos de alta resolución a partir de polvo de titanio.
+	\item  Definir y evaluar estrategias para generar geometrías multicapa a través de trayectorias de herramienta.
+	\item Proponer indicadores de calidad y cuantificar los resultados del proceso.
+
 \end{enumerate}
 
 \subsubsection{Alcances}
 
-El producto principal de esta investigación es la obtención de piezas volumétricas mediante el proceso definido. En consecuencia, la optimización de las condiciones de imprimibilidad y de la precisión geométrica de los depósitos constituye una prioridad por sobre el rendimiento mecánico de los mismos.
+El producto principal de esta investigación es la obtención de piezas mediante el proceso de CS. En consecuencia, la optimización de las condiciones de imprimibilidad y de la precisión geométrica de los depósitos constituye una prioridad por sobre el rendimiento mecánico de los mismos, así como la proyección económica.
 
 \begin{itemize}
-	\item Integración del sistema de deposición por CS con microtoberas a una máquina CNC comercial, generando condiciones para un proceso controlado y con mínima dispersión de polvo, protegiendo los componentes de precisión.
+	\item Integración del sistema de deposición por CS con microtobera a una máquina CNC comercial, generando condiciones para un proceso controlado y con mínima dispersión de polvo, protegiendo los componentes de precisión y al usuario.
 	\item El diseño de piezas está a limitado a piezas sencillas de parametrizar, debido a la ausencia de software CAM o simuladores específicos, por lo que se desarrollarán códigos personalizados para definir las trayectorias de herramienta.
-	\item Operación del proceso con expulsión continua de partículas sin sistema de detención ni modulación del chorro.
-	\item Caracterización mecánica limitada a análisis microestructurales mediante microscopía óptica y/o electrónica, y ensayos de microdureza.
-	\item La temperatura y la presión serán variables fijas durante los ensayos una vez encontrado el par óptimo.
+	\item La operación del proceso será con expulsión continua de partículas sin sistema de detención ni modulación del chorro.
+	\item Caracterización mecánica limitada a análisis microestructurales mediante microscopía óptica y/o electrónica. Se realizarán ensayos de microdureza.
+	\item Dado que la hipótesis corresponde a una prueba de concepto, el polvo a utilizar es una variable más. Este trabajo se realizará principalmente con \textbf{polvo de aluminio}, por su facilidad de deposición y disponibilidad en el Laboratorio de Pulvimetalurgia de la UChile.
 \end{itemize}
 
 
